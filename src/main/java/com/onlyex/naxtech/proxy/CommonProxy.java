@@ -1,16 +1,16 @@
 package com.onlyex.naxtech.proxy;
 
+import gregtech.api.block.VariantItemBlock;
 import com.onlyex.naxtech.NaxTech;
 import com.onlyex.naxtech.api.utils.NTLog;
+import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
-
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
-
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -56,6 +56,8 @@ public class CommonProxy {
         在注册MetaBlock时用到
         */
 
+        registry.register(NTMetaBlocks.DIMENSION);
+        registry.register(NTMetaBlocks.DIMENSION_FRAME);
 
     }
 
@@ -70,6 +72,10 @@ public class CommonProxy {
         registry.register(createItemBlock(方块实例, VariantItemBlock::new));
         在注册MetaBlock时用到
         */
+
+        registry.register(createItemBlock(NTMetaBlocks.DIMENSION, VariantItemBlock::new));
+        registry.register(createItemBlock(NTMetaBlocks.DIMENSION_FRAME, VariantItemBlock::new));
+
     }
 
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {

@@ -1,6 +1,7 @@
 package com.onlyex.naxtech;
 
 import com.onlyex.naxtech.api.utils.NTLog;
+import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
 import com.onlyex.naxtech.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
@@ -35,8 +36,8 @@ public class NaxTech {
     {
         NTLog.init(event.getModLog());
         NTMetaInit.init();
-        /*NTMetaTileEntities.initialization();
-        NTMetaBlocks.init();*/
+        /*NTMetaTileEntities.initialization();*/
+        NTMetaBlocks.init();
         proxy.preLoad();
 
     }

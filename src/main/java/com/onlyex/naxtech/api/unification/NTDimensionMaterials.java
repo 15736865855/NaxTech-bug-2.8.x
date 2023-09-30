@@ -79,7 +79,7 @@ public class NTDimensionMaterials {
         Mithril = new Material.Builder(24012, gregtechId("mithril"))
                 .build();
 
-        /*
+/*
         Shirabon = new Material.Builder(24013, gregtechId("shirabon"))
                 .ingot().fluid()
                 .color(0xBE125C).iconSet(METALLIC)

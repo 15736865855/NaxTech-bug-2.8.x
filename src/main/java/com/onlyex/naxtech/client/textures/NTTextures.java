@@ -1,6 +1,7 @@
-package com.onlyex.naxtech.api.textures;
+package com.onlyex.naxtech.client.textures;
 
 public class NTTextures {
+
 
     public static void init() {
 
