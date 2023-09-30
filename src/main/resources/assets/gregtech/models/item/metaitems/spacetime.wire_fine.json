@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/materials/spacetime/wire_fine",
+    "layer1": "naxtech:items/materials/spacetime/wire_fine_overlay",
+    "layer2": "naxtech:items/materials/spacetime/halo_overlay"
+  }
+}

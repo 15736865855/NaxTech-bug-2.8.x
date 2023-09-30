@@ -25,8 +25,8 @@ public class NaxTech {
     public static NaxTech instance;
 
     @SidedProxy(
-            clientSide = "onlyex.naxtech.proxy.ClientProxy",
-            serverSide = "onlyex.naxtech.proxy.CommonProxy"
+            clientSide = "com.onlyex.naxtech.proxy.ClientProxy",
+            serverSide = "com.onlyex.naxtech.proxy.CommonProxy"
     )
     public static CommonProxy proxy;
 

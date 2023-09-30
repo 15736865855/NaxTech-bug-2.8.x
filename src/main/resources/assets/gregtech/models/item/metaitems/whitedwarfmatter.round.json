@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/materials/whitedwarfmatter/round",
+    "layer1": "naxtech:items/materials/whitedwarfmatter/halo_overlay"
+  }
+}

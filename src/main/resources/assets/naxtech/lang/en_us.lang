@@ -1,0 +1,574 @@
+
+
+
+itemGroup.naxtech=naxtech(NT)
+# Circuits
+# Gooware
+metaitem.circuit.gooware_processor.name=Gooware Processor
+metaitem.circuit.gooware_processor.tooltip=Reaction-Diffusion Computation/n§2ZPM-tier Circuit
+metaitem.circuit.gooware_assembly.name=Gooware Assembly
+metaitem.circuit.gooware_assembly.tooltip=Cyclic Concentration/n§2UV-tier Circuit
+metaitem.circuit.gooware_computer.name=Gooware Supercomputer
+metaitem.circuit.gooware_computer.tooltip=Complex Wave Phenomena!/n§2UHV-tier Circuit
+metaitem.circuit.gooware_mainframe.name=Gooware Mainframe
+metaitem.circuit.gooware_mainframe.tooltip=Spiraling Colored Waves!/n§2UEV-tier Circuit
+
+# Optical
+metaitem.circuit.optical_processor.name=Optical Processor
+metaitem.circuit.optical_processor.tooltip=Lightspeed Computing/n§6UV-tier Circuit
+metaitem.circuit.optical_assembly.name=Optical Assembly
+metaitem.circuit.optical_assembly.tooltip=With the Power of Lasers!/n§6UHV-tier Circuit
+metaitem.circuit.optical_computer.name=Optical Supercomputer
+metaitem.circuit.optical_computer.tooltip=In the Blink of an Eye/n§6UEV-tier Circuit
+metaitem.circuit.optical_mainframe.name=Optical Mainframe
+metaitem.circuit.optical_mainframe.tooltip=Could Anything be faster?/n§6UIV-tier Circuit
+
+# Spintronic
+metaitem.circuit.spintronic_processor.name=Spintronic Processor
+metaitem.circuit.spintronic_processor.tooltip=Spinning Electrons/n§5UHV-tier Circuit
+metaitem.circuit.spintronic_assembly.name=Spintronic Assembly
+metaitem.circuit.spintronic_assembly.tooltip=Discrete Quantum Walks/n§5UEV-tier Circuit
+metaitem.circuit.spintronic_computer.name=Spintronic Supercomputer
+metaitem.circuit.spintronic_computer.tooltip=Ballistic Spin Filtration/n§5UIV-tier Circuit
+metaitem.circuit.spintronic_mainframe.name=Spintronic Mainframe
+metaitem.circuit.spintronic_mainframe.tooltip=Spin-Wave Logic!/n§5UXV-tier Circuit
+
+
+# Cosmic
+metaitem.circuit.cosmic_processor.name=Cosmic Processor
+metaitem.circuit.cosmic_processor.tooltip=Phenomenal cosmic powers!/n§8UEV-tier Circuit
+metaitem.circuit.cosmic_assembly.name=Cosmic Assembly
+metaitem.circuit.cosmic_assembly.tooltip=Phenomenal cosmic powers!/n§8UIV-tier Circuit
+metaitem.circuit.cosmic_computer.name=Cosmic Supercomputer
+metaitem.circuit.cosmic_computer.tooltip=Phenomenal cosmic powers!/n§8UXV-tier Circuit
+metaitem.circuit.cosmic_mainframe.name=Cosmic Mainframe
+metaitem.circuit.cosmic_mainframe.tooltip=Phenomenal cosmic powers!/n§8OpV-tier Circuit
+
+# Supracausal
+metaitem.circuit.supracausal_processor.name=Supra-Causal Processor
+metaitem.circuit.supracausal_processor.tooltip=With the Power of Black Holes/n§fUIV-tier Circuit
+metaitem.circuit.supracausal_assembly.name=Supra-Causal Assembly
+metaitem.circuit.supracausal_assembly.tooltip=Singularities on an Epic scale/n§fUXV-tier Circuit
+metaitem.circuit.supracausal_computer.name=Supra-Causal Supercomputer
+metaitem.circuit.supracausal_computer.tooltip=Using Wormholes to our Advantage/n§fOpV-tier Circuit
+metaitem.circuit.supracausal_mainframe.name=Supra-Causal Mainframe
+metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier Circuit
+
+# Suprachronal
+metaitem.circuit.suprachronal.ulv.name=Supra-Chronal Circuit (ULV)
+metaitem.circuit.suprachronal.ulv.tooltip=Full control over spacetime/n§fULV-tier Circuit
+metaitem.circuit.suprachronal.lv.name=Supra-Chronal Circuit (LV)
+metaitem.circuit.suprachronal.lv.tooltip=Full control over spacetime/n§fLV-tier Circuit
+metaitem.circuit.suprachronal.mv.name=Supra-Chronal Circuit (MV)
+metaitem.circuit.suprachronal.mv.tooltip=Full control over spacetime/n§fMV-tier Circuit
+metaitem.circuit.suprachronal.hv.name=Supra-Chronal Circuit (HV)
+metaitem.circuit.suprachronal.hv.tooltip=Full control over spacetime/n§fHV-tier Circuit
+metaitem.circuit.suprachronal.ev.name=Supra-Chronal Circuit (EV)
+metaitem.circuit.suprachronal.ev.tooltip=Full control over spacetime/n§fEV-tier Circuit
+metaitem.circuit.suprachronal.iv.name=Supra-Chronal Circuit (IV)
+metaitem.circuit.suprachronal.iv.tooltip=Full control over spacetime/n§fIV-tier Circuit
+metaitem.circuit.suprachronal.luv.name=Supra-Chronal Circuit (LuV)
+metaitem.circuit.suprachronal.luv.tooltip=Full control over spacetime/n§fLuV-tier Circuit
+metaitem.circuit.suprachronal.zpm.name=Supra-Chronal Circuit (ZPM)
+metaitem.circuit.suprachronal.zpm.tooltip=Full control over spacetime/n§fZPM-tier Circuit
+metaitem.circuit.suprachronal.uv.name=Supra-Chronal Circuit (UV)
+metaitem.circuit.suprachronal.uv.tooltip=Full control over spacetime/n§fUV-tier Circuit
+metaitem.circuit.suprachronal.uhv.name=Supra-Chronal Circuit (UHV)
+metaitem.circuit.suprachronal.uhv.tooltip=Full control over spacetime/n§fUHV-tier Circuit
+metaitem.circuit.suprachronal.uev.name=Supra-Chronal Circuit (UEV)
+metaitem.circuit.suprachronal.uev.tooltip=Full control over spacetime/n§fUEV-tier Circuit
+metaitem.circuit.suprachronal.uiv.name=Supra-Chronal Circuit (UIV)
+metaitem.circuit.suprachronal.uiv.tooltip=Full control over spacetime/n§fUIV-tier
+metaitem.circuit.suprachronal.uxv.name=Supra-Chronal Circuit (UXV)
+metaitem.circuit.suprachronal.uxv.tooltip=Full control over spacetime/n§fUXV-tier Circuit
+metaitem.circuit.suprachronal.opv.name=Supra-Chronal Circuit (OpV)
+metaitem.circuit.suprachronal.opv.tooltip=Full control over spacetime/n§fOpV-tier Circuit
+metaitem.circuit.suprachronal.max.name=Supra-Chronal Circuit (MAX)
+metaitem.circuit.suprachronal.max.tooltip=Full control over spacetime/n§fMAX-tier Circuit
+
+# Supra-Chronal Stuff
+metaitem.eigenfolded.kerr.manifold.name=Eigenfolded Kerr Manifold
+metaitem.hyperdimensional.drone.name=Hyperdimensional Drone
+metaitem.dimension.quantum_anomaly.name=Quantum Anomaly
+metaitem.dimension.quantum_anomaly.tooltip=
+
+metaitem.dimension.raw_tesseract.name=Raw Tesseract
+metaitem.dimension.raw_tesseract.tooltip=Probably should shoot it with lasers
+metaitem.dimension.energised_tesseract.name=Energised Tesseract
+metaitem.dimension.energised_tesseract.tooltip=Higher dimensional engineering
+metaitem.dimension.black_body_naquadria_supersolid.name=Black Body Naquadria Supersolid
+metaitem.dimension.black_body_naquadria_supersolid.tooltip=Flows like a fluid and reflects nothing, perfect absorption and transfer
+metaitem.dimension.hyper-stable_self-healing_adhesive.name=Hyper-Stable Self-Healing Adhesive
+metaitem.dimension.hyper-stable_self-healing_adhesive.tooltip=Complete and selective adhesion, even when torn or damaged
+metaitem.dimension.superconductor_rare-earth_composite.name=Superconductor Rare-Earth Composite
+metaitem.dimension.superconductor_rare-earth_composite.tooltip=Zero resistance to electrical and quantum flow, regardless of temperature
+metaitem.gooware.biocells.name=Biocells
+metaitem.gooware.biocells.tooltip=Mutated Raw inteligence
+metaitem.gooware.living_bio_wafer.name=Living Bio Wafer
+metaitem.gooware.living_bio_wafer.tooltip=Raw Circuit
+metaitem.gooware.living_bio_chip.name=Living Bio Chip
+metaitem.gooware.living_bio_chip.tooltip=Needed for Circuits
+metaitem.nuclear_star.name=Nuclear Star
+metaitem.nuclear_star.tooltip=BY THE POWERS OF NAUGHTINESS, I COMMAND
+metaitem.living_crystal_chip.name=Living Crystal Chip
+metaitem.living_crystal_chip.tooltip=Needed for Circuits
+metaitem.optical.optically_enriched_crystalline_boule.name=Optically Enriched Crystalline Boule
+metaitem.optical.optically_enriched_crystalline_boule.tooltip=Raw Circuit
+metaitem.optical.photonically_prepared_wafer.name=Photonically Prepared Wafer
+metaitem.optical.photonically_prepared_wafer.tooltip=Raw Circuit
+metaitem.optical.photonically_enhanced_wafer.name=Photonically Enhanced Wafer
+metaitem.optical.photonically_enhanced_wafer.tooltip=Raw Circuit
+metaitem.optical.raw_exposed_optical_chip.name=Raw Exposed Optical Chip
+metaitem.optical.raw_exposed_optical_chip.tooltip=Raw Optical Chip
+metaitem.optical.optically_compatible_memory.name=Optically Compatible Memory
+metaitem.optical.optically_compatible_memory.tooltip=Its in the name!
+metaitem.optical.optically_perfected_cpu.name=Optically Perfected CPU
+metaitem.optical.optically_perfected_cpu.tooltip=Perfected CPU!
+metaitem.optical.optical_cpu_containment_housing.name=Optical CPU Containment Housing
+metaitem.optical.optical_cpu_containment_housing.tooltip=CPU Housing
+metaitem.optical.optical_circuit_board.name=Optical Circuit Board
+metaitem.optical.optical_circuit_board.tooltip=Optically Infused Board
+metaitem.timepiece.name=Timepiece
+metaitem.timepiece.tooltip=Beware of the kid with the hat
+
+
+
+
+
+metaitem.boule.cubic_zirconia.europium.name=Europium-doped Monocrystalline Cubic Zirconia Boule
+metaitem.boule.cubic_zirconia.europium.tooltip=Raw Crystal
+metaitem.wafer.cubic_zirconia.europium.name=Europium-doped Cubic Zirconia Wafer
+metaitem.wafer.cubic_zirconia.europium.tooltip=Raw Crystal
+metaitem.wafer.crystal.interface.name=Crystal Interface Wafer
+metaitem.wafer.crystal.interface.tooltip=Raw Crystal Interface
+metaitem.plate.crystal.interface.name=Crystal Interface Chip
+metaitem.plate.crystal.interface.tooltip=Crystal Interface
+metaitem.engraved.crystal_chip.ruby.name=Engraved Ruby Crystal Chip
+metaitem.engraved.crystal_chip.ruby.tooltip=Control Ruby
+metaitem.engraved.crystal_chip.sapphire.name=Engraved Sapphire Crystal Chip
+metaitem.engraved.crystal_chip.sapphire.tooltip=Conversion Sapphire
+metaitem.engraved.crystal_chip.diamond.name=Engraved Diamond Crystal Chip
+metaitem.engraved.crystal_chip.diamond.tooltip=Logic Diamond
+metaitem.crystal.modulator.ruby.name=Ruby Crystal Modulator
+metaitem.crystal.modulator.ruby.tooltip=Control Processing Circuit
+metaitem.crystal.modulator.sapphire.name=Sapphire Crystal Modulator
+metaitem.crystal.modulator.sapphire.tooltip=Conversion Processing Circuit
+metaitem.crystal.modulator.diamond.name=Diamond Crystal Modulator
+metaitem.crystal.modulator.diamond.tooltip=Logic Processing Circuit
+metaitem.crystal.system_on_chip.socket.name=Crystal SOC Socket
+metaitem.crystal.system_on_chip.socket.tooltip=Bridging Crystal and Circuit
+metaitem.glass_fiber.name=Glass Fiber
+metaitem.glass_fiber.tooltip=B(SiO₂)₇
+metaitem.europium_doped_monocrystalline_silicon_boule.name=Europium doped Monocrystalline Silicon Boule
+metaitem.europium_doped_monocrystalline_silicon_boule.tooltip=Raw Circuit
+metaitem.europium_doped_wafer.name=Europium doped Wafer
+metaitem.europium_doped_wafer.tooltip=Raw Circuit
+metaitem.americium_doped_monocrystalline_silicon_boule.name=Americium doped Monocrystalline Silicon Boule
+metaitem.americium_doped_monocrystalline_silicon_boule.tooltip=Raw Circuit
+metaitem.americium_doped_wafer.name=Americium doped Wafer
+metaitem.americium_doped_wafer.tooltip=Raw Circuit
+metaitem.bio_circuit_board.name=Bio Circuit Board
+metaitem.bio_circuit_board.tooltip=Bio genetic mutated Board
+metaitem.ultra_bio_mutated_circuit_board.name=Ultra Bio Mutated Circuit Board
+metaitem.ultra_bio_mutated_circuit_board.tooltip=Bio genetic mutated Board
+metaitem.station_1.name=Hi-Computation Station MK-I
+metaitem.station_1.tooltip=§b93015 TFlops§r
+metaitem.station_2.name=Hi-Computation Station MK-II
+metaitem.station_2.tooltip=§e76M Processor Units§r
+metaitem.station_3.name=Hi-Computation Station MK-III
+metaitem.station_3.tooltip=§aInvalidate RSA§r
+metaitem.station_4.name=Hi-Computation Station MK-IV Prototype
+metaitem.station_4.tooltip=§c56th Mersenne Prime§r
+metaitem.station_5.name=Hi-Computation Station MK-V Finaltype
+metaitem.station_5.tooltip=§5Paradox§r
+
+
+
+
+
+
+
+
+
+
+metaitem.plate.phase_change_memory.name=PRAM
+metaitem.plate.phase_change_memory.tooltip=Phase-change Memory
+metaitem.optical_fiber.name=Optical Fiber
+metaitem.optical_fiber.tooltip=Light-transmitting Glass
+metaitem.dielectric_mirror.name=Dielectric Mirror
+metaitem.dielectric_mirror.tooltip=Bragg Mirror
+metaitem.laser.assembly.empty.name=Empty Laser Assembly
+metaitem.laser.assembly.empty.tooltip=Fill this with some Laser Medium
+metaitem.laser.helium_neon.name=Helium-Neon Laser
+metaitem.laser.helium_neon.tooltip=Purpose: Weak Optical Appliances
+metaitem.laser.nd_yag.name=Nd:YAG Laser
+metaitem.laser.nd_yag.tooltip=Purpose: Strong Optical Appliances
+
+metaitem.plate.spin_transfer_torque_memory.name=STTRAM
+metaitem.plate.spin_transfer_torque_memory.tooltip=Spin-Transfer Torque Memory
+metaitem.tube.topological_insulator.name=Topological Insulator Tube
+metaitem.tube.topological_insulator.tooltip=Conductive Surface States
+metaitem.containment_unit.bose_einstein_condensate.name=Bose-Einstein Condensate Containment Unit
+metaitem.containment_unit.bose_einstein_condensate.tooltip=Magnetic Evaporative Cooling
+metaitem.bose_einstein_condensate.name=Bose-Einstein Condensate
+metaitem.bose_einstein_condensate.tooltip=2,000 §cRb-87§7 Atoms at §b170nK§7!
+
+metaitem.wafer.nano_power_integrated_circuit.name=NPIC Wafer
+metaitem.wafer.nano_power_integrated_circuit.tooltip=Raw Nano Power Circuit
+metaitem.wafer.pico_power_integrated_circuit.name=PPIC Wafer
+metaitem.wafer.pico_power_integrated_circuit.tooltip=Raw Pico Power Circuit
+metaitem.wafer.femto_power_integrated_circuit.name=FPIC Wafer
+metaitem.wafer.femto_power_integrated_circuit.tooltip=Raw Femto Power Circuit
+metaitem.plate.nano_power_integrated_circuit.name=NPIC
+metaitem.plate.nano_power_integrated_circuit.tooltip=Nano Power Integrated Circuit
+metaitem.plate.pico_power_integrated_circuit.name=PPIC
+metaitem.plate.pico_power_integrated_circuit.tooltip=Pico Power Integrated Circuit
+metaitem.plate.femto_power_integrated_circuit.name=FPIC
+metaitem.plate.femto_power_integrated_circuit.tooltip=Femto Power Integrated Circuit
+
+# SMDs
+metaitem.optical.optical_smd.capacitor.name=Optical Integrator
+metaitem.optical.optical_smd.capacitor.tooltip=Optoelectronic Capacitor
+metaitem.optical.optical_smd.diode.name=Optical Isolator
+metaitem.optical.optical_smd.diode.tooltip=Optoelectronic Diode
+metaitem.optical.optical_smd.resistor.name=Photoresistor
+metaitem.optical.optical_smd.resistor.tooltip=Optoelectronic Resistor
+metaitem.optical.optical_smd.transistor.name=Optical Transistor
+metaitem.optical.optical_smd.transistor.tooltip=Optoelectronic Transistor
+metaitem.optical.optical_smd.inductor.name=Optical Polarizer
+metaitem.optical.optical_smd.inductor.tooltip=Optoelectronic Inductor
+
+
+metaitem.component.spintronic_smd.capacitor.name=Supercapacitor
+metaitem.component.spintronic_smd.capacitor.tooltip=Spin-Electronic Capacitor
+metaitem.component.spintronic_smd.diode.name=Schottky Diode
+metaitem.component.spintronic_smd.diode.tooltip=Spin-Electronic Diode
+metaitem.component.spintronic_smd.resistor.name=Magnetorestrictor
+metaitem.component.spintronic_smd.resistor.tooltip=Spin-Electronic Resistor
+metaitem.component.spintronic_smd.transistor.name=Spin MOSFET
+metaitem.component.spintronic_smd.transistor.tooltip=Spin-Electronic Transistor
+metaitem.component.spintronic_smd.inductor.name=Spin Polarizer
+metaitem.component.spintronic_smd.inductor.tooltip=Spin-Electronic Inductor
+
+# Processing Units
+metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
+metaitem.nonlinear_chemical_oscillator.name=Nonlinear Chemical Oscillator
+metaitem.nonlinear_chemical_oscillator.tooltip=Non-equilibrium Thermodynamics!
+metaitem.optical_laser_control_unit.name=Optical Laser Control Unit
+metaitem.optical_laser_control_unit.tooltip=Laser Information Transmission
+metaitem.esr_computation_unit.name=ESR Computation Unit
+metaitem.esr_computation_unit.tooltip=Electron Spin Resonance Quantum Computation!
+metaitem.item.bio_processing_unit.name=Bio Processing Unit
+metaitem.item.bio_processing_unit.tooltip=Bio CPU
+metaitem.item.advanced_processor_board.name=Advanced Processor Boar
+metaitem.item.advanced_processor_board.tooltip=Advanced CPU
+metaitem.item.advanced_board.name=Advanced Board
+metaitem.item.advanced_board.tooltip=
+metaitem.item.quantum_processor_board.name=Quantum Processor Boar
+metaitem.item.quantum_processor_board.tooltip=Quantum CPU
+metaitem.item.quantum_board.name=Quantum Boar
+metaitem.item.quantum_board.tooltip=
+metaitem.item.nano_processor_board.name=Nano Processor Boar
+metaitem.item.nano_processor_board.tooltip=Nano CPU
+metaitem.item.nano_board.name=Nano Boar
+metaitem.item.nano_board.tooltip=
+
+
+
+
+
+
+
+gregtech.material.lumium=lumium
+gregtech.material.enderium=enderium
+gregtech.material.signalum=signalum
+gregtech.material.mithril=Mana Infused
+gregtech.material.draconium_awakened=draconium awakened
+gregtech.material.draconium=draconium
+gregtech.material.blackd_warf_matter=Blackd Warf Matter
+gregtech.material.whited_warf_matter=Whited Warf Matter
+gregtech.material.infinity=infinity
+gregtech.material.cosmic_neutronium=cosmic neutronium
+gregtech.material.spacetime=Spacetime
+gregtech.material.magnetohydrodynamically_constrained_star_matter=magnetohydrodynamically constrained star matter
+gregtech.material.eternity= eternity
+gregtech.material.shirabon=shirabon
+gregtech.material.astral_titanium=astral titanium
+gregtech.material.celestial_tungsten=celestial tungsten
+gregtech.material.Rhugnor=Rhugnor
+
+
+
+
+
+
+
+metaitem.infinity.bolt.name=§cinfinity bolt
+metaitem.infinity.dust.name=§cinfinity dust
+metaitem.infinity.dust_tiny.name=§cinfinity dust tiny
+metaitem.infinity.dust_small.name=§cinfinity dust small
+metaitem.infinity.foil.name=§cinfinity foil
+metaitem.infinity.gear.name=§cinfinity gear
+metaitem.infinity.gear_small.name=§cinfinity gear small
+metaitem.infinity.lens.name=§cinfinity lens
+metaitem.infinity.ingot.name=§cinfinity ingot
+metaitem.infinity.ingot_hot.name=§cinfinity ingot hot
+metaitem.infinity.nugget.name=§cinfinity nugget
+metaitem.infinity.plate.name=§cinfinity plate
+metaitem.infinity.plate_dense.name=§cinfinity plate dense
+metaitem.infinity.plate_double.name=§cinfinity plate double
+metaitem.infinity.ring.name=§cinfinity ring
+metaitem.infinity.rotor.name=§cinfinity rotor
+metaitem.infinity.round.name=§cinfinity round
+metaitem.infinity.screw.name=§cinfinity screw
+metaitem.infinity.spring.name=§cinfinity spring
+metaitem.infinity.spring_small.name=§cinfinity spring small
+metaitem.infinity.stick.name=§cinfinity stick
+metaitem.infinity.stick_long.name=§cinfinity stick long
+metaitem.infinity.turbine_blade.name=§cinfinity turbine blade
+metaitem.infinity.wire_fine.name=§cinfinity wire fine
+metaitem.infinity.ingot_double.name=§cinfinity ingot_double
+metaitem.infinity.plate_quadruple.name=§cinfinity plate_quadruple
+metaitem.infinity.plate_quintuple.name=§cinfinity plate_quintuple
+metaitem.infinity.plate_triple.name=§cinfinity plate_triple
+metaitem.infinity.casing_small.name=§cinfinity casing_small
+tile.frame.infinity.name=
+tile.block.infinity.name=
+
+metaitem.cosmic_neutronium.bolt.name=§bcosmic neutronium bolt
+metaitem.cosmic_neutronium.dust.name=§bcosmic neutronium dust
+metaitem.cosmic_neutronium.dust_tiny.name=§bcosmic neutronium dust tiny
+metaitem.cosmic_neutronium.dust_small.name=§bcosmic neutronium dust small
+metaitem.cosmic_neutronium.foil.name=§bcosmic neutronium foil
+metaitem.cosmic_neutronium.gear.name=§bcosmic neutronium gear
+metaitem.cosmic_neutronium.gear_small.name=§bcosmic neutronium gear small
+metaitem.cosmic_neutronium.ingot.name=§bcosmic neutronium ingot
+metaitem.cosmic_neutronium.ingot_hot.name=§bcosmic neutronium ingot hot
+metaitem.cosmic_neutronium.nugget.name=§bcosmic neutronium nugget
+metaitem.cosmic_neutronium.plate.name=§bcosmic neutronium plate
+metaitem.cosmic_neutronium.plate_dense.name=§bcosmic neutronium plate dense
+metaitem.cosmic_neutronium.plate_double.name=§bcosmic neutronium plate double
+metaitem.cosmic_neutronium.ring.name=§bcosmic neutronium ring
+metaitem.cosmic_neutronium.rotor.name=§bcosmic neutronium rotor
+metaitem.cosmic_neutronium.round.name=§bcosmic neutronium round
+metaitem.cosmic_neutronium.screw.name=§bcosmic neutronium screw
+metaitem.cosmic_neutronium.spring.name=§bcosmic neutronium spring
+metaitem.cosmic_neutronium.spring_small.name=§bcosmic neutronium spring small
+metaitem.cosmic_neutronium.stick.name=§bcosmic neutronium stick
+metaitem.cosmic_neutronium.stick_long.name=§bcosmic neutronium stick long
+metaitem.cosmic_neutronium.wire_fine.name=§bcosmic neutronium wire fine
+tile.frame.cosmic_neutronium.name=
+tile.block.cosmic_neutronium.name=
+
+
+metaitem.whitedwarfmatter.bolt.name=whited warf matter bolt
+metaitem.whitedwarfmatter.dust.name=whited warf matter dust
+metaitem.whitedwarfmatter.dust_tiny.name=whited warf matter dust tiny
+metaitem.whitedwarfmatter.dust_small.name=whited warf matter dust small
+metaitem.whitedwarfmatter.foil.name=whited warf matter foil
+metaitem.whitedwarfmatter.gear.name=whited warf matter gear
+metaitem.whitedwarfmatter.gear_small.name=whited warf matter gear small
+metaitem.whitedwarfmatter.ingot.name=whited warf matter ingot
+metaitem.whitedwarfmatter.ingot_hot.name=whited warf matter ingot hot
+metaitem.whitedwarfmatter.nugget.name=whited warf matter nugget
+metaitem.whitedwarfmatter.plate.name=whited warf matter plate
+metaitem.whitedwarfmatter.plate_dense.name=whited warf matter plate dense
+metaitem.whitedwarfmatter.plate_double.name=whited warf matter plate double
+metaitem.whitedwarfmatter.ring.name=whited warf matter ring
+metaitem.whitedwarfmatter.rotor.name=whited warf matter rotor
+metaitem.whitedwarfmatter.round.name=whited warf matter round
+metaitem.whitedwarfmatter.screw.name=whited warf matter screw
+metaitem.whitedwarfmatter.spring.name=whited warf matter spring
+metaitem.whitedwarfmatter.spring_small.name=whited warf matter spring small
+metaitem.whitedwarfmatter.stick.name=whited warf matter stick
+metaitem.whitedwarfmatter.stick_long.name=whited warf matter stick long
+metaitem.whitedwarfmatter.wire_fine.name=whited warf matter wire fine
+metaitem.whitedwarfmatter.nanites.name=whited warf matter nanites
+metaitem.whitedwarfmatter.casing_small.name=whited warf matter casing_small
+tile.frame.whitedwarfmatter.name=
+tile.block.whitedwarfmatter.name=
+
+
+metaitem.spacetime.bolt.name=spacetime bolt
+metaitem.spacetime.bolt.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.dust.name=spacetime dust
+metaitem.spacetime.dust.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.dust_tiny.name=spacetime dust tiny
+metaitem.spacetime.dust_tiny.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.dust_small.name=spacetime dust small
+metaitem.spacetime.dust_small.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.foil.name=spacetime foil
+metaitem.spacetime.foil.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.gear.name=spacetime gear
+metaitem.spacetime.gear.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.gear_small.name=spacetime gear small
+metaitem.spacetime.gear_small.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.lens.name=spacetime lens
+metaitem.spacetime.lens.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.ingot.name=spacetime ingot
+metaitem.spacetime.ingot.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.ingot_hot.name=spacetime ingot hot
+metaitem.spacetime.ingot_hot.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.nugget.name=spacetime nugget
+metaitem.spacetime.nugget.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.plate.name=spacetime plate
+metaitem.spacetime.plate.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.plate_dense.name=spacetime plate dense
+metaitem.spacetime.plate_dense.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.plate_double.name=spacetime plate double
+metaitem.spacetime.plate_double.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.ring.name=spacetime ring
+metaitem.spacetime.ring.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.rotor.name=spacetime rotor
+metaitem.spacetime.rotor.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.round.name=spacetime round
+metaitem.spacetime.round.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.screw.name=spacetime screw
+metaitem.spacetime.screw.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.spring.name=spacetime spring
+metaitem.spacetime.spring.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.spring_small.name=spacetime spring small
+metaitem.spacetime.spring_small.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.stick.name=spacetime stick
+metaitem.spacetime.stick.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.stick_long.name=spacetime stick long
+metaitem.spacetime.stick_long.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.turbine_blade.name=spacetime turbine blade
+metaitem.spacetime.turbine_blade.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.wire_fine.name=spacetime wire fine
+metaitem.spacetime.wire_fine.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.ingot_double.name=spacetime ingot_double
+metaitem.spacetime.ingot_double.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.plate_quadruple.name=spacetime plate_quadruple
+metaitem.spacetime.plate_quadruple.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.plate_quintuple.name=spacetime plate_quintuple
+metaitem.spacetime.plate_quintuple.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.plate_triple.name=spacetime plate_triple
+metaitem.spacetime.plate_triple.tooltip=Reality itself distilled into physical form
+metaitem.spacetime.casing_small.name=spacetime casing_small
+metaitem.spacetime.casing_small.tooltip=Reality itself distilled into physical form
+tile.frame.spacetime.name=
+tile.block.spacetime.name=
+
+
+metaitem.eternity.bolt.name=eternity bolt
+metaitem.eternity.dust.name=eternity dust
+metaitem.eternity.dust_tiny.name=eternity dust tiny
+metaitem.eternity.dust_small.name=eternity dust small
+metaitem.eternity.foil.name=eternity foil
+metaitem.eternity.gear.name=eternity gear
+metaitem.eternity.gear_small.name=eternity gear small
+metaitem.eternity.lens.name=eternity lens
+metaitem.eternity.ingot.name=eternity ingot
+metaitem.eternity.ingot_hot.name=eternity ingot hot
+metaitem.eternity.nugget.name=eternity nugget
+metaitem.eternity.plate.name=eternity plate
+metaitem.eternity.plate_dense.name=eternity plate dense
+metaitem.eternity.plate_double.name=eternity plate double
+metaitem.eternity.ring.name=eternity ring
+metaitem.eternity.rotor.name=eternity rotor
+metaitem.eternity.round.name=eternity round
+metaitem.eternity.screw.name=eternity screw
+metaitem.eternity.spring.name=eternity spring
+metaitem.eternity.spring_small.name=eternity spring small
+metaitem.eternity.stick.name=eternity stick
+metaitem.eternity.stick_long.name=eternity stick long
+metaitem.eternity.turbine_blade.name=eternity turbine blade
+metaitem.eternity.wire_fine.name=eternity wire fine
+metaitem.eternity.nanites.name=eternity nanites
+metaitem.eternity.ingot_double.name=eternity ingot_double
+metaitem.eternity.plate_quadruple.name=eternity plate_quadruple
+metaitem.eternity.plate_quintuple.name=eternity plate_quintuple
+metaitem.eternity.plate_triple.name=eternity plate_triple
+metaitem.eternity.casing_small.name=eternity casing_small
+tile.frame.eternity.name=
+tile.block.eternity.name=
+
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.bolt.name=magnetohydrodynamically constrained star matter bolt
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.dust.name=magnetohydrodynamically constrained star matter dust
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.dust_tiny.name=magnetohydrodynamically constrained star matter dust tiny
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.dust_small.name=magnetohydrodynamically constrained star matter dust small
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.foil.name=magnetohydrodynamically constrained star matter foil
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.gear.name=magnetohydrodynamically constrained star matter gear
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.gear_small.name=magnetohydrodynamically constrained star matter gear small
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.ingot.name=magnetohydrodynamically constrained star matter ingot
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.ingot_hot.name=magnetohydrodynamically constrained star matter ingot hot
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.nugget.name=magnetohydrodynamically constrained star matter nugget
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.plate.name=magnetohydrodynamically constrained star matter plate
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.plate_dense.name=magnetohydrodynamically constrained star matter plate dense
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.plate_double.name=magnetohydrodynamically constrained star matter plate double
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.ring.name=magnetohydrodynamically constrained star matter ring
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.round.name=magnetohydrodynamically constrained star matter round
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.screw.name=magnetohydrodynamically constrained star matter screw
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.spring.name=magnetohydrodynamically constrained star matter spring
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.spring_small.name=magnetohydrodynamically constrained star matter spring small
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.stick.name=magnetohydrodynamically constrained star matter stick
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.stick_long.name=magnetohydrodynamically constrained star matter stick long
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.ingot_double.name=magnetohydrodynamically constrained star matter ingot_double
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.plate_quadruple.name=magnetohydrodynamically constrained star matter plate_quadruple
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.plate_quintuple.name=magnetohydrodynamically constrained star matter plate_quintuple
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.plate_triple.name=magnetohydrodynamically constrained star matter plate_triple
+metaitem.magnetohydrodynamicallyconstrainedstarmatter.casing_small.name=magnetohydrodynamically constrained star matter casing_small
+tile.frame.magnetohydrodynamicallyconstrainedstarmatter.name=
+tile.block.magnetohydrodynamicallyconstrainedstarmatter.name=
+
+
+#tf
+metaitem.lumium.dust.name=lumium dust
+metaitem.lumium.gear.name=lumium gear
+metaitem.lumium.nugget.name=lumium nugget
+metaitem.lumium.plate.name=lumium plate
+metaitem.lumium.ingot.name=lumium ingot
+
+metaitem.enderium.dust.name=enderium dust
+metaitem.enderium.gear.name=enderium gear
+metaitem.enderium.nugget.name=enderium nugget
+metaitem.enderium.plate.name=enderium plate
+metaitem.enderium.ingot.name=enderium ingot
+
+metaitem.signalum.dust.name=signalum dust
+metaitem.signalum.gear.name=signalum gear
+metaitem.signalum.nugget.name=signalum nugget
+metaitem.signalum.plate.name=signalum plate
+metaitem.signalum.ingot.name=signalum ingot
+
+metaitem.mithril.dust.name=mithril dust
+metaitem.mithril.gear.name=mithril gear
+metaitem.mithril.nugget.name=mithril nugget
+metaitem.mithril.plate.name=mithril plate
+metaitem.mithril.ingot.name=mithril ingot
+
+metaitem.dust_basalz.name=dust_basalz
+metaitem.dust_aerotheum.name=dust_aerotheum
+metaitem.dust_blaze.name=dust_blaze
+metaitem.dust_blitz.name=dust_blitz
+metaitem.dust_blizz.name=dust_blizz
+metaitem.dust_pyrotheum.name=dust_pyrotheum
+metaitem.dust_petrotheum.name=dust_petrotheum
+metaitem.dust_cryotheum.name=dust_cryotheum
+metaitem.dust_mana.name=dust_mana
+
+metaitem.rod_basalz.name=rod_basalz
+metaitem.rod_blitz.name=rod_blitz
+metaitem.rod_blizz.name=rod_blizz
+
+metaitem.crystal_redstone.name=crystal_redstone
+metaitem.crystal_crude_oil.name=crystal_crude_oil
+metaitem.crystal_glowstone.name=crystal_glowstone
+metaitem.crystal_ender.name=crystal_ender
+metaitem.crystal_geode.name=crystal_geode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tile.block.name=tile.frame.name=tile.frame.name=

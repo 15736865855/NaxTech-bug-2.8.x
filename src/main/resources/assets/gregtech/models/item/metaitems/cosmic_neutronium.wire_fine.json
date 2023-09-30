@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/materials/cosmicneutronium/halo_overlay",
+    "layer1": "naxtech:items/materials/cosmicneutronium/wire_fine",
+    "layer2": "naxtech:items/materials/cosmicneutronium/wire_fine_overlay"
+  }
+}

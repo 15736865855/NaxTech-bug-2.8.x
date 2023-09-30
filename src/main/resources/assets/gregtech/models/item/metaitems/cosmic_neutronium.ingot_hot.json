@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/materials/cosmicneutronium/halo_overlay",
+    "layer1": "naxtech:items/materials/cosmicneutronium/ingot_hot",
+    "layer2": "naxtech:items/materials/cosmicneutronium/ingot_hot_overlay"
+  }
+}

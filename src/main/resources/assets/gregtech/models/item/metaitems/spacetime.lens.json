@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/materials/spacetime/lens",
+    "layer1": "naxtech:items/materials/spacetime/lens_overlay",
+    "layer2": "naxtech:items/materials/spacetime/halo_overlay"
+  }
+}
