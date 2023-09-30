@@ -1,11 +1,8 @@
 package com.onlyex.naxtech.proxy;
 
+import com.onlyex.naxtech.NaxTech;
 import com.onlyex.naxtech.api.utils.NTLog;
-import com.onlyex.naxtech.common.items.NTMetaItem1;
-import com.onlyex.naxtech.common.items.NTMetaItems;
-import gregtech.api.block.VariantItemBlock;
-import gregtech.api.items.metaitem.MetaItem;
-import gregtech.common.items.MetaItems;
+import com.onlyex.naxtech.common.items.NTMetaInit;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -23,15 +20,13 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.Objects;
 import java.util.function.Function;
-@Mod.EventBusSubscriber(
-        modid = "naxtech"
-)
+@Mod.EventBusSubscriber(modid = NaxTech.MOD_ID)
 public class CommonProxy {
 
     public static final CreativeTabs NAXTECH_TAB = new CreativeTabs("NaxTech") {
         @Override
         public ItemStack createIcon() {
-            return NTMetaItems.ENERGISED_TESSERACT.getStackForm();
+            return NTMetaInit.ENERGISED_TESSERACT.getStackForm();
         }
     };
 

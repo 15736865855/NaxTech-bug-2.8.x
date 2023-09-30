@@ -1,7 +1,7 @@
 package com.onlyex.naxtech;
 
 import com.onlyex.naxtech.api.utils.NTLog;
-import com.onlyex.naxtech.common.items.NTMetaItems;
+import com.onlyex.naxtech.common.items.NTMetaInit;
 import com.onlyex.naxtech.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -34,7 +34,7 @@ public class NaxTech {
     public void preInit(FMLPreInitializationEvent event)
     {
         NTLog.init(event.getModLog());
-        NTMetaItems.init();
+        NTMetaInit.init();
         /*NTMetaTileEntities.initialization();
         NTMetaBlocks.init();*/
         proxy.preLoad();

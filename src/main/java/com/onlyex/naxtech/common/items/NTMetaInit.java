@@ -3,9 +3,11 @@ package com.onlyex.naxtech.common.items;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.StandardMetaItem;
 
-public class NTMetaItems {
+public class NTMetaInit {
 
     static StandardMetaItem metaItem_NT;
+
+    static StandardMetaItem metaItem_NTM;
 
         /*NT
           在此处提供物品的实例
@@ -149,11 +151,43 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem SPINTRONIC_TRANSISTOR;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_INDUCTOR;
 
+    //material
+
+
+    //infinity=无尽
+    public static MetaItem<?>.MetaValueItem INFINITY;
+
+    //cosmic_neutronium=宇宙中子态素
+    public static MetaItem<?>.MetaValueItem COSMIC_NEUTRONIUM;
+
+    //whitedwarfmatter=白矮星物质
+    public static MetaItem<?>.MetaValueItem WHITED_WARF_MATTER;
+
+    //spacetime=时空🌌
+    public static MetaItem<?>.MetaValueItem SPACETIME;
+
+    //
+    public static MetaItem<?>.MetaValueItem UNIVERSIUM;
+
+    //eternity=永恒
+    public static MetaItem<?>.MetaValueItem ETERNITY;
+
+    //magnetohydrodynamicallyconstrainedstarmatter=磁流体约束恒星物质
+    public static MetaItem<?>.MetaValueItem MAGNETOHYDRODYNAMICALLYCONSTRAINEDSTARMATTER;
+    public static MetaItem<?>.MetaValueItem LUMIUM;
+    public static MetaItem<?>.MetaValueItem ENDERIUM;
+    public static MetaItem<?>.MetaValueItem SIGNALUM;
+    public static MetaItem<?>.MetaValueItem MITHRIL;
+    public static MetaItem<?>.MetaValueItem TDUST;
+    public static MetaItem<?>.MetaValueItem TROD;
+    public static MetaItem<?>.MetaValueItem TCRYSTAL;
 
     public static void init()
     {
         metaItem_NT = new NTMetaItem1();
         metaItem_NT.setRegistryName("meta_item_nt");
+        metaItem_NTM = new NTMaterial1();
+        metaItem_NTM.setRegistryName("meta_item_ntm");
     }
 
 }
