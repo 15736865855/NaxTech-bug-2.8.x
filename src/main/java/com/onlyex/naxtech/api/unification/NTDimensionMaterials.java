@@ -79,41 +79,41 @@ public class NTDimensionMaterials {
         Mithril = new Material.Builder(24012, gregtechId("mithril"))
                 .build();
 
-/*
+
         Shirabon = new Material.Builder(24013, gregtechId("shirabon"))
                 .ingot().fluid()
                 .color(0xBE125C).iconSet(METALLIC)
-                .element(NTElements.SHON)
-                //.flags(ONTEA)
-                //.blastTemp(13000, BlastProperty.GasTier.HIGH, VA[OpV], 1200)
-                //.fluidTemp(26000)
+                .flags(ONTEA)
+                //.element(NTElements.SHON)
+                .blastTemp(13000, BlastProperty.GasTier.HIGH, VA[OpV], 1200)
+                .fluidTemp(26000)
                 .build();
 
         AstralTitanium = new Material.Builder(24014, gregtechId("astral_titanium"))
                 .ingot().fluid()
                 .color(0xE5ABF6).iconSet(METALLIC)
-                .element(NTElements.ATi)
-                //.flags(ONTEA)
-                //.blastTemp(9700, BlastProperty.GasTier.HIGH, VA[UHV], 900)
-                //.fluidTemp(6900)
+                .flags(ONTEA)
+                //.element(NTElements.ATi)
+                .blastTemp(9700, BlastProperty.GasTier.HIGH, VA[UHV], 900)
+                .fluidTemp(6900)
                 .build();
 
         CelestialTungsten = new Material.Builder(24015, gregtechId("celestial_tungsten"))
                 .ingot().fluid()
                 .color(0x303030).iconSet(METALLIC)
-                .element(NTElements.CTW)
-                //.flags(ONTEA)
-                //.blastTemp(10470, BlastProperty.GasTier.HIGH, VA[UEV], 480)
-                //.fluidTemp(8700)
+                .flags(ONTEA)
+                //.element(NTElements.CTW)
+                .blastTemp(10470, BlastProperty.GasTier.HIGH, VA[UEV], 480)
+                .fluidTemp(8700)
                 .build();
 
         Rhugnor = new Material.Builder(24016, gregtechId("rhugnor"))
                 .ingot().fluid()
                 .color(0xA80000).iconSet(METALLIC)
-                //.flags(ONTEA)
+                .flags(ONTEA)
                 .build();
 
-         */
+
     }
 
 

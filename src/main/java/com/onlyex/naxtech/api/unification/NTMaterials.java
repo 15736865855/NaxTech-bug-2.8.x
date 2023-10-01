@@ -16,7 +16,7 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
  * <p>
  * 所有材料建设者应遵循以下通用格式:
  * <p>
- * material = new MaterialBuilder(id, name)
+ * material = new MaterialBuilder(id, gregtechId("name"))
  * .ingot().fluid().ore()                <--- 类型
  * .color().iconSet()                    <--- 外观
  * .flags()                              <--- 特殊生成
