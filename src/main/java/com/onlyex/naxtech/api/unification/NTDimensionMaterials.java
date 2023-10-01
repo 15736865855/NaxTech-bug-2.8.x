@@ -13,13 +13,12 @@ import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 //24000-25000
 public class NTDimensionMaterials {
 
-    public static void init() {
+    public static void register() {
 
         BlackdWarfMatter = new Material.Builder(24000,gregtechId("blackd_warf_matter"))
-                .ingot().fluid()
+                .ingot(11).fluid()
                 .color(0x000000).iconSet(METALLIC)
-                .flags(ONTEA)
-                .blastTemp(10800, BlastProperty.GasTier.HIGH, VA[UIV], 300)
+                .flags(NONTM)
                 .fluidTemp(0)
                 .build();
 
@@ -52,18 +51,16 @@ public class NTDimensionMaterials {
                 .build();
 
         DraconiumAwakened = new Material.Builder(24007,gregtechId("draconium_awakened"))
-                .ingot().fluid()
+                .ingot(9).fluid()
                 .color(0xFFA157).iconSet(METALLIC)
-                .flags(ONTEA)
-                .blastTemp(8600, BlastProperty.GasTier.HIGH, VA[UHV], 300)
+                .flags(NONTM)
                 .fluidTemp(8460)
                 .build();
 
         Draconium = new Material.Builder(24008,gregtechId("draconium"))
-                .ingot().fluid()
+                .ingot(8).fluid()
                 .color(0x6200e7).iconSet(METALLIC)
-                .flags(ONTEA)
-                .blastTemp(7600, BlastProperty.GasTier.HIGH, VA[UV], 180)
+                .flags(NONTM)
                 .fluidTemp(7250)
                 .build();
 
@@ -81,36 +78,33 @@ public class NTDimensionMaterials {
 
 
         Shirabon = new Material.Builder(24013, gregtechId("shirabon"))
-                .ingot().fluid()
+                .ingot(13).fluid()
                 .color(0xBE125C).iconSet(METALLIC)
-                .flags(ONTEA)
-                //.element(NTElements.SHON)
-                .blastTemp(13000, BlastProperty.GasTier.HIGH, VA[OpV], 1200)
+                .flags(NONTM)
+                .element(NTElements.SHON)
                 .fluidTemp(26000)
                 .build();
 
         AstralTitanium = new Material.Builder(24014, gregtechId("astral_titanium"))
-                .ingot().fluid()
+                .ingot(9).fluid()
                 .color(0xE5ABF6).iconSet(METALLIC)
-                .flags(ONTEA)
-                //.element(NTElements.ATi)
-                .blastTemp(9700, BlastProperty.GasTier.HIGH, VA[UHV], 900)
+                .flags(NONTM)
+                .element(NTElements.ATi)
                 .fluidTemp(6900)
                 .build();
 
         CelestialTungsten = new Material.Builder(24015, gregtechId("celestial_tungsten"))
-                .ingot().fluid()
+                .ingot(10).fluid()
                 .color(0x303030).iconSet(METALLIC)
-                .flags(ONTEA)
-                //.element(NTElements.CTW)
-                .blastTemp(10470, BlastProperty.GasTier.HIGH, VA[UEV], 480)
+                .flags(NONTM)
+                .element(NTElements.CTW)
                 .fluidTemp(8700)
                 .build();
 
         Rhugnor = new Material.Builder(24016, gregtechId("rhugnor"))
                 .ingot().fluid()
                 .color(0xA80000).iconSet(METALLIC)
-                .flags(ONTEA)
+                .flags(NONTM)
                 .build();
 
 

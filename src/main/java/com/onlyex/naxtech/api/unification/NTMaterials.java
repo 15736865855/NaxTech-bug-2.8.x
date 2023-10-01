@@ -10,34 +10,17 @@ import java.util.List;
 import static gregtech.api.unification.material.Materials.EXT2_METAL;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 
-
-/**
- * 材料注册
- * <p>
- * 所有材料建设者应遵循以下通用格式:
- * <p>
- * material = new MaterialBuilder(id, gregtechId("name"))
- * .ingot().fluid().ore()                <--- 类型
- * .color().iconSet()                    <--- 外观
- * .flags()                              <--- 特殊生成
- * .element() / .components()            <--- 成分
- * .toolStats()                          <---
- * .oreByProducts()                         | 其他属性
- * ...                                   <---
- * .blastTemp()                          <--- 鼓风温度
- * .build();
- * <p>
- * 使用默认值对您有利！一些默认值:
- * - iconSet: DULL
- * - color: 0xFFFFFF
- */
 public class NTMaterials {
 
     public static final List<MaterialFlag> ONTEA = new ArrayList<>();
+    public static final List<MaterialFlag> NONTM = new ArrayList<>();
 
     static {
         ONTEA.addAll(EXT2_METAL);
         ONTEA.addAll(Arrays.asList(GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_DENSE, GENERATE_DOUBLE_PLATE, GENERATE_FOIL));
+
+        NONTM.addAll(ONTEA);
+        NONTM.addAll(Arrays.asList(NO_UNIFICATION, EXCLUDE_BLOCK_CRAFTING_RECIPES));
     }
 
     //材料
@@ -87,9 +70,9 @@ public class NTMaterials {
     public NTMaterials() {}
     public static void initregister() {
         // 24000-25000
-        NTDimensionMaterials.init();
+        NTDimensionMaterials.register();
         // 25000-26000
-        NTFluid.init();
+        NTFluid.register();
 
     }
 }
