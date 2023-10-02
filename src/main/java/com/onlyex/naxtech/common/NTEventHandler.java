@@ -1,13 +1,14 @@
 package com.onlyex.naxtech.common;
 
 import com.onlyex.naxtech.NaxTech;
+import com.onlyex.naxtech.api.NTValues;
 import com.onlyex.naxtech.api.unification.NTMaterials;
 import gregtech.api.unification.material.event.MaterialEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod.EventBusSubscriber(modid = NaxTech.MOD_ID)
+@Mod.EventBusSubscriber(modid = NTValues.MOD_ID)
 public class NTEventHandler {
     public NTEventHandler() {}
 

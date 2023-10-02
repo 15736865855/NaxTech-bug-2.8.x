@@ -1,5 +1,7 @@
 package com.onlyex.naxtech.proxy;
 
+import com.onlyex.naxtech.api.NTValues;
+import com.onlyex.naxtech.api.fluids.NTMetaFluids;
 import gregtech.api.block.VariantItemBlock;
 import com.onlyex.naxtech.NaxTech;
 import com.onlyex.naxtech.api.utils.NTLog;
@@ -20,7 +22,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.Objects;
 import java.util.function.Function;
-@Mod.EventBusSubscriber(modid = NaxTech.MOD_ID)
+@Mod.EventBusSubscriber(modid = NTValues.MOD_ID)
 public class CommonProxy {
 
     public static final CreativeTabs NAXTECH_TAB = new CreativeTabs("NaxTech") {
@@ -31,7 +33,6 @@ public class CommonProxy {
     };
 
     public void preInit(FMLPreInitializationEvent event ) {
-
 
     }
     public void init(FMLInitializationEvent event ) {

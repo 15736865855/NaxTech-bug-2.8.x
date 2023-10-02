@@ -1,5 +1,7 @@
 package com.onlyex.naxtech;
 
+import com.onlyex.naxtech.api.NTValues;
+import com.onlyex.naxtech.api.fluids.NTMetaFluids;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
@@ -11,18 +13,14 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(
-        modid = "naxtech",
+        modid = NTValues.MOD_ID,
         name="NaxTech",
         acceptedMinecraftVersions = "[1.12.2]",
         version = "1.0" ,
         dependencies = "required-after:gregtech@[2.7.3-beta,) ;"
 )
 public class NaxTech {
-    public static final String MOD_ID = "naxtech";
-    public static final String NAME = "NaxTech";
-    public static final String VERSION = "1.0";
-
-    @Mod.Instance(NaxTech.MOD_ID)
+    @Mod.Instance(NTValues.MOD_ID)
     public static NaxTech instance;
 
     @SidedProxy(
@@ -38,6 +36,7 @@ public class NaxTech {
         NTMetaInit.init();
         /*NTMetaTileEntities.initialization();*/
         NTMetaBlocks.init();
+        NTMetaFluids.init();
         proxy.preLoad();
 
     }

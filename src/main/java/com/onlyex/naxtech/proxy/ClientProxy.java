@@ -1,5 +1,7 @@
 package com.onlyex.naxtech.proxy;
 
+import codechicken.lib.texture.TextureUtils;
+import com.onlyex.naxtech.api.fluids.NTMetaFluids;
 import com.onlyex.naxtech.client.textures.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import net.minecraftforge.client.event.ModelRegistryEvent;

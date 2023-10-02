@@ -1,5 +1,6 @@
 package com.onlyex.naxtech.api.unification;
 
+import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 
@@ -23,11 +24,11 @@ public class NTDimensionMaterials {
                 .build();
 
         WhitedWarfMatter = new Material.Builder(24001, gregtechId("whited_warf_matter"))
-                .fluid()
+                .fluid(FluidTypes.LIQUID)
                 .build();
 
         Infinity = new Material.Builder(24002, gregtechId("infinity"))
-                .fluid()
+                .fluid(FluidTypes.LIQUID)
                 .element(NTElements.If)
                 .build();
 
@@ -36,17 +37,17 @@ public class NTDimensionMaterials {
                 .build();
 
         Spacetime = new Material.Builder(24004, gregtechId("spacetime"))
-                .fluid()
+                .fluid(FluidTypes.LIQUID)
                 .element(NTElements.ST)
                 .build();
 
         Eternity = new Material.Builder(24005, gregtechId("eternity"))
-                .fluid()
+                .fluid(FluidTypes.LIQUID)
                 .element(NTElements.N_UNCOUNT)
                 .build();
 
         MagnetohydrodynamicallyConstrainedStarMatter = new Material.Builder(24006, gregtechId("magnetohydrodynamically_constrained_star_matter"))
-                .fluid()
+                .fluid(FluidTypes.LIQUID)
                 .element(NTElements.MCSM)
                 .build();
 

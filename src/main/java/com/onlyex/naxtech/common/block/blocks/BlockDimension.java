@@ -42,9 +42,7 @@ public class BlockDimension extends VariantBlock<BlockDimension.BlockType> {
         //COSMIC_NEUTRONIUM(1,"cosmic_neutronium",6),
         WHITED_WARF_MATTER_BLOCK(0,"whitedwarfmatter",6),
         SPACETIME_BLOCK(1,"spacetime",6),
-        ETERNITY_BLOCK(2,"eternity",6),
-        TREATED_PLANK_BLOCK(3,"7",6);
-
+        ETERNITY_BLOCK(2,"eternity",6);
         private final int metadata;
         private final String name;
         private final int harvestLevel;
