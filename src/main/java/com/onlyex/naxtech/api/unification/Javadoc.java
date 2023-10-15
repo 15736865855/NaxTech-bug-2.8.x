@@ -25,13 +25,14 @@ MAX = 14
   所有材料建设者应遵循以下通用格式:
   <p>
   material = new MaterialBuilder(id, gregtechId("name"))
-  .ingot().fluid().ore()                <--- 类型
+  .ingot().fluid().ore().dust()         <--- 类型
   .color().iconSet()                    <--- 外观
   .flags()                              <--- 特殊生成
   .element() / .components()            <--- 成分
   .toolStats(ToolProperty.Builder.of(7.0F, 6.0F, 2560, 3) )  <---工具统计信息
   .oreByProducts()                         | 其他属性
   ...                                   <---
+  .itemPipeProperties(2048, 1)          <---管道特性
   .rotorStats(15.0f, 7.0f, 3000)        <---转子统计
   .attackSpeed(0.1F).enchantability(21).build())             <---攻击速度
   .blastTemp()                          <--- 鼓风温度
@@ -40,6 +41,19 @@ MAX = 14
   使用默认值对您有利！一些默认值:
   - iconSet: DULL
   - color: 0xFFFFFF
+  .dust().iconSet(SHINY)
+  .fluid().iconSet(METALLIC)
+  常用上标 ⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁺ ⁻ ⁼ ⁽ ⁾ ⁿ º ˙
+  常用下标₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ₊ ₋ ₌ ₍ ₎ ₐ ₑ ₒ ₓ ₔ
+  中文上标 ㆒㆓㆔㆕㆖㆗㆘㆙㆚㆛㆜㆝㆞㆟
+  更多上标 ᵃ ᵇ ᶜ ᵈ ᵉ ᵍ ʰ ⁱ ʲ ᵏ ˡ ᵐ ⁿ ᵒ ᵖ ᵒ ʳ ˢ
+  ᵗ ᵘ ᵛ ʷ ˣ ʸ ᙆ ᴬ ᴮ ᒼ ᴰ ᴱ ᴳ ᴴ ᴵ ᴶ ᴷ ᴸ ᴹ ᴺ ᴼ
+  ᴾ ᴼ̴ ᴿ ˢ ᵀ ᵁ ᵂ ˣ ᵞ ᙆ ˀ ˁ ˤ ʱ ʴ ʵ ʶ ˠ ᴭ ᴯ ᴲ
+  ᴻ ᴽ ᵄ ᵅ ᵆ ᵊ ᵋ ᵌ ᵑ ᵓ ᵚ ᵝ ᵞ ᵟ ᵠ ᵡ ᵎ ᵔ ᵕ ᵙ ᵜ ᶛ
+  ᶜ ᶝ ᶞ ᶟ ᶡ ᶣ ᶤ ᶥ ᶦ ᶧ ᶨ ᶩ ᶪ ᶫ ᶬ ᶭ ᶮ ᶯ ᶰ ᶱ ᶲ ᶳ ᶴ ᶵ ᶶ ᶷ ᶸ ᶹ ᶺ
+  ᶼ ᶽ ᶾ ᶿ ჼ ᒃ ᕻ ᑦ ᒄ ᕪ ᑋ ᑊ ᔿ ᐢ ᣕ ᐤ ᣖ ᣴ ᣗ ᔆ ᙚ ᐡ ᘁ ᐜ ᕽ ᙆ ᙇ
+  ᒼ ᣳ ᒢ ᒻ ᔿ ᐤ ᣖ ᣵ ᙚ ᐪ ᓑ ᘁ ᐜ ᕽ ᙆ ᙇ ⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁺ ⁻ ⁼ ˂ ˃ ⁽ ⁾ ˙ * º
+  更多下标 ₐ ₔ ₑ ᵢ ₒ ᵣ ᵤ ᵥ ₓ ᙮ ᵤ ᵩ ᵦ ˪ ៳ ៷ ₒ ᵨ ៴ ᵤ ᵪ ᵧ
  */
 
 /*
@@ -68,7 +82,7 @@ GENERATE_PLATE=生成板
 GENERATE_DOUBLE_PLATE=生成双重板
 GENERATE_ROD=生成杆
 GENERATE_BOLT_SCREW=生成螺栓螺钉
-GENERATE_FRAME=生成FRAME
+GENERATE_FRAME=生成框架
 GENERATE_GEAR=生成齿轮
 GENERATE_LONG_ROD=生成长杆
 FORCE_GENERATE_BLOCK=强制生成块

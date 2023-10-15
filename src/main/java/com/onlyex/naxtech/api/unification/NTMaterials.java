@@ -14,6 +14,7 @@ public class NTMaterials {
 
     public static final List<MaterialFlag> ONTEA = new ArrayList<>();
     public static final List<MaterialFlag> NONTM = new ArrayList<>();
+    public static final List<MaterialFlag> NOR = new ArrayList<>();
 
     static {
         ONTEA.addAll(EXT2_METAL);
@@ -21,6 +22,8 @@ public class NTMaterials {
 
         NONTM.addAll(ONTEA);
         NONTM.addAll(Arrays.asList(NO_UNIFICATION, EXCLUDE_BLOCK_CRAFTING_RECIPES));
+
+        NOR.addAll(Arrays.asList(NO_UNIFICATION, DISABLE_DECOMPOSITION));
     }
 
     //材料
@@ -42,8 +45,8 @@ public class NTMaterials {
     public static Material AstralTitanium;
     public static Material CelestialTungsten;
     public static Material Rhugnor;
-    //public static Material ;
-    //public static Material ;
+    public static Material ElectrumFlux;
+    public static Material Hypogen;
     //public static Material ;
     //public static Material ;
     //public static Material ;
@@ -52,6 +55,20 @@ public class NTMaterials {
     //public static Material ;
 
     //流体
+    public static Material MutatedIivingSolder;
+    public static Material EthylCyanoacrylateSuperGlue;
+    public static Material CyanoacrylatePolymer;
+    public static Material EthylCyanoacetate;
+    public static Material CopperSulfatePentahydrate;
+    public static Material CopperSulfate;
+    public static Material SolidAcidCatalystMixture;
+    public static Material CyanoaceticAcid;
+    public static Material SodiumCyanide;
+    public static Material ChloroaceticMixture;
+    public static Material TrichloroaceticAcid;
+    public static Material DichloroaceticAcid;
+    public static Material ChloroaceticAcid;
+    public static Material AceticAnhydride;
     //public static Material ;
     //public static Material ;
     //public static Material ;
@@ -62,8 +79,6 @@ public class NTMaterials {
     //public static Material ;
     //public static Material ;
     //public static Material ;
-    //public static Material ;
-
 
 
 
@@ -71,7 +86,7 @@ public class NTMaterials {
     public static void initregister() {
         // 24000-25000
         NTDimensionMaterials.register();
-        // 25000-26000
+        // 25001-26000
         NTFluid.register();
 
     }

@@ -36,7 +36,6 @@ public class NaxTech {
         NTMetaInit.init();
         /*NTMetaTileEntities.initialization();*/
         NTMetaBlocks.init();
-        NTMetaFluids.init();
         proxy.preLoad();
 
     }

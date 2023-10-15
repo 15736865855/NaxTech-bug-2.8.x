@@ -1,7 +1,7 @@
 
 
 
-itemGroup.naxtech=naxtech(NT)
+itemGroup.NaxTech=NaxTech(NT)
 # Circuits
 # Gooware
 metaitem.circuit.gooware_processor.name=Gooware Processor
@@ -85,6 +85,189 @@ metaitem.circuit.suprachronal.opv.name=Supra-Chronal Circuit (OpV)
 metaitem.circuit.suprachronal.opv.tooltip=Full control over spacetime/n§fOpV-tier Circuit
 metaitem.circuit.suprachronal.max.name=Supra-Chronal Circuit (MAX)
 metaitem.circuit.suprachronal.max.tooltip=Full control over spacetime/n§fMAX-tier Circuit
+
+#Wrap Circuit
+metaitem.wrapcircuit.ulv.name=
+metaitem.wrapcircuit.ulv.tooltip=
+metaitem.wrapcircuit.lv.name=
+metaitem.wrapcircuit.lv.tooltip=
+metaitem.wrapcircuit.mv.name=
+metaitem.wrapcircuit.mv.tooltip=
+metaitem.wrapcircuit.hv.name=
+metaitem.wrapcircuit.hv.tooltip=
+metaitem.wrapcircuit.ev.name=
+metaitem.wrapcircuit.ev.tooltip=
+metaitem.wrapcircuit.iv.name=
+metaitem.wrapcircuit.iv.tooltip=
+metaitem.wrapcircuit.luv.name=
+metaitem.wrapcircuit.luv.tooltip=
+metaitem.wrapcircuit.zpm.name=
+metaitem.wrapcircuit.zpm.tooltip=
+metaitem.wrapcircuit.uv.name=
+metaitem.wrapcircuit.uv.tooltip=
+metaitem.wrapcircuit.uhv.name=
+metaitem.wrapcircuit.uhv.tooltip=
+metaitem.wrapcircuit.uev.name=
+metaitem.wrapcircuit.uev.tooltip=
+metaitem.wrapcircuit.uiv.name=
+metaitem.wrapcircuit.uiv.tooltip=
+metaitem.wrapcircuit.uxv.name=
+metaitem.wrapcircuit.uxv.tooltip=
+metaitem.wrapcircuit.opv.name=
+metaitem.wrapcircuit.opv.tooltip=
+metaitem.wrapcircuit.nax.name=
+metaitem.wrapcircuit.nax.tooltip=
+
+#
+#Wrap
+metaitem.wrap.coated_board.name=
+metaitem.wrap.coated_board.tooltip=
+metaitem.wrap.phenolic_board.name=
+metaitem.wrap.phenolic_board.tooltip=
+metaitem.wrap.plastic_board.name=
+metaitem.wrap.plastic_board.tooltip=
+metaitem.wrap.epoxy_board.name=
+metaitem.wrap.epoxy_board.tooltip=
+metaitem.wrap.fiber_board.name=
+metaitem.wrap.fiber_board.tooltip=
+metaitem.wrap.multilayer_fiber_board.name=
+metaitem.wrap.multilayer_fiber_board.tooltip=
+metaitem.wrap.wetware_board.name=
+metaitem.wrap.wetware_board.tooltip=
+
+metaitem.wrap.basic_circuit_board.name=
+metaitem.wrap.basic_circuit_board.tooltip=
+metaitem.wrap.good_circuit_board.name=
+metaitem.wrap.good_circuit_board.tooltip=
+metaitem.wrap.plastic_circuit_board.name=
+metaitem.wrap.plastic_circuit_board.tooltip=
+metaitem.wrap.advanced_circuit_board.name=
+metaitem.wrap.advanced_circuit_board.tooltip=
+metaitem.wrap.extreme_circuit_board.name=
+metaitem.wrap.extreme_circuit_board.tooltip=
+metaitem.wrap.elite_circuit_board.name=
+metaitem.wrap.elite_circuit_board.tooltip=
+metaitem.wrap.wetware_circuit_board.name=
+metaitem.wrap.wetware_circuit_board.tooltip=
+metaitem.wrap.crystal_system_on_chip.name=
+metaitem.wrap.crystal_system_on_chip.tooltip=
+
+metaitem.wrap.smd_capacitor.name=
+metaitem.wrap.smd_capacitor.tooltip=
+metaitem.wrap.smd_diode.name=
+metaitem.wrap.smd_diode.tooltip=
+metaitem.wrap.smd_resistor.name=
+metaitem.wrap.smd_resistor.tooltip=
+metaitem.wrap.smd_transistor.name=
+metaitem.wrap.smd_transistor.tooltip=
+metaitem.wrap.smd_inductor.name=
+metaitem.wrap.smd_inductor.tooltip=
+metaitem.wrap.advanced_smd_capacitor.name=
+metaitem.wrap.advanced_smd_capacitor.tooltip=
+metaitem.wrap.advanced_smd_diode.name=
+metaitem.wrap.advanced_smd_diode.tooltip=
+metaitem.wrap.advanced_smd_resistor.name=
+metaitem.wrap.advanced_smd_resistor.tooltip=
+metaitem.wrap.advanced_smd_transistor.name=
+metaitem.wrap.advanced_smd_transistor.tooltip=
+metaitem.wrap.advanced_smd_inductor.name=
+metaitem.wrap.advanced_smd_inductor.tooltip=
+
+metaitem.wrap.neuro_processor.name=
+metaitem.wrap.neuro_processor.tooltip=
+metaitem.wrap.stem_cells.name=
+metaitem.wrap.stem_cells.tooltip=
+metaitem.wrap.engraved_lapotron_chip.name=
+metaitem.wrap.engraved_lapotron_chip.tooltip=
+metaitem.wrap.engraved_crystal_chip.name=
+metaitem.wrap.engraved_crystal_chip.tooltip=
+metaitem.wrap.crystal_central_processing_unit.name=
+metaitem.wrap.crystal_central_processing_unit.tooltip=
+
+metaitem.wrap.central_processing_unit.name=
+metaitem.wrap.central_processing_unit.tooltip=
+metaitem.wrap.random_access_memory.name=
+metaitem.wrap.random_access_memory.tooltip=
+metaitem.wrap.integrated_logic_circuit.name=
+metaitem.wrap.integrated_logic_circuit.tooltip=
+metaitem.wrap.nano_central_processing_unit.name=
+metaitem.wrap.nano_central_processing_unit.tooltip=
+metaitem.wrap.qubit_central_processing_unit.name=
+metaitem.wrap.qubit_central_processing_unit.tooltip=
+metaitem.wrap.simple_system_on_chip.name=
+metaitem.wrap.simple_system_on_chip.tooltip=
+metaitem.wrap.system_on_chip.name=
+metaitem.wrap.system_on_chip.tooltip=
+metaitem.wrap.advanced_system_on_chip.name=
+metaitem.wrap.advanced_system_on_chip.tooltip=
+metaitem.wrap.highly_advanced_system_on_chip.name=
+metaitem.wrap.highly_advanced_system_on_chip.tooltip=
+metaitem.wrap.nand_memory_chip.name=
+metaitem.wrap.nand_memory_chip.tooltip=
+metaitem.wrap.nor_memory_chip.name=
+metaitem.wrap.nor_memory_chip.tooltip=
+metaitem.wrap.ultra_low_power_integrated_circuit.name=
+metaitem.wrap.ultra_low_power_integrated_circuit.tooltip=
+metaitem.wrap.low_power_integrated_circuit.name=
+metaitem.wrap.low_power_integrated_circuit.tooltip=
+metaitem.wrap.power_integrated_circuit.name=
+metaitem.wrap.power_integrated_circuit.tooltip=
+metaitem.wrap.high_power_integrated_circuit.name=
+metaitem.wrap.high_power_integrated_circuit.tooltip=
+metaitem.wrap.ultra_high_power_integrated_circuit.name=
+metaitem.wrap.ultra_high_power_integrated_circuit.tooltip=
+
+metaitem.wrap.nano_power_integrated_circuit.name=
+metaitem.wrap.nano_power_integrated_circuit.tooltip=
+metaitem.wrap.pico_power_integrated_circuit.name=
+metaitem.wrap.pico_power_integrated_circuit.tooltip=
+metaitem.wrap.femto_power_integrated_circuit.name=
+metaitem.wrap.femto_power_integrated_circuit.tooltip=
+
+metaitem.wrap.optically_compatible_memory.name=
+metaitem.wrap.optically_compatible_memory.tooltip=
+metaitem.wrap.optically_perfected_cpu.name=
+metaitem.wrap.optically_perfected_cpu.tooltip=
+metaitem.wrap.raw_exposed_optical_chip.name=
+metaitem.wrap.raw_exposed_optical_chip.tooltip=
+metaitem.wrap.optical_cpu_containment_housing.name=
+metaitem.wrap.optical_cpu_containment_housing.tooltip=
+metaitem.wrap.optical_circuit_board.name=
+metaitem.wrap.optical_circuit_board.tooltip=
+metaitem.wrap.optical_smd.capacitor.name=
+metaitem.wrap.optical_smd.capacitor.tooltip=
+metaitem.wrap.optical_smd.diode.name=
+metaitem.wrap.optical_smd.diode.tooltip=
+metaitem.wrap.optical_smd.inductor.name=
+metaitem.wrap.optical_smd.inductor.tooltip=
+metaitem.wrap.optical_smd.resistor.name=
+metaitem.wrap.optical_smd.resistor.tooltip=
+metaitem.wrap.optical_smd.transistor.name=
+metaitem.wrap.optical_smd.transistor.tooltip=
+
+metaitem.wrap.living_crystal_chip.name=
+metaitem.wrap.living_crystal_chip.tooltip=
+metaitem.wrap.gooware.living_bio_chip.name=
+metaitem.wrap.gooware.living_bio_chip.tooltip=
+metaitem.wrap.gooware.biocells.name=
+metaitem.wrap.gooware.biocells.tooltip=
+metaitem.wrap.bio_circuit_board.name=
+metaitem.wrap.bio_circuit_board.tooltip=
+metaitem.wrap.ultra_bio_mutated_circuit_board.name=
+metaitem.wrap.ultra_bio_mutated_circuit_board.tooltip=
+metaitem.wrap.raw_advanced_crystal_chip.name=
+metaitem.wrap.raw_advanced_crystal_chip.tooltip=
+
+metaitem.wrap.spintronic_smd.capacitor.name=
+metaitem.wrap.spintronic_smd.capacitor.tooltip=
+metaitem.wrap.spintronic_smd.diode.name=
+metaitem.wrap.spintronic_smd.diode.tooltip=
+metaitem.wrap.spintronic_smd.inductor.name=
+metaitem.wrap.spintronic_smd.inductor.tooltip=
+metaitem.wrap.spintronic_smd.resistor.name=
+metaitem.wrap.spintronic_smd.resistor.tooltip=
+metaitem.wrap.spintronic_smd.transistor.name=
+metaitem.wrap.spintronic_smd.transistor.tooltip=
 
 # Supra-Chronal Stuff
 metaitem.eigenfolded.kerr.manifold.name=Eigenfolded Kerr Manifold
@@ -181,7 +364,8 @@ metaitem.station_4.name=Hi-Computation Station MK-IV Prototype
 metaitem.station_4.tooltip=§c56th Mersenne Prime§r
 metaitem.station_5.name=Hi-Computation Station MK-V Finaltype
 metaitem.station_5.tooltip=§5Paradox§r
-
+metaitem.crystal.raw_advanced_chip.name=Raw Advanced Crystal Chip
+metaitem.crystal.raw_advanced_chip.tooltip=Raw Advanced Crystal Processor
 
 
 
@@ -295,9 +479,38 @@ gregtech.material.eternity= eternity
 gregtech.material.shirabon=shirabon
 gregtech.material.astral_titanium=astral titanium
 gregtech.material.celestial_tungsten=celestial tungsten
-gregtech.material.Rhugnor=Rhugnor
+gregtech.material.rhugnor=Rhugnor
+gregtech.material.universium=universium
+gregtech.material.electrum_flux=electrum flux
+gregtech.material.hypogen=Hypogen
 
 
+#fluid
+gregtech.material.mutated_iiving_solder=Mutated Living Solder
+gregtech.material.ethyl_cyanoacrylate_super_glue=Ethyl Cyanoacrylate (Super Glue)
+gregtech.material.cyanoacrylate_polymer=Cyanoacrylate Polymer
+gregtech.material.ethyl_cyanoacetate=Ethyl Cyanoacetate
+gregtech.material.copper_sulfate_pentahydrate=Copper(II) Sulfate Pentahydrate
+gregtech.material.copper_sulfate=Copper(II) Sulfate
+gregtech.material.solid_acid_catalyst_mixture=Solid Acid Catalyst Mixture
+gregtech.material.cyanoacetic_acid=Cyanoacetic Acid
+gregtech.material.sodium_cyanide=Sodium Cyanide
+gregtech.material.chloroacetic_mixture=Chloroacetic Mixture
+gregtech.material.trichloroacetic_acid=Trichloroacetic Acid
+gregtech.material.dichloroacetic_acid=Dichloroacetic Acid
+gregtech.material.chloroacetic_acid=Chloroacetic Acid
+gregtech.material.acetic_anhydride=Acetic Anhydride
+
+
+
+#Coil Block
+tile.wire_coil.naquadah_alloy.name=Naquadah Alloy Coil Block
+tile.wire_coil.electrum_flux.name=Electrum Flux Coil Block
+tile.wire_coil.awakened_draconium.name=Awakened Draconium Coil Block
+tile.wire_coil.hss_s.name=HSS-S Coil Block
+tile.wire_coil.infinity.name=Infinity Coil Block
+tile.wire_coil.hypogen.name=Hypogen Coil Block
+tile.wire_coil.eternal.name=Eternal Coil Block
 
 
 

@@ -2,9 +2,7 @@ package com.onlyex.naxtech.api.unification;
 
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.properties.BlastProperty;
 
-import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.METALLIC;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
@@ -25,30 +23,35 @@ public class NTDimensionMaterials {
 
         WhitedWarfMatter = new Material.Builder(24001, gregtechId("whited_warf_matter"))
                 .fluid(FluidTypes.LIQUID)
+                .iconSet(METALLIC)
                 .build();
 
         Infinity = new Material.Builder(24002, gregtechId("infinity"))
                 .fluid(FluidTypes.LIQUID)
+                .iconSet(METALLIC)
                 .element(NTElements.If)
                 .build();
 
         CosmicNeutronium = new Material.Builder(24003, gregtechId("cosmic_neutronium"))
-                .element(NTElements.CN)
+                .element(NTElements.CoNe)
                 .build();
 
         Spacetime = new Material.Builder(24004, gregtechId("spacetime"))
                 .fluid(FluidTypes.LIQUID)
-                .element(NTElements.ST)
+                .iconSet(METALLIC)
+                .element(NTElements.SpTi)
                 .build();
 
         Eternity = new Material.Builder(24005, gregtechId("eternity"))
                 .fluid(FluidTypes.LIQUID)
-                .element(NTElements.N_UNCOUNT)
+                .iconSet(METALLIC)
+                .element(NTElements.Et)
                 .build();
 
         MagnetohydrodynamicallyConstrainedStarMatter = new Material.Builder(24006, gregtechId("magnetohydrodynamically_constrained_star_matter"))
                 .fluid(FluidTypes.LIQUID)
-                .element(NTElements.MCSM)
+                .iconSet(METALLIC)
+                .element(NTElements.MaCoStMa)
                 .build();
 
         DraconiumAwakened = new Material.Builder(24007,gregtechId("draconium_awakened"))
@@ -82,7 +85,7 @@ public class NTDimensionMaterials {
                 .ingot(13).fluid()
                 .color(0xBE125C).iconSet(METALLIC)
                 .flags(NONTM)
-                .element(NTElements.SHON)
+                .element(NTElements.Shir)
                 .fluidTemp(26000)
                 .build();
 
@@ -90,7 +93,7 @@ public class NTDimensionMaterials {
                 .ingot(9).fluid()
                 .color(0xE5ABF6).iconSet(METALLIC)
                 .flags(NONTM)
-                .element(NTElements.ATi)
+                .element(NTElements.AsTi)
                 .fluidTemp(6900)
                 .build();
 
@@ -98,7 +101,7 @@ public class NTDimensionMaterials {
                 .ingot(10).fluid()
                 .color(0x303030).iconSet(METALLIC)
                 .flags(NONTM)
-                .element(NTElements.CTW)
+                .element(NTElements.CeTu)
                 .fluidTemp(8700)
                 .build();
 
@@ -108,7 +111,19 @@ public class NTDimensionMaterials {
                 .flags(NONTM)
                 .build();
 
+        Universium = new Material.Builder(24017, gregtechId("universium"))
+                .element(NTElements.Un)
+                .iconSet(METALLIC)
+                .build();
 
+        ElectrumFlux = new Material.Builder(24018, gregtechId("electrum_flux"))
+                .element(NTElements.ElFl)
+                .iconSet(METALLIC)
+                .build();
+
+        Hypogen = new Material.Builder(24019, gregtechId("hypogen"))
+                .iconSet(METALLIC)
+                .build();
     }
 
 

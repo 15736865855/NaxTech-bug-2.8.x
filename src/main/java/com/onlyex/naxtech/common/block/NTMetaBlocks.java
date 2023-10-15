@@ -1,5 +1,7 @@
 package com.onlyex.naxtech.common.block;
 
+import com.onlyex.naxtech.common.block.blocks.BlockDimensionWireCoil;
+import gregtech.common.blocks.BlockLamp;
 import gregtech.common.blocks.MetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.BlockDimension;
 import com.onlyex.naxtech.common.block.blocks.BlockDimensionFrame;
@@ -11,10 +13,13 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import static gregtech.common.blocks.MetaBlocks.BORDERLESS_LAMPS;
+
 public class NTMetaBlocks {
 
     public static BlockDimension DIMENSION;
     public static BlockDimensionFrame DIMENSION_FRAME;
+    public static BlockDimensionWireCoil BLOCK_DIMENSION_WIRE_COIL;
 
     private NTMetaBlocks() {}
     public static void init() {
@@ -22,12 +27,17 @@ public class NTMetaBlocks {
         DIMENSION.setRegistryName("block");
         DIMENSION_FRAME = new BlockDimensionFrame();
         DIMENSION_FRAME.setRegistryName("frame");
+        BLOCK_DIMENSION_WIRE_COIL = new BlockDimensionWireCoil();
+        BLOCK_DIMENSION_WIRE_COIL.setRegistryName("wire_coil");
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
         registerItemModel(DIMENSION);
         registerItemModel(DIMENSION_FRAME);
+
+        BLOCK_DIMENSION_WIRE_COIL.onModelRegister();
+        for (BlockLamp lamp : BORDERLESS_LAMPS.values()) lamp.onModelRegister();
 
     }
 

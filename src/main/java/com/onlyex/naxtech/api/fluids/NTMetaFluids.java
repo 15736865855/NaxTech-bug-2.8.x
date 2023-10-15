@@ -26,7 +26,7 @@ public class NTMetaFluids {
     }
 
     private static void setCustomTextures() {
-        //MetaFluids.setMaterialFluidTexture(NTMaterials., FluidTypes.LIQUID);
+        //setMaterialFluidTexture(NTMaterials., FluidTypes.LIQUID);
         setMaterialFluidTexture(NTMaterials.WhitedWarfMatter, FluidTypes.LIQUID);
         setMaterialFluidTexture(NTMaterials.Infinity, FluidTypes.LIQUID);
         setMaterialFluidTexture(NTMaterials.Spacetime, FluidTypes.LIQUID);

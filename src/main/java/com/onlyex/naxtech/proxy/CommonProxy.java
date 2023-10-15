@@ -59,6 +59,7 @@ public class CommonProxy {
 
         registry.register(NTMetaBlocks.DIMENSION);
         registry.register(NTMetaBlocks.DIMENSION_FRAME);
+        registry.register(NTMetaBlocks.BLOCK_DIMENSION_WIRE_COIL);
 
     }
 
@@ -76,6 +77,7 @@ public class CommonProxy {
 
         registry.register(createItemBlock(NTMetaBlocks.DIMENSION, VariantItemBlock::new));
         registry.register(createItemBlock(NTMetaBlocks.DIMENSION_FRAME, VariantItemBlock::new));
+        registry.register(createItemBlock(NTMetaBlocks.BLOCK_DIMENSION_WIRE_COIL, VariantItemBlock::new));
 
     }
 
