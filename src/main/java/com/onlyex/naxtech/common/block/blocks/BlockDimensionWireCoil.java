@@ -124,6 +124,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
             return this.name;
         }
 
+
         @Override
         public int getCoilTemperature() {
             return coilTemperature;

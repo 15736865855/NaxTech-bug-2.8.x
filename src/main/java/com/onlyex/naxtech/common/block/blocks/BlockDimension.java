@@ -43,12 +43,10 @@ public class BlockDimension extends VariantBlock<BlockDimension.BlockType> {
         WHITED_WARF_MATTER_BLOCK(0,"whitedwarfmatter",6),
         SPACETIME_BLOCK(1,"spacetime",6),
         ETERNITY_BLOCK(2,"eternity",6);
-        private final int metadata;
         private final String name;
         private final int harvestLevel;
 
         BlockType(int metadata, String name, int harvestLevel) {
-            this.metadata = metadata;
             this.name = name;
             this.harvestLevel = harvestLevel;
         }
@@ -59,12 +57,15 @@ public class BlockDimension extends VariantBlock<BlockDimension.BlockType> {
             return this.name;
         }
 
-        public int getMetadata() {
-            return metadata;
-        }
+
         @Override
         public int getHarvestLevel(IBlockState state) {
             return harvestLevel;
+        }
+
+        @Override
+        public String getHarvestTool(IBlockState state) {
+            return IStateHarvestLevel.super.getHarvestTool(state);
         }
     }
 

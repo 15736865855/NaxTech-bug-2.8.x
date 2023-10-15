@@ -7,9 +7,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.util.IStringSerializable;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
@@ -41,12 +39,10 @@ public class BlockDimensionFrame extends VariantBlock<BlockDimensionFrame.BlockT
         ETERNITY(4,"eternity",6),
         MAGNETOHYDRODYNAMICALETERNITYLY_CONSTRAINED_STAR_MATTER_FRAME(5,"magnetohydrodynamicallyconstrainedstarmatter",6);
 
-        private final int metadata;
         private final String name;
         private final int harvestLevel;
 
         BlockType(int metadata, String name, int harvestLevel) {
-            this.metadata = metadata;
             this.name = name;
             this.harvestLevel = harvestLevel;
         }
@@ -57,10 +53,6 @@ public class BlockDimensionFrame extends VariantBlock<BlockDimensionFrame.BlockT
             return this.name;
         }
 
-
-        public int getMetadata() {
-            return metadata;
-        }
 
         @Override
         public int getHarvestLevel(IBlockState state) {

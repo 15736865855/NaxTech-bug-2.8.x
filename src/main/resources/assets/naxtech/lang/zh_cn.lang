@@ -1,7 +1,7 @@
 
 
 itemGroup.NaxTech=NaxTech(NT)
-
+naxtech.mixin.info.glass.tier=玻璃等级:%s
 # Circuits
 # 化学
 metaitem.circuit.gooware_processor.name=化学处理器
@@ -85,6 +85,17 @@ metaitem.circuit.suprachronal.opv.name=超时空OpV级电路
 metaitem.circuit.suprachronal.opv.tooltip=在已知时空之外运行的电路板 /n§fOpV级电路
 metaitem.circuit.suprachronal.max.name=超时空MAX级电路
 metaitem.circuit.suprachronal.max.tooltip=在已知时空之外运行的电路板 /n§fMAX级电路
+#Glasses
+tile.bw_glasses_casing.ti_boron_silicate_glass_block.name=钛强化硅酸盐硼玻璃
+tile.bw_glasses_casing.w_boron_silicate_glass_block.name=钨强化硅酸盐硼玻璃
+tile.bw_glasses_casing.cr_boron_silicate_glass_block.name=铬强化硅酸盐硼玻璃
+tile.bw_glasses_casing.thy_boron_silicate_glass_block.name=钍钇玻璃块
+tile.bw_glasses_casing.ir_boron_silicate_glass_block.name=铱强化硅酸盐硼玻璃
+tile.bw_glasses_casing.os_boron_silicate_glass_block.name=锇强化硅酸盐硼玻璃
+tile.bw_glasses_casing.ne_boron_silicate_glass_block.name=中子强化硅酸盐硼玻璃
+tile.bw_glasses_casing.sne_boron_silicate_glass_block.name=宇宙中子强化硅酸盐硼玻璃
+tile.bw_glasses_casing.ava_boron_silicate_glass_block.name=无尽强化硅酸盐硼玻璃
+tile.bw_glasses_casing.tl_boron_silicate_glass_block.name=超时空强化硅酸盐硼玻璃
 
 #封装电路
 #Wrap Circuit
@@ -828,4 +839,4 @@ metaitem.crystal_geode.name=元始魔力络合物
 
 
 
-tile.block.name=tile.frame.name
+

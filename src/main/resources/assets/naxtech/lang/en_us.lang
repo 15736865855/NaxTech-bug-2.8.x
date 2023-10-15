@@ -2,6 +2,7 @@
 
 
 itemGroup.NaxTech=NaxTech(NT)
+naxtech.mixin.info.glass.tier=%s §fTire Glass
 # Circuits
 # Gooware
 metaitem.circuit.gooware_processor.name=Gooware Processor
@@ -85,6 +86,19 @@ metaitem.circuit.suprachronal.opv.name=Supra-Chronal Circuit (OpV)
 metaitem.circuit.suprachronal.opv.tooltip=Full control over spacetime/n§fOpV-tier Circuit
 metaitem.circuit.suprachronal.max.name=Supra-Chronal Circuit (MAX)
 metaitem.circuit.suprachronal.max.tooltip=Full control over spacetime/n§fMAX-tier Circuit
+
+
+#Glasses
+tile.bw_glasses_casing.ti_boron_silicate_glass_block.name=Ti Boron Silicate GLASS
+tile.bw_glasses_casing.w_boron_silicate_glass_block.name=W Boron Silicate GLASS
+tile.bw_glasses_casing.cr_boron_silicate_glass_block.name=CR Boron Silicate GLASS
+tile.bw_glasses_casing.thy_boron_silicate_glass_block.name=ThYBoron Silicate GLASS
+tile.bw_glasses_casing.ir_boron_silicate_glass_block.name=IR Boron Silicate GLASS
+tile.bw_glasses_casing.os_boron_silicate_glass_block.name=OS Boron Silicate GLASS
+tile.bw_glasses_casing.ne_boron_silicate_glass_block.name=NE Boron Silicate GLASS
+tile.bw_glasses_casing.sne_boron_silicate_glass_block.name=SpaceNE Boron Silicate GLASS
+tile.bw_glasses_casing.ava_boron_silicate_glass_block.name=AVA Boron Silicate GLASS
+tile.bw_glasses_casing.tl_boron_silicate_glass_block.name=TL Boron Silicate GLASS
 
 #Wrap Circuit
 metaitem.wrapcircuit.ulv.name=
@@ -776,12 +790,3 @@ metaitem.crystal_geode.name=crystal_geode
 
 
 
-
-
-
-
-
-
-
-
-tile.block.name=tile.frame.name=tile.frame.name=

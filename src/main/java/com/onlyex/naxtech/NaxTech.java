@@ -5,6 +5,7 @@ import com.onlyex.naxtech.api.fluids.NTMetaFluids;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
+import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
 import com.onlyex.naxtech.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -34,7 +35,7 @@ public class NaxTech {
     {
         NTLog.init(event.getModLog());
         NTMetaInit.init();
-        /*NTMetaTileEntities.initialization();*/
+        NTMetaTileEntities.init();
         NTMetaBlocks.init();
         proxy.preLoad();
 

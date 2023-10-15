@@ -1,5 +1,6 @@
 package com.onlyex.naxtech.common.block;
 
+import com.onlyex.naxtech.common.block.blocks.BlockBWGlasBlocks;
 import com.onlyex.naxtech.common.block.blocks.BlockDimensionWireCoil;
 import gregtech.common.blocks.BlockLamp;
 import gregtech.common.blocks.MetaBlocks;
@@ -20,6 +21,7 @@ public class NTMetaBlocks {
     public static BlockDimension DIMENSION;
     public static BlockDimensionFrame DIMENSION_FRAME;
     public static BlockDimensionWireCoil BLOCK_DIMENSION_WIRE_COIL;
+    public static BlockBWGlasBlocks BW_GlasBlocks;
 
     private NTMetaBlocks() {}
     public static void init() {
@@ -29,12 +31,15 @@ public class NTMetaBlocks {
         DIMENSION_FRAME.setRegistryName("frame");
         BLOCK_DIMENSION_WIRE_COIL = new BlockDimensionWireCoil();
         BLOCK_DIMENSION_WIRE_COIL.setRegistryName("wire_coil");
+        BW_GlasBlocks = new BlockBWGlasBlocks();
+        BW_GlasBlocks.setRegistryName("bw_glasses_casing");
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
         registerItemModel(DIMENSION);
         registerItemModel(DIMENSION_FRAME);
+        registerItemModel(BW_GlasBlocks);
 
         BLOCK_DIMENSION_WIRE_COIL.onModelRegister();
         for (BlockLamp lamp : BORDERLESS_LAMPS.values()) lamp.onModelRegister();
