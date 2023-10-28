@@ -1,12 +1,10 @@
 package com.onlyex.naxtech.proxy;
 
 import com.onlyex.naxtech.api.NTValues;
-import com.onlyex.naxtech.api.fluids.NTMetaFluids;
-import gregtech.api.block.VariantItemBlock;
-import com.onlyex.naxtech.NaxTech;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
+import gregtech.api.block.VariantItemBlock;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -61,6 +59,9 @@ public class CommonProxy {
         registry.register(NTMetaBlocks.DIMENSION_FRAME);
         registry.register(NTMetaBlocks.BLOCK_DIMENSION_WIRE_COIL);
         registry.register(NTMetaBlocks.BW_GlasBlocks);
+        registry.register(NTMetaBlocks.CONTROL_CASING);
+        registry.register(NTMetaBlocks.MACHINE_CASING);
+        registry.register(NTMetaBlocks.PACKAGING_LINE);
 
     }
 
@@ -80,6 +81,9 @@ public class CommonProxy {
         registry.register(createItemBlock(NTMetaBlocks.DIMENSION_FRAME, VariantItemBlock::new));
         registry.register(createItemBlock(NTMetaBlocks.BLOCK_DIMENSION_WIRE_COIL, VariantItemBlock::new));
         registry.register(createItemBlock(NTMetaBlocks.BW_GlasBlocks, VariantItemBlock::new));
+        registry.register(createItemBlock(NTMetaBlocks.CONTROL_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(NTMetaBlocks.MACHINE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(NTMetaBlocks.PACKAGING_LINE, VariantItemBlock::new));
 
     }
 

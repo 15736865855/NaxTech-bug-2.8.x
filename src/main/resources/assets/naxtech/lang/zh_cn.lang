@@ -125,7 +125,7 @@ metaitem.wrapcircuit.uiv.name=封装UIV电路板
 metaitem.wrapcircuit.uiv.tooltip=一片更比十六片
 metaitem.wrapcircuit.uxv.name=封装UXV电路板
 metaitem.wrapcircuit.uxv.tooltip=一片更比十六片
-metaitem.wrapcircuit.opv.name=封装PpV电路板
+metaitem.wrapcircuit.opv.name=封装OpV电路板
 metaitem.wrapcircuit.opv.tooltip=一片更比十六片
 metaitem.wrapcircuit.nax.name=封装MAX电路板
 metaitem.wrapcircuit.nax.tooltip=一片更比十六片
@@ -801,10 +801,16 @@ metaitem.crystal_glowstone.name=充能络合物
 metaitem.crystal_ender.name=谐振末影络合物
 metaitem.crystal_geode.name=元始魔力络合物
 
+#
+tile.packaging_line.packaging_line_control_casing.name=封装控制外壳
+tile.packaging_line.packaging_line_machine_casing.name=封装机械外壳
+tile.packaging_line.packaging_line_casing.name=封装线外壳
 
 
 
 
+#machine
+gregtech.machine.packaging_line.name=封装线
 
 
 

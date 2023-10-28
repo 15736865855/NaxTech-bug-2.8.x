@@ -3,9 +3,10 @@ package com.onlyex.naxtech.api.unification;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 
+import static com.onlyex.naxtech.api.unification.NTMaterials.*;
+import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.METALLIC;
 import static gregtech.api.util.GTUtility.gregtechId;
-import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 
 public class NTFluid {
     /*
@@ -25,7 +26,7 @@ public class NTFluid {
         EthylCyanoacrylateSuperGlue = new Material.Builder(25002, gregtechId("ethyl_cyanoacrylate_super_glue"))
                 .fluid(FluidTypes.LIQUID)
                 .color(0xAABEC8).iconSet(METALLIC)
-                .element(NTElements.EtCySuGl)
+                .components(Carbon, 6,Hydrogen, 7,Nitrogen, 1,Oxygen, 2)//C₆H₇NO₂
                 .build();
 
         CyanoacrylatePolymer = new Material.Builder(25003, gregtechId("cyanoacrylate_polymer"))
@@ -37,72 +38,72 @@ public class NTFluid {
         EthylCyanoacetate = new Material.Builder(25004, gregtechId("ethyl_cyanoacetate"))
                 .fluid(FluidTypes.LIQUID)
                 .color(0x004BA0).iconSet(METALLIC)
-                .element(NTElements.EtCy)
+                .components(Carbon, 5,Hydrogen, 7,Nitrogen, 1,Oxygen, 2)//C₅H₇NO₂
                 .build();
 
         CopperSulfatePentahydrate = new Material.Builder(25005, gregtechId("copper_sulfate_pentahydrate"))
                 .dust()
                 .color(0x5AAAFF)
                 .flags(NOR)
-                .element(NTElements.CoSuPe)
-                .build();
+                .build()
+                .setFormula("CuSO₄∙(H₂O)₅", true);
 
         CopperSulfate = new Material.Builder(25006, gregtechId("copper_sulfate"))
                 .dust()
                 .color(0xC8C8C8)
                 .flags(NOR)
-                .element(NTElements.CoSu)
+                .components(Copper, 1,Sulfur, 1,Oxygen, 4)//CuSO₄
                 .build();
 
         SolidAcidCatalystMixture = new Material.Builder(25007, gregtechId("solid_acid_catalyst_mixture"))
                 .fluid(FluidTypes.LIQUID)
                 .color(0x502800)
-                .element(NTElements.SoAcCaMi)
-                .build();
+                .build()
+                .setFormula("?H₂SO₄?", true);
 
         CyanoaceticAcid = new Material.Builder(25008, gregtechId("cyanoacetic_acid"))
                 .dust()
                 .color(0x828228)
                 .flags(NOR)
-                .element(NTElements.CyAc)
+                .components(Carbon, 3,Hydrogen, 3,Nitrogen, 1,Oxygen, 2)//C₃H₃NO₂
                 .build();
 
         SodiumCyanide = new Material.Builder(25009, gregtechId("sodium_cyanide"))
                 .dust()
                 .color(0xB4BEFF)
                 .flags(NOR)
-                .element(NTElements.SoCy)
+                .components(Sodium, 1,Carbon, 1,Nitrogen, 1)//NaCN
                 .build();
 
         ChloroaceticMixture = new Material.Builder(25010, gregtechId("chloroacetic_mixture"))
                 .fluid(FluidTypes.LIQUID)
                 .color(0xD2A00A)
-                .element(NTElements.ChMi)
-                .build();
+                .build()
+                .setFormula("Cl?H?C-COOH", true);
 
         TrichloroaceticAcid = new Material.Builder(25011, gregtechId("trichloroacetic_acid"))
                 .fluid(FluidTypes.LIQUID)
                 .color(0x78641E).iconSet(METALLIC)
-                .element(NTElements.TrAc)
-                .build();
+                .build()
+                .setFormula("Cl₃C-COOH", true);
 
         DichloroaceticAcid = new Material.Builder(25012, gregtechId("dichloroacetic_acid"))
                 .fluid(FluidTypes.LIQUID)
                 .color(0xBEA03C).iconSet(METALLIC)
-                .element(NTElements.DiAc)
-                .build();
+                .build()
+                .setFormula("Cl₂CH-COOH", true);
 
         ChloroaceticAcid = new Material.Builder(25013, gregtechId("chloroacetic_acid"))
                 .fluid(FluidTypes.LIQUID)
                 .color(0xE6C85A).iconSet(METALLIC)
-                .element(NTElements.ChAc)
-                .build();
+                .build()
+                .setFormula("ClCH₂-COOH", true);
 
         AceticAnhydride = new Material.Builder(25014, gregtechId("acetic_anhydride"))
                 .fluid(FluidTypes.LIQUID)
                 .color(0xFAF06E).iconSet(METALLIC)
-                .element(NTElements.AcAn)
-                .build();
+                .build()
+                .setFormula("(CH₃CO)₂O", true);
 
     }
 }

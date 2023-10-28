@@ -1,7 +1,6 @@
 package com.onlyex.naxtech;
 
 import com.onlyex.naxtech.api.NTValues;
-import com.onlyex.naxtech.api.fluids.NTMetaFluids;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
@@ -18,7 +17,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
         name="NaxTech",
         acceptedMinecraftVersions = "[1.12.2]",
         version = "1.0" ,
-        dependencies = "required-after:gregtech@[2.7.3-beta,) ;"
+        dependencies = "required-after:gregtech@[2.7.4-beta,) ;"
 )
 public class NaxTech {
     @Mod.Instance(NTValues.MOD_ID)

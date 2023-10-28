@@ -785,8 +785,13 @@ metaitem.crystal_glowstone.name=crystal_glowstone
 metaitem.crystal_ender.name=crystal_ender
 metaitem.crystal_geode.name=crystal_geode
 
+#
+tile.packaging_line.packaging_line_control_casing.name=
+tile.packaging_line.packaging_line_machine_casing.name=
+tile.packaging_line.packaging_line_casing.name=
 
 
 
-
+#machine
+gregtech.machine.packaging_line.name=
 

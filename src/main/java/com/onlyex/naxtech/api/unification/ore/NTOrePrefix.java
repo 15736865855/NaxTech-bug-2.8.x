@@ -8,8 +8,8 @@ import gregtech.api.unification.ore.OrePrefix;
 import stanhebben.zenscript.annotations.ZenClass;
 
 import static gregtech.api.GTValues.M;
-import static gregtech.api.unification.ore.OrePrefix.Conditions.*;
-import static gregtech.api.unification.ore.OrePrefix.Flags.*;
+import static gregtech.api.unification.ore.OrePrefix.Conditions.hasIngotProperty;
+import static gregtech.api.unification.ore.OrePrefix.Flags.ENABLE_UNIFICATION;
 
 @ZenClass("mods.naxtech.ore.NTOrePrefix")
 @ZenRegister

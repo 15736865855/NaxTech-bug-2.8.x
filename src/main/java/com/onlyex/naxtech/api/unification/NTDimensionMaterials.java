@@ -3,9 +3,9 @@ package com.onlyex.naxtech.api.unification;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 
+import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.METALLIC;
 import static gregtech.api.util.GTUtility.gregtechId;
-import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 
 
 
@@ -117,9 +117,9 @@ public class NTDimensionMaterials {
                 .build();
 
         ElectrumFlux = new Material.Builder(24018, gregtechId("electrum_flux"))
-                .element(NTElements.ElFl)
                 .iconSet(METALLIC)
-                .build();
+                .build()
+                .setFormula("(CuAu₄)(AuMa*)(CuAu₄ZnCu₃(Fe₅₀C)₂(NiAuAgCu₃(Fe₅₀C)₃)₄)(Ag₂FeMa)((CuAg₄)(Nq₂KeC)(Sn₉Sb)(CuAg₄BiZnCu₃(Fe₅₀C)₂(NiAuAgCu₃(Fe₅₀C)₃)₄)", true);
 
         Hypogen = new Material.Builder(24019, gregtechId("hypogen"))
                 .iconSet(METALLIC)

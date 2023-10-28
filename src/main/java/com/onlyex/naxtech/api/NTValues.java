@@ -1,6 +1,5 @@
 package com.onlyex.naxtech.api;
 
-import com.onlyex.naxtech.NaxTech;
 import net.minecraft.util.ResourceLocation;
 
 public class NTValues {

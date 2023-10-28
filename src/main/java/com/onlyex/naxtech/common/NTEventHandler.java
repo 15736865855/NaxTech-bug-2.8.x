@@ -1,6 +1,5 @@
 package com.onlyex.naxtech.common;
 
-import com.onlyex.naxtech.NaxTech;
 import com.onlyex.naxtech.api.NTValues;
 import com.onlyex.naxtech.api.unification.NTMaterials;
 import gregtech.api.unification.material.event.MaterialEvent;

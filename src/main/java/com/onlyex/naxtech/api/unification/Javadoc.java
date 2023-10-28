@@ -37,6 +37,7 @@ MAX = 14
   .attackSpeed(0.1F).enchantability(21).build())             <---攻击速度
   .blastTemp()                          <--- 鼓风温度
   .build();
+  .setFormula("NH4Cl", true);           <---设置公式
   <p>
   使用默认值对您有利！一些默认值:
   - iconSet: DULL
