@@ -14,7 +14,6 @@ import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.client.renderer.ICubeRenderer;
-import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockMultiblockCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiFluidHatch;
@@ -39,21 +38,18 @@ public class MetaTileEntityPackagingLine extends RecipeMapMultiblockController {
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("XXXXXXX", "PPPPPPP", "BBBBBBB","GGGGGGG", "#######")
-                .aisle("YTTTTTY", "YCCCCCY", "YCCCCCY","AAAAAAA", "AAAAAAA")
-                .aisle("YTTTTTY", "YCCCCCY", "YCCCCCY","AAAAAAA", "AAAAAAA")
-                .aisle("XXXXXXX", "PPPPPPP", "BBBSBBB","GGGGGGG", "#######")
+                .aisle("XXXXXXX", "PPPPPPP", "XXXXXXX","GGGGGGG", "#######")
+                .aisle("XXXXXXX", "XCCCCCX", "XCCCCCX","AAAAAAA", "AAAAAAA")
+                .aisle("XXXXXXX", "XCCCCCX", "XCCCCCX","AAAAAAA", "AAAAAAA")
+                .aisle("XXXXXXX", "PPPPPPP", "XXXSXXX","GGGGGGG", "#######")
                 .where('S', selfPredicate())
-                .where('T',  states(getMCasingState()))
                 .where('X',  states(getMCasingState())
-                        .or(fluidInputPredicate()))
-                .where('B',  states(getMCasingState())
-                        .or(autoAbilities(false, true, false, false, false, false, false)))
-                .where('P',  states(getBWGlasState()))
-                .where('Y', states(getMCasingState())
+                        .or(fluidInputPredicate())
                         .or(abilities(MultiblockAbility.INPUT_ENERGY)
                                 .setMinGlobalLimited(1)
-                                .setMaxGlobalLimited(3)))
+                                .setMaxGlobalLimited(3))
+                        .or(autoAbilities(false, true, true, true, false, false, false)))
+                .where('P',  states(getBWGlasState()))
                 .where('C',  states(NTMetaBlocks.PACKAGING_LINE.getState(BlockPackagingline.MultiblockCasingType.PACKAGING_LINE_CASING)))
                 .where('G',  states(MetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.MultiblockCasingType.GRATE_CASING)))
                 .where('A',  states(getCCasingState()))
