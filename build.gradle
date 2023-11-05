@@ -1,4 +1,7 @@
+import com.gtnewhorizons.retrofuturagradle.mcp.InjectTagsTask
 import org.jetbrains.gradle.ext.Gradle
+
+import java.time.LocalDate
 
 plugins {
     id 'java'
@@ -156,11 +159,9 @@ dependencies {
     compileOnly (files("libs/EnderCore-1.12.2-0.5.78.jar"))
     compileOnly (files("libs/CraftTweaker2-1.12-4.1.20.693.jar"))
 
-
-
-
-
 }
+
+apply from: 'gradle/scripts/dependencies.gradle'
 
 // Adds Access Transformer files to tasks
 if (project.use_access_transformer.toBoolean()) {
@@ -194,15 +195,15 @@ processResources {
 jar {
     manifest {
         def attribute_map = [:]
-        if (project.use_coremod.toBoolean()) {
-            attribute_map['FMLCorePlugin'] = project.coremod_plugin_class_name
+        if (propertyBool('is_coremod')) {
+            attribute_map['FMLCorePlugin'] = propertyString('coremod_plugin_class_name')
             if (project.include_mod.toBoolean()) {
                 attribute_map['FMLCorePluginContainsFMLMod'] = true
                 attribute_map['ForceLoadAsMod'] = project.gradle.startParameter.taskNames[0] == "build"
             }
         }
-        if (project.use_access_transformer.toBoolean()) {
-            attribute_map['FMLAT'] = project.archives_base_name + '_at.cfg'
+        if (propertyBool('use_access_transformer')) {
+            attribute_map['FMLAT'] = propertyString('access_transformer_locations')
         }
         attributes(attribute_map)
     }
@@ -242,6 +243,107 @@ idea {
     }
 }
 
-tasks.named("processIdeaSettings").configure {
-    dependsOn("injectTags")
+compileTestJava {
+    sourceCompatibility = targetCompatibility = 8
 }
+
+test {
+    javaLauncher.set(javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(8)
+    })
+}
+
+changelog {
+    header.set("[${propertyString('mod_version')}] - ${LocalDate.now().format("yyyy-MM-dd")}")
+    headerParserRegex.set(~/(\d+\.\d+)/)
+}
+
+if (propertyBool('spotless')) {
+    apply plugin: 'com.diffplug.spotless'
+    // noinspection GroovyAssignabilityCheck
+    spotless {
+        encoding 'UTF-8'
+        format 'misc', {
+            target '.gitignore'
+
+            endWithNewline()
+            indentWithSpaces()
+            trimTrailingWhitespace()
+        }
+        java {
+            target 'src/main/java/**/*.java', 'src/test/java/**/*.java'
+
+            endWithNewline()
+            formatAnnotations()
+            importOrder()
+            indentWithSpaces()
+            removeUnusedImports()
+            toggleOffOn()
+            trimTrailingWhitespace()
+
+            if (propertyBool('cleanthat')) {
+                cleanthat().sourceCompatibility('1.8')
+            }
+        }
+        json {
+            target 'src/main/resources/**/*.json', 'src/test/resources/**/*.json'
+
+            simple().indentWithSpaces(6)
+        }
+    }
+}
+
+tasks.register('generateMixinJson') {
+    group 'cleanroom helpers'
+    onlyIf {
+        if (propertyBool('use_mixins') && propertyBool('generate_mixins_json')) {
+            return !file("src/main/resources/mixins.${propertyString('mod_id')}.json").exists()
+        }
+        return false
+    }
+    doLast {
+        def file = file("src/main/resources/mixins.${propertyString('mod_id')}.json")
+        file << """{\n\t"package": "\${mixin_package}",\n\t"required": true,\n\t"refmap": "\${mixin_refmap}",\n\t"target": "@env(DEFAULT)",\n\t"minVersion": "0.8.5",\n\t"compatibilityLevel": "JAVA_8",\n\t"mixins": [],\n\t"server": [],\n\t"client": []\n}"""
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    if (propertyBool('use_modern_java_syntax')) {
+        if (it.name in ['compileMcLauncherJava', 'compilePatchedMcJava']) {
+            return
+        }
+        sourceCompatibility = 17
+        options.release.set(8)
+        javaCompiler.set(javaToolchains.compilerFor {
+            languageVersion.set(JavaLanguageVersion.of(16))
+            vendor.set(JvmVendorSpec.AZUL)
+        })
+    }
+}
+
+tasks.register('cleanroomAfterSync') {
+    group 'cleanroom helpers'
+    dependsOn 'injectTags', 'generateMixinJson'
+}
+
+if (propertyBool('use_modern_java_syntax')) {
+    tasks.withType(Javadoc).configureEach {
+        sourceCompatibility = 17
+    }
+}
+
+tasks.named('injectTags', InjectTagsTask).configure {
+    onlyIf {
+        return propertyBool('use_tags') && !it.getTags().get().isEmpty()
+    }
+    it.outputClassName.set(propertyString('tag_class_name'))
+}
+
+idea.project.settings {
+    taskTriggers {
+        afterSync 'cleanroomAfterSync'
+    }
+}
+apply from: 'gradle/scripts/publishing.gradle'
+apply from: 'gradle/scripts/extra.gradle'
