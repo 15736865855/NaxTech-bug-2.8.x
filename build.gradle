@@ -14,27 +14,20 @@ plugins {
 
 apply from: 'gradle/scripts/helpers.gradle'
 
-version = propertyString('mod_version')
-group = propertyString('root_package')
+version = project.mod_version
+group = project.maven_group
+archivesBaseName = project.archives_base_name
 
-base {
-    archivesName.set(propertyString('mod_id'))
-}
-
-tasks.decompressDecompiledSources.enabled !propertyBool('change_minecraft_sources')
-
+// Set the toolchain version to decouple the Java we run Gradle with from the Java used to compile and run the mod
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(propertyBool('use_modern_java_syntax') ? 16 : 8))
+        languageVersion.set(JavaLanguageVersion.of(8))
         // Azul covers the most platforms for Java 8 toolchains, crucially including MacOS arm64
         vendor.set(JvmVendorSpec.AZUL)
     }
-    if (propertyBool('generate_sources_jar')) {
-        withSourcesJar()
-    }
-    if (propertyBool('generate_javadocs_jar')) {
-        withJavadocJar()
-    }
+    // Generate sources and javadocs jars when building and publishing
+    withSourcesJar()
+    // withJavadocJar()
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -62,12 +55,12 @@ minecraft {
     // Add various JVM arguments here for runtime
     def args = ["-ea:${project.group}"]
     if (project.use_coremod.toBoolean()) {
-        args << '-Dfml.coreMods.load=' + coremod_plugin_class_name
+        args << ('-Dfml.coreMods.load=' + coremod_plugin_class_name as GString)
     }
     if (project.use_mixins.toBoolean()) {
-        args << '-Dmixin.hotSwap=true'
-        args << '-Dmixin.checks.interfaces=true'
-        args << '-Dmixin.debug.export=true'
+        args << ('-Dmixin.hotSwap=true' as GString)
+        args << ('-Dmixin.checks.interfaces=true' as GString)
+        args << ('-Dmixin.debug.export=true' as GString)
     }
     extraRunJvmArguments.addAll(args)
 
@@ -138,21 +131,8 @@ dependencies {
         }
     }
 
-    // Example of deobfuscating a dependency
-    // implementation rfg.deobf('curse.maven:had-enough-items-557549:4543375')
-    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4799055")
-    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4701685")
-    implementation rfg.deobf("curse.maven:code-chicken-lib-1-8-242818:2779848")
-    implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4773115")
-
-    compileOnly (files("libs/EnderCore-1.12.2-0.5.78.jar"))
-    compileOnly (files("libs/CraftTweaker2-1.12-4.1.20.693.jar"))
-
-    compileOnly(rfg.deobf("curse.maven:ctm-267602:2915363"))
-
-
     if (project.use_mixins.toBoolean()) {
-        // Change your mixin refmap name here:
+        // 在此处更改您的mixin refmap名称：
         String mixin = modUtils.enableMixins('org.spongepowered:mixin:0.8.3', "mixins.${project.archives_base_name}.refmap.json")
         api (mixin) {
             transitive = false
@@ -164,6 +144,21 @@ dependencies {
             transitive = false
         }
     }
+
+
+    // 消除依赖项混淆的示例
+    implementation rfg.deobf("curse.maven:had-enough-items-557549:4810661")
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4799055")
+    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4701685")
+    implementation rfg.deobf("curse.maven:code-chicken-lib-1-8-242818:2779848")
+    implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4773115")
+
+    compileOnly (files("libs/EnderCore-1.12.2-0.5.78.jar"))
+    compileOnly (files("libs/CraftTweaker2-1.12-4.1.20.693.jar"))
+
+
+
+
 
 }
 
