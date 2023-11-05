@@ -175,19 +175,27 @@ if (project.use_access_transformer.toBoolean()) {
 
 processResources {
     // This will ensure that this task is redone when the versions change
-    inputs.property 'version', project.version
-    inputs.property 'mcversion', project.minecraft.version
-    
+
     // Replace various properties in mcmod.info and pack.mcmeta if applicable
-    filesMatching(['mcmod.info', 'pack.mcmeta']) { fcd ->
+    filesMatching(['mcmod.info', 'pack.mcmeta', 'mixins.*(?!refmap).*\\.json']) { fcd ->
         // Replace version and mcversion
-        fcd.expand (
-                'version': project.version,
-                'mcversion': project.minecraft.version
+        def authors = propertyString('mod_authors').split(',').collect { """\"${ it.trim() }\"""" }.join(', ')
+        expand(
+                'mod_id': propertyString('mod_id'),
+                'mod_name': propertyString('mod_name'),
+                'mod_version': propertyString('mod_version'),
+                'mod_description': propertyString('mod_description'),
+                'mod_authors': "[${authors}]",
+                'mod_credits': propertyString('mod_credits'),
+                'mod_url': propertyString('mod_url'),
+                'mod_update_json': propertyString('mod_update_json'),
+                'mod_logo_path': propertyString('mod_logo_path'),
+                'mixin_refmap': propertyString('mixin_refmap'),
+                'mixin_package': propertyString('mixin_package')
         )
     }
     
-    if (project.use_access_transformer.toBoolean()) {
+    if (propertyBool('use_access_transformer')) {
         rename '(.+_at.cfg)', 'META-INF/$1' // Make sure Access Transformer files are in META-INF folder
     }
 }
@@ -197,9 +205,12 @@ jar {
         def attribute_map = [:]
         if (propertyBool('is_coremod')) {
             attribute_map['FMLCorePlugin'] = propertyString('coremod_plugin_class_name')
-            if (project.include_mod.toBoolean()) {
+            if (propertyBool('coremod_includes_mod')) {
                 attribute_map['FMLCorePluginContainsFMLMod'] = true
-                attribute_map['ForceLoadAsMod'] = project.gradle.startParameter.taskNames[0] == "build"
+                def currentTasks = gradle.startParameter.taskNames
+                if (currentTasks[0] == 'build' || currentTasks[0] == 'prepareObfModsFolder' || currentTasks[0] == 'runObfClient') {
+                    attribute_map['ForceLoadAsMod'] = true
+                }
             }
         }
         if (propertyBool('use_access_transformer')) {

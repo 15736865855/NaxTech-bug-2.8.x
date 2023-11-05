@@ -30,7 +30,7 @@ public class BlockControlCasing extends VariantBlock<BlockControlCasing.CasingTy
 
 
 
-    public static enum CasingType implements IStringSerializable {
+    public enum CasingType implements IStringSerializable {
 
         P("1");
 

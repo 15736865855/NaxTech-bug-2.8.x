@@ -68,7 +68,7 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem WRAP_ADVANCED_CIRCUIT_BOARD;
     public static MetaItem<?>.MetaValueItem WRAP_EXTREME_CIRCUIT_BOARD;
     public static MetaItem<?>.MetaValueItem WRAP_ELITE_CIRCUIT_BOARD;
-    public static MetaItem<?>.MetaValueItem WRAP_WETWARE_CIRCUIT_BOARD;;
+    public static MetaItem<?>.MetaValueItem WRAP_WETWARE_CIRCUIT_BOARD;
 
     public static MetaItem<?>.MetaValueItem WRAP_SMD_CAPACITOR;
     public static MetaItem<?>.MetaValueItem WRAP_SMD_DIODE;

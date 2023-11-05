@@ -30,7 +30,7 @@ public class BlockPackagingline  extends VariantBlock<BlockPackagingline.Multibl
 
 
 
-    public static enum MultiblockCasingType implements IStringSerializable {
+    public enum MultiblockCasingType implements IStringSerializable {
 
         PACKAGING_LINE_MACHINE_CASING("packaging_line_machine_casing"),
         PACKAGING_LINE_CASING("packaging_line_casing"),
