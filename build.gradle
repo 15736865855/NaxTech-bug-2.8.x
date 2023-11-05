@@ -17,6 +17,30 @@ plugins {
 
 apply from: 'gradle/scripts/helpers.gradle'
 
+// Early Assertions
+assertProperty 'mod_version'
+assertProperty 'root_package'
+assertProperty 'mod_id'
+assertProperty 'mod_name'
+
+assertSubProperties 'use_tags', 'tag_class_name'
+assertSubProperties 'use_access_transformer', 'access_transformer_locations'
+assertSubProperties 'use_mixins', 'mixin_booter_version', 'mixin_refmap'
+assertSubProperties 'is_coremod', 'coremod_includes_mod', 'coremod_plugin_class_name'
+assertSubProperties 'use_asset_mover', 'asset_mover_version'
+
+setDefaultProperty 'use_modern_java_syntax', false, false
+setDefaultProperty 'spotless', false, false
+setDefaultProperty 'generate_sources_jar', true, false
+setDefaultProperty 'generate_javadocs_jar', true, false
+setDefaultProperty 'mapping_channel', true, 'stable'
+setDefaultProperty 'mapping_version', true, '39'
+setDefaultProperty 'use_dependency_at_files', true, true
+setDefaultProperty 'minecraft_username', true, 'Developer'
+setDefaultProperty 'extra_jvm_args', false, ''
+setDefaultProperty 'extra_tweak_classes', false, ''
+setDefaultProperty 'change_minecraft_sources', false, false
+
 version = propertyString('mod_version')
 group = propertyString('root_package')
 
@@ -24,20 +48,20 @@ base {
     archivesName.set(propertyString('mod_id'))
 }
 
-// Set the toolchain version to decouple the Java we run Gradle with from the Java used to compile and run the mod
+tasks.decompressDecompiledSources.enabled !propertyBool('change_minecraft_sources')
+
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
+        languageVersion.set(JavaLanguageVersion.of(propertyBool('use_modern_java_syntax') ? 16 : 8))
         // Azul covers the most platforms for Java 8 toolchains, crucially including MacOS arm64
         vendor.set(JvmVendorSpec.AZUL)
     }
-    // Generate sources and javadocs jars when building and publishing
-    withSourcesJar()
-    // withJavadocJar()
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
+    if (propertyBool('generate_sources_jar')) {
+        withSourcesJar()
+    }
+    if (propertyBool('generate_javadocs_jar')) {
+        withJavadocJar()
+    }
 }
 
 configurations {
@@ -46,17 +70,17 @@ configurations {
 }
 
 minecraft {
-    mcVersion = '1.12.2'
+    mcVersion.set('1.12.2')
 
-    // MCP Mappings
-    mcpMappingChannel = 'stable'
-    mcpMappingVersion = '39'
-    
-    // Set username here, the UUID will be looked up automatically
-    username = 'Developer'
-    
+    mcpMappingChannel.set(propertyString('mapping_channel'))
+    mcpMappingVersion.set(propertyString('mapping_version'))
+
+    useDependencyAccessTransformers.set(propertyBool('use_dependency_at_files'))
+
+    username.set(propertyString('minecraft_username'))
+
     // Add any additional tweaker classes here
-    // extraTweakClasses.add('org.spongepowered.asm.launch.MixinTweaker')
+    extraTweakClasses.addAll(propertyStringList('extra_tweak_classes'))
     
     // Add various JVM arguments here for runtime
     def args = ['-ea:' + group]
@@ -69,9 +93,6 @@ minecraft {
         args << '-Dmixin.debug.export=true'
     }
     extraRunJvmArguments.addAll(args)
-
-    // Include and use dependencies' Access Transformer files
-    useDependencyAccessTransformers = true
     
     // Add any properties you want to swap out for a dynamic value at build time here
     // Any properties here will be added to a class at build time, the name can be configured below

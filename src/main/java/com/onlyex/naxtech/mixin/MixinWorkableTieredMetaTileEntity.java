@@ -26,7 +26,8 @@ public abstract class MixinWorkableTieredMetaTileEntity {
             method = "update()V",
             at = @At(
                     value = "HEAD"
-            )
+            ),
+            cancellable = true
     )
     public void update(CallbackInfo ci) {
         if (metaTileEntity instanceof WorkableTieredMetaTileEntity metaTileEntity) {
