@@ -17,9 +17,12 @@ plugins {
 
 apply from: 'gradle/scripts/helpers.gradle'
 
-version = project.mod_version
-group = project.maven_group
-archivesBaseName = project.archives_base_name
+version = propertyString('mod_version')
+group = propertyString('root_package')
+
+base {
+    archivesName.set(propertyString('mod_id'))
+}
 
 // Set the toolchain version to decouple the Java we run Gradle with from the Java used to compile and run the mod
 java {
@@ -56,14 +59,14 @@ minecraft {
     // extraTweakClasses.add('org.spongepowered.asm.launch.MixinTweaker')
     
     // Add various JVM arguments here for runtime
-    def args = ["-ea:${project.group}"]
-    if (project.use_coremod.toBoolean()) {
-        args << ('-Dfml.coreMods.load=' + coremod_plugin_class_name as GString)
+    def args = ['-ea:' + group]
+    if (propertyBool('is_coremod')) {
+        args << '-Dfml.coreMods.load=' + propertyString('coremod_plugin_class_name')
     }
-    if (project.use_mixins.toBoolean()) {
-        args << ('-Dmixin.hotSwap=true' as GString)
-        args << ('-Dmixin.checks.interfaces=true' as GString)
-        args << ('-Dmixin.debug.export=true' as GString)
+    if (propertyBool('use_mixins')) {
+        args << '-Dmixin.hotSwap=true'
+        args << '-Dmixin.checks.interfaces=true'
+        args << '-Dmixin.debug.export=true'
     }
     extraRunJvmArguments.addAll(args)
 
@@ -75,13 +78,19 @@ minecraft {
     // Example:
     // injectedTags.put('VERSION', project.version)
     // injectedTags.put('MOD_ID', project.archives_base_name)
+    extraRunJvmArguments.addAll(propertyStringList('extra_jvm_args'))
+
+    if (propertyBool('use_tags')) {
+        if (file('tags.properties').exists()) {
+            Properties props = new Properties().tap {  it.load(file('tags.properties').newInputStream()); it }
+            if (!props.isEmpty()) {
+                injectedTags.set(props.collectEntries { k, v -> [(k): interpolate(v)] })
+            }
+        }
+    }
 }
 
-// Generate a group.archives_base_name.Tags class
-tasks.injectTags.configure {
-    // Change Tags class' name here:
-    outputClassName.set("${project.group}.${project.archives_base_name}.Tags")
-}
+
 
 repositories {
     maven {
@@ -134,9 +143,11 @@ dependencies {
         }
     }
 
-    if (project.use_mixins.toBoolean()) {
-        // 在此处更改您的mixin refmap名称：
-        String mixin = modUtils.enableMixins('org.spongepowered:mixin:0.8.3', "mixins.${project.archives_base_name}.refmap.json")
+    if (propertyBool('use_asset_mover')) {
+        implementation "com.cleanroommc:assetmover:${propertyString('asset_mover_version')}"
+    }
+    if (propertyBool('use_mixins')) {
+        String mixin = modUtils.enableMixins("zone.rong:mixinbooter:${propertyString('mixin_booter_version')}", propertyString('mixin_refmap'))
         api (mixin) {
             transitive = false
         }
