@@ -1,12 +1,15 @@
 package com.onlyex.naxtech;
 
-import com.onlyex.naxtech.api.NTValues;
+import com.onlyex.naxtech.api.NTAPI;
+import com.onlyex.naxtech.api.capability.pollution.IPollution;
+import com.onlyex.naxtech.api.capability.pollution.PollutionProvider;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
 import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
 import com.onlyex.naxtech.proxy.CommonProxy;
 import gregtech.common.ConfigHolder;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
@@ -24,8 +27,6 @@ import static com.onlyex.naxtech.api.NTValues.MOD_ID;
         dependencies = "required-after:gregtech@[2.7.4-beta,) ;"
 )
 public class NaxTech {
-    @Mod.Instance(MOD_ID)
-    public static NaxTech instance;
 
     @SidedProxy(
             modId = MOD_ID,
@@ -39,12 +40,16 @@ public class NaxTech {
         ConfigHolder.machines.highTierContent = true;
     }
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
+    public void preInit(FMLPreInitializationEvent event) {
         NTLog.init(event.getModLog());
+        ConfigHolder.machines.highTierContent = true;
+        NTLog.logger.info("Enabled GregTechCEu highTierContent");
         NTMetaInit.init();
         NTMetaTileEntities.init();
+        NTAPI.APIBlockInit();
         NTMetaBlocks.init();
+
+        CapabilityManager.INSTANCE.register(IPollution.class, new PollutionProvider.Storage(), PollutionProvider.Impl::new);
         proxy.preLoad();
 
     }

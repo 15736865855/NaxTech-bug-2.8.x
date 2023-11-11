@@ -1,11 +1,19 @@
 package com.onlyex.naxtech.proxy;
 
 import com.onlyex.naxtech.api.NTValues;
+import com.onlyex.naxtech.api.recipes.properties.CACasingTierProperty;
+import com.onlyex.naxtech.api.recipes.properties.CasingTierProperty;
+import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
+import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.api.cover.CoverDefinition;
+import gregtech.api.recipes.recipeproperties.FusionEUToStartProperty;
+import gregtech.loaders.recipe.CraftingComponent;
 import net.minecraft.block.Block;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -15,6 +23,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -97,6 +106,44 @@ public class CommonProxy {
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
     {
         NTLog.logger.info("Registering recipes...");
+        FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
+        FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
+        CasingTierProperty.registerCasingTier(1, I18n.format("naxtech.recipe.casing_tier.1"));
+        CasingTierProperty.registerCasingTier(2, I18n.format("naxtech.recipe.casing_tier.2"));
+        CasingTierProperty.registerCasingTier(3, I18n.format("naxtech.recipe.casing_tier.3"));
+        CasingTierProperty.registerCasingTier(4, I18n.format("naxtech.recipe.casing_tier.4"));
+        CasingTierProperty.registerCasingTier(5, I18n.format("naxtech.recipe.casing_tier.5"));
+        PACasingTierProperty.registerPACasingTier(1, I18n.format("naxtech.machine.precise_assembler.tier.1"));
+        PACasingTierProperty.registerPACasingTier(2, I18n.format("naxtech.machine.precise_assembler.tier.2"));
+        PACasingTierProperty.registerPACasingTier(3, I18n.format("naxtech.machine.precise_assembler.tier.3"));
+        CACasingTierProperty.registerCACasingTier(1, I18n.format("naxtech.machine.component_assembly_line.tier.1"));
+        CACasingTierProperty.registerCACasingTier(2, I18n.format("naxtech.machine.component_assembly_line.tier.2"));
+        CACasingTierProperty.registerCACasingTier(3, I18n.format("naxtech.machine.component_assembly_line.tier.3"));
+        CACasingTierProperty.registerCACasingTier(4, I18n.format("naxtech.machine.component_assembly_line.tier.4"));
+        CACasingTierProperty.registerCACasingTier(5, I18n.format("naxtech.machine.component_assembly_line.tier.5"));
+        CACasingTierProperty.registerCACasingTier(6, I18n.format("naxtech.machine.component_assembly_line.tier.6"));
+        CACasingTierProperty.registerCACasingTier(7, I18n.format("naxtech.machine.component_assembly_line.tier.7"));
+        CACasingTierProperty.registerCACasingTier(8, I18n.format("naxtech.machine.component_assembly_line.tier.8"));
+        CACasingTierProperty.registerCACasingTier(9, I18n.format("naxtech.machine.component_assembly_line.tier.9"));
+        CACasingTierProperty.registerCACasingTier(10, I18n.format("naxtech.machine.component_assembly_line.tier.10"));
+        CACasingTierProperty.registerCACasingTier(11, I18n.format("naxtech.machine.component_assembly_line.tier.11"));
+        CACasingTierProperty.registerCACasingTier(12, I18n.format("naxtech.machine.component_assembly_line.tier.12"));
+        CACasingTierProperty.registerCACasingTier(13, I18n.format("naxtech.machine.component_assembly_line.tier.13"));
+        CACasingTierProperty.registerCACasingTier(14, I18n.format("naxtech.machine.component_assembly_line.tier.14"));
+    }
 
+    @SubscribeEvent
+    public static void registerRecipeHandlers(RegistryEvent.Register<IRecipe> event) {
+
+    }
+
+    //  Crafting Component Event
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void initComponents(GregTechAPI.RegisterEvent<CraftingComponent> event) {
+    }
+
+    //  Cover Behavior Event
+    @SubscribeEvent
+    public static void registerCoverBehavior(GregTechAPI.RegisterEvent<CoverDefinition> event) {
     }
 }

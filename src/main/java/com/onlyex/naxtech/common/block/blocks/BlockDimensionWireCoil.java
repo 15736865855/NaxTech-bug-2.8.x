@@ -9,11 +9,13 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.client.utils.TooltipHelper;
 import gregtech.common.ConfigHolder;
+import gregtech.common.blocks.BlockWireCoil;
 import gregtech.common.metatileentities.multi.electric.MetaTileEntityMultiSmelter;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
@@ -41,32 +43,27 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
 
     public BlockDimensionWireCoil() {
         super(net.minecraft.block.material.Material.IRON);
-        setTranslationKey("wire_coil");
-        setCreativeTab(NAXTECH_TAB);
-        setHardness(50.0f);
-        setResistance(100.0f);
-        setSoundType(SoundType.METAL);
-        setHarvestLevel(ToolClasses.WRENCH, 6);
-        setDefaultState(this.getState(BlockDimensionWireCoil.CoilType.NAQUADAH_ALLOY));
+        this.setTranslationKey("wire_coil");
+        this.setCreativeTab(NAXTECH_TAB);
+        this.setHardness(50.0f);
+        this.setResistance(100.0f);
+        this.setSoundType(SoundType.METAL);
+        this.setHarvestLevel(ToolClasses.WRENCH, 6);
+        this.setDefaultState(this.getState(CoilType.NAQUADAH_ALLOY));
     }
 
-    @Override
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.SOLID;
     }
 
-    @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(@Nonnull ItemStack itemStack, @Nullable World worldIn, List<String> lines, @Nonnull ITooltipFlag tooltipFlag) {
         super.addInformation(itemStack, worldIn, lines, tooltipFlag);
 
-        // noinspection rawtypes, unchecked 就是个样(70.3%).
-        VariantItemBlock itemBlock = (VariantItemBlock<BlockDimensionWireCoil.CoilType, BlockDimensionWireCoil>) itemStack.getItem();
+        VariantItemBlock itemBlock = (VariantItemBlock<CoilType, BlockDimensionWireCoil>) itemStack.getItem();
         IBlockState stackState = itemBlock.getBlockState(itemStack);
-        BlockDimensionWireCoil.CoilType coilType = getState(stackState);
-
+        CoilType coilType =  this.getState(stackState);
         lines.add(I18n.format("tile.wire_coil.tooltip_heat", coilType.coilTemperature));
-
         if (TooltipHelper.isShiftDown()) {
             int coilTier = coilType.ordinal();
             lines.add(I18n.format("tile.wire_coil.tooltip_smelter"));
@@ -82,12 +79,10 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
         }
     }
 
-    @Override
-    public boolean canCreatureSpawn(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, @Nonnull SpawnPlacementType type) {
+    public boolean canCreatureSpawn(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, @Nonnull EntityLiving.SpawnPlacementType type) {
         return false;
     }
 
-    @Override
     protected boolean isBloomEnabled(CoilType value) {
         return ConfigHolder.client.coilsActiveEmissiveTextures;
     }
@@ -97,16 +92,13 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
         NAQUADAH_ALLOY("naquadah_alloy", 8101, 8, 8, Materials.NaquadahAlloy),
         ELECTRUM_FLUX("electrum_flux", 9901, 16, 16, NTMaterials.ElectrumFlux),
         AWAKENED_DRACONIUM("awakened_draconium", 10801, 32, 16, NTMaterials.DraconiumAwakened),
-        HSS_S("hss_s", 6301, 4, 2, Materials.HSSS),
         INFINITY("infinity", 11701, 32, 32, NTMaterials.Infinity),
         HYPOGEN("hypogen", 12601, 64, 32, NTMaterials.Hypogen),
         ETERNAL("eternal", 13501, 64, 64, null);
 
         private final String name;
         private final int coilTemperature;
-        //线圈温度
         private final int level;
-        //多冶炼厂特性
         private final int energyDiscount;
         private final Material material;
 
@@ -119,42 +111,35 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
         }
 
         @Nonnull
-        @Override
         public String getName() {
             return this.name;
         }
 
 
-        @Override
         public int getCoilTemperature() {
-            return coilTemperature;
+            return this.coilTemperature;
         }
 
-        @Override
         public int getLevel() {
-            return level;
+            return this.level;
         }
 
-        @Override
         public int getEnergyDiscount() {
-            return energyDiscount;
+            return this.energyDiscount;
         }
 
-        @Override
         public int getTier() {
-            return this.ordinal();
+            return BlockWireCoil.CoilType.TRITANIUM.getTier() + this.ordinal();
         }
 
         @Nullable
-        @Override
         public Material getMaterial() {
-            return material;
+            return this.material;
         }
 
         @Nonnull
-        @Override
         public String toString() {
-            return getName();
+            return this.getName();
         }
     }
 }

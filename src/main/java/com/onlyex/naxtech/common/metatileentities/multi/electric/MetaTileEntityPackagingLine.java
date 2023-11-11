@@ -3,7 +3,7 @@ package com.onlyex.naxtech.common.metatileentities.multi.electric;
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.client.textures.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
-import com.onlyex.naxtech.common.block.blocks.BlockBWGlasBlocks;
+import com.onlyex.naxtech.common.block.blocks.BlockGlassCasing;
 import com.onlyex.naxtech.common.block.blocks.BlockPackagingline;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -69,7 +69,7 @@ public class MetaTileEntityPackagingLine extends RecipeMapMultiblockController {
 
     @Nonnull
     protected static IBlockState getBWGlasState() {
-        return NTMetaBlocks.BW_GlasBlocks.getState(BlockBWGlasBlocks.CasingType.TI_BORON_SILICATE_GLASS_BLOCK);
+        return NTMetaBlocks.BW_GlasBlocks.getState(BlockGlassCasing.CasingType.TI_BORON_SILICATE_GLASS_BLOCK);
     }
     @Nonnull
     protected static TraceabilityPredicate fluidInputPredicate() {
