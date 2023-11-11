@@ -11,6 +11,8 @@ import net.minecraft.world.IBlockAccess;
 
 import javax.annotation.Nonnull;
 
+import static com.onlyex.naxtech.proxy.CommonProxy.NAXTECH_TAB;
+
 public class BlockMachinelCasing  extends VariantBlock<BlockMachinelCasing.CasingType> {
 
 
@@ -20,8 +22,9 @@ public class BlockMachinelCasing  extends VariantBlock<BlockMachinelCasing.Casin
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
+        setCreativeTab(NAXTECH_TAB);
         this.setHarvestLevel("wrench", 2);
-        this.setDefaultState(this.getState(BlockMachinelCasing.CasingType.P));
+        this.setDefaultState(this.getState(CasingType.IRIDIUM));
     }
 
     public boolean canCreatureSpawn(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, @Nonnull EntityLiving.SpawnPlacementType type) {
@@ -32,7 +35,7 @@ public class BlockMachinelCasing  extends VariantBlock<BlockMachinelCasing.Casin
 
     public enum CasingType implements IStringSerializable {
 
-        P("1");
+        IRIDIUM("iridium");
 
         private final String name;
 

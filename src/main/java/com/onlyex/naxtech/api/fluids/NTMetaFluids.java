@@ -1,9 +1,9 @@
 package com.onlyex.naxtech.api.fluids;
 
 import com.onlyex.naxtech.api.unification.NTMaterials;
+import gregtech.api.fluids.MetaFluids;
 import gregtech.api.fluids.fluidType.FluidTypes;
 
-import static gregtech.api.fluids.MetaFluids.setMaterialFluidTexture;
 
 public class NTMetaFluids {
     /**
@@ -26,11 +26,11 @@ public class NTMetaFluids {
     }
 
     private static void setCustomTextures() {
-        //setMaterialFluidTexture(NTMaterials., FluidTypes.LIQUID);
-        setMaterialFluidTexture(NTMaterials.WhitedWarfMatter, FluidTypes.LIQUID);
-        setMaterialFluidTexture(NTMaterials.Infinity, FluidTypes.LIQUID);
-        setMaterialFluidTexture(NTMaterials.Spacetime, FluidTypes.LIQUID);
-        setMaterialFluidTexture(NTMaterials.Eternity, FluidTypes.LIQUID);
-        setMaterialFluidTexture(NTMaterials.MagnetohydrodynamicallyConstrainedStarMatter, FluidTypes.LIQUID);
+        //MetaFluids.setMaterialFluidTexture(NTMaterials., FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.WhitedWarfMatter, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.Infinity, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.Spacetime, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.Eternity, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.MagnetohydrodynamicallyConstrainedStarMatter, FluidTypes.LIQUID);
     }
 }

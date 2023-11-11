@@ -1,0 +1,23 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant=pbi": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/pipelinel_casing/pbi"
+      }
+    },
+    "variant=2": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/pipelinel_casing/packaging_line_control_casing"
+      }
+    },
+    "variant=3": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/pipelinel_casing/packaging_line_casing"
+      }
+    }
+  }
+}

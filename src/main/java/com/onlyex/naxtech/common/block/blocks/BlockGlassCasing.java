@@ -40,7 +40,7 @@ public class BlockGlassCasing extends VariantActiveBlock<BlockGlassCasing.Casing
         setDefaultState(this.getState(CasingType.TI_BORON_SILICATE_GLASS_BLOCK));
         this.useNeighborBrightness = true;
 
-    }
+    }//TODO 连接材质
 
     @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, @Nonnull EntityLiving.SpawnPlacementType type) {

@@ -46,8 +46,8 @@ public class NaxTech {
         NTLog.logger.info("Enabled GregTechCEu highTierContent");
         NTMetaInit.init();
         NTMetaTileEntities.init();
-        NTAPI.APIBlockInit();
         NTMetaBlocks.init();
+        NTAPI.APIBlockInit();
 
         CapabilityManager.INSTANCE.register(IPollution.class, new PollutionProvider.Storage(), PollutionProvider.Impl::new);
         proxy.preLoad();

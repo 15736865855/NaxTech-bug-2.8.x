@@ -1,7 +1,7 @@
 
 
 itemGroup.NaxTech=NaxTech(NT)
-naxtech.mixin.info.glass.tier=玻璃等级:%s
+
 # Circuits
 # 化学
 metaitem.circuit.gooware_processor.name=化学处理器
@@ -96,6 +96,16 @@ tile.glasses_casing.ne_boron_silicate_glass_block.name=中子强化硅酸盐硼�
 tile.glasses_casing.sne_boron_silicate_glass_block.name=宇宙中子强化硅酸盐硼玻璃
 tile.glasses_casing.ava_boron_silicate_glass_block.name=无尽强化硅酸盐硼玻璃
 tile.glasses_casing.tl_boron_silicate_glass_block.name=超时空强化硅酸盐硼玻璃
+
+naxtech.glass_tier.tooltip=玻璃等级：%s
+naxtech.optical_glass_tier.tooltip.0=粗制光学玻璃
+naxtech.optical_glass_tier.tooltip.1=普通光学玻璃
+naxtech.optical_glass_tier.tooltip.2=改良光学玻璃
+naxtech.optical_glass_tier.tooltip.3=优质光学玻璃
+naxtech.optical_glass_tier.tooltip.4=精密光学玻璃
+naxtech.optical_glass_tier.tooltip.5=精奇光学玻璃
+
+naxtech.multiblock.pattern.error.glasses=必须使用同一种玻璃方块。
 
 #封装电路
 #Wrap Circuit
@@ -813,13 +823,74 @@ tile.packaging_line.packaging_line_casing.name=封装线外壳
 gregtech.machine.packaging_line.name=封装线
 
 
+naxtech.machine.component_assembly_line.name=部件装配线
+recipemap.component_assembly_line_recipes.name=部件装配线
+naxtech.machine.component_assembly_line.tier=装配外壳等级：
+naxtech.machine.component_assembly_line.tooltip.1=批量装配各式各样的零部件
+naxtech.machine.component_assembly_line.tooltip.2=效率碾压同等级组装机/装配线！
+naxtech.machine.component_assembly_line.tooltip.3=需要不同等级的§6部件装配线外壳§7
+naxtech.machine.component_assembly_line.tooltip.4=部件装配线外壳限制了机器可执行的§r配方等级§7
 
+tile.component_assembly_line_casing.lv.name=部件装配线外壳（LV）
+tile.component_assembly_line_casing.lv.tooltip=简易装配单元
+tile.component_assembly_line_casing.mv.name=部件装配线外壳（MV）
+tile.component_assembly_line_casing.mv.tooltip=粗制装配单元
+tile.component_assembly_line_casing.hv.name=部件装配线外壳（HV）
+tile.component_assembly_line_casing.hv.tooltip=优质装配单元
+tile.component_assembly_line_casing.ev.name=部件装配线外壳（EV）
+tile.component_assembly_line_casing.ev.tooltip=进阶装配单元
+tile.component_assembly_line_casing.iv.name=部件装配线外壳（IV）
+tile.component_assembly_line_casing.iv.tooltip=高级装配单元
+tile.component_assembly_line_casing.luv.name=部件装配线外壳（LuV）
+tile.component_assembly_line_casing.luv.tooltip=高精度装配单元
+tile.component_assembly_line_casing.zpm.name=部件装配线外壳（ZPM）
+tile.component_assembly_line_casing.zpm.tooltip=超高精度装配单元
+tile.component_assembly_line_casing.uv.name=部件装配线外壳（UV）
+tile.component_assembly_line_casing.uv.tooltip=极限精度装配单元
+tile.component_assembly_line_casing.uhv.name=部件装配线外壳（UHV）
+tile.component_assembly_line_casing.uhv.tooltip=极高精度装配单元
+tile.component_assembly_line_casing.uev.name=部件装配线外壳（UEV）
+tile.component_assembly_line_casing.uev.tooltip=结构装配单元
+tile.component_assembly_line_casing.uiv.name=部件装配线外壳（UIV）
+tile.component_assembly_line_casing.uiv.tooltip=大尺度结构装配单元
+tile.component_assembly_line_casing.uxv.name=部件装配线外壳（UXV）
+tile.component_assembly_line_casing.uxv.tooltip=超结构装配单元
+tile.component_assembly_line_casing.opv.name=部件装配线外壳（OpV）
+tile.component_assembly_line_casing.opv.tooltip=宇宙装配单元
+tile.component_assembly_line_casing.max.name=部件装配线外壳（MAX）
+tile.component_assembly_line_casing.max.tooltip=时空装配单元
 
-
-
-
-
-
+#  Wrap Items
+metaitem.wrap.circuit.ulv.name=封装电路板（ULV）
+metaitem.wrap.circuit.ulv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.lv.name=封装电路板（LV）
+metaitem.wrap.circuit.lv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.mv.name=封装电路板（MV）
+metaitem.wrap.circuit.mv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.hv.name=封装电路板（HV）
+metaitem.wrap.circuit.hv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.ev.name=封装电路板（EV）
+metaitem.wrap.circuit.ev.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.iv.name=封装电路板（IV）
+metaitem.wrap.circuit.iv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.luv.name=封装电路板（LuV）
+metaitem.wrap.circuit.luv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.zpm.name=封装电路板（ZPM）
+metaitem.wrap.circuit.zpm.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uv.name=封装电路板（UV）
+metaitem.wrap.circuit.uv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uhv.name=封装电路板（UHV）
+metaitem.wrap.circuit.uhv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uev.name=封装电路板（UEV）
+metaitem.wrap.circuit.uev.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uiv.name=封装电路板（UIV）
+metaitem.wrap.circuit.uiv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uxv.name=封装电路板（UXV）
+metaitem.wrap.circuit.uxv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.opv.name=封装电路板（OpV）
+metaitem.wrap.circuit.opv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.max.name=封装电路板（MAX）
+metaitem.wrap.circuit.max.tooltip=用于在§6部件装配线§7中进行批量组装
 
 
 

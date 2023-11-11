@@ -11,6 +11,8 @@ import net.minecraft.world.IBlockAccess;
 
 import javax.annotation.Nonnull;
 
+import static com.onlyex.naxtech.proxy.CommonProxy.NAXTECH_TAB;
+
 public class BlockPackagingline  extends VariantBlock<BlockPackagingline.MultiblockCasingType> {
 
 
@@ -20,6 +22,7 @@ public class BlockPackagingline  extends VariantBlock<BlockPackagingline.Multibl
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
+        setCreativeTab(NAXTECH_TAB);
         this.setHarvestLevel("wrench", 2);
         this.setDefaultState(this.getState(BlockPackagingline.MultiblockCasingType.PACKAGING_LINE_MACHINE_CASING));
     }

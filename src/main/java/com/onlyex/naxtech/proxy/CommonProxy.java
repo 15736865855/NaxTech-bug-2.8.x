@@ -29,6 +29,9 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.Objects;
 import java.util.function.Function;
+
+import static com.onlyex.naxtech.common.block.NTMetaBlocks.*;
+
 @Mod.EventBusSubscriber(modid = NTValues.MOD_ID)
 public class CommonProxy {
 
@@ -57,20 +60,17 @@ public class CommonProxy {
     {
         NTLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
-        /*
-        在此处注册方块
-        例子：
-        registry.register(方块实例);
-        在注册MetaBlock时用到
-        */
 
-        registry.register(NTMetaBlocks.DIMENSION);
-        registry.register(NTMetaBlocks.DIMENSION_FRAME);
-        registry.register(NTMetaBlocks.BLOCK_DIMENSION_WIRE_COIL);
-        registry.register(NTMetaBlocks.BW_GlasBlocks);
-        registry.register(NTMetaBlocks.CONTROL_CASING);
-        registry.register(NTMetaBlocks.MACHINE_CASING);
-        registry.register(NTMetaBlocks.PACKAGING_LINE);
+        registry.register(DIMENSION);
+        registry.register(DIMENSION_FRAME);
+        registry.register(BLOCK_DIMENSION_WIRE_COIL);
+        registry.register(GLASS_CASING);
+        registry.register(CONTROL_CASING);
+        registry.register(MACHINE_CASING);
+        registry.register(PACKAGING_LINE);
+        registry.register(COMPONENT_ASSEMBLY_LINE_CASING);
+        registry.register(ADVANCED_ASSEMBLY_LINE_CASING);
+        registry.register(PIPELINE_CASING);
 
     }
 
@@ -79,20 +79,18 @@ public class CommonProxy {
     {
         NTLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
-        /*
-        在此处注册方块的物品
-        例子：
-        registry.register(createItemBlock(方块实例, VariantItemBlock::new));
-        在注册MetaBlock时用到
-        */
 
-        registry.register(createItemBlock(NTMetaBlocks.DIMENSION, VariantItemBlock::new));
-        registry.register(createItemBlock(NTMetaBlocks.DIMENSION_FRAME, VariantItemBlock::new));
-        registry.register(createItemBlock(NTMetaBlocks.BLOCK_DIMENSION_WIRE_COIL, VariantItemBlock::new));
-        registry.register(createItemBlock(NTMetaBlocks.BW_GlasBlocks, VariantItemBlock::new));
-        registry.register(createItemBlock(NTMetaBlocks.CONTROL_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(NTMetaBlocks.MACHINE_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(NTMetaBlocks.PACKAGING_LINE, VariantItemBlock::new));
+        registry.register(createItemBlock(DIMENSION, VariantItemBlock::new));
+        registry.register(createItemBlock(DIMENSION_FRAME, VariantItemBlock::new));
+        registry.register(createItemBlock(BLOCK_DIMENSION_WIRE_COIL, VariantItemBlock::new));
+        registry.register(createItemBlock(GLASS_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(CONTROL_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(MACHINE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(PACKAGING_LINE, VariantItemBlock::new));
+        registry.register(createItemBlock(COMPONENT_ASSEMBLY_LINE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(ADVANCED_ASSEMBLY_LINE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(PIPELINE_CASING, VariantItemBlock::new));
+
 
     }
 

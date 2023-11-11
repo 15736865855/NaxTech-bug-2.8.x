@@ -1,5 +1,7 @@
 package com.onlyex.naxtech.api.recipes;
 
+import com.onlyex.naxtech.api.recipes.builder.*;
+import com.onlyex.naxtech.api.recipes.machines.*;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
@@ -13,8 +15,20 @@ import stanhebben.zenscript.annotations.ZenProperty;
 @ZenRegister
 public class NTRecipeMaps {
     @ZenProperty
-    public static final RecipeMap<AssemblerRecipeBuilder> PACKAGING_LINE_RECIPES = new RecipeMap<>("packaging_line", 9, 1, 1, 0, new AssemblerRecipeBuilder(), false)
-            .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT, ProgressWidget.MoveType.HORIZONTAL)
-            .setSound(GTSoundEvents.ASSEMBLER);
+    public static final RecipeMap<AssemblerRecipeBuilder> PACKAGING_LINE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<CACasingTierRecipeBuilder> COMPONENT_ASSEMBLY_LINE_RECIPES;
+    public NTRecipeMaps() {}
+
+    static {
+        PACKAGING_LINE_RECIPES = new RecipeMap<>("packaging_line", 9, 1, 1, 0, new AssemblerRecipeBuilder(), false)
+                .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.ASSEMBLER);
+
+        //  Component Assembly Line Recipemap
+        COMPONENT_ASSEMBLY_LINE_RECIPES = new RecipeMapComponentAssemblyLine<>("component_assembly_line_recipes", 12, 1,  12, 0, new CACasingTierRecipeBuilder(), false)
+                .setSound(GTSoundEvents.ASSEMBLER);
+    }
+
 }

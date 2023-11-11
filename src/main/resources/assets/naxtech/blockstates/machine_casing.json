@@ -1,10 +1,10 @@
 {
   "forge_marker": 1,
   "variants": {
-    "variant=packaging_line_machine_casing": {
+    "variant=iridium": {
       "model": "minecraft:cube_all",
       "textures": {
-        "all": "naxtech:blocks/casings/machine_casing/packaging_line_machine_casing"
+        "all": "naxtech:blocks/casings/machine_casing/iridium"
       }
     }
   }

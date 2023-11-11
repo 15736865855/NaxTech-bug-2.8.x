@@ -15,7 +15,7 @@ public class ClientProxy extends CommonProxy {
     public void preLoad()
     {
         super.preLoad();
-        NTTextures.init();
+        NTTextures.preInit();
     }
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event)

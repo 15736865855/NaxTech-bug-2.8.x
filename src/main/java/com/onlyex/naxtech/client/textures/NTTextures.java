@@ -11,12 +11,8 @@ SimpleSidedCubeRenderer
 SimpleOverlayRenderer
 OrientedOverlayRenderer
 */
-    public static SimpleOverlayRenderer PACKAGING_LINE = new SimpleOverlayRenderer("casings/solid/machine_packaging_line");
+    public static NTOverlayRenderer PACKAGING_LINE = new NTOverlayRenderer("casings/solid/machine_packaging_line");
+    public static NTOverlayRenderer ADVANCED_ASSEMBLY_LINE = new NTOverlayRenderer("casings/solid/advanced_assembly_line");
 
-    public static void init() {
-        // = new OrientedOverlayRenderer("multiblock/");
-        // = new SimpleSidedCubeRenderer("multiblock/");
-        //PACKAGING_LINE = new SimpleSidedCubeRenderer("casings/solid/packaging_line");
-
-    }
+    public static void preInit() {}
 }

@@ -69,7 +69,7 @@ public class MetaTileEntityPackagingLine extends RecipeMapMultiblockController {
 
     @Nonnull
     protected static IBlockState getBWGlasState() {
-        return NTMetaBlocks.BW_GlasBlocks.getState(BlockGlassCasing.CasingType.TI_BORON_SILICATE_GLASS_BLOCK);
+        return NTMetaBlocks.GLASS_CASING.getState(BlockGlassCasing.CasingType.TI_BORON_SILICATE_GLASS_BLOCK);
     }
     @Nonnull
     protected static TraceabilityPredicate fluidInputPredicate() {
