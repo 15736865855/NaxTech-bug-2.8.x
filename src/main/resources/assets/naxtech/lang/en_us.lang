@@ -508,6 +508,10 @@ gregtech.material.electrum_flux=electrum flux
 gregtech.material.hypogen=Hypogen
 
 
+gregtech.material.mar_m_200_steel=
+
+
+
 #fluid
 gregtech.material.mutated_iiving_solder=Mutated Living Solder
 gregtech.material.ethyl_cyanoacrylate_super_glue=Ethyl Cyanoacrylate (Super Glue)
@@ -799,10 +803,19 @@ tile.packaging_line.packaging_line_control_casing.name=
 tile.packaging_line.packaging_line_machine_casing.name=
 tile.packaging_line.packaging_line_casing.name=
 
+tile.advanced_assembly_line_casing.filter_casing.name=
+tile.advanced_assembly_line_casing.filter_casing.tooltip.1=
+tile.advanced_assembly_line_casing.filter_casing.tooltip.2=
 
+tile.advanced_assembly_line_casing.assembly_line_casing.name=
+tile.advanced_assembly_line_casing.assembly_control_casing.name=
+
+tile.machine_casing.iridium.name= iridium machine_casing
+
+tile.pipelinel_casing.pbi.name=
 
 #machine
-gregtech.machine.packaging_line.name=
+naxtech.machine.packaging_line.name=
 
 
 naxtech.machine.component_assembly_line.name=部件装配线
@@ -873,3 +886,19 @@ metaitem.wrap.circuit.opv.name=封装电路板（OpV）
 metaitem.wrap.circuit.opv.tooltip=用于在§6部件装配线§7中进行批量组装
 metaitem.wrap.circuit.max.name=封装电路板（MAX）
 metaitem.wrap.circuit.max.tooltip=用于在§6部件装配线§7中进行批量组装
+
+naxtech.machine.component_assembly_line.casing_tier=装配外壳等级：%s
+naxtech.machine.component_assembly_line.tier.1=简易 (LV)
+naxtech.machine.component_assembly_line.tier.2=粗制 (MV)
+naxtech.machine.component_assembly_line.tier.3=优质 (HV)
+naxtech.machine.component_assembly_line.tier.4=进阶 (EV)
+naxtech.machine.component_assembly_line.tier.5=高级 (IV)
+naxtech.machine.component_assembly_line.tier.6=高精度 (LuV)
+naxtech.machine.component_assembly_line.tier.7=超高精度 (ZPM)
+naxtech.machine.component_assembly_line.tier.8=极限精度 (UV)
+naxtech.machine.component_assembly_line.tier.9=极高精度 (UHV)
+naxtech.machine.component_assembly_line.tier.10=结构 (UEV)
+naxtech.machine.component_assembly_line.tier.11=大尺度结构 (UIV)
+naxtech.machine.component_assembly_line.tier.12=超结构 (UXV)
+naxtech.machine.component_assembly_line.tier.13=宇宙 (OpV)
+naxtech.machine.component_assembly_line.tier.14=时空 (MAX)
