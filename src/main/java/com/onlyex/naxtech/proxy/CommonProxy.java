@@ -61,8 +61,6 @@ public class CommonProxy {
         NTLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
 
-        registry.register(DIMENSION);
-        registry.register(DIMENSION_FRAME);
         registry.register(BLOCK_DIMENSION_WIRE_COIL);
         registry.register(GLASS_CASING);
         registry.register(CONTROL_CASING);
@@ -80,8 +78,6 @@ public class CommonProxy {
         NTLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
 
-        registry.register(createItemBlock(DIMENSION, VariantItemBlock::new));
-        registry.register(createItemBlock(DIMENSION_FRAME, VariantItemBlock::new));
         registry.register(createItemBlock(BLOCK_DIMENSION_WIRE_COIL, VariantItemBlock::new));
         registry.register(createItemBlock(GLASS_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(CONTROL_CASING, VariantItemBlock::new));

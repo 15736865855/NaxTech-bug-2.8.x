@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.api.unification;
+package com.onlyex.naxtech;
 
 public @interface Javadoc {
 /*

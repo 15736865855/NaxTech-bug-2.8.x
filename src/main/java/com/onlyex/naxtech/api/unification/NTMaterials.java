@@ -16,6 +16,7 @@ public class NTMaterials {
     public static final List<MaterialFlag> ONTEA = new ArrayList<>();
     public static final List<MaterialFlag> NONTM = new ArrayList<>();
     public static final List<MaterialFlag> NOR = new ArrayList<>();
+    public static final List<MaterialFlag> DIMENSION = new ArrayList<>();
 
     static {
         ONTEA.addAll(EXT2_METAL);
@@ -25,6 +26,9 @@ public class NTMaterials {
         NONTM.addAll(Arrays.asList(NO_UNIFICATION, EXCLUDE_BLOCK_CRAFTING_RECIPES));
 
         NOR.addAll(Arrays.asList(NO_UNIFICATION, DISABLE_DECOMPOSITION));
+
+        DIMENSION.addAll(NONTM);
+        DIMENSION.addAll(Arrays.asList(GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROTOR, GENERATE_ROUND, GENERATE_FINE_WIRE, GENERATE_RING));
     }
 
     //材料
