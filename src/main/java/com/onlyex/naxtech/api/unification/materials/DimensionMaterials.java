@@ -39,7 +39,7 @@ public class DimensionMaterials {
                 .element(NTElements.If)
                 .build();
 
-        CosmicNeutronium = new Material.Builder(getMaterialsId(), gregtechId("cosmic_neutronium"))
+        CosmicNeutronium = new Material.Builder(getMaterialsId(), gregtechId("cosmic_neutronium"))//TODO 方块 流体 材质
                 .ingot().fluid(FluidTypes.LIQUID)
                 .element(NTElements.CoNe)
                 .iconSet(CUSTOM_CN)
