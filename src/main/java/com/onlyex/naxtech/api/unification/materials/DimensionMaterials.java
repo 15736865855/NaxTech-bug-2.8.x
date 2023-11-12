@@ -70,7 +70,7 @@ public class DimensionMaterials {
                 .element(NTElements.MaCoStMa)
                 .build();
 
-        DraconiumChaotic = new Material.Builder(getMaterialsId(),gregtechId("draconium_awakened"))
+        DraconiumChaotic = new Material.Builder(getMaterialsId(),gregtechId("draconium_chaotic"))
                 .ingot(10).fluid()
                 .color(0x2C195A).iconSet(METALLIC)
                 .flags(NONTM)
