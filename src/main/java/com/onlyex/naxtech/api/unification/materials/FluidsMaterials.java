@@ -3,6 +3,7 @@ package com.onlyex.naxtech.api.unification.materials;
 import com.onlyex.naxtech.api.unification.NTElements;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
+import net.minecraft.util.text.TextFormatting;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -82,11 +83,13 @@ public class FluidsMaterials {
 
         TemporalFluid = new Material.Builder(getMaterialsId(), gregtechId("temporal_fluid"))
                 .fluid(FluidTypes.LIQUID)
-                .build();
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED  + "a"  + TextFormatting.RESET + "§et" + TextFormatting.OBFUSCATED  + "a", false);
 
         SpatialFluid = new Material.Builder(getMaterialsId(), gregtechId("spatial_fluid"))
                 .fluid(FluidTypes.LIQUID)
-                .build();
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED  + "a" + TextFormatting.RESET + "§eh" + TextFormatting.OBFUSCATED + "a", false);
 
         Rawstarmatter = new Material.Builder(getMaterialsId(), gregtechId("rawstarmatter"))
                 .fluid(FluidTypes.LIQUID)
@@ -94,55 +97,56 @@ public class FluidsMaterials {
 
         PrimordialMatter = new Material.Builder(getMaterialsId(), gregtechId("primordial_matter"))
                 .fluid(FluidTypes.LIQUID)
-                .build();
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 
         DimensionallyTranscendentResidue = new Material.Builder(getMaterialsId(), gregtechId("dimensionally_transcendent_residue"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .build();
 
         DimensionallyTranscendentCrudecatalyst = new Material.Builder(getMaterialsId(), gregtechId("dimensionally_transcendent_crudecatalyst"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .color(0x0F1616)
                 .build();
 
         DimensionallyTranscendentProsaiccatalyst = new Material.Builder(getMaterialsId(), gregtechId("dimensionally_transcendent_prosaiccatalyst"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .color(0x0F1616)
                 .build();
 
         DimensionallyTranscendentResplendentcatalyst = new Material.Builder(getMaterialsId(), gregtechId("dimensionally_transcendent_resplendentcatalyst"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .color(0x0F1616)
                 .build();
 
         DimensionallyTranscendentExoticcatalyst = new Material.Builder(getMaterialsId(), gregtechId("dimensionally_transcendent_exoticcatalyst"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .color(0x0F1616)
                 .build();
 
         DimensionallyTranscendentStellarcatalyst = new Material.Builder(getMaterialsId(), gregtechId("dimensionally_transcendent_stellarcatalyst"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .color(0x0F1616)
                 .build();
 
         ExciteddtCC = new Material.Builder(getMaterialsId(), gregtechId("exciteddt_cc"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .build();
 
         ExciteddtPC = new Material.Builder(getMaterialsId(), gregtechId("exciteddt_pc"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .build();
 
         ExciteddtRC = new Material.Builder(getMaterialsId(), gregtechId("exciteddt_rc"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .build();
 
         ExciteddtEC = new Material.Builder(getMaterialsId(), gregtechId("exciteddt_ec"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .build();
 
         ExciteddtSC = new Material.Builder(getMaterialsId(), gregtechId("exciteddt_sc"))
-                .fluid(FluidTypes.PLASMA)
+                .fluid(FluidTypes.LIQUID)
                 .build();
     }
     private static int getMaterialsId() {

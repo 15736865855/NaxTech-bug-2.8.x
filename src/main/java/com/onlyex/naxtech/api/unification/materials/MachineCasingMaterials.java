@@ -9,6 +9,7 @@ import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialFlags.GENERATE_FRAME;
+import static gregtech.api.unification.material.info.MaterialIconSet.OPAL;
 import static gregtech.api.unification.material.info.MaterialIconSet.SHINY;
 import static gregtech.api.util.GTUtility.gregtechId;
 
@@ -25,6 +26,14 @@ public class MachineCasingMaterials {
                 .blastTemp(5000, BlastProperty.GasTier.HIGHER, VA[IV], 200)
                 .components(Niobium, 2, Chrome, 9, Aluminium, 5, Titanium, 2, Cobalt, 10, Tungsten, 13, Nickel, 18)
                 .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        Celestite = new Material.Builder(getMaterialsId(), gregtechId("celestite"))
+                .gem()
+                .color(0x4AE3E6)
+                .iconSet(OPAL)
+                .components(Strontium, 1, Sulfur, 1, Oxygen, 4)
+                .flags(CRYSTALLIZABLE, DISABLE_DECOMPOSITION, GENERATE_LENS)
                 .build();
 
     }

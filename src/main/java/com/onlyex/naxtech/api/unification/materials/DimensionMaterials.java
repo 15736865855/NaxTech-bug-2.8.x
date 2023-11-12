@@ -3,9 +3,11 @@ package com.onlyex.naxtech.api.unification.materials;
 import com.onlyex.naxtech.api.unification.NTElements;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.ToolProperty;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 import static com.onlyex.naxtech.api.unification.info.NTMaterialIconSet.*;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
@@ -33,16 +35,16 @@ public class DimensionMaterials {
                 .build();
 
         Infinity = new Material.Builder(getMaterialsId(), gregtechId("infinity"))
-                .ingot().fluid(FluidTypes.LIQUID)
+                .ingot().fluid(FluidTypes.LIQUID, true)
                 .iconSet(CUSTOM_IF)
                 .flags(DIMENSION)
                 .element(NTElements.If)
                 .build();
 
         CosmicNeutronium = new Material.Builder(getMaterialsId(), gregtechId("cosmic_neutronium"))//TODO 方块 流体 材质
-                .ingot().fluid(FluidTypes.LIQUID)
+                .ingot().fluid(FluidTypes.LIQUID, true)
                 .element(NTElements.CoNe)
-                .iconSet(CUSTOM_CN)
+                .color(0x323232).iconSet(CUSTOM_CN)
                 .flags(DIMENSION)
                 .build();
 
@@ -63,7 +65,7 @@ public class DimensionMaterials {
         MagnetohydrodynamicallyConstrainedStarMatter = new Material.Builder(getMaterialsId(), gregtechId("magneto_hydrodynamically_constrained_star_matter"))
                 .ingot().fluid(FluidTypes.LIQUID)
                 .iconSet(CUSTOM_MHCSM)
-                .flags(NONTM, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROTOR, GENERATE_ROUND, GENERATE_RING)
+                .flags(NONTM, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_RING)
                 .element(NTElements.MaCoStMa)
                 .build();
 
@@ -119,9 +121,10 @@ public class DimensionMaterials {
                 .build();
 
         Rhugnor = new Material.Builder(getMaterialsId(), gregtechId("rhugnor"))
-                .ingot().fluid()
-                .color(0xA80000).iconSet(METALLIC)
-                .flags(NONTM)
+                .fluid()
+                .color(0xBE00FF).iconSet(METALLIC)
+                .fluidTemp((int) (V[UIV] - V[UV]))
+                .element(NTElements.Rhugnor)
                 .build();
 
         Universium = new Material.Builder(getMaterialsId(), gregtechId("universium"))
@@ -135,8 +138,22 @@ public class DimensionMaterials {
                 .setFormula("(CuAu₄)(AuMa*)(CuAu₄ZnCu₃(Fe₅₀C)₂(NiAuAgCu₃(Fe₅₀C)₃)₄)(Ag₂FeMa)((CuAg₄)(Nq₂KeC)(Sn₉Sb)(CuAg₄BiZnCu₃(Fe₅₀C)₂(NiAuAgCu₃(Fe₅₀C)₃)₄)", true);
 
         Hypogen = new Material.Builder(getMaterialsId(), gregtechId("hypogen"))
+                .ingot()
+                .fluid()
+                .plasma()
+                .fluidTemp((int) (V[UXV] - V[LuV]))
+                .element(NTElements.Hypogen)
+                .color(0xDC784B)
+                .iconSet(CUSTOM_HYPOGEN)
+                .toolStats(ToolProperty.Builder.of(20.0F, 200.0F, 2000000, 200).unbreakable().enchantability(33).magnetic().build())
+                .flags(GENERATE_PLATE, NO_UNIFICATION)
+                .build();
+
+        TranscendentMetal = new Material.Builder(getMaterialsId(), gregtechId("transcendent_metal"))
+                .fluid(FluidTypes.LIQUID, true)
                 .iconSet(METALLIC)
                 .build();
+
     }
 
     private static int getMaterialsId() {

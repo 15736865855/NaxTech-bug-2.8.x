@@ -36,6 +36,7 @@ public class NTMetaFluids {
         MetaFluids.setMaterialFluidTexture(NTMaterials.SpatialFluid, FluidTypes.LIQUID);
         MetaFluids.setMaterialFluidTexture(NTMaterials.Rawstarmatter, FluidTypes.LIQUID);
         MetaFluids.setMaterialFluidTexture(NTMaterials.PrimordialMatter, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.TranscendentMetal, FluidTypes.LIQUID);
 
 
         MetaFluids.setMaterialFluidTexture(NTMaterials.DimensionallyTranscendentResidue, FluidTypes.LIQUID);

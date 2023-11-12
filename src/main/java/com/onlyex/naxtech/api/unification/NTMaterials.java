@@ -53,8 +53,8 @@ public class NTMaterials {
     public static Material ElectrumFlux;
     public static Material Hypogen;
     public static Material MARM200Steel;
-    //public static Material ;
-    //public static Material ;
+    public static Material TranscendentMetal;
+    public static Material Celestite;
     //public static Material ;
     //public static Material ;
     //public static Material ;

@@ -1,6 +1,7 @@
 package com.onlyex.naxtech.api.unification;
 
 import gregtech.api.unification.Element;
+import gregtech.api.unification.Elements;
 
 import static gregtech.api.unification.Elements.add;
 
@@ -16,5 +17,7 @@ public class NTElements {
     public static final Element Un = add(-1, -1, -1, null, "universium", "⊙", false);
     public static final Element MuIiSo = add(-1, -1, -1, null, "mutated_iiving_solder", "?Sn?Bi?", false);
     public static final Element CyPo = add(-1, -1, -1, null, "cyanoacrylate_polymer", "(-C₆H₇NO₂-)n", false);
+    public static final Element Rhugnor = add(8750, 14757, -1, null, "rhugnor", "Fs⚶", false);
+    public static final Element Hypogen = add(11255, 19377, -1, null, "hypogen", "Hy⚶", false);
     //public static final Element  = add(-1, -1, -1, null, "", "", false);
 }
