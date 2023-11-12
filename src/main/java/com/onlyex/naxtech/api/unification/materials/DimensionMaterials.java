@@ -4,6 +4,7 @@ import com.onlyex.naxtech.api.unification.NTElements;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
@@ -26,13 +27,14 @@ public class DimensionMaterials {
                 .ingot(11).fluid()
                 .color(0x000000).iconSet(METALLIC)
                 .flags(NONTM)
-                .fluidTemp(0)
+                .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
 
         WhitedWarfMatter = new Material.Builder(getMaterialsId(), gregtechId("whited_warf_matter"))
                 .ingot().fluid(FluidTypes.LIQUID)
                 .iconSet(CUSTOM_WWM)
                 .flags(DIMENSION)
+                .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
 
         Infinity = new Material.Builder(getMaterialsId(), gregtechId("infinity"))
@@ -40,6 +42,7 @@ public class DimensionMaterials {
                 .iconSet(CUSTOM_IF)
                 .flags(DIMENSION)
                 .element(NTElements.If)
+                .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
 
         CosmicNeutronium = new Material.Builder(getMaterialsId(), gregtechId("cosmic_neutronium"))//TODO 方块 流体 材质
@@ -47,6 +50,7 @@ public class DimensionMaterials {
                 .element(NTElements.CoNe)
                 .color(0x323232).iconSet(CUSTOM_CN)
                 .flags(DIMENSION)
+                .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
 
         Spacetime = new Material.Builder(getMaterialsId(), gregtechId("spacetime"))
@@ -54,6 +58,7 @@ public class DimensionMaterials {
                 .iconSet(CUSTOM_SPACETIME)
                 .flags(DIMENSION)
                 .element(NTElements.SpTi)
+                .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
 
         Eternity = new Material.Builder(getMaterialsId(), gregtechId("eternity"))
@@ -61,6 +66,7 @@ public class DimensionMaterials {
                 .iconSet(CUSTOM_ETERNITY)
                 .flags(DIMENSION)
                 .element(NTElements.Et)
+                .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
 
         MagnetohydrodynamicallyConstrainedStarMatter = new Material.Builder(getMaterialsId(), gregtechId("magneto_hydrodynamically_constrained_star_matter"))
@@ -68,30 +74,31 @@ public class DimensionMaterials {
                 .iconSet(CUSTOM_MHCSM)
                 .flags(NONTM, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_RING)
                 .element(NTElements.MaCoStMa)
+                .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
 
         DraconiumChaotic = new Material.Builder(getMaterialsId(),gregtechId("draconium_chaotic"))
                 .ingot(10).fluid()
                 .color(0x2C195A).iconSet(METALLIC)
                 .flags(NONTM)
-                .fluidTemp(9430)
                 .element(NTElements.ChaoticDraconium)
+                .blastTemp(9430, BlastProperty.GasTier.HIGH)
                 .build();
 
         DraconiumAwakened = new Material.Builder(getMaterialsId(),gregtechId("draconium_awakened"))
                 .ingot(9).fluid()
                 .color(0xFFA157).iconSet(METALLIC)
                 .flags(NONTM)
-                .fluidTemp(8460)
                 .element(NTElements.AwakenedDraconium)
+                .blastTemp(8460, BlastProperty.GasTier.HIGH)
                 .build();
 
         Draconium = new Material.Builder(getMaterialsId(),gregtechId("draconium"))
                 .ingot(8).fluid()
                 .color(0x6200e7).iconSet(METALLIC)
                 .flags(NONTM)
-                .fluidTemp(7250)
                 .element(NTElements.Draconium)
+                .blastTemp(7250, BlastProperty.GasTier.HIGH)
                 .build();
 
         Lumium = new Material.Builder(getMaterialsId(), gregtechId("lumium"))

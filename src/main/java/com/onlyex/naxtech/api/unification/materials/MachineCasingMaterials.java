@@ -24,7 +24,7 @@ public class MachineCasingMaterials {
                 .iconSet(SHINY)
                 .blastTemp(5000, BlastProperty.GasTier.HIGHER, VA[IV], 200)
                 .components(Niobium, 2, Chrome, 9, Aluminium, 5, Titanium, 2, Cobalt, 10, Tungsten, 13, Nickel, 18)
-                .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_FRAME, NO_UNIFICATION)
                 .build();
 
         Celestite = new Material.Builder(getMaterialsId(), gregtechId("celestite"))
@@ -32,7 +32,7 @@ public class MachineCasingMaterials {
                 .color(0x4AE3E6)
                 .iconSet(OPAL)
                 .components(Strontium, 1, Sulfur, 1, Oxygen, 4)
-                .flags(CRYSTALLIZABLE, DISABLE_DECOMPOSITION, GENERATE_LENS)
+                .flags(CRYSTALLIZABLE, DISABLE_DECOMPOSITION, GENERATE_LENS, NO_UNIFICATION)
                 .build();
 
         Vibranium = new Material.Builder(getMaterialsId(), gregtechId("vibranium"))
@@ -41,7 +41,7 @@ public class MachineCasingMaterials {
                 .plasma()
                 .color(0xC880FF)
                 .iconSet(SHINY)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE, GENERATE_FRAME, NO_UNIFICATION)
                 .element(NTElements.Vibranium)
                 .blastTemp(4852, BlastProperty.GasTier.HIGH)
                 .build();
@@ -52,7 +52,7 @@ public class MachineCasingMaterials {
                 .plasma()
                 .color(0xFF0040)
                 .iconSet(METALLIC)
-                .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_SPRING, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_SPRING, GENERATE_DOUBLE_PLATE, NO_UNIFICATION)
                 .element(NTElements.Adamantium)
                 .blastTemp(5225, BlastProperty.GasTier.HIGH)
                 .cableProperties(VA[UHV], 18, 9, false)
@@ -64,7 +64,7 @@ public class MachineCasingMaterials {
                 .color(0x72A0C1)
                 .iconSet(METALLIC)
                 .element(NTElements.Orichalcum)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, NO_UNIFICATION)
                 .blastTemp(9000, BlastProperty.GasTier.HIGH)
                 .build();
 
