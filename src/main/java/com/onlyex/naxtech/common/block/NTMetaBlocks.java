@@ -10,8 +10,6 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.Objects;
-
 public class NTMetaBlocks {
     public static BlockDimensionWireCoil BLOCK_DIMENSION_WIRE_COIL;//线圈
     public static BlockGlassCasing GLASS_CASING;//强化硅酸盐硼玻璃
