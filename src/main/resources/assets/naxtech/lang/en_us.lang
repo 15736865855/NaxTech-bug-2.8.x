@@ -527,8 +527,21 @@ gregtech.material.trichloroacetic_acid=Trichloroacetic Acid
 gregtech.material.dichloroacetic_acid=Dichloroacetic Acid
 gregtech.material.chloroacetic_acid=Chloroacetic Acid
 gregtech.material.acetic_anhydride=Acetic Anhydride
-
-
+gregtech.material.temporal_fluid=Tachyon Rich Temporal Fluid
+gregtech.spatial_fluid=Spatially Enlarged Fluid
+gregtech.rawstarmatter=Condensed Raw Stellar Plasma Mixture
+gregtech.primordial_matter=Liquid Primordial Matter
+gregtech.dimensionally_transcendent_crudecatalyst=Dimensionally Transcendent Crude Catalyst
+gregtech.dimensionally_transcendent_exoticcatalyst=Dimensionally Transcendent Exotic Catalyst
+gregtech.dimensionally_transcendent_prosaiccatalyst=Dimensionally Transcendent Prosaic Catalyst
+gregtech.dimensionally_transcendent_residue=Dimensionally Transcendent Residue
+gregtech.dimensionally_transcendent_resplendentcatalyst=Dimensionally Transcendent Resplendent Catalyst
+gregtech.dimensionally_transcendent_stellarcatalyst=Dimensionally Transcendent Stellar Catalyst
+gregtech.exciteddt_cc=Excited Dimensionally Transcendent Crude Catalyst
+gregtech.exciteddt_ec=Excited Dimensionally Transcendent Exotic Catalyst
+gregtech.exciteddt_pc=Excited Dimensionally Transcendent Prosaic Catalyst
+gregtech.exciteddt_rc=Excited Dimensionally Transcendent Resplendent Catalyst
+gregtech.exciteddt_sc=Excited Dimensionally Transcendent Stellar Catalyst
 
 #Coil Block
 tile.wire_coil.naquadah_alloy.name=Naquadah Alloy Coil Block

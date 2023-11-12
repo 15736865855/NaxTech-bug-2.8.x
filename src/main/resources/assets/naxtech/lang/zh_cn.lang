@@ -541,9 +541,21 @@ gregtech.material.trichloroacetic_acid=三氯乙酸
 gregtech.material.dichloroacetic_acid=二氯乙酸
 gregtech.material.chloroacetic_acid=一氯乙酸
 gregtech.material.acetic_anhydride=乙酸酐
-#gregtech.material.=
-
-
+gregtech.material.temporal_fluid=富快子时间流体
+gregtech.spatial_fluid=扩大化空间流体
+gregtech.rawstarmatter=浓缩原始恒星等离子体混合物
+gregtech.primordial_matter=流体本源物质
+gregtech.dimensionally_transcendent_residue=超维度残留
+gregtech.dimensionally_transcendent_crudecatalyst=粗制超维度催化剂
+gregtech.dimensionally_transcendent_prosaiccatalyst=平凡超维度催化剂
+gregtech.dimensionally_transcendent_resplendentcatalyst=光辉超维度催化剂
+gregtech.dimensionally_transcendent_exoticcatalyst=异星超维度催化剂
+gregtech.dimensionally_transcendent_stellarcatalyst=恒星超维度催化剂
+gregtech.exciteddt_cc=激发的粗制超维度催化剂
+gregtech.exciteddt_pc=激发的平凡超维度催化剂
+gregtech.exciteddt_rc=激发的光辉超维度催化剂
+gregtech.exciteddt_ec=激发的异星超维度催化剂
+gregtech.exciteddt_sc=激发的恒星超维度催化剂
 #Coil Block
 tile.wire_coil.naquadah_alloy.name=硅岩合金线圈方块
 tile.wire_coil.electrum_flux.name=通流琥珀金线圈方块

@@ -1,8 +1,6 @@
 package com.onlyex.naxtech.api.unification;
 
-import com.onlyex.naxtech.api.unification.materials.MachineCasingMaterials;
-import com.onlyex.naxtech.api.unification.materials.NTDimensionMaterials;
-import com.onlyex.naxtech.api.unification.materials.NTFluid;
+import com.onlyex.naxtech.api.unification.materials.*;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
 
@@ -73,6 +71,21 @@ public class NTMaterials {
     public static Material DichloroaceticAcid;
     public static Material ChloroaceticAcid;
     public static Material AceticAnhydride;
+    public static Material TemporalFluid;
+    public static Material SpatialFluid;
+    public static Material Rawstarmatter;
+    public static Material PrimordialMatter;
+    public static Material DimensionallyTranscendentResidue;
+    public static Material DimensionallyTranscendentCrudecatalyst;
+    public static Material DimensionallyTranscendentProsaiccatalyst;
+    public static Material DimensionallyTranscendentResplendentcatalyst;
+    public static Material DimensionallyTranscendentExoticcatalyst;
+    public static Material DimensionallyTranscendentStellarcatalyst;
+    public static Material ExciteddtCC;
+    public static Material ExciteddtPC;
+    public static Material ExciteddtRC;
+    public static Material ExciteddtEC;
+    public static Material ExciteddtSC;
     //public static Material ;
     //public static Material ;
     //public static Material ;
@@ -83,17 +96,23 @@ public class NTMaterials {
     //public static Material ;
     //public static Material ;
     //public static Material ;
-
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
 
 
     public NTMaterials() {}
     public static void initregister() {
         // 24000-25000
-        NTDimensionMaterials.register();
+        DimensionMaterials.register();
         // 25001-26000
-        NTFluid.register();
+        FluidsMaterials.register();
         //26001-27000
         MachineCasingMaterials.register();
+        //27001-28000
+        DustMaterials.register();
 
     }
 }

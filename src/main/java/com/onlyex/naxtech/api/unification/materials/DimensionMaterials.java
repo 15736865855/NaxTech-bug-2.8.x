@@ -11,7 +11,7 @@ import static gregtech.api.util.GTUtility.gregtechId;
 
 
 //24000-25000
-public class NTDimensionMaterials {
+public class DimensionMaterials {
     private static int startId = 24001;
     private static final int END_ID = startId + 1000;
 

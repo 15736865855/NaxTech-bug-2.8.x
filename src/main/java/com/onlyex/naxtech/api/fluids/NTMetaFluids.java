@@ -32,5 +32,18 @@ public class NTMetaFluids {
         MetaFluids.setMaterialFluidTexture(NTMaterials.Spacetime, FluidTypes.LIQUID);
         MetaFluids.setMaterialFluidTexture(NTMaterials.Eternity, FluidTypes.LIQUID);
         MetaFluids.setMaterialFluidTexture(NTMaterials.MagnetohydrodynamicallyConstrainedStarMatter, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.TemporalFluid, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.SpatialFluid, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.Rawstarmatter, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.PrimordialMatter, FluidTypes.LIQUID);
+
+
+        MetaFluids.setMaterialFluidTexture(NTMaterials.DimensionallyTranscendentResidue, FluidTypes.PLASMA);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtCC, FluidTypes.PLASMA);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtPC, FluidTypes.PLASMA);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtRC, FluidTypes.PLASMA);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtEC, FluidTypes.PLASMA);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtSC, FluidTypes.PLASMA);
+
     }
 }
