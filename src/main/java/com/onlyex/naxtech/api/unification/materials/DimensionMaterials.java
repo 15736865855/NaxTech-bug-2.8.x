@@ -5,7 +5,8 @@ import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.METALLIC;
+import static com.onlyex.naxtech.api.unification.info.NTMaterialIconSet.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 
 
@@ -25,35 +26,43 @@ public class DimensionMaterials {
                 .build();
 
         WhitedWarfMatter = new Material.Builder(getMaterialsId(), gregtechId("whited_warf_matter"))
-                .fluid(FluidTypes.LIQUID)
-                .iconSet(METALLIC)
+                .ingot().fluid(FluidTypes.LIQUID)
+                .iconSet(CUSTOM_WWM)
+                .flags(NONTM)
                 .build();
 
         Infinity = new Material.Builder(getMaterialsId(), gregtechId("infinity"))
-                .fluid(FluidTypes.LIQUID)
-                .iconSet(METALLIC)
+                .ingot().fluid(FluidTypes.LIQUID)
+                .iconSet(CUSTOM_IF)
+                .flags(NONTM)
                 .element(NTElements.If)
                 .build();
 
         CosmicNeutronium = new Material.Builder(getMaterialsId(), gregtechId("cosmic_neutronium"))
+                .ingot().fluid(FluidTypes.LIQUID)
                 .element(NTElements.CoNe)
+                .iconSet(CUSTOM_CN)
+                .flags(NONTM)
                 .build();
 
         Spacetime = new Material.Builder(getMaterialsId(), gregtechId("spacetime"))
-                .fluid(FluidTypes.LIQUID)
-                .iconSet(METALLIC)
+                .ingot().fluid(FluidTypes.LIQUID)
+                .iconSet(CUSTOM_SPACETIME)
+                .flags(NONTM)
                 .element(NTElements.SpTi)
                 .build();
 
         Eternity = new Material.Builder(getMaterialsId(), gregtechId("eternity"))
-                .fluid(FluidTypes.LIQUID)
-                .iconSet(METALLIC)
+                .ingot().fluid(FluidTypes.LIQUID)
+                .iconSet(CUSTOM_ETERNITY)
+                .flags(NONTM)
                 .element(NTElements.Et)
                 .build();
 
-        MagnetohydrodynamicallyConstrainedStarMatter = new Material.Builder(getMaterialsId(), gregtechId("magnetohydrodynamically_constrained_star_matter"))
-                .fluid(FluidTypes.LIQUID)
-                .iconSet(METALLIC)
+        MagnetohydrodynamicallyConstrainedStarMatter = new Material.Builder(getMaterialsId(), gregtechId("magneto_hydrodynamically_constrained_star_matter"))
+                .ingot().fluid(FluidTypes.LIQUID)
+                .iconSet(CUSTOM_MHCSM)
+                .flags(NONTM)
                 .element(NTElements.MaCoStMa)
                 .build();
 

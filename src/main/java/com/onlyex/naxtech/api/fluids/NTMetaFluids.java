@@ -38,12 +38,12 @@ public class NTMetaFluids {
         MetaFluids.setMaterialFluidTexture(NTMaterials.PrimordialMatter, FluidTypes.LIQUID);
 
 
-        MetaFluids.setMaterialFluidTexture(NTMaterials.DimensionallyTranscendentResidue, FluidTypes.PLASMA);
-        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtCC, FluidTypes.PLASMA);
-        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtPC, FluidTypes.PLASMA);
-        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtRC, FluidTypes.PLASMA);
-        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtEC, FluidTypes.PLASMA);
-        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtSC, FluidTypes.PLASMA);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.DimensionallyTranscendentResidue, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtCC, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtPC, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtRC, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtEC, FluidTypes.LIQUID);
+        MetaFluids.setMaterialFluidTexture(NTMaterials.ExciteddtSC, FluidTypes.LIQUID);
 
     }
 }

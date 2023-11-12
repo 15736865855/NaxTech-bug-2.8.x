@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "naxtech:items/materials/magnetohydrodynamicallyconstrainedstarmatter/dust_small",
-    "layer1": "naxtech:items/materials/magnetohydrodynamicallyconstrainedstarmatter/dust_small_overlay"
-  }
-}

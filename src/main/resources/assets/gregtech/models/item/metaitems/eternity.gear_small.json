@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "naxtech:items/materials/eternity/gear_small",
-    "layer1": "naxtech:items/materials/eternity/gear_small_overlay"
-  }
-}

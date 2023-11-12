@@ -13,9 +13,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Objects;
 
 public class NTMetaBlocks {
-
-    public static BlockDimension DIMENSION;
-    public static BlockDimensionFrame DIMENSION_FRAME;
     public static BlockDimensionWireCoil BLOCK_DIMENSION_WIRE_COIL;//线圈
     public static BlockGlassCasing GLASS_CASING;//强化硅酸盐硼玻璃
     public static BlockControlCasing CONTROL_CASING;//控制外壳
@@ -27,10 +24,6 @@ public class NTMetaBlocks {
 
     private NTMetaBlocks() {}
     public static void init() {
-        DIMENSION = new BlockDimension();
-        DIMENSION.setRegistryName("block");
-        DIMENSION_FRAME = new BlockDimensionFrame();
-        DIMENSION_FRAME.setRegistryName("frame");
         BLOCK_DIMENSION_WIRE_COIL = new BlockDimensionWireCoil();
         BLOCK_DIMENSION_WIRE_COIL.setRegistryName("wire_coil");
         GLASS_CASING = new BlockGlassCasing();
@@ -51,8 +44,6 @@ public class NTMetaBlocks {
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
-        registerItemModel(DIMENSION);
-        registerItemModel(DIMENSION_FRAME);
         registerItemModel(CONTROL_CASING);
         registerItemModel(MACHINE_CASING);
         registerItemModel(PACKAGING_LINE);
