@@ -2,6 +2,7 @@ package com.onlyex.naxtech.api.unification.materials;
 
 import com.onlyex.naxtech.api.unification.NTElements;
 import gregtech.api.fluids.fluidType.FluidTypes;
+import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.ToolProperty;
 
@@ -153,6 +154,17 @@ public class DimensionMaterials {
                 .fluid(FluidTypes.LIQUID, true)
                 .iconSet(METALLIC)
                 .build();
+
+        DegenerateRhenium = new Material.Builder(getMaterialsId(), gregtechId("degenerate_rhenium"))
+                .dust()
+                .fluid(FluidTypes.PLASMA)
+                .fluidTemp((int) V[UV])
+                .color(0x6666FF)
+                .iconSet(CUSTOM_DEGENERATE_RHENIUM)
+                .element(Elements.Rh)
+                .flags(GENERATE_PLATE, NO_UNIFICATION)
+                .build()
+                .setFormula("§cR§de", false);
 
     }
 

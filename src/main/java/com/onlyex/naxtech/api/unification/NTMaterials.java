@@ -55,7 +55,7 @@ public class NTMaterials {
     public static Material MARM200Steel;
     public static Material TranscendentMetal;
     public static Material Celestite;
-    //public static Material ;
+    public static Material DegenerateRhenium;
     //public static Material ;
     //public static Material ;
     //public static Material ;
