@@ -1,16 +1,15 @@
 package com.onlyex.naxtech.api.unification.materials;
 
+import com.onlyex.naxtech.api.unification.NTElements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
-import static gregtech.api.GTValues.IV;
-import static gregtech.api.GTValues.VA;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialFlags.GENERATE_FRAME;
-import static gregtech.api.unification.material.info.MaterialIconSet.OPAL;
-import static gregtech.api.unification.material.info.MaterialIconSet.SHINY;
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 
 public class MachineCasingMaterials {
@@ -35,6 +34,40 @@ public class MachineCasingMaterials {
                 .components(Strontium, 1, Sulfur, 1, Oxygen, 4)
                 .flags(CRYSTALLIZABLE, DISABLE_DECOMPOSITION, GENERATE_LENS)
                 .build();
+
+        Vibranium = new Material.Builder(getMaterialsId(), gregtechId("vibranium"))
+                .ingot()
+                .fluid()
+                .plasma()
+                .color(0xC880FF)
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE, GENERATE_FRAME)
+                .element(NTElements.Vibranium)
+                .blastTemp(4852, BlastProperty.GasTier.HIGH)
+                .build();
+
+        Adamantium = new Material.Builder(getMaterialsId(), gregtechId("adamantium"))
+                .ingot()
+                .fluid()
+                .plasma()
+                .color(0xFF0040)
+                .iconSet(METALLIC)
+                .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_SPRING, GENERATE_DOUBLE_PLATE)
+                .element(NTElements.Adamantium)
+                .blastTemp(5225, BlastProperty.GasTier.HIGH)
+                .cableProperties(VA[UHV], 18, 9, false)
+                .build();
+
+        Orichalcum = new Material.Builder(getMaterialsId(), gregtechId("orichalcum"))
+                .ingot()
+                .fluid()
+                .color(0x72A0C1)
+                .iconSet(METALLIC)
+                .element(NTElements.Orichalcum)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
+                .blastTemp(9000, BlastProperty.GasTier.HIGH)
+                .build();
+
 
     }
 

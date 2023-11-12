@@ -7,6 +7,7 @@ import net.minecraft.util.text.TextFormatting;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.DULL;
 import static gregtech.api.unification.material.info.MaterialIconSet.METALLIC;
 import static gregtech.api.util.GTUtility.gregtechId;
 
@@ -148,6 +149,25 @@ public class FluidsMaterials {
         ExciteddtSC = new Material.Builder(getMaterialsId(), gregtechId("exciteddt_sc"))
                 .fluid(FluidTypes.LIQUID)
                 .build();
+
+        DragonBreath = new Material.Builder(getMaterialsId(), gregtechId("dragon_breath"))
+                .fluid(FluidTypes.ACID)
+                .color(0x9400D3)
+                .build()
+                .setFormula("Dr?", false);
+
+        ConcentrateDragonBreath = new Material.Builder(getMaterialsId(), gregtechId("concentrate_dragon_breath"))
+                .fluid(FluidTypes.ACID)
+                .color(0x9400D3)
+                .build()
+                .setFormula("Dr2?", true);
+
+        DragonBlood = new Material.Builder(getMaterialsId(), gregtechId("dragon_blood"))
+                .fluid()
+                .color(0xDC2814)
+                .iconSet(DULL)
+                .build()
+                .setFormula("*Dr*Rn?", true);
     }
     private static int getMaterialsId() {
         if (startId < END_ID) {

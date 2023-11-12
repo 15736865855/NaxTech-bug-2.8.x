@@ -70,11 +70,20 @@ public class DimensionMaterials {
                 .element(NTElements.MaCoStMa)
                 .build();
 
+        DraconiumChaotic = new Material.Builder(getMaterialsId(),gregtechId("draconium_awakened"))
+                .ingot(10).fluid()
+                .color(0x2C195A).iconSet(METALLIC)
+                .flags(NONTM)
+                .fluidTemp(9430)
+                .element(NTElements.ChaoticDraconium)
+                .build();
+
         DraconiumAwakened = new Material.Builder(getMaterialsId(),gregtechId("draconium_awakened"))
                 .ingot(9).fluid()
                 .color(0xFFA157).iconSet(METALLIC)
                 .flags(NONTM)
                 .fluidTemp(8460)
+                .element(NTElements.AwakenedDraconium)
                 .build();
 
         Draconium = new Material.Builder(getMaterialsId(),gregtechId("draconium"))
@@ -82,6 +91,7 @@ public class DimensionMaterials {
                 .color(0x6200e7).iconSet(METALLIC)
                 .flags(NONTM)
                 .fluidTemp(7250)
+                .element(NTElements.Draconium)
                 .build();
 
         Lumium = new Material.Builder(getMaterialsId(), gregtechId("lumium"))

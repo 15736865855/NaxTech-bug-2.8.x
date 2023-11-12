@@ -508,7 +508,10 @@ gregtech.material.electrum_flux=electrum flux
 gregtech.material.hypogen=Hypogen
 gregtech.material.transcendent_metal=transcendent_metal
 gregtech.material.degenerate_rhenium=
-
+gregtech.material.chaotic_draconium=
+gregtech.material.orichalcum=
+gregtech.material.vibranium=
+gregtech.material.adamantium=
 
 gregtech.material.mar_m_200_steel=
 
@@ -544,6 +547,10 @@ gregtech.material.exciteddt_ec=Excited Dimensionally Transcendent Exotic Catalys
 gregtech.material.exciteddt_pc=Excited Dimensionally Transcendent Prosaic Catalyst
 gregtech.material.exciteddt_rc=Excited Dimensionally Transcendent Resplendent Catalyst
 gregtech.material.exciteddt_sc=Excited Dimensionally Transcendent Stellar Catalyst
+gregtech.material.dragon_breath=
+gregtech.material.concentrate_dragon_breath=
+gregtech.material.dragon_blood=
+
 #Coil Block
 tile.wire_coil.naquadah_alloy.name=Naquadah Alloy Coil Block
 tile.wire_coil.electrum_flux.name=Electrum Flux Coil Block
