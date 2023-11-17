@@ -222,23 +222,23 @@ metaitem.wrap.nand_memory_chip.name=封装NAND
 metaitem.wrap.nand_memory_chip.tooltip=与非逻辑门
 metaitem.wrap.nor_memory_chip.name=封装NOR
 metaitem.wrap.nor_memory_chip.tooltip=或非逻辑门
-metaitem.wrap.ultra_low_power_integrated_circuit.name=封装ULPIC
-metaitem.wrap.ultra_low_power_integrated_circuit.tooltip=超低功率集成电路
-metaitem.wrap.low_power_integrated_circuit.name=封装LPIC
-metaitem.wrap.low_power_integrated_circuit.tooltip=低功率集成电路
-metaitem.wrap.power_integrated_circuit.name=封装PIC
-metaitem.wrap.power_integrated_circuit.tooltip=功率集成电路
-metaitem.wrap.high_power_integrated_circuit.name=封装HPIC
-metaitem.wrap.high_power_integrated_circuit.tooltip=高功率集成电路
-metaitem.wrap.ultra_high_power_integrated_circuit.name=封装UHPIC
-metaitem.wrap.ultra_high_power_integrated_circuit.tooltip=超高功率集成电路
+metaitem.wrap.ultra_low_pic.name=封装ULPIC
+metaitem.wrap.ultra_low_pic.tooltip=超低功率集成电路
+metaitem.wrap.low_pic.name=封装LPIC
+metaitem.wrap.low_pic.tooltip=低功率集成电路
+metaitem.wrap.pic.name=封装PIC
+metaitem.wrap.pic.tooltip=功率集成电路
+metaitem.wrap.high_pic.name=封装HPIC
+metaitem.wrap.high_pic.tooltip=高功率集成电路
+metaitem.wrap.ultra_high_pic.name=封装UHPIC
+metaitem.wrap.ultra_high_pic.tooltip=超高功率集成电路
 
-metaitem.wrap.nano_power_integrated_circuit.name=封装NPIC
-metaitem.wrap.nano_power_integrated_circuit.tooltip=纳米功率集成电路
-metaitem.wrap.pico_power_integrated_circuit.name=封装PPIC
-metaitem.wrap.pico_power_integrated_circuit.tooltip=微微功率集成电路
-metaitem.wrap.femto_power_integrated_circuit.name=封装FPIC
-metaitem.wrap.femto_power_integrated_circuit.tooltip=毫微微功率集成电路
+metaitem.wrap.nano_pic.name=封装NPIC
+metaitem.wrap.nano_pic.tooltip=纳米功率集成电路
+metaitem.wrap.pico_pic.name=封装PPIC
+metaitem.wrap.pico_pic.tooltip=微微功率集成电路
+metaitem.wrap.femto_pic.name=封装FPIC
+metaitem.wrap.femto_pic.tooltip=毫微微功率集成电路
 
 metaitem.wrap.optically_compatible_memory.name=封装光学兼容内存
 metaitem.wrap.optically_compatible_memory.tooltip=顾名思义！
@@ -267,10 +267,10 @@ metaitem.wrap.gooware.living_bio_chip.name=封装活性生物芯片
 metaitem.wrap.gooware.living_bio_chip.tooltip=用来制作电路板
 metaitem.wrap.gooware.biocells.name=封装生物细胞
 metaitem.wrap.gooware.biocells.tooltip=突变的智慧原料
-metaitem.wrap.bio_circuit_board.name=封装生物电路基板
-metaitem.wrap.bio_circuit_board.tooltip=生物基因突变的电路基板
-metaitem.wrap.ultra_bio_mutated_circuit_board.name=封装超生物突变电路基板
-metaitem.wrap.ultra_bio_mutated_circuit_board.tooltip=生物基因突变的电路基板
+metaitem.wrap.board.gooware.name=封装生物电路基板
+metaitem.wrap.board.gooware.tooltip=生物基因突变的电路基板
+metaitem.wrap.circuit_board.gooware.name=封装超生物突变电路基板
+metaitem.wrap.circuit_board.gooware.tooltip=生物基因突变的电路基板
 metaitem.wrap.raw_advanced_crystal_chip.name=封装先进晶体芯片原料
 metaitem.wrap.raw_advanced_crystal_chip.tooltip=先进晶体处理器的原料
 
@@ -285,8 +285,60 @@ metaitem.wrap.spintronic_smd.resistor.tooltip=自旋电子电阻器
 metaitem.wrap.spintronic_smd.transistor.name=封装自旋金氧半场效晶体管
 metaitem.wrap.spintronic_smd.transistor.tooltip=自旋电子晶体管
 
+metaitem.wrap.cosmic.information_module.name=封装宇宙信息承载模块
+metaitem.wrap.cosmic.information_module.tooltip=宇宙在我手中
+metaitem.wrap.cosmic.holographic_imc.name=封装存算一体全息存储器
+metaitem.wrap.cosmic.holographic_imc.tooltip=天穹对偶引力散射！
+metaitem.wrap.supracausal.spacetime_condenser.name=封装超因果时空凝聚器
+metaitem.wrap.supracausal.spacetime_condenser.tooltip=超空间稳定器
+metaitem.wrap.supracausal.light_cone_module.name=封装时空光锥稳定模块
+metaitem.wrap.supracausal.light_cone_module.tooltip=自旋泡沫路径积分计算！
 
+metaitem.wrap.cosmic_smd.transistor.name=封装晶体信息载荷
+metaitem.wrap.cosmic_smd.transistor.tooltip=寰宇晶体管
+metaitem.wrap.cosmic_smd.resistor.name=封装微型星际物质信息壁
+metaitem.wrap.cosmic_smd.resistor.tooltip=寰宇电阻
+metaitem.wrap.cosmic_smd.capacitor.name=封装全息能量荷
+metaitem.wrap.cosmic_smd.capacitor.tooltip=寰宇电容
+metaitem.wrap.cosmic_smd.diode.name=封装宇宙离子极管
+metaitem.wrap.cosmic_smd.diode.tooltip=寰宇二极管
+metaitem.wrap.cosmic_smd.inductor.name=封装天顶星偏振器
+metaitem.wrap.cosmic_smd.inductor.tooltip=寰宇电感
 
+metaitem.wrap.supracausal_smd.transistor.name=封装卡鲁扎-克莱因额外维胀子场效应管
+metaitem.wrap.supracausal_smd.transistor.tooltip=超因果晶体管
+metaitem.wrap.supracausal_smd.resistor.name=封装非反常量子主约束生成器
+metaitem.wrap.supracausal_smd.resistor.tooltip=超因果电阻
+metaitem.wrap.supracausal_smd.capacitor.name=封装能量-动量-应力张量存储器
+metaitem.wrap.supracausal_smd.capacitor.tooltip=超因果电容
+metaitem.wrap.supracausal_smd.diode.name=封装自旋网络载波极管
+metaitem.wrap.supracausal_smd.diode.tooltip=超因果二极管
+metaitem.wrap.supracausal_smd.inductor.name=封装超对称共形偏振器
+metaitem.wrap.supracausal_smd.inductor.tooltip=超因果电感
+
+metaitem.wrap.atto_pic.name=封装APIC晶片
+metaitem.wrap.atto_pic.tooltip=阿米功率集成电路
+metaitem.wrap.zepto_pic.name=封装ZPIC晶片
+metaitem.wrap.zepto_pic.tooltip=仄米功率集成电路
+metaitem.wrap.uhasoc.name=封装UHASoC晶片
+metaitem.wrap.uhasoc.tooltip=极高进阶片上系统
+metaitem.wrap.phase_change_memory.name=封装PRAM晶片
+metaitem.wrap.phase_change_memory.tooltip=相变随机存取存储器
+metaitem.wrap.optical_nor_memory_chip.name=封装ACNOR晶片
+metaitem.wrap.optical_nor_memory_chip.tooltip=全光级联逻辑或非门
+metaitem.wrap.spin_transfer_torque_memory.name=封装STTRAM晶片
+metaitem.wrap.spin_transfer_torque_memory.tooltip=自旋转移力矩存储器
+metaitem.wrap.spintronic_nand_memory_chip.name=封装MDNAND晶片
+metaitem.wrap.spintronic_nand_memory_chip.tooltip=磁畴壁反相逻辑与非门
+
+metaitem.wrap.board.optical.name=封装氮化镓半导体材料电路基板
+metaitem.wrap.board.optical.tooltip=绝对理想的光电器件材料
+metaitem.wrap.circuit_board.optical.name=封装半导体工业的技术之星
+metaitem.wrap.circuit_board.optical.tooltip=究极电路板
+metaitem.wrap.board.spintronic.name=封装碳纳米管磁性存储电路基板
+metaitem.wrap.board.spintronic.tooltip=第三代自旋电子技术
+metaitem.wrap.circuit_board.spintronic.name=封装无尽电路板
+metaitem.wrap.circuit_board.spintronic.tooltip=自旋转移矩效应的最好实现
 
 
 
@@ -332,6 +384,9 @@ metaitem.nuclear_star.name=核能之星
 metaitem.nuclear_star.tooltip=这颗星星，非常非常热
 metaitem.living_crystal_chip.name=活性晶体芯片
 metaitem.living_crystal_chip.tooltip=用来制作电路板
+metaitem.protonated_fullerene_sieving_matrix.name=质子化富勒烯筛分基质
+metaitem.saturated_fullerene_sieving_matrix.name=饱和富勒烯筛分基质
+metaitem.unstable_star.name=易变之星
 
 #
 metaitem.optical.optically_enriched_crystalline_boule.name=光学富集单晶硅
@@ -350,16 +405,17 @@ metaitem.optical.optical_cpu_containment_housing.name=光学CPU密封外壳
 metaitem.optical.optical_cpu_containment_housing.tooltip=CPU外壳
 metaitem.optical.optical_circuit_board.name=光学电路基板
 metaitem.optical.optical_circuit_board.tooltip=光学注入的电路基板
-metaitem.optical.optical_smd.capacitor.name=光学贴片电容
-metaitem.optical.optical_smd.capacitor.tooltip=高度先进电子元件
-metaitem.optical.optical_smd.diode.name=光学贴片二极管
-metaitem.optical.optical_smd.diode.tooltip=高度先进电子元件
-metaitem.optical.optical_smd.resistor.name=光学贴片电阻
-metaitem.optical.optical_smd.resistor.tooltip=高度先进电子元件
-metaitem.optical.optical_smd.transistor.name=光学贴片晶体管
-metaitem.optical.optical_smd.transistor.tooltip=高度先进电子元件
-metaitem.optical.optical_smd.inductor.name=光学贴片电感
-metaitem.optical.optical_smd.inductor.tooltip=高度先进电子元件
+
+metaitem.component.optical_smd.capacitor.name=光学贴片电容
+metaitem.component.optical_smd.capacitor.tooltip=高度先进电子元件
+metaitem.component.optical_smd.diode.name=光学贴片二极管
+metaitem.component.optical_smd.diode.tooltip=高度先进电子元件
+metaitem.component.optical_smd.resistor.name=光学贴片电阻
+metaitem.component.optical_smd.resistor.tooltip=高度先进电子元件
+metaitem.component.optical_smd.transistor.name=光学贴片晶体管
+metaitem.component.optical_smd.transistor.tooltip=高度先进电子元件
+metaitem.component.optical_smd.inductor.name=光学贴片电感
+metaitem.component.optical_smd.inductor.tooltip=高度先进电子元件
 
 
 
@@ -398,10 +454,23 @@ metaitem.americium_doped_monocrystalline_silicon_boule.name=镅掺杂的单晶�
 metaitem.americium_doped_monocrystalline_silicon_boule.tooltip=电路板原料
 metaitem.americium_doped_wafer.name=镅掺杂的晶圆
 metaitem.americium_doped_wafer.tooltip=电路板原料
-metaitem.bio_circuit_board.name=生物电路基板
-metaitem.bio_circuit_board.tooltip=生物基因突变的电路基板
-metaitem.ultra_bio_mutated_circuit_board.name=超生物突变电路基板
-metaitem.ultra_bio_mutated_circuit_board.tooltip=生物基因突变的电路基板
+
+# board
+metaitem.board.gooware.name=生物电路基板
+metaitem.board.gooware.tooltip=生物基因突变的电路基板
+metaitem.board.optical.name=氮化镓半导体材料电路基板
+metaitem.board.optical.tooltip=绝对理想的光电器件材料
+metaitem.board.spintronic.name=碳纳米管磁性存储电路基板
+metaitem.board.spintronic.tooltip=第三代自旋电子技术
+
+metaitem.circuit_board.gooware.name=超生物突变电路基板
+metaitem.circuit_board.gooware.tooltip=生物基因突变的电路基板
+metaitem.circuit_board.optical.name=究极电路板
+metaitem.circuit_board.optical.tooltip=半导体工业的技术之星
+metaitem.circuit_board.spintronic.name=无尽电路板
+metaitem.circuit_board.spintronic.tooltip=自旋转移矩效应的最好实现
+
+#
 metaitem.station_1.name=高算力工作站 MK-I
 metaitem.station_1.tooltip=§b93015-T浮点运算/秒§r
 metaitem.station_2.name=高算力工作站 MK-II
@@ -412,16 +481,27 @@ metaitem.station_4.name=高算力工作站 MK-IV
 metaitem.station_4.tooltip=§c第56梅森素数§r
 metaitem.station_5.name=高算力工作站 MK-V
 metaitem.station_5.tooltip=§5佯谬§r
+
+#
 metaitem.crystal.raw_advanced_chip.name=先进晶体芯片原料
 metaitem.crystal.raw_advanced_chip.tooltip=先进晶体处理器的原料
 
+#  Cosmic Components
+metaitem.component.cosmic.information_module.name=宇宙信息承载模块
+metaitem.component.cosmic.information_module.tooltip=宇宙在我手中
+metaitem.component.cosmic.holographic_imc.name=存算一体全息存储器
+metaitem.component.cosmic.holographic_imc.tooltip=天穹对偶引力散射！
+
+#  Supracausal Components
+metaitem.component.supracausal.spacetime_condenser.name=超因果时空凝聚器
+metaitem.component.supracausal.spacetime_condenser.tooltip=超空间稳定器
+metaitem.component.supracausal.light_cone_module.name=时空光锥稳定模块
+metaitem.component.supracausal.light_cone_module.tooltip=自旋泡沫路径积分计算！
 
 
 
 
 
-metaitem.plate.phase_change_memory.name=PRAM
-metaitem.plate.phase_change_memory.tooltip=相变内存
 metaitem.optical_fiber.name=光纤
 metaitem.optical_fiber.tooltip=透光玻璃
 metaitem.dielectric_mirror.name=介电镜
@@ -432,9 +512,6 @@ metaitem.laser.helium_neon.name=氦氖激光
 metaitem.laser.helium_neon.tooltip=用途：弱光学设备
 metaitem.laser.nd_yag.name=掺钕钇铝石榴石激光
 metaitem.laser.nd_yag.tooltip=用途：强光学设备
-
-metaitem.plate.spin_transfer_torque_memory.name=STTRAM
-metaitem.plate.spin_transfer_torque_memory.tooltip=自旋转移扭矩记忆
 metaitem.tube.topological_insulator.name=拓扑绝缘管
 metaitem.tube.topological_insulator.tooltip=导电表面态
 metaitem.containment_unit.bose_einstein_condensate.name=玻色-爱因斯坦冷凝液遏制装置
@@ -442,20 +519,38 @@ metaitem.containment_unit.bose_einstein_condensate.tooltip=磁蒸发冷却
 metaitem.bose_einstein_condensate.name=玻色-爱因斯坦凝聚体
 metaitem.bose_einstein_condensate.tooltip=2,000§cRb-87§7原子，§b170nK§7！
 
-metaitem.wafer.nano_power_integrated_circuit.name=NPIC晶圆
-metaitem.wafer.nano_power_integrated_circuit.tooltip=纳米功率电路原料
-metaitem.wafer.pico_power_integrated_circuit.name=PPIC晶圆
-metaitem.wafer.pico_power_integrated_circuit.tooltip=微微电源电路原料
-metaitem.wafer.femto_power_integrated_circuit.name=FPIC晶圆
-metaitem.wafer.femto_power_integrated_circuit.tooltip=毫微微电源电路原料
-metaitem.plate.nano_power_integrated_circuit.name=NPIC
-metaitem.plate.nano_power_integrated_circuit.tooltip=纳米功率集成电路
-metaitem.plate.pico_power_integrated_circuit.name=PPIC
-metaitem.plate.pico_power_integrated_circuit.tooltip=微微功率集成电路
-metaitem.plate.femto_power_integrated_circuit.name=FPIC
-metaitem.plate.femto_power_integrated_circuit.tooltip=毫微微功率集成电路
-
-
+metaitem.plate.phase_change_memory.name=PRAM晶片
+metaitem.plate.phase_change_memory.tooltip=相变随机存取存储器
+metaitem.plate.optical_nor_memory_chip.name=ACNOR晶片
+metaitem.plate.optical_nor_memory_chip.tooltip=全光级联逻辑或非门
+metaitem.plate.spin_transfer_torque_memory.name=STTRAM晶片
+metaitem.plate.spin_transfer_torque_memory.tooltip=自旋转移力矩存储器
+metaitem.plate.spintronic_nand_memory_chip.name=MDNAND晶片
+metaitem.plate.spintronic_nand_memory_chip.tooltip=磁畴壁反相逻辑与非门
+metaitem.wafer.nano_pic.name=NPIC晶圆
+metaitem.wafer.nano_pic.tooltip=纳米功率电路原料
+metaitem.wafer.pico_pic.name=PPIC晶圆
+metaitem.wafer.pico_pic.tooltip=微微电源电路原料
+metaitem.wafer.femto_pic.name=FPIC晶圆
+metaitem.wafer.femto_pic.tooltip=毫微微电源电路原料
+metaitem.plate.nano_pic.name=NPIC晶片
+metaitem.plate.nano_pic.tooltip=纳米功率集成电路
+metaitem.plate.pico_pic.name=PPIC晶片
+metaitem.plate.pico_pic.tooltip=微微功率集成电路
+metaitem.plate.femto_pic.name=FPIC晶片
+metaitem.plate.femto_pic.tooltip=毫微微功率集成电路
+metaitem.wafer.atto_pic.name=APIC晶圆
+metaitem.wafer.atto_pic.tooltip=阿米功率集成电路原料
+metaitem.plate.atto_pic.name=APIC晶片
+metaitem.plate.atto_pic.tooltip=阿米功率集成电路
+metaitem.wafer.zepto_pic.name=ZPIC晶圆
+metaitem.wafer.zepto_pic.tooltip=仄米功率集成电路原料
+metaitem.plate.zepto_pic.name=ZPIC晶片
+metaitem.plate.zepto_pic.tooltip=仄米功率集成电路
+metaitem.wafer.uhasoc.name=UHASoC晶圆
+metaitem.wafer.uhasoc.tooltip=待处理极高进阶片上系统
+metaitem.plate.uhasoc.name=UHASoC晶片
+metaitem.plate.uhasoc.tooltip=极高进阶片上系统
 
 
 metaitem.component.spintronic_smd.capacitor.name=超级电容
@@ -469,6 +564,27 @@ metaitem.component.spintronic_smd.transistor.tooltip=自旋电子晶体管
 metaitem.component.spintronic_smd.inductor.name=自旋偏振器
 metaitem.component.spintronic_smd.inductor.tooltip=自旋电子电感器
 
+metaitem.component.cosmic_smd.transistor.name=晶体信息载荷
+metaitem.component.cosmic_smd.transistor.tooltip=寰宇晶体管
+metaitem.component.cosmic_smd.resistor.name=微型星际物质信息壁
+metaitem.component.cosmic_smd.resistor.tooltip=寰宇电阻
+metaitem.component.cosmic_smd.capacitor.name=全息能量荷
+metaitem.component.cosmic_smd.capacitor.tooltip=寰宇电容
+metaitem.component.cosmic_smd.diode.name=宇宙离子极管
+metaitem.component.cosmic_smd.diode.tooltip=寰宇二极管
+metaitem.component.cosmic_smd.inductor.name=天顶星偏振器
+metaitem.component.cosmic_smd.inductor.tooltip=寰宇电感
+
+metaitem.component.supracausal_smd.transistor.name=卡鲁扎-克莱因额外维胀子场效应管
+metaitem.component.supracausal_smd.transistor.tooltip=超因果晶体管
+metaitem.component.supracausal_smd.resistor.name=非反常量子主约束生成器
+metaitem.component.supracausal_smd.resistor.tooltip=超因果电阻
+metaitem.component.supracausal_smd.capacitor.name=能量-动量-应力张量存储器
+metaitem.component.supracausal_smd.capacitor.tooltip=超因果电容
+metaitem.component.supracausal_smd.diode.name=自旋网络载波极管
+metaitem.component.supracausal_smd.diode.tooltip=超因果二极管
+metaitem.component.supracausal_smd.inductor.name=超对称共形偏振器
+metaitem.component.supracausal_smd.inductor.tooltip=超因果电感
 
 # Processing Units
 metaitem.reaction_chamber.bz.name=B-Z振荡反应室

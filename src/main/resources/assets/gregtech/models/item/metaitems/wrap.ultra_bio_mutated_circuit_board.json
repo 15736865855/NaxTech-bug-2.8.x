@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "naxtech:items/metaitems/ultra_bio_mutated_circuit_board",
-    "layer1": "naxtech:items/wrap_overlay"
-  }
-}

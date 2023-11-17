@@ -17,7 +17,7 @@ public class NTMetaInit {
 
 
 
-    //生物_化学
+    //
     public static MetaItem<?>.MetaValueItem BIOCELLS;
     public static MetaItem<?>.MetaValueItem LIVING_BIO_WAFER;
     public static MetaItem<?>.MetaValueItem LIVING_BIO_CHIP;
@@ -26,8 +26,11 @@ public class NTMetaInit {
     //
     public static MetaItem<?>.MetaValueItem NUCLEAR_STAR;
     public static MetaItem<?>.MetaValueItem LIVING_CRYSTAL_CHIP;
+    public static MetaItem<?>.MetaValueItem PROTONATED_FULLERENE_SIEVING_MATRIX;
+    public static MetaItem<?>.MetaValueItem SATURATED_FULLERENE_SIEVING_MATRIX;
+    public static MetaItem<?>.MetaValueItem UNSTABLE_STAR;
 
-    //封装电路
+    //
     //Wrap Circuit
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_ULV;
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_LV;
@@ -45,7 +48,6 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_OPV;
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_MAX;
 
-    //封装
     //Wrap
     public static MetaItem<?>.MetaValueItem WRAP_COATED_BOARD;
     public static MetaItem<?>.MetaValueItem WRAP_PHENOLIC_BOARD;
@@ -90,17 +92,14 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem WRAP_HIGHLY_ADVANCED_SOC;
     public static MetaItem<?>.MetaValueItem WRAP_NAND_MEMORY_CHIP;
     public static MetaItem<?>.MetaValueItem WRAP_NOR_MEMORY_CHIP;
-    public static MetaItem<?>.MetaValueItem WRAP_ULTRA_LOW_POWER_INTEGRATED_CIRCUIT;
-    public static MetaItem<?>.MetaValueItem WRAP_LOW_POWER_INTEGRATED_CIRCUIT;
-    public static MetaItem<?>.MetaValueItem WRAP_POWER_INTEGRATED_CIRCUIT;
-    public static MetaItem<?>.MetaValueItem WRAP_HIGH_POWER_INTEGRATED_CIRCUIT;
-    public static MetaItem<?>.MetaValueItem WRAP_ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT;
-
-
-
-    public static MetaItem<?>.MetaValueItem WRAP_NANO_POWER_IC;
-    public static MetaItem<?>.MetaValueItem WRAP_PICO_POWER_IC;
-    public static MetaItem<?>.MetaValueItem WRAP_FEMTO_POWER_IC;
+    public static MetaItem<?>.MetaValueItem WRAP_ULTRA_LOW_PIC;
+    public static MetaItem<?>.MetaValueItem WRAP_LOW_PIC;
+    public static MetaItem<?>.MetaValueItem WRAP_PIC;
+    public static MetaItem<?>.MetaValueItem WRAP_HIGH_PIC;
+    public static MetaItem<?>.MetaValueItem WRAP_ULTRA_HIGH_PIC;
+    public static MetaItem<?>.MetaValueItem WRAP_NANO_PIC;
+    public static MetaItem<?>.MetaValueItem WRAP_PICO_PIC;
+    public static MetaItem<?>.MetaValueItem WRAP_FEMTO_PIC;
 
     public static MetaItem<?>.MetaValueItem WRAP_RAW_EXPOSED_OPTICAL_CHIP;
     public static MetaItem<?>.MetaValueItem WRAP_OPTICALLY_COMPATIBLE_MEMORY;
@@ -116,8 +115,8 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem WRAP_LIVING_CRYSTAL_CHIP;
     public static MetaItem<?>.MetaValueItem WRAP_LIVING_BIO_CHIP;
     public static MetaItem<?>.MetaValueItem WRAP_BIOCELLS;
-    public static MetaItem<?>.MetaValueItem WRAP_BIO_CIRCUIT_BOARD;
-    public static MetaItem<?>.MetaValueItem WRAP_ULTRA_BIO_MUTATED_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_GOOWARE_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_GOOWARE_CIRCUIT;
 
     public static MetaItem<?>.MetaValueItem WRAP_CRYSTAL_SYSTEM_ON_CHIP;
     public static MetaItem<?>.MetaValueItem WRAP_RAW_ADVANCED_CRYSTAL_CHIP;
@@ -128,8 +127,33 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_TRANSISTOR;
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_INDUCTOR;
 
+    public static MetaItem<?>.MetaValueItem WRAP_COSMIC_INFORMATION_MODULE;
+    public static MetaItem<?>.MetaValueItem WRAP_HOLOGRAPHIC_INFORMATION_IMC;
+    public static MetaItem<?>.MetaValueItem WRAP_SPACETIME_CONDENSER;
+    public static MetaItem<?>.MetaValueItem WRAP_LIGHT_CONE_MODULE;
+    public static MetaItem<?>.MetaValueItem WRAP_COSMIC_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_COSMIC_RESISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_COSMIC_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem WRAP_COSMIC_DIODE;
+    public static MetaItem<?>.MetaValueItem WRAP_COSMIC_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_RESISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_DIODE;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_ATTO_PIC;
+    public static MetaItem<?>.MetaValueItem WRAP_ZEPTO_PIC;
+    public static MetaItem<?>.MetaValueItem WRAP_UHASOC_CHIP;
+    public static MetaItem<?>.MetaValueItem WRAP_PHASE_CHANGE_MEMORY;
+    public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_NOR_MEMORY_CHIP;
+    public static MetaItem<?>.MetaValueItem WRAP_SPIN_TRANSFER_TORQUE_MEMORY;
+    public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_NAND_MEMORY_CHIP;
 
-    //光学
+    public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_CIRCUIT;
+    public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_CIRCUIT;
+    //
     public static MetaItem<?>.MetaValueItem OPTICALLY_ENRICHED_CRYSTALLINE_BOULE;
     public static MetaItem<?>.MetaValueItem PHOTONICALLY_PREPARED_WAFER;
     public static MetaItem<?>.MetaValueItem PHOTONICALLY_ENHANCED_WAFER;
@@ -145,7 +169,7 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem OPTICAL_INDUCTOR;
 
 
-    //处理单元
+    //
     public static MetaItem<?>.MetaValueItem BIO_PROCESSING_UNIT;
     public static MetaItem<?>.MetaValueItem ADVANCED_PROCESSOR_BOARD;
     public static MetaItem<?>.MetaValueItem ADVANCED_BOARD;
@@ -195,8 +219,6 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem EUROPIUM_DOPED_WAFER;
     public static MetaItem<?>.MetaValueItem AMERICIUM_DOPED_MONOCRYSTALLINE_SILICON_BOULE;
     public static MetaItem<?>.MetaValueItem AMERICIUM_DOPED_WAFER;
-    public static MetaItem<?>.MetaValueItem BIO_CIRCUIT_BOARD;
-    public static MetaItem<?>.MetaValueItem ULTRA_BIO_MUTATED_CIRCUIT_BOARD;
     public static MetaItem<?>.MetaValueItem STATION_MKI;
     public static MetaItem<?>.MetaValueItem STATION_MKII;
     public static MetaItem<?>.MetaValueItem STATION_MKIII;
@@ -204,16 +226,34 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem STATION_MKV;
     public static MetaItem<?>.MetaValueItem RAW_ADVANCED_CRYSTAL_CHIP;
 
+    //  Cosmic Components
+    public static MetaItem<?>.MetaValueItem COSMIC_INFORMATION_MODULE;
+    public static MetaItem<?>.MetaValueItem HOLOGRAPHIC_INFORMATION_IMC;
+
+    //  Supracausal Components
+    public static MetaItem<?>.MetaValueItem SPACETIME_CONDENSER;
+    public static MetaItem<?>.MetaValueItem LIGHT_CONE_MODULE;
+
+    public static MetaItem<?>.MetaValueItem GOOWARE_BOARD;
+    public static MetaItem<?>.MetaValueItem OPTICAL_BOARD;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_BOARD;
+    public static MetaItem<?>.MetaValueItem GOOWARE_CIRCUIT;
+    public static MetaItem<?>.MetaValueItem OPTICAL_CIRCUIT;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_CIRCUIT;
 
 
-
-
-    // 2化学
+    //
     public static MetaItem<?>.MetaValueItem BZ_REACTION_CHAMBER;
     public static MetaItem<?>.MetaValueItem NONLINEAR_CHEMICAL_OSCILLATOR;
 
-    // 3光学
+
+    public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
     public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
+    public static MetaItem<?>.MetaValueItem OPTICAL_NOR_MEMORY_CHIP;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_NAND_MEMORY_CHIP;
+
+
+    //
     public static MetaItem<?>.MetaValueItem OPTICAL_FIBER;
     public static MetaItem<?>.MetaValueItem DIELECTRIC_MIRROR;
     public static MetaItem<?>.MetaValueItem EMPTY_LASER_ASSEMBLY;
@@ -221,29 +261,46 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem ND_YAG_LASER;
     public static MetaItem<?>.MetaValueItem OPTICAL_LASER_CONTROL_UNIT;
 
-    // 4自旋电子学
-    public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
+    //
     public static MetaItem<?>.MetaValueItem TOPOLOGICAL_INSULATOR_TUBE;
     public static MetaItem<?>.MetaValueItem BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT;
     public static MetaItem<?>.MetaValueItem BOSE_EINSTEIN_CONDENSATE;
     public static MetaItem<?>.MetaValueItem ESR_COMPUTATION_UNIT;
 
-    // 5超因果
+    //
     public static MetaItem<?>.MetaValueItem EIGENFOLDED_KERR_MANIFOLD;
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_DRONE;
 
     // PIC
-    public static MetaItem<?>.MetaValueItem NANO_POWER_IC_WAFER;
-    public static MetaItem<?>.MetaValueItem PICO_POWER_IC_WAFER;
-    public static MetaItem<?>.MetaValueItem FEMTO_POWER_IC_WAFER;
-    public static MetaItem<?>.MetaValueItem NANO_POWER_IC;
-    public static MetaItem<?>.MetaValueItem PICO_POWER_IC;
-    public static MetaItem<?>.MetaValueItem FEMTO_POWER_IC;
+    public static MetaItem<?>.MetaValueItem NANO_PIC_WAFER;
+    public static MetaItem<?>.MetaValueItem PICO_PIC_WAFER;
+    public static MetaItem<?>.MetaValueItem FEMTO_PIC_WAFER;
+    public static MetaItem<?>.MetaValueItem NANO_PIC;
+    public static MetaItem<?>.MetaValueItem PICO_PIC;
+    public static MetaItem<?>.MetaValueItem FEMTO_PIC;
+    public static MetaItem<?>.MetaValueItem ATTO_PIC_WAFER;
+    public static MetaItem<?>.MetaValueItem ATTO_PIC;
+    public static MetaItem<?>.MetaValueItem ZEPTO_PIC_WAFER;
+    public static MetaItem<?>.MetaValueItem ZEPTO_PIC;
+    public static MetaItem<?>.MetaValueItem UHASOC_WAFER;
+    public static MetaItem<?>.MetaValueItem UHASOC_CHIP;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_CAPACITOR;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_DIODE;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_RESISTOR;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_TRANSISTOR;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_INDUCTOR;
+
+    public static MetaItem<?>.MetaValueItem COSMIC_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem COSMIC_RESISTOR;
+    public static MetaItem<?>.MetaValueItem COSMIC_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem COSMIC_DIODE;
+    public static MetaItem<?>.MetaValueItem COSMIC_INDUCTOR;
+
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_RESISTOR;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_DIODE;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_INDUCTOR;
 
 
     public static void init()
