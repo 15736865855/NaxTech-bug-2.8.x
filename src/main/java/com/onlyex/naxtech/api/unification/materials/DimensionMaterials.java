@@ -8,7 +8,8 @@ import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
-import static com.onlyex.naxtech.api.unification.info.NTMaterialIconSet.*;
+import static com.onlyex.naxtech.api.unification.material.info.NTMaterialFlags.*;
+import static com.onlyex.naxtech.api.unification.material.info.NTMaterialIconSet.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
@@ -26,14 +27,14 @@ public class DimensionMaterials {
         BlackdWarfMatter = new Material.Builder(getMaterialsId(),gregtechId("blackd_warf_matter"))
                 .ingot(11).fluid()
                 .color(0x000000).iconSet(METALLIC)
-                .flags(NONTM)
+                .flags(NONTM, GENERATE_NANITES)
                 .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
 
         WhitedWarfMatter = new Material.Builder(getMaterialsId(), gregtechId("whited_warf_matter"))
                 .ingot().fluid(FluidTypes.LIQUID)
                 .iconSet(CUSTOM_WWM)
-                .flags(DIMENSION)
+                .flags(DIMENSION, GENERATE_NANITES)
                 .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
 
@@ -64,7 +65,7 @@ public class DimensionMaterials {
         Eternity = new Material.Builder(getMaterialsId(), gregtechId("eternity"))
                 .ingot().fluid(FluidTypes.LIQUID)
                 .iconSet(CUSTOM_ETERNITY)
-                .flags(DIMENSION)
+                .flags(DIMENSION, GENERATE_NANITES)
                 .element(NTElements.Et)
                 .blastTemp(120000, BlastProperty.GasTier.HIGH)
                 .build();
@@ -111,6 +112,15 @@ public class DimensionMaterials {
                 .build();
 
         Mithril = new Material.Builder(getMaterialsId(), gregtechId("mithril"))
+                .ingot()
+                .fluid()
+                .plasma()
+                .fluidTemp(4550)
+                .color(0x428fdb)
+                .iconSet(DULL)
+                .blastTemp(10900, BlastProperty.GasTier.HIGHEST, VA[UHV])
+                .element(NTElements.Mithril)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, NO_UNIFICATION)
                 .build();
 
 
@@ -183,6 +193,51 @@ public class DimensionMaterials {
                 .build()
                 .setFormula("§cR§de", false);
 
+        CrystalMatrix = new Material.Builder(getMaterialsId(), gregtechId("crystal_matrix"))
+                .ingot()
+                .fluid()
+                .fluidTemp(660450)
+                .color(0x70ecff)
+                .iconSet(BRIGHT)
+                .flags(NO_UNIFICATION)
+                .element(NTElements.CrystalMatrix)
+                .build();
+
+        Ichorium = new Material.Builder(getMaterialsId(), gregtechId("ichorium"))
+                .ingot()
+                .fluid()
+                .color(0xE5A559)
+                .iconSet(BRIGHT)
+                .blastTemp(10800, BlastProperty.GasTier.HIGHEST, VA[UV])
+                .element(NTElements.Ichorium)
+                .flags(GENERATE_PLATE, NO_UNIFICATION)
+                .build();
+
+        IchorLiquid = new Material.Builder(getMaterialsId(), gregtechId("ichor_liquid"))
+                .fluid(FluidTypes.PLASMA)
+                .fluidTemp(214748)
+                .color(0xE5A559)
+                .element(NTElements.IchorLiquid)
+                .flags(NO_UNIFICATION)
+                .build();
+
+        VoidMetal = new Material.Builder(getMaterialsId(), gregtechId("void_metal"))
+                .ingot()
+                .fluid()
+                .fluidTemp(0)
+                .color(0x20142C)
+                .iconSet(DULL)
+                .element(NTElements.VoidMetal)
+                .flags(NO_UNIFICATION)
+                .build();
+
+        DragonTear = new Material.Builder(getMaterialsId(), gregtechId("dragon_tear"))
+                .fluid()
+                .fluidTemp(2992)
+                .color(0x9999FF)
+                .iconSet(DULL)
+                .build()
+                .setFormula("⚙", false);
     }
 
     private static int getMaterialsId() {

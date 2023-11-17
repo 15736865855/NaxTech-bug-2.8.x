@@ -60,8 +60,14 @@ public class NTMaterials {
     public static Material Adamantium;
     public static Material DraconiumChaotic;
     public static Material Orichalcum;
-    //public static Material ;
-    //public static Material ;
+    public static Material CrystalMatrix;
+    public static Material Taranium;
+    public static Material Ichorium;
+    public static Material IchorLiquid;
+    public static Material VoidMetal;
+    public static Material Legendarium;
+    public static Material DragonDust;
+    public static Material DragonTear;
     //public static Material ;
     //public static Material ;
     //public static Material ;
@@ -76,6 +82,19 @@ public class NTMaterials {
     //public static Material ;
 
     //流体
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    //public static Material ;
+    public static Material DraconiumSlagSolution;
+    public static Material ResidualDraconiumSolution;
     public static Material MutatedIivingSolder;
     public static Material EthylCyanoacrylateSuperGlue;
     public static Material CyanoacrylatePolymer;
@@ -108,18 +127,8 @@ public class NTMaterials {
     public static Material DragonBreath;
     public static Material ConcentrateDragonBreath;
     public static Material DragonBlood;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
+    public static Material NitratedDragonDustSolution;
+
 
 
     public NTMaterials() {}

@@ -5,6 +5,7 @@ import gregtech.api.unification.material.Material;
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 import static com.onlyex.naxtech.api.unification.NTMaterials.NOR;
 import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.DULL;
 import static gregtech.api.util.GTUtility.gregtechId;
 
 public class DustMaterials {
@@ -38,6 +39,15 @@ public class DustMaterials {
                 .flags(NOR)
                 .components(Copper, 1,Sulfur, 1,Oxygen, 4)//CuSO₄
                 .build();
+
+        DragonDust = new Material.Builder(getMaterialsId(), gregtechId("dragon_dust"))
+                .ore(1, 1, true)
+                .addOreByproducts(Amethyst)
+                .dust()
+                .color(Draconium.getMaterialRGB())
+                .iconSet(DULL)
+                .build()
+                .setFormula("Dc3Ac3Se4At4?", false);
 
     }
 

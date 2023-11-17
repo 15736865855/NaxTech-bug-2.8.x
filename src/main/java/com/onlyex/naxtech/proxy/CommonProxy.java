@@ -7,6 +7,7 @@ import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
+import com.onlyex.naxtech.loaders.recipe.handlers.NTRecipeHandlerList;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.cover.CoverDefinition;
@@ -128,6 +129,7 @@ public class CommonProxy {
 
     @SubscribeEvent
     public static void registerRecipeHandlers(RegistryEvent.Register<IRecipe> event) {
+        NTRecipeHandlerList.register();
 
     }
 

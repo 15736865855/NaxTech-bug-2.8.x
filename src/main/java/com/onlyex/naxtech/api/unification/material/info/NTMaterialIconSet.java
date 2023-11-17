@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.api.unification.info;
+package com.onlyex.naxtech.api.unification.material.info;
 
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.unification.material.info.MaterialIconSet;
@@ -16,4 +16,5 @@ public class NTMaterialIconSet {
     public static final MaterialIconSet CUSTOM_WWM = new MaterialIconSet("whited_warf_matter", null, true);
     public static final MaterialIconSet CUSTOM_DEGENERATE_RHENIUM = new MaterialIconSet("degenerate_rhenium", null, true);
     public static final MaterialIconSet CUSTOM_HYPOGEN = new MaterialIconSet("hypogen", null, true);
+    public static final MaterialIconSet CUSTOM_LEGENDARIUM = new MaterialIconSet("legendarium", null, true);
 }

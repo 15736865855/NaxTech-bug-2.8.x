@@ -2,6 +2,12 @@
 
 
 itemGroup.NaxTech=NaxTech(NT)
+item.material.oreprefix.plateCurved=Curved %s Plate
+item.material.oreprefix.milled=Milled %s Dust
+metaitem.milled.tooltip.flotation=Further processing requires §6Industrial Flotation Factory§7.
+item.material.oreprefix.nanites=%s
+item.material.oreprefix.wrap=%s
+
 # Circuits
 # Gooware
 metaitem.circuit.gooware_processor.name=Gooware Processor
@@ -617,7 +623,7 @@ gregtech.material.whited_warf_matter=Whited Warf Matter
 gregtech.material.infinity=infinity
 gregtech.material.cosmic_neutronium=cosmic neutronium
 gregtech.material.spacetime=Spacetime
-gregtech.material.magneto_hydrodynamically_constrained_star_matter=magnetohydrodynamically constrained star matter
+gregtech.material.magneto_hydrodynamically_constrained_star_matter=magnet ohydrodynamically constrained star matter
 gregtech.material.eternity= eternity
 gregtech.material.shirabon=shirabon
 gregtech.material.astral_titanium=astral titanium
@@ -634,7 +640,12 @@ gregtech.material.vibranium=
 gregtech.material.adamantium=
 
 gregtech.material.mar_m_200_steel=
-
+gregtech.material.ichorium=
+gregtech.material.ichor_liquid=
+gregtech.material.crystal_matrix=
+gregtech.material.void_metal=
+gregtech.material.legendarium=
+gregtech.material.dragon_dust=
 
 
 #fluid
@@ -670,6 +681,11 @@ gregtech.material.exciteddt_sc=Excited Dimensionally Transcendent Stellar Cataly
 gregtech.material.dragon_breath=
 gregtech.material.concentrate_dragon_breath=
 gregtech.material.dragon_blood=
+gregtech.material.nitrated_dragon_dust_solution=
+gregtech.material.residual_draconium_solution=
+gregtech.material.draconium_slag_solution=
+gregtech.material.dragon_tear=
+
 
 #Coil Block
 tile.wire_coil.naquadah_alloy.name=Naquadah Alloy Coil Block

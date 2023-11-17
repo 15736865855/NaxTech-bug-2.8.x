@@ -4,6 +4,7 @@ import com.onlyex.naxtech.api.NTValues;
 import com.onlyex.naxtech.api.capability.pollution.PollutionProvider;
 import com.onlyex.naxtech.api.fluids.NTMetaFluids;
 import com.onlyex.naxtech.api.unification.NTMaterials;
+import com.onlyex.naxtech.api.unification.OrePrefixAdditions;
 import gregtech.api.unification.material.event.MaterialEvent;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.chunk.Chunk;
@@ -24,6 +25,7 @@ public class NTEventHandler {
         NTMaterials.initregister();
         NTMetaFluids.init();
         //在此处注册材料
+        OrePrefixAdditions.init();
     }
     @SubscribeEvent
     public void attachChunkPollutionCapability(AttachCapabilitiesEvent<Chunk> event) {

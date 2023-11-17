@@ -168,6 +168,23 @@ public class FluidsMaterials {
                 .iconSet(DULL)
                 .build()
                 .setFormula("*Dr*Rn?", true);
+
+        NitratedDragonDustSolution = new Material.Builder(getMaterialsId(), gregtechId("nitrated_dragon_dust_solution"))
+                .fluid(FluidTypes.ACID)
+                .color(0xF553FF)
+                .build();
+
+        ResidualDraconiumSolution = new Material.Builder(getMaterialsId(), gregtechId("residual_draconium_solution"))
+                .fluid()
+                .color(0x4321C5)
+                .build();
+
+        DraconiumSlagSolution = new Material.Builder(getMaterialsId(), gregtechId("draconium_slag_solution"))
+                .fluid()
+                .color(0x790D80)
+                .iconSet(DULL)
+                .build()
+                .setFormula("Dc?(H2O)", true);
     }
     private static int getMaterialsId() {
         if (startId < END_ID) {
