@@ -16,9 +16,6 @@ public class NTMetaItem1 extends StandardMetaItem {
         setCreativeTabs(CommonProxy.NAXTECH_TAB);
     }
 
-    //下面是一个例子，第一个数据（0）是Meta Data，不能重复
-    //"test"是该物品的Meta ID，例如circuit.ulv之类的
-    //TEST = metaItem1.addItem(0, "test");
     //NTMetaItems. = this.addItem(,"");
     public void registerSubItems(){
 
@@ -89,17 +86,43 @@ public class NTMetaItem1 extends StandardMetaItem {
 
 
         //ID 100~
+        ELECTRIC_MOTOR_MAX = this.addItem(100, "cover.electric_motor.max");
+        ELECTRIC_PISTON_MAX = this.addItem(101, "cover.electric_piston.max");
+        ELECTRIC_PUMP_MAX = this.addItem(102, "cover.electric_pump.max");
+        CONVEYOR_MODULE_MAX = this.addItem(103, "cover.conveyor_module.max");
+        ROBOT_ARM_MAX = this.addItem(104, "cover.robot_arm.max");
+        EMITTER_MAX = this.addItem(105, "cover.emitter.max");
+        SENSOR_MAX = this.addItem(106, "cover.sensor.max");
+        FIELD_GENERATOR_MAX = this.addItem(107, "cover.field_generator.max");
 
-        BIOCELLS = this.addItem(125,"gooware.biocells");
-        LIVING_BIO_WAFER = this.addItem(126,"gooware.living_bio_wafer");
-        LIVING_BIO_CHIP = this.addItem(127,"gooware.living_bio_chip");
+        ELECTRIC_MOTOR_MAXX = this.addItem(108, "cover.electric_motor.maxx");
+        ELECTRIC_PISTON_MAXX = this.addItem(109, "cover.electric_piston.maxx");
+        ELECTRIC_PUMP_MAXX = this.addItem(110, "cover.electric_pump.maxx");
+        CONVEYOR_MODULE_MAXX = this.addItem(111, "cover.conveyor_module.maxx");
+        ROBOT_ARM_MAXX = this.addItem(112, "cover.robot_arm.maxx");
+        EMITTER_MAXX = this.addItem(113, "cover.emitter.maxx");
+        SENSOR_MAXX = this.addItem(114, "cover.sensor.maxx");
+        FIELD_GENERATOR_MAXX = this.addItem(115, "cover.field_generator.maxx");
 
-        NUCLEAR_STAR = this.addItem(128,"nuclear_star");
-        LIVING_CRYSTAL_CHIP = this.addItem(129,"living_crystal_chip");
-        PROTONATED_FULLERENE_SIEVING_MATRIX = this.addItem(130, "protonated_fullerene_sieving_matrix");
-        SATURATED_FULLERENE_SIEVING_MATRIX = this.addItem( 131, "saturated_fullerene_sieving_matrix");
+        SENSOR_EX = this.addItem(116, "cover.sensor.ex");
+        FIELD_GENERATOR_EX = this.addItem(117, "cover.field_generator.ex");
+        ELECTRIC_MOTOR_EX = this.addItem(118, "cover.electric_motor.ex");
+        ELECTRIC_PISTON_EX = this.addItem(119, "cover.electric_piston.ex");
+        ELECTRIC_PUMP_EX = this.addItem(120, "cover.electric_pump.ex");
+        CONVEYOR_MODULE_EX = this.addItem(121, "cover.conveyor_module.ex");
+        ROBOT_ARM_EX = this.addItem(122, "cover.robot_arm.ex");
+        EMITTER_EX = this.addItem(123, "cover.emitter.ex");
 
-        UNSTABLE_STAR = this.addItem(132, "unstable_star");
+        BIOCELLS = this.addItem(124,"gooware.biocells");
+        LIVING_BIO_WAFER = this.addItem(125,"gooware.living_bio_wafer");
+        LIVING_BIO_CHIP = this.addItem(126,"gooware.living_bio_chip");
+
+        NUCLEAR_STAR = this.addItem(127,"nuclear_star");
+        LIVING_CRYSTAL_CHIP = this.addItem(128,"living_crystal_chip");
+        PROTONATED_FULLERENE_SIEVING_MATRIX = this.addItem(129, "protonated_fullerene_sieving_matrix");
+        SATURATED_FULLERENE_SIEVING_MATRIX = this.addItem( 130, "saturated_fullerene_sieving_matrix");
+
+        UNSTABLE_STAR = this.addItem(131, "unstable_star");
 
 
         //140~

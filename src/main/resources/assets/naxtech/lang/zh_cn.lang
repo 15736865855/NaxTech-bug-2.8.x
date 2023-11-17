@@ -97,6 +97,42 @@ tile.glasses_casing.sne_boron_silicate_glass_block.name=宇宙中子强化硅酸
 tile.glasses_casing.ava_boron_silicate_glass_block.name=无尽强化硅酸盐硼玻璃
 tile.glasses_casing.tl_boron_silicate_glass_block.name=超时空强化硅酸盐硼玻璃
 
+metaitem.cover.electric_motor.max.name=电动马达（MAX）
+metaitem.cover.electric_piston.max.name=电力活塞（MAX）
+metaitem.cover.electric_pump.max.name=电动泵（MAX）
+metaitem.cover.electric_pump.max.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f1048576 L/t§7
+metaitem.cover.conveyor_module.max.name=传送带（MAX）
+metaitem.cover.conveyor_module.max.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.robot_arm.max.name=机械臂（MAX）
+metaitem.cover.robot_arm.max.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.emitter.max.name=发射器（MAX）
+metaitem.cover.sensor.max.name=传感器（MAX）
+metaitem.cover.field_generator.max.name=力场发生器（MAX）
+
+metaitem.cover.electric_motor.maxx.name=电动马达（MAX+）
+metaitem.cover.electric_piston.maxx.name=电力活塞（MAX+）
+metaitem.cover.electric_pump.maxx.name=电动泵（MAX+）
+metaitem.cover.electric_pump.maxx.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f1048576 L/t§7
+metaitem.cover.conveyor_module.maxx.name=传送带（MAX+）
+metaitem.cover.conveyor_module.maxx.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.robot_arm.maxx.name=机械臂（MAX+）
+metaitem.cover.robot_arm.maxx.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.emitter.maxx.name=发射器（MAX+）
+metaitem.cover.sensor.maxx.name=传感器（MAX+）
+metaitem.cover.field_generator.maxx.name=力场发生器（MAX+）
+
+metaitem.cover.electric_motor.ex.name=电动马达（EX）
+metaitem.cover.electric_piston.ex.name=电力活塞（EX）
+metaitem.cover.electric_pump.ex.name=电动泵（EX）
+metaitem.cover.electric_pump.ex.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f1048576 L/t§7
+metaitem.cover.conveyor_module.ex.name=传送带（EX）
+metaitem.cover.conveyor_module.ex.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.robot_arm.ex.name=机械臂（EX）
+metaitem.cover.robot_arm.ex.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.emitter.ex.name=发射器（EX）
+metaitem.cover.sensor.ex.name=传感器（EX）
+metaitem.cover.field_generator.ex.name=力场发生器（EX）
+
 naxtech.glass_tier.tooltip=玻璃等级：%s
 naxtech.optical_glass_tier.tooltip.0=粗制光学玻璃
 naxtech.optical_glass_tier.tooltip.1=普通光学玻璃
@@ -814,9 +850,41 @@ naxtech.machine.component_assembly_line.tier.12=超结构 (UXV)
 naxtech.machine.component_assembly_line.tier.13=宇宙 (OpV)
 naxtech.machine.component_assembly_line.tier.14=时空 (MAX)
 
+naxtech.machine.energy_hatch.input_4a.uev.name=4 安能源仓（UEV）
+naxtech.machine.energy_hatch.input_4a.uiv.name=4 安能源仓（UIV）
+naxtech.machine.energy_hatch.input_4a.uxv.name=4 安能源仓（UXV）
+naxtech.machine.energy_hatch.input_4a.opv.name=4 安能源仓（OpV）
+naxtech.machine.energy_hatch.input_16a.uev.name=16 安能源仓（UEV）
+naxtech.machine.energy_hatch.input_16a.uiv.name=16 安能源仓（UIV）
+naxtech.machine.energy_hatch.input_16a.uxv.name=16 安能源仓（UXV）
+naxtech.machine.energy_hatch.input_16a.opv.name=16 安能源仓（OpV）
+naxtech.machine.energy_hatch.output_4a.lv.name=4 安动力仓（LV）
+naxtech.machine.energy_hatch.output_4a.mv.name=4 安动力仓（MV）
+naxtech.machine.energy_hatch.output_4a.hv.name=4 安动力仓（HV）
+naxtech.machine.energy_hatch.output_4a.uev.name=4 安动力仓（UEV）
+naxtech.machine.energy_hatch.output_4a.uiv.name=4 安动力仓（UIV）
+naxtech.machine.energy_hatch.output_4a.uxv.name=4 安动力仓（UXV）
+naxtech.machine.energy_hatch.output_4a.opv.name=4 安动力仓（OpV）
+naxtech.machine.energy_hatch.output_16a.lv.name=16 安动力仓（LV）
+naxtech.machine.energy_hatch.output_16a.mv.name=16 安动力仓（MV）
+naxtech.machine.energy_hatch.output_16a.hv.name=16 安动力仓（HV）
+naxtech.machine.energy_hatch.output_16a.ev.name=16 安动力仓（EV）
+naxtech.machine.energy_hatch.output_16a.uev.name=16 安动力仓（UEV）
+naxtech.machine.energy_hatch.output_16a.uiv.name=16 安动力仓（UIV）
+naxtech.machine.energy_hatch.output_16a.uxv.name=16 安动力仓（UXV）
+naxtech.machine.energy_hatch.output_16a.opv.name=16 安动力仓（OpV）
 
-
-
+recipemap.component_assembler_recipes.name=部件组装机
+naxtech.machine.component_assembler.lv.name=基础部件组装机
+naxtech.machine.component_assembler.lv.tooltip=零部件工厂
+naxtech.machine.component_assembler.mv.name=进阶部件组装机
+naxtech.machine.component_assembler.mv.tooltip=零部件工厂
+naxtech.machine.component_assembler.hv.name=进阶部件组装机 II
+naxtech.machine.component_assembler.hv.tooltip=零部件工厂
+naxtech.machine.component_assembler.ev.name=进阶部件组装机 III
+naxtech.machine.component_assembler.ev.tooltip=零部件工厂
+naxtech.machine.component_assembler.iv.name=精英部件组装机
+naxtech.machine.component_assembler.iv.tooltip=零部件工厂
 
 
 

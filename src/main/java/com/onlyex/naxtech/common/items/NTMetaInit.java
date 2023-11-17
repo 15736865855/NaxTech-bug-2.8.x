@@ -16,6 +16,33 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
 
 
+    //
+    public static MetaItem<?>.MetaValueItem ELECTRIC_MOTOR_MAX;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PISTON_MAX;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PUMP_MAX;
+    public static MetaItem<?>.MetaValueItem CONVEYOR_MODULE_MAX;
+    public static MetaItem<?>.MetaValueItem ROBOT_ARM_MAX;
+    public static MetaItem<?>.MetaValueItem EMITTER_MAX;
+    public static MetaItem<?>.MetaValueItem SENSOR_MAX;
+    public static MetaItem<?>.MetaValueItem FIELD_GENERATOR_MAX;
+
+    public static MetaItem<?>.MetaValueItem ELECTRIC_MOTOR_MAXX;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PISTON_MAXX;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PUMP_MAXX;
+    public static MetaItem<?>.MetaValueItem CONVEYOR_MODULE_MAXX;
+    public static MetaItem<?>.MetaValueItem ROBOT_ARM_MAXX;
+    public static MetaItem<?>.MetaValueItem EMITTER_MAXX;
+    public static MetaItem<?>.MetaValueItem SENSOR_MAXX;
+    public static MetaItem<?>.MetaValueItem FIELD_GENERATOR_MAXX;
+
+    public static MetaItem<?>.MetaValueItem ELECTRIC_MOTOR_EX;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PISTON_EX;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PUMP_EX;
+    public static MetaItem<?>.MetaValueItem CONVEYOR_MODULE_EX;
+    public static MetaItem<?>.MetaValueItem ROBOT_ARM_EX;
+    public static MetaItem<?>.MetaValueItem EMITTER_EX;
+    public static MetaItem<?>.MetaValueItem SENSOR_EX;
+    public static MetaItem<?>.MetaValueItem FIELD_GENERATOR_EX;
 
     //
     public static MetaItem<?>.MetaValueItem BIOCELLS;
