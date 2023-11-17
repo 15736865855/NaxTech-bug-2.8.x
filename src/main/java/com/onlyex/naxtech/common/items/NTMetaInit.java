@@ -249,7 +249,6 @@ public class NTMetaInit {
     public static void init()
     {
         metaItem_NT = new NTMetaItem1();
-        metaItem_NT.setRegistryName("meta_item_nt");
     }
 
 }
