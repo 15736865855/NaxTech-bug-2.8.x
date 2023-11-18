@@ -191,6 +191,7 @@ dependencies {
     compileOnly (files("libs/EnderCore-1.12.2-0.5.78.jar"))
     compileOnly (files("libs/CraftTweaker2-1.12-4.1.20.693.jar"))
 
+    implementation (files("libs/Avaritia-1.12.2-3.3.0.37-universal.jar"))
 }
 
 apply from: 'gradle/scripts/dependencies.gradle'
