@@ -3,8 +3,7 @@ package com.onlyex.naxtech.common.metatileentities;
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtils;
-import com.onlyex.naxtech.common.metatileentities.multi.electric.MetaTileEntityComponentAssemblyLine;
-import com.onlyex.naxtech.common.metatileentities.multi.electric.MetaTileEntityPackagingLine;
+import com.onlyex.naxtech.common.metatileentities.multi.electric.*;
 import com.onlyex.naxtech.common.metatileentities.multi.part.*;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -39,8 +38,11 @@ public class NTMetaTileEntities {
     public static NTMetaTileEntityEnergyHatch[] OUTPUT_ENERGY_HATCH_16A = new NTMetaTileEntityEnergyHatch[8];
     public static NTMetaTileEntityCatalystHatch MULTIPART_CATALYST_HATCH;
     public static NTMetaTileEntityIndustrialMaintenanceHatch INDUSTRIAL_MAINTENANCE_HATCH;
+    public static NTMetaTileEntityBufferHatch MULTIPART_BUFFER_HATCH;
 
     public static SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.IV + 1];
+
+
     //多方块
     public static MetaTileEntityPackagingLine PACKAGING_LINE;
     public static MetaTileEntityComponentAssemblyLine COMPONENT_ASSEMBLY_LINE;
@@ -49,6 +51,8 @@ public class NTMetaTileEntities {
     public static MetaTileEntityPreciseAssembler PRECISE_ASSEMBLER;
     public static MetaTileEntityIntegratedOreFactory INTEGRATED_ORE_FACTORY;
     //public static MetaTileEntityCompressedFusionReactor[] COMPACT_FUSION_REACTOR = new MetaTileEntityCompressedFusionReactor[5];
+
+    public static MetaTileEntityFlotationFactory FLOTATION_FACTORY;
     private static <F extends MetaTileEntity> F registerSingleMetaTileEntity(int id, F mte) {
         if (id > 500) return null;
         return registerMetaTileEntity(id + 14000, mte);
@@ -89,6 +93,7 @@ public class NTMetaTileEntities {
 
         MULTIPART_CATALYST_HATCH = registerSingleMetaTileEntity(24, new NTMetaTileEntityCatalystHatch(epId("catalyst_hatch")));
         INDUSTRIAL_MAINTENANCE_HATCH = registerSingleMetaTileEntity(25, new NTMetaTileEntityIndustrialMaintenanceHatch(epId("industrial_maintenance_hatch")));
+        MULTIPART_BUFFER_HATCH = registerSingleMetaTileEntity(26, new NTMetaTileEntityBufferHatch(epId("buffer_hatch")));
 
 
         //14500
@@ -109,6 +114,6 @@ public class NTMetaTileEntities {
         //COMPACT_FUSION_REACTOR[2] = registerMultiMetaTileEntity(8, new MetaTileEntityCompressedFusionReactor(epId("compact_fusion_reactor_mk3"), GTValues.UV, MetaBlocks.FUSION_CASING.getState(BlockFusionCasing.CasingType.FUSION_CASING_MK3), MetaBlocks.FRAMES.get(Materials.Tritanium).getBlock(Materials.Tritanium), MetaBlocks.FUSION_CASING.getState(BlockFusionCasing.CasingType.FUSION_COIL), MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.FUSION_GLASS)));
         //COMPACT_FUSION_REACTOR[3] = registerMultiMetaTileEntity(9, new MetaTileEntityCompressedFusionReactor(epId("compact_fusion_reactor_mk4"), 9, );
         INTEGRATED_ORE_FACTORY = registerMultiMetaTileEntity(10, new MetaTileEntityIntegratedOreFactory(epId("integrated_ore_factory")));
-
+        FLOTATION_FACTORY = registerMultiMetaTileEntity(11, new MetaTileEntityFlotationFactory(epId("flotation_factory")));
     }
 }

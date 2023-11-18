@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.common.metatileentities.multi.part;
+package com.onlyex.naxtech.common.metatileentities.multi.electric;
 
 import codechicken.lib.raytracer.CuboidRayTraceResult;
 import codechicken.lib.render.CCRenderState;

@@ -30,7 +30,7 @@ public class BlockComponentAssemblyLineCasing extends VariantBlock<BlockComponen
         return false;
     }
 
-    public static enum CasingTier implements IStringSerializable {
+    public enum CasingTier implements IStringSerializable {
         LV("lv"),
         MV("mv"),
         HV("hv"),

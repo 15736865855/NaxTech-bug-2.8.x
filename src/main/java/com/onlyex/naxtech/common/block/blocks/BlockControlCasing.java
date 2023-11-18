@@ -24,7 +24,7 @@ public class BlockControlCasing extends VariantBlock<BlockControlCasing.CasingTy
         this.setSoundType(SoundType.METAL);
         setCreativeTab(NAXTECH_TAB);
         this.setHarvestLevel("wrench", 2);
-        this.setDefaultState(this.getState(CasingType.P));
+        this.setDefaultState(this.getState(CasingType.ISA_MILL_CASING));
     }
 
     public boolean canCreatureSpawn(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, @Nonnull EntityLiving.SpawnPlacementType type) {
@@ -35,7 +35,12 @@ public class BlockControlCasing extends VariantBlock<BlockControlCasing.CasingTy
 
     public enum CasingType implements IStringSerializable {
 
-        P("1");
+        ISA_MILL_CASING("isa_mill_casing"),
+        ISA_MILL_CASING_GEARBOX("isa_mill_casing_gearbox"),
+        ISA_MILL_CASING_PIPE("isa_mill_casing_pipe"),
+        FLOTATION_CASING("flotation_casing"),
+        FLOTATION_CASING_GEARBOX("flotation_casing_gearbox"),
+        FLOTATION_CASING_PIPE("flotation_casing_pipe");
 
         private final String name;
 

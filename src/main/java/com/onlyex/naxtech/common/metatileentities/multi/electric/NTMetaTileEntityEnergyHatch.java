@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.common.metatileentities.multi.part;
+package com.onlyex.naxtech.common.metatileentities.multi.electric;
 
 import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
 import gregtech.api.capability.IEnergyContainer;

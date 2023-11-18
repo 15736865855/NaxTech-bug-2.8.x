@@ -60,7 +60,7 @@ public class NTOverlayRenderer implements ICubeRenderer {
         Textures.renderFace(renderState, translation, pipeline, frontFacing, bounds, this.sprite, BlockRenderLayer.CUTOUT_MIPPED);
         if (this.spriteEmissive != null) {
             if (ConfigHolder.client.machinesEmissiveTextures) {
-                IVertexOperation[] lightPipeline = (IVertexOperation[]) ArrayUtils.add(pipeline, new LightMapOperation(240, 240));
+                IVertexOperation[] lightPipeline = ArrayUtils.add(pipeline, new LightMapOperation(240, 240));
                 Textures.renderFace(renderState, translation, lightPipeline, frontFacing, bounds, this.spriteEmissive, BloomEffectUtil.getRealBloomLayer());
             } else {
                 Textures.renderFace(renderState, translation, pipeline, frontFacing, bounds, this.spriteEmissive, BlockRenderLayer.CUTOUT_MIPPED);

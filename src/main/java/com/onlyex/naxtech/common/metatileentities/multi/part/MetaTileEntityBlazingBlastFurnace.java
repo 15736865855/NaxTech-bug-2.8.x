@@ -101,10 +101,10 @@ public class MetaTileEntityBlazingBlastFurnace extends RecipeMapMultiblockContro
                 .aisle("XXX", "C#C", "C#C", "XMX")
                 .aisle("XSX", "CCC", "CCC", "XXX")
                 .where('S', this.selfPredicate())
-                .where('X', states(new IBlockState[]{this.getCasingState()})
+                .where('X', states(this.getCasingState())
                         .setMinGlobalLimited(9)
                         .or(this.autoAbilities(true, true, true, true, true, true, false)))
-                .where('M', abilities(new MultiblockAbility[]{MultiblockAbility.MUFFLER_HATCH}))
+                .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
                 .where('C', heatingCoils())
                 .where('#', air())
                 .build();

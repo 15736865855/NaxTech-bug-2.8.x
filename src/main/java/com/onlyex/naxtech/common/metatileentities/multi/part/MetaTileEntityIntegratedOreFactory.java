@@ -65,7 +65,7 @@ import java.util.function.Consumer;
 
 import static gregtech.api.unification.material.Materials.TungstenSteel;
 
-//TODO 添加耗能显示
+//TODO 添加耗能显示 更换方块
 public class MetaTileEntityIntegratedOreFactory extends MultiblockWithDisplayBase implements IDataInfoProvider {
     protected OreProcessingLogic logic;
     protected IEnergyContainer energyContainer;

@@ -20,6 +20,8 @@ public class NTMetaBlocks {
     public static BlockComponentAssemblyLineCasing COMPONENT_ASSEMBLY_LINE_CASING;//部件装配线外壳
     public static BlockAdvancedAssemblyLineCasing ADVANCED_ASSEMBLY_LINE_CASING;//进阶装配线外壳
 
+    public static BlockActiveMultiblockCasing ACTIVE_MULTIBLOCK_CASING;//活跃多块外壳
+
     private NTMetaBlocks() {}
     public static void init() {
         BLOCK_DIMENSION_WIRE_COIL = new BlockDimensionWireCoil();
@@ -38,6 +40,8 @@ public class NTMetaBlocks {
         ADVANCED_ASSEMBLY_LINE_CASING.setRegistryName("advanced_assembly_line_casing");
         PIPELINE_CASING = new BlockPipelinelCasing();
         PIPELINE_CASING.setRegistryName("pipelinel_casing");
+        ACTIVE_MULTIBLOCK_CASING = new BlockActiveMultiblockCasing();
+        ACTIVE_MULTIBLOCK_CASING.setRegistryName("active_multiblock_casing");
     }
 
     @SideOnly(Side.CLIENT)
@@ -52,6 +56,7 @@ public class NTMetaBlocks {
         //  VariantActiveBlock Registry
         BLOCK_DIMENSION_WIRE_COIL.onModelRegister();
         GLASS_CASING.onModelRegister();
+        ACTIVE_MULTIBLOCK_CASING.onModelRegister();
 
     }
 

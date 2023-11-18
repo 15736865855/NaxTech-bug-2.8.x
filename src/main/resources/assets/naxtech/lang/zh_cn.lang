@@ -766,6 +766,16 @@ tile.machine_casing.precise_assembler_casing_mk3.name=精密电子单元机械�
 
 tile.pipelinel_casing.pbi.name=PBI管道方块
 
+tile.control_casing.isa_mill_casing.name=镍基合金-625机器外壳
+tile.control_casing.isa_mill_casing_pipe.name=镍基合金-625温和分散管道外壳
+tile.control_casing.isa_mill_casing_gearbox.name=镍基合金-625球磨齿轮箱外壳
+tile.control_casing.flotation_casing.name=哈斯特洛依合金-N机器外壳
+tile.control_casing.flotation_casing_pipe.name=哈斯特洛依合金-N油膜管道外壳
+tile.control_casing.flotation_casing_gearbox.name=哈斯特洛依合金-N齿轮箱外壳
+
+
+tile.active_multiblock_casing.flotation_intake_casing.name=哈斯特洛依合金-N筛选用进气口外壳
+
 
 
 #machine
@@ -896,6 +906,9 @@ naxtech.machine.component_assembler.iv.tooltip=零部件工厂
 naxtech.machine.catalyst_hatch.name=催化剂仓
 naxtech.multipart.catalyst.only=仅能放入当前反应的催化剂
 
+naxtech.machine.buffer_hatch.name=缓冲剂仓
+naxtech.machine.buffer_hatch.import.tooltip=为多方块结构输入缓冲剂
+naxtech.multipart.ph.name=当前pH值：%s
 naxtech.machine.industrial_maintenance_hatch.name=工业级维护仓
 
 naxtech.machine.blazing_blast_furnace.name=炽焱高炉
@@ -941,11 +954,31 @@ naxtech.machine.integrated_ore_factory.mode.4=处理模式：研磨-化学浸洗
 naxtech.machine.integrated_ore_factory.void.true=石粉销毁已开启
 naxtech.machine.integrated_ore_factory.void.false=石粉销毁已关闭
 
+naxtech.machine.compact_fusion_reactor_mk1.name=压缩核聚变反应堆控制电脑 Mk I
+naxtech.machine.compact_fusion_reactor_mk2.name=压缩核聚变反应堆控制电脑 Mk II
+naxtech.machine.compact_fusion_reactor_mk3.name=压缩核聚变反应堆控制电脑 Mk III
+naxtech.machine.compact_fusion_reactor_mk4.name=压缩核聚变反应堆控制电脑 Mk IV
+naxtech.machine.compact_fusion_reactor_mk5.name=压缩核聚变反应堆控制电脑 Mk V
 
+naxtech.machine.chemical_plant.name=化工厂
+recipemap.chemical_plant_recipes.name=化工处理
+naxtech.machine.chemical_plant.coil_tier=线圈等级：%d
+naxtech.machine.chemical_plant.casing_tier=外壳等级：%d
+naxtech.machine.chemical_plant.tube_tier=管道等级：%d
+naxtech.machine.chemical_plant.tier=等级：%d
+naxtech.recipe.casing_tier=等级：
+naxtech.recipe.casing_tier.1=1 (青铜)
+naxtech.recipe.casing_tier.2=2 (钢)
+naxtech.recipe.casing_tier.3=3 (铝)
+naxtech.recipe.casing_tier.4=4 (不锈钢)
+naxtech.recipe.casing_tier.5=5 (钛)
+naxtech.recipe.casing_tier.6=6 (钨钢)
 
+naxtech.machine.isa_mill.name=艾萨研磨机
+recipemap.isa_mill_recipes.name=湿法碾磨
 
-
-
+naxtech.machine.flotation_factory.name=工业浮选机
+recipemap.flotation_factory_recipes.name=浮游选矿
 
 
 

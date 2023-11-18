@@ -935,17 +935,44 @@ naxtech.machine.integrated_ore_factory.mode.4=Processing Mode: Pulverization-Che
 naxtech.machine.integrated_ore_factory.void.true=Stone Dust Voiding Enabled
 naxtech.machine.integrated_ore_factory.void.false=Stone Dust Voiding Disabled
 
+naxtech.machine.compact_fusion_reactor_mk1.name=压缩核聚变反应堆控制电脑 Mk I
+naxtech.machine.compact_fusion_reactor_mk2.name=压缩核聚变反应堆控制电脑 Mk II
+naxtech.machine.compact_fusion_reactor_mk3.name=压缩核聚变反应堆控制电脑 Mk III
+naxtech.machine.compact_fusion_reactor_mk4.name=压缩核聚变反应堆控制电脑 Mk IV
+naxtech.machine.compact_fusion_reactor_mk5.name=压缩核聚变反应堆控制电脑 Mk V
 
+naxtech.machine.chemical_plant.name=Chemical Plant
+recipemap.chemical_plant_recipes.name=Chemical Processing
+naxtech.machine.chemical_plant.coil_tier=Coil level: %d
+naxtech.machine.chemical_plant.casing_tier=Casing level: %d
+naxtech.machine.chemical_plant.tube_tier=Pipe level: %d
+naxtech.machine.chemical_plant.tier=Tier: %d
+naxtech.recipe.casing_tier=等级：
+naxtech.recipe.casing_tier.1=1 (青铜)
+naxtech.recipe.casing_tier.2=2 (钢)
+naxtech.recipe.casing_tier.3=3 (铝)
+naxtech.recipe.casing_tier.4=4 (不锈钢)
+naxtech.recipe.casing_tier.5=5 (钛)
+naxtech.recipe.casing_tier.6=6 (钨钢)
 
+naxtech.machine.isa_mill.name=Isa Mill
+recipemap.isa_mill_recipes.name=Wet Milling
 
+naxtech.machine.flotation_factory.name=Industrial Flotation Factory
+recipemap.flotation_factory_recipes.name=Flotation
 
+tile.control_casing.isa_mill_casing.name=Inconel-625 Machine Casing
+tile.control_casing.isa_mill_casing_pipe.name=Inconel-625 Mild dispersion Pipe Casing
+tile.control_casing.isa_mill_casing_gearbox.name=Inconel-625 Ball-milling Gearbox Casing
+tile.control_casing.flotation_casing.name=Hastelloy-N Machine Casing
+tile.control_casing.flotation_casing_pipe.name=Hastelloy-N Oil film coated Pipe Casing
+tile.control_casing.flotation_casing_gearbox.name=Hastelloy-N Gearbox Casing
 
+tile.active_multiblock_casing.flotation_intake_casing.name=Hastelloy-N Sieve selection Intake Casing
 
-
-
-
-
-
+naxtech.machine.buffer_hatch.name=Buffer Hatch
+naxtech.machine.buffer_hatch.import.tooltip=Input buffer for multiblocks
+naxtech.multipart.ph.name=pH: %s
 
 
 

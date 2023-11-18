@@ -7,6 +7,7 @@ import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaInit;
+import com.onlyex.naxtech.loaders.formula.FormulaManager;
 import com.onlyex.naxtech.loaders.recipe.handlers.NTRecipeHandlerList;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
@@ -70,6 +71,7 @@ public class CommonProxy {
         registry.register(COMPONENT_ASSEMBLY_LINE_CASING);
         registry.register(ADVANCED_ASSEMBLY_LINE_CASING);
         registry.register(PIPELINE_CASING);
+        registry.register(ACTIVE_MULTIBLOCK_CASING);
 
     }
 
@@ -87,6 +89,7 @@ public class CommonProxy {
         registry.register(createItemBlock(COMPONENT_ASSEMBLY_LINE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(ADVANCED_ASSEMBLY_LINE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(PIPELINE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(ACTIVE_MULTIBLOCK_CASING, VariantItemBlock::new));
 
 
     }
@@ -125,6 +128,7 @@ public class CommonProxy {
         CACasingTierProperty.registerCACasingTier(12, I18n.format("naxtech.machine.component_assembly_line.tier.12"));
         CACasingTierProperty.registerCACasingTier(13, I18n.format("naxtech.machine.component_assembly_line.tier.13"));
         CACasingTierProperty.registerCACasingTier(14, I18n.format("naxtech.machine.component_assembly_line.tier.14"));
+        FormulaManager.init();
     }
 
     @SubscribeEvent

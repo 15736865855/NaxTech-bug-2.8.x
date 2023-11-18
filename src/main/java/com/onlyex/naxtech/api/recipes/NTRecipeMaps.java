@@ -26,6 +26,12 @@ public class NTRecipeMaps {
     public static final RecipeMap<PACasingTierRecipeBuilder> PRECISE_ASSEMBLER_RECIPES;
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> FLOTATION_FACTORY_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<GrindBallTierRecipeBuilder> ISA_MILL_GRINDER;
+    @ZenProperty
+    public static final RecipeMap<CasingTierRecipeBuilder> CHEMICAL_PLANT_RECIPES;
     public NTRecipeMaps() {}
 
     static {
@@ -52,6 +58,26 @@ public class NTRecipeMaps {
         CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor_recipes", 0, 3, 0, 2, 0, 2, 0, 2, new NoCoilTemperatureRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.COOLING);
+
+        //  Flotation Factory Recipemap
+        FLOTATION_FACTORY_RECIPES = new RecipeMap<>("flotation_factory_recipes", 3, 3, 3, 3, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.CIRCULAR)
+                .setSound(GTSoundEvents.BATH);
+
+        //  Isa Mill Recipemap
+        ISA_MILL_GRINDER = new RecipeMap<>("isa_mill_recipes", 3, 3, 0, 0, new GrindBallTierRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.MACERATOR);
+
+        //  Chemical Plant Recipemap
+        CHEMICAL_PLANT_RECIPES = new RecipeMapChemicalPlant<>("chemical_plant_recipes", 4, 4, 4, 4, new CasingTierRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressWidget.MoveType.CIRCULAR)
+                .setSlotOverlay(false, false, GuiTextures.MOLECULAR_OVERLAY_1)
+                .setSlotOverlay(false, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setSlotOverlay(true, false, GuiTextures.VIAL_OVERLAY_1)
+                .setSlotOverlay(true, true, GuiTextures.VIAL_OVERLAY_2)
+                .setSound(GTSoundEvents.CHEMICAL_REACTOR);
+
 
     }
 

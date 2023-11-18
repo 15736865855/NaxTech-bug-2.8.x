@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.common.metatileentities.multi.part;
+package com.onlyex.naxtech.common.metatileentities.multi.electric;
 
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;

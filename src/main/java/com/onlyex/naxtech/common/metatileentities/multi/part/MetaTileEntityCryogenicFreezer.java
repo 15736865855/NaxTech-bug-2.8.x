@@ -53,7 +53,7 @@ public class MetaTileEntityCryogenicFreezer extends RecipeMapMultiblockControlle
                 .aisle("XXX", "X#X", "XXX")
                 .aisle("XXX", "XSX", "XXX")
                 .where('S', this.selfPredicate())
-                .where('X', states(new IBlockState[]{this.getCasingState()})
+                .where('X', states(this.getCasingState())
                         .setMinGlobalLimited(14)
                         .or(this.autoAbilities()))
                 .where('#', air())

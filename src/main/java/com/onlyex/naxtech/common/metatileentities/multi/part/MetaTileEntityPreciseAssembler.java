@@ -126,7 +126,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
                 .where('G', states(getGlassState()))
                 .where('M', NTTraceabilityPredicate.PA_INTERNAL_CASING.get())
                 .build();
-    }
+    }//TODO 更换方块
 
     private static IBlockState getFrameState() {
         return MetaBlocks.FRAMES.get(NTMaterials.MARM200Steel).getBlock(NTMaterials.MARM200Steel);

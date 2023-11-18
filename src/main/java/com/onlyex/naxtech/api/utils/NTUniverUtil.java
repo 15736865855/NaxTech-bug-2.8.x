@@ -19,7 +19,6 @@ import java.util.function.Supplier;
 import static net.minecraft.util.EnumFacing.*;
 
 public class NTUniverUtil {
-
     //  Utils
     public static int getOrDefault(NBTTagCompound tag, String key, int defaultValue){
         if(tag.hasKey(key)){

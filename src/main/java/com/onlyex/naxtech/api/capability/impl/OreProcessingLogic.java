@@ -65,7 +65,7 @@ public class OreProcessingLogic implements IWorkable{
     protected boolean isOutputsFull;
 
     private int mode = 0;
-    private static boolean init = false;
+    private static final boolean init = false;
     private boolean isVoidStone = false;
     private final MetaTileEntityIntegratedOreFactory metaTileEntity;
     public OreProcessingLogic(MetaTileEntityIntegratedOreFactory metaTileEntity) {
