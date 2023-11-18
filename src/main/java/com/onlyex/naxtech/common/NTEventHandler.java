@@ -1,6 +1,5 @@
 package com.onlyex.naxtech.common;
 
-import com.onlyex.naxtech.api.NTValues;
 import com.onlyex.naxtech.api.capability.pollution.PollutionProvider;
 import com.onlyex.naxtech.api.fluids.NTMetaFluids;
 import com.onlyex.naxtech.api.unification.NTMaterials;

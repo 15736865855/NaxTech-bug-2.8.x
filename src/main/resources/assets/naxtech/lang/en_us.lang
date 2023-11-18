@@ -685,6 +685,9 @@ gregtech.material.nitrated_dragon_dust_solution=
 gregtech.material.residual_draconium_solution=
 gregtech.material.draconium_slag_solution=
 gregtech.material.dragon_tear=
+gregtech.material.blazing_pyrotheum=Blazing Pyrotheum
+gregtech.material.gelid_cryotheum=Gelid Cryotheum
+
 
 
 #Coil Block
@@ -716,7 +719,11 @@ tile.advanced_assembly_line_casing.assembly_line_casing.name=
 tile.advanced_assembly_line_casing.assembly_control_casing.name=
 
 tile.machine_casing.iridium.name= iridium machine_casing
-
+tile.machine_casing.advanced_invar_casing.name=Plated Adiabatic Invar Machine Casing
+tile.machine_casing.advanced_aluminium_casing.name=Plated Antifreeze Aluminium Machine Casing
+tile.machine_casing.precise_assembler_casing_mk1.name=精密电子单元机械方块 Mk I
+tile.machine_casing.precise_assembler_casing_mk2.name=精密电子单元机械方块 Mk II
+tile.machine_casing.precise_assembler_casing_mk3.name=精密电子单元机械方块 Mk III
 tile.pipelinel_casing.pbi.name=
 
 #machine
@@ -879,3 +886,67 @@ metaitem.cover.robot_arm.ex.tooltip=作§f覆盖板§7时对§f物品§7的量�
 metaitem.cover.emitter.ex.name=发射器（EX）
 metaitem.cover.sensor.ex.name=传感器（EX）
 metaitem.cover.field_generator.ex.name=力场发生器（EX）
+
+naxtech.machine.catalyst_hatch.name=Catalyst Hatch
+naxtech.multipart.catalyst.only=Only catalysts can be placed
+
+naxtech.machine.industrial_maintenance_hatch.name=Industrial Maintenance Hatch
+
+naxtech.machine.blazing_blast_furnace.name=Volcanus
+naxtech.machine.blazing_blast_furnace.amount=Blazing Pyrotheum: %sL
+naxtech.machine.blazing_blast_furnace.heat=Blazing Pyrotheum are converting into heat!
+naxtech.machine.blazing_blast_furnace.warning=Insufficient Blazing Pyrotheum
+naxtech.machine.blazing_blast_furnace.tooltip.1=Need to provide §cBlazing Pyrotheum§7 for work
+naxtech.machine.blazing_blast_furnace.tooltip.2=When no §cBlazing Pyrotheum§7 are provided, Volcanus will shut down.
+naxtech.machine.blazing_blast_furnace.tooltip.3=The maximum parallels is determined based on the Coil level, and each improvement will increase maximum parallels to twice the original number.
+naxtech.machine.blazing_blast_furnace.tooltip.4=
+
+naxtech.machine.cryogenic_freezer.name=Cryogenic Freezer
+naxtech.machine.cryogenic_freezer.amount=Gelid Cryotheum: %sL
+naxtech.machine.cryogenic_freezer.subcooled=Gelid Cryotheum are absorbing surrounding heat!
+naxtech.machine.cryogenic_freezer.warning=Insufficient Gelid Cryotheum
+naxtech.machine.cryogenic_freezer.tooltip.1=Need to provide §bGelid Cryotheum§7 for work
+naxtech.machine.cryogenic_freezer.tooltip.2=When no §bGelid Cryotheum§7 are provided, Cryogenic Freezer will shut down.
+naxtech.machine.cryogenic_freezer.tooltip.3=
+naxtech.machine.cryogenic_freezer.tooltip.4=
+
+naxtech.machine.precise_assembler.name=精密自动组装机MT-3662
+recipemap.precise_assembler_recipes.name=精密组装机
+naxtech.machine.precise_assembler.tier=机器外壳等级：
+naxtech.machine.precise_assembler.tooltip.1=误差不超过7nm
+naxtech.machine.precise_assembler.tooltip.2=可运行一般的§r组装机§7配方，亦可用于组装精密器件
+naxtech.machine.precise_assembler.tooltip.3=使用不同的机器外壳判定机器等级
+naxtech.machine.precise_assembler.tooltip.4=运行§r组装机§7配方时，配方时间减半。
+naxtech.machine.precise_assembler.tooltip.5=运行§r组装机§7配方时，获得§r2^(机器外壳等级+4)§7次并行。
+naxtech.machine.precise_assembler.tier.1=MK1
+naxtech.machine.precise_assembler.tier.2=MK2
+naxtech.machine.precise_assembler.tier.3=MK3
+
+naxtech.machine.integrated_ore_factory.name=Integrated Ore Processing Factory
+naxtech.machine.integrated_ore_factory.tooltip.1=一步完成矿物处理
+naxtech.machine.integrated_ore_factory.tooltip_shift.1=使用螺丝刀右键控制器以切换处理模式
+naxtech.machine.integrated_ore_factory.tooltip_shift.2=潜行使用螺丝刀右键控制器以开关石粉销毁
+naxtech.machine.integrated_ore_factory.mode.0=Processing Mode: Pulverization-Ore Washer-Thermal Centrifuge-Pulverization
+naxtech.machine.integrated_ore_factory.mode.1=Processing Mode: Pulverization-Ore Washer-Pulverization-Centrifuge
+naxtech.machine.integrated_ore_factory.mode.2=Processing Mode: Pulverization-Pulverization-Centrifuge
+naxtech.machine.integrated_ore_factory.mode.3=Processing Mode: Pulverization-Ore Washer-Sifter
+naxtech.machine.integrated_ore_factory.mode.4=Processing Mode: Pulverization-Chemical Bath-Pulverization-Centrifuge
+
+naxtech.machine.integrated_ore_factory.void.true=Stone Dust Voiding Enabled
+naxtech.machine.integrated_ore_factory.void.false=Stone Dust Voiding Disabled
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

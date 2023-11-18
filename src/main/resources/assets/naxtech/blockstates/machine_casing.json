@@ -6,6 +6,36 @@
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/iridium"
       }
+    },
+    "variant=advanced_invar_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/advanced_invar_casing"
+      }
+    },
+    "variant=advanced_aluminium_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/advanced_aluminium_casing"
+      }
+    },
+    "variant=precise_assembler_casing_mk1": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/precise_assembler_casing_mk1"
+      }
+    },
+    "variant=precise_assembler_casing_mk2": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/precise_assembler_casing_mk2"
+      }
+    },
+    "variant=precise_assembler_casing_mk3": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/precise_assembler_casing_mk3"
+      }
     }
   }
 }

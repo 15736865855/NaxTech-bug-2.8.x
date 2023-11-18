@@ -35,7 +35,12 @@ public class BlockMachinelCasing  extends VariantBlock<BlockMachinelCasing.Casin
 
     public enum CasingType implements IStringSerializable {
 
-        IRIDIUM("iridium");
+        IRIDIUM("iridium"),
+        ADVANCED_INVAR_CASING("advanced_invar_casing"),
+        ADVANCED_ALUMINIUM_CASING("advanced_aluminium_casing"),
+        PRECISE_ASSEMBLER_CASING_MK1("precise_assembler_casing_mk1"),
+        PRECISE_ASSEMBLER_CASING_MK2("precise_assembler_casing_mk2"),
+        PRECISE_ASSEMBLER_CASING_MK3("precise_assembler_casing_mk3");
 
         private final String name;
 

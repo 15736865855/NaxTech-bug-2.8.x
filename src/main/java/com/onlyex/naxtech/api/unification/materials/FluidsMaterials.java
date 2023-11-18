@@ -3,10 +3,12 @@ package com.onlyex.naxtech.api.unification.materials;
 import com.onlyex.naxtech.api.unification.NTElements;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.Materials;
 import net.minecraft.util.text.TextFormatting;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
 import static gregtech.api.unification.material.info.MaterialIconSet.DULL;
 import static gregtech.api.unification.material.info.MaterialIconSet.METALLIC;
 import static gregtech.api.util.GTUtility.gregtechId;
@@ -185,6 +187,22 @@ public class FluidsMaterials {
                 .iconSet(DULL)
                 .build()
                 .setFormula("Dc?(H2O)", true);
+
+        BlazingPyrotheum = new Material.Builder(getMaterialsId(), gregtechId("blazing_pyrotheum"))
+                .fluid()
+                .color(Materials.Blaze.getMaterialRGB())
+                .fluidTemp(8000)
+                .components(Blaze, 2, Redstone, 1, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        GelidCryotheum = new Material.Builder(getMaterialsId(), gregtechId("gelid_cryotheum"))
+                .fluid()
+                .color(0x40B8FB)
+                .fluidTemp(8)
+                .components(Ice, 2, Electrotine, 1, Water, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
     private static int getMaterialsId() {
         if (startId < END_ID) {

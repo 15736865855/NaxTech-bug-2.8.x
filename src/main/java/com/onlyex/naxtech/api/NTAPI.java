@@ -5,6 +5,9 @@ import com.onlyex.naxtech.api.block.impl.WrappedIntTier;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.BlockComponentAssemblyLineCasing;
 import com.onlyex.naxtech.common.block.blocks.BlockDimensionWireCoil;
+import com.onlyex.naxtech.common.block.blocks.BlockMachinelCasing;
+import gregtech.common.blocks.BlockMachineCasing;
+import gregtech.common.blocks.MetaBlocks;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.state.IBlockState;
 
@@ -13,6 +16,8 @@ import static gregtech.api.GregTechAPI.HEATING_COILS;
 public class NTAPI {
 
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_CA_TIRED_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_PA_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_PA_INTERNAL_CASING = new Object2ObjectOpenHashMap<>();
 
     public static void APIBlockInit() {
         //  HEATING_COILS Addition
@@ -49,5 +54,21 @@ public class NTAPI {
                 new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.OpV, 13));
         MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.MAX),
                 new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.MAX, 14));
+
+        //  MAP_PA_CASING Init
+        MAP_PA_CASING.put(NTMetaBlocks.MACHINE_CASING.getState(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK1),
+                new WrappedIntTier(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK1, 1));
+        MAP_PA_CASING.put(NTMetaBlocks.MACHINE_CASING.getState(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK2),
+                new WrappedIntTier(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK2, 2));
+        MAP_PA_CASING.put(NTMetaBlocks.MACHINE_CASING.getState(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK3),
+                new WrappedIntTier(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK3, 3));
+
+        //  MAP_PA_INTERNAL_CASING Init
+        MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.LuV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.LuV, 1));
+        MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.ZPM),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.ZPM, 2));
+        MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UV, 3));
     }
 }

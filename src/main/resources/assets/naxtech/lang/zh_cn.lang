@@ -112,11 +112,11 @@ metaitem.cover.field_generator.max.name=力场发生器（MAX）
 metaitem.cover.electric_motor.maxx.name=电动马达（MAX+）
 metaitem.cover.electric_piston.maxx.name=电力活塞（MAX+）
 metaitem.cover.electric_pump.maxx.name=电动泵（MAX+）
-metaitem.cover.electric_pump.maxx.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f1048576 L/t§7
+metaitem.cover.electric_pump.maxx.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§fX L/t§7
 metaitem.cover.conveyor_module.maxx.name=传送带（MAX+）
-metaitem.cover.conveyor_module.maxx.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.conveyor_module.maxx.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§fX 组物品/s§7
 metaitem.cover.robot_arm.maxx.name=机械臂（MAX+）
-metaitem.cover.robot_arm.maxx.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.robot_arm.maxx.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§fX 组物品/s§7
 metaitem.cover.emitter.maxx.name=发射器（MAX+）
 metaitem.cover.sensor.maxx.name=传感器（MAX+）
 metaitem.cover.field_generator.maxx.name=力场发生器（MAX+）
@@ -124,11 +124,11 @@ metaitem.cover.field_generator.maxx.name=力场发生器（MAX+）
 metaitem.cover.electric_motor.ex.name=电动马达（EX）
 metaitem.cover.electric_piston.ex.name=电力活塞（EX）
 metaitem.cover.electric_pump.ex.name=电动泵（EX）
-metaitem.cover.electric_pump.ex.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f1048576 L/t§7
+metaitem.cover.electric_pump.ex.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§fX L/t§7
 metaitem.cover.conveyor_module.ex.name=传送带（EX）
-metaitem.cover.conveyor_module.ex.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.conveyor_module.ex.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§fX 组物品/s§7
 metaitem.cover.robot_arm.ex.name=机械臂（EX）
-metaitem.cover.robot_arm.ex.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f16 组物品/s§7
+metaitem.cover.robot_arm.ex.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§fX 组物品/s§7
 metaitem.cover.emitter.ex.name=发射器（EX）
 metaitem.cover.sensor.ex.name=传感器（EX）
 metaitem.cover.field_generator.ex.name=力场发生器（EX）
@@ -726,6 +726,8 @@ gregtech.material.dragon_tear=龙泪
 gregtech.material.nitrated_dragon_dust_solution=硝化龙尘溶液
 gregtech.material.residual_draconium_solution=龙素残余物溶液
 gregtech.material.draconium_slag_solution=龙素残渣溶液
+gregtech.material.blazing_pyrotheum=烈焰之炽焱
+gregtech.material.gelid_cryotheum=极寒之凛冰
 
 #Coil Block
 tile.wire_coil.naquadah_alloy.name=硅岩合金线圈方块
@@ -756,6 +758,11 @@ tile.advanced_assembly_line_casing.assembly_line_casing.name=进阶装配线外�
 tile.advanced_assembly_line_casing.assembly_control_casing.name=进阶装配控制外壳
 
 tile.machine_casing.iridium.name=强化镀铱机械方块
+tile.machine_casing.advanced_invar_casing.name=镀层殷钢绝热机器外壳
+tile.machine_casing.advanced_aluminium_casing.name=镀层铝制防冻机器外壳
+tile.machine_casing.precise_assembler_casing_mk1.name=精密电子单元机械方块 Mk I
+tile.machine_casing.precise_assembler_casing_mk2.name=精密电子单元机械方块 Mk II
+tile.machine_casing.precise_assembler_casing_mk3.name=精密电子单元机械方块 Mk III
 
 tile.pipelinel_casing.pbi.name=PBI管道方块
 
@@ -886,15 +893,53 @@ naxtech.machine.component_assembler.ev.tooltip=零部件工厂
 naxtech.machine.component_assembler.iv.name=精英部件组装机
 naxtech.machine.component_assembler.iv.tooltip=零部件工厂
 
+naxtech.machine.catalyst_hatch.name=催化剂仓
+naxtech.multipart.catalyst.only=仅能放入当前反应的催化剂
 
+naxtech.machine.industrial_maintenance_hatch.name=工业级维护仓
 
+naxtech.machine.blazing_blast_furnace.name=炽焱高炉
+naxtech.machine.blazing_blast_furnace.amount=烈焰之炽焱储量：%sL
+naxtech.machine.blazing_blast_furnace.heat=烈焰之炽焱正在转换为热量！
+naxtech.machine.blazing_blast_furnace.warning=烈焰之炽焱不足
+naxtech.machine.blazing_blast_furnace.tooltip.1=需要提供§c烈焰之炽焱§7以工作。
+naxtech.machine.blazing_blast_furnace.tooltip.2=未提供§c烈焰之炽焱§7时，炽焱高炉将会停机。
+naxtech.machine.blazing_blast_furnace.tooltip.3=比相同电压等级的§r电力高炉§7快一倍
+naxtech.machine.blazing_blast_furnace.tooltip.4=线圈等级决定最大并行数量，每提升一级都会使得最大并行数量提高至原本数量的两倍。
 
+naxtech.machine.cryogenic_freezer.name=凛冰冷冻机
+naxtech.machine.cryogenic_freezer.amount=极寒之凛冰储量：%sL
+naxtech.machine.cryogenic_freezer.subcooled=极寒之凛冰正在吸收周围的热量！
+naxtech.machine.cryogenic_freezer.warning=极寒之凛冰不足
+naxtech.machine.cryogenic_freezer.tooltip.1=需要提供§b极寒之凛冰§7以工作
+naxtech.machine.cryogenic_freezer.tooltip.2=未提供§b极寒之凛冰§7时，凛冰冷冻机将会停机
+naxtech.machine.cryogenic_freezer.tooltip.3=配方时间减少至原本的0.8倍
+naxtech.machine.cryogenic_freezer.tooltip.4=最大并行数：§e4§7
 
+naxtech.machine.precise_assembler.name=精密自动组装机MT-3662
+recipemap.precise_assembler_recipes.name=精密组装机
+naxtech.machine.precise_assembler.tier=机器外壳等级：
+naxtech.machine.precise_assembler.tooltip.1=误差不超过7nm
+naxtech.machine.precise_assembler.tooltip.2=可运行一般的§r组装机§7配方，亦可用于组装精密器件
+naxtech.machine.precise_assembler.tooltip.3=使用不同的机器外壳判定机器等级
+naxtech.machine.precise_assembler.tooltip.4=运行§r组装机§7配方时，配方时间减半。
+naxtech.machine.precise_assembler.tooltip.5=运行§r组装机§7配方时，获得§r2^(机器外壳等级+4)§7次并行。
+naxtech.machine.precise_assembler.tier.1=MK1
+naxtech.machine.precise_assembler.tier.2=MK2
+naxtech.machine.precise_assembler.tier.3=MK3
 
+naxtech.machine.integrated_ore_factory.name=集成矿石处理厂
+naxtech.machine.integrated_ore_factory.tooltip.1=一步完成矿物处理
+naxtech.machine.integrated_ore_factory.tooltip_shift.1=使用螺丝刀右键控制器以切换处理模式
+naxtech.machine.integrated_ore_factory.tooltip_shift.2=潜行使用螺丝刀右键控制器以开关石粉销毁
+naxtech.machine.integrated_ore_factory.mode.0=处理模式：研磨-洗矿-热力离心-研磨
+naxtech.machine.integrated_ore_factory.mode.1=处理模式：研磨-洗矿-研磨-离心
+naxtech.machine.integrated_ore_factory.mode.2=处理模式：研磨-研磨-离心
+naxtech.machine.integrated_ore_factory.mode.3=处理模式：研磨-洗矿-筛选
+naxtech.machine.integrated_ore_factory.mode.4=处理模式：研磨-化学浸洗-研磨-离心
 
-
-
-
+naxtech.machine.integrated_ore_factory.void.true=石粉销毁已开启
+naxtech.machine.integrated_ore_factory.void.false=石粉销毁已关闭
 
 
 

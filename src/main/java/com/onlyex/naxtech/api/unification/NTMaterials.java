@@ -91,8 +91,8 @@ public class NTMaterials {
     //public static Material ;
     //public static Material ;
     //public static Material ;
-    //public static Material ;
-    //public static Material ;
+    public static Material BlazingPyrotheum;
+    public static Material GelidCryotheum;
     public static Material DraconiumSlagSolution;
     public static Material ResidualDraconiumSolution;
     public static Material MutatedIivingSolder;
