@@ -1,3 +1,11 @@
+/*
+ *不要更改此文件！
+ *此外，如果有可用的更新，您可以随时替换此文件。
+ *请检查https://github.com/GregTechCEu/Buildscripts/blob/master/build.gradle更新。
+ *您也可以运行./gradlew updateBuildScript来更新您的构建脚本。
+ */
+
+
 import com.gtnewhorizons.retrofuturagradle.mcp.InjectTagsTask
 import org.jetbrains.gradle.ext.Gradle
 
