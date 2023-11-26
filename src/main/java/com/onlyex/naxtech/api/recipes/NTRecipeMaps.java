@@ -32,6 +32,8 @@ public class NTRecipeMaps {
     public static final RecipeMap<GrindBallTierRecipeBuilder> ISA_MILL_GRINDER;
     @ZenProperty
     public static final RecipeMap<CasingTierRecipeBuilder> CHEMICAL_PLANT_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<QFTCasingTierRecipeBuilder> QUANTUM_FORCE_TRANSFORMER_RECIPES;
     public NTRecipeMaps() {}
 
     static {
@@ -78,7 +80,10 @@ public class NTRecipeMaps {
                 .setSlotOverlay(true, true, GuiTextures.VIAL_OVERLAY_2)
                 .setSound(GTSoundEvents.CHEMICAL_REACTOR);
 
-
+        //  Quantum Force Transformer RecipeMap
+        QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>("quantum_force_transformer_recipes", 0, 6, 0, 6, 0, 6, 0, 6, new QFTCasingTierRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.SCIENCE);
     }
 
 }

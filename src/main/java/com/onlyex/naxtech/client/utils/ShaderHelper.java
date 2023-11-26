@@ -18,7 +18,7 @@ public final class ShaderHelper {
 
     private static final int VERT = ARBVertexShader.GL_VERTEX_SHADER_ARB;
     private static final int FRAG = ARBFragmentShader.GL_FRAGMENT_SHADER_ARB;
-    private static final String PREFIX = "/assets/epimorphism/shader/";
+    private static final String PREFIX = "/assets/naxtech/shader/";
 
     public static int cosmicShader = 0;
 

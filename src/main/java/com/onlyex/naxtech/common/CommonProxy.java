@@ -64,6 +64,8 @@ public class CommonProxy {
         registry.register(ADVANCED_ASSEMBLY_LINE_CASING);
         registry.register(PIPELINE_CASING);
         registry.register(ACTIVE_MULTIBLOCK_CASING);
+        registry.register(QUANTUM_FORCE_TRANSFORMER_CASING);
+        registry.register(QUANTUM_FORCE_TRANSFORMER_GLASS_CASING);
 
     }
 
@@ -82,6 +84,8 @@ public class CommonProxy {
         registry.register(createItemBlock(ADVANCED_ASSEMBLY_LINE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(PIPELINE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(ACTIVE_MULTIBLOCK_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(QUANTUM_FORCE_TRANSFORMER_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(QUANTUM_FORCE_TRANSFORMER_GLASS_CASING, VariantItemBlock::new));
 
 
     }

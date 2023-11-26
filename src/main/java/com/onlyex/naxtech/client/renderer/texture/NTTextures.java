@@ -30,6 +30,7 @@ OrientedOverlayRenderer
     public static NTOverlayRenderer ISA_MILL_CASING = new NTOverlayRenderer("casings/solid/isa_mill_casing");
     public static NTOverlayRenderer MULTIPART_BUFFER_HATCH = new NTOverlayRenderer("multiparts/overlay_buffer_hatch");
     public static OrientedOverlayRenderer ISA_MILL_OVERLAY = new OrientedOverlayRenderer("multiblock/isa_mill");
+    public static NTOverlayRenderer QUANTUM_CONSTRAINT_CASING = new NTOverlayRenderer("casings/quantum_force_transformer_casing/quantum_constraint_casing");
 
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();
 

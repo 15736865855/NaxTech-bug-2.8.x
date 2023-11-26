@@ -3,7 +3,7 @@ package com.onlyex.naxtech.common.items;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.StandardMetaItem;
 
-public class NTMetaInit {
+public class NTMetaItems {
 
     static StandardMetaItem metaItem_NT;
 
@@ -14,6 +14,7 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem SUPERCONDUCTOR_RARE_EARTH_COMPOSITE;
     public static MetaItem<?>.MetaValueItem TIMEPIECE;
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
+    public static MetaItem<?>.MetaValueItem NULL;
 
 
     //
@@ -56,6 +57,8 @@ public class NTMetaInit {
     public static MetaItem<?>.MetaValueItem PROTONATED_FULLERENE_SIEVING_MATRIX;
     public static MetaItem<?>.MetaValueItem SATURATED_FULLERENE_SIEVING_MATRIX;
     public static MetaItem<?>.MetaValueItem UNSTABLE_STAR;
+    public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
+    public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;
 
     //
     //Wrap Circuit

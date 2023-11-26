@@ -40,7 +40,7 @@ public class DimensionMaterials {
 
         Infinity = new Material.Builder(getMaterialsId(), gregtechId("infinity"))
                 .ingot().fluid(FluidTypes.LIQUID, true)
-                .iconSet(CUSTOM_IF)
+                .iconSet(CUSTOM_INFINITY)
                 .flags(DIMENSION)
                 .element(NTElements.If)
                 .blastTemp(120000, BlastProperty.GasTier.HIGH)

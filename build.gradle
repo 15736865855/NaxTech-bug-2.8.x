@@ -127,17 +127,9 @@ repositories {
         url 'https://maven.cleanroommc.com'
     }
     maven {
-        name 'SpongePowered Maven'
-        url 'https://repo.spongepowered.org/maven'
+        name 'BlameJared Maven'
+        url 'https://maven.blamejared.com'
     }
-    maven {
-        name 'CurseMaven'
-        url 'https://cursemaven.com'
-        content {
-            includeGroup 'curse.maven'
-        }
-    }
-    mavenLocal() // Must be last for caching to work
 }
 
 dependencies {
@@ -196,10 +188,11 @@ dependencies {
     implementation rfg.deobf("curse.maven:code-chicken-lib-1-8-242818:2779848")
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4773115")
 
+    compileOnly(rfg.deobf('CraftTweaker2:CraftTweaker2-API:4.1.20.684'))
+    compileOnly(rfg.deobf("curse.maven:ctm-267602:2915363"))
     compileOnly (files("libs/EnderCore-1.12.2-0.5.78.jar"))
-    compileOnly (files("libs/CraftTweaker2-1.12-4.1.20.693.jar"))
 
-
+    runtimeOnly 'curse.maven:top-245211:2667280'
 }
 
 apply from: 'gradle/scripts/dependencies.gradle'

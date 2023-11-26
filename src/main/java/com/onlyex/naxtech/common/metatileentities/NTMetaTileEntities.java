@@ -3,6 +3,7 @@ package com.onlyex.naxtech.common.metatileentities;
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtils;
+import com.onlyex.naxtech.common.metatileentities.multi.dimension.MetaTileEntityQuantumForceTransformer;
 import com.onlyex.naxtech.common.metatileentities.multi.electric.*;
 import com.onlyex.naxtech.common.metatileentities.multi.part.*;
 import gregtech.api.GTValues;
@@ -51,6 +52,7 @@ public class NTMetaTileEntities {
     public static MetaTileEntityPreciseAssembler PRECISE_ASSEMBLER;
     public static MetaTileEntityIntegratedOreFactory INTEGRATED_ORE_FACTORY;
     //public static MetaTileEntityCompressedFusionReactor[] COMPACT_FUSION_REACTOR = new MetaTileEntityCompressedFusionReactor[5];
+    public static MetaTileEntityQuantumForceTransformer QUANTUM_FORCE_TRANSFORMER;
 
     public static MetaTileEntityFlotationFactory FLOTATION_FACTORY;
     private static <F extends MetaTileEntity> F registerSingleMetaTileEntity(int id, F mte) {
@@ -115,5 +117,7 @@ public class NTMetaTileEntities {
         //COMPACT_FUSION_REACTOR[3] = registerMultiMetaTileEntity(9, new MetaTileEntityCompressedFusionReactor(epId("compact_fusion_reactor_mk4"), 9, );
         INTEGRATED_ORE_FACTORY = registerMultiMetaTileEntity(10, new MetaTileEntityIntegratedOreFactory(epId("integrated_ore_factory")));
         FLOTATION_FACTORY = registerMultiMetaTileEntity(11, new MetaTileEntityFlotationFactory(epId("flotation_factory")));
+        QUANTUM_FORCE_TRANSFORMER = registerMultiMetaTileEntity(12, new MetaTileEntityQuantumForceTransformer(epId("quantum_force_transformer")));
+
     }
 }

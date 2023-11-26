@@ -6,6 +6,8 @@ import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.BlockComponentAssemblyLineCasing;
 import com.onlyex.naxtech.common.block.blocks.BlockDimensionWireCoil;
 import com.onlyex.naxtech.common.block.blocks.BlockMachinelCasing;
+import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerCasing;
+import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerGlassCasing;
 import gregtech.common.blocks.BlockBoilerCasing;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.BlockMetalCasing;
@@ -26,6 +28,10 @@ public class NTAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_MACHINE_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_CP_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_CP_TUBE = new Object2ObjectOpenHashMap<>();
+
+    public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_QFT_MANIPULATOR = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_QFT_SHIELDING_CORE = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_QFT_GLASS = new Object2ObjectOpenHashMap<>();
     public static void APIBlockInit() {
         //  HEATING_COILS Addition
         for (BlockDimensionWireCoil.CoilType type : BlockDimensionWireCoil.CoilType.values()) {
@@ -106,5 +112,35 @@ public class NTAPI {
                 new WrappedIntTier(BlockBoilerCasing.BoilerCasingType.BRONZE_PIPE,5));
         MAP_CP_TUBE.put(MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.TUNGSTENSTEEL_PIPE),
                 new WrappedIntTier(BlockBoilerCasing.BoilerCasingType.TUNGSTENSTEEL_PIPE,6));
+
+        //  MAP_QFT_MANIPULATOR Init
+        MAP_QFT_MANIPULATOR.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_CASING.getState(BlockQuantumForceTransformerCasing.CasingType.NEUTRON_PULSE_MANIPULATOR_CASING),
+                new WrappedIntTier(BlockQuantumForceTransformerCasing.CasingType.NEUTRON_PULSE_MANIPULATOR_CASING, 1));
+        MAP_QFT_MANIPULATOR.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_CASING.getState(BlockQuantumForceTransformerCasing.CasingType.COSMIC_FABRIC_MANIPULATOR_CASING),
+                new WrappedIntTier(BlockQuantumForceTransformerCasing.CasingType.COSMIC_FABRIC_MANIPULATOR_CASING, 2));
+        MAP_QFT_MANIPULATOR.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_CASING.getState(BlockQuantumForceTransformerCasing.CasingType.INFINITY_INFUSED_MANIPULATOR_CASING),
+                new WrappedIntTier(BlockQuantumForceTransformerCasing.CasingType.INFINITY_INFUSED_MANIPULATOR_CASING, 3));
+        MAP_QFT_MANIPULATOR.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_CASING.getState(BlockQuantumForceTransformerCasing.CasingType.SUPRACAUSAL_CONTINUUM_MANIPULATOR_CASING),
+                new WrappedIntTier(BlockQuantumForceTransformerCasing.CasingType.SUPRACAUSAL_CONTINUUM_MANIPULATOR_CASING, 4));
+
+        //  MAP_QFT_SHIELDING_CORE Init
+        MAP_QFT_SHIELDING_CORE.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_CASING.getState(BlockQuantumForceTransformerCasing.CasingType.NEUTRON_SHIELDING_CORE_CASING),
+                new WrappedIntTier(BlockQuantumForceTransformerCasing.CasingType.NEUTRON_SHIELDING_CORE_CASING, 1));
+        MAP_QFT_SHIELDING_CORE.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_CASING.getState(BlockQuantumForceTransformerCasing.CasingType.COSMIC_FABRIC_SHIELDING_CORE_CASING),
+                new WrappedIntTier(BlockQuantumForceTransformerCasing.CasingType.COSMIC_FABRIC_SHIELDING_CORE_CASING, 2));
+        MAP_QFT_SHIELDING_CORE.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_CASING.getState(BlockQuantumForceTransformerCasing.CasingType.INFINITY_INFUSED_SHIELDING_CORE_CASING),
+                new WrappedIntTier(BlockQuantumForceTransformerCasing.CasingType.INFINITY_INFUSED_SHIELDING_CORE_CASING, 3));
+        MAP_QFT_SHIELDING_CORE.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_CASING.getState(BlockQuantumForceTransformerCasing.CasingType.SUPRACAUSAL_CONTINUUM_SHIELDING_CORE_CASING),
+                new WrappedIntTier(BlockQuantumForceTransformerCasing.CasingType.SUPRACAUSAL_CONTINUUM_SHIELDING_CORE_CASING, 4));
+
+        //  MAP_QFT_GLASS Init
+        MAP_QFT_GLASS.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.getState(BlockQuantumForceTransformerGlassCasing.GlassType.FORCE_FIELD_CONSTRAINED_GLASS),
+                new WrappedIntTier(BlockQuantumForceTransformerGlassCasing.GlassType.FORCE_FIELD_CONSTRAINED_GLASS, 1));
+        MAP_QFT_GLASS.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.getState(BlockQuantumForceTransformerGlassCasing.GlassType.COSMIC_MICROWAVE_BACKGROUND_RADIATION_ABSORPTION_GLASS),
+                new WrappedIntTier(BlockQuantumForceTransformerGlassCasing.GlassType.COSMIC_MICROWAVE_BACKGROUND_RADIATION_ABSORPTION_GLASS, 2));
+        MAP_QFT_GLASS.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.getState(BlockQuantumForceTransformerGlassCasing.GlassType.SPACETIME_SUPERCONDENSER_GLASS),
+                new WrappedIntTier(BlockQuantumForceTransformerGlassCasing.GlassType.SPACETIME_SUPERCONDENSER_GLASS, 3));
+        MAP_QFT_GLASS.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.getState(BlockQuantumForceTransformerGlassCasing.GlassType.SUPRACAUSAL_LIGHT_CONE_GLASS),
+                new WrappedIntTier(BlockQuantumForceTransformerGlassCasing.GlassType.SUPRACAUSAL_LIGHT_CONE_GLASS, 4));
     }
 }

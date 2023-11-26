@@ -8,6 +8,11 @@ metaitem.milled.tooltip.flotation=Further processing requires §6Industrial Flot
 item.material.oreprefix.nanites=%s
 item.material.oreprefix.wrap=%s
 
+
+#  Mill Balls
+metaitem.mill.grindball_soapstone.name=Soapstone Grindball
+metaitem.mill.grindball_aluminium.name=Aluminium Grindball
+
 # Circuits
 # Gooware
 metaitem.circuit.gooware_processor.name=Gooware Processor
@@ -359,6 +364,10 @@ metaitem.hyperdimensional.drone.name=Hyperdimensional Drone
 metaitem.dimension.quantum_anomaly.name=Quantum Anomaly
 metaitem.dimension.quantum_anomaly.tooltip=
 
+
+metaitem.null.name=
+metaitem.null.tooltip=§b§o
+
 metaitem.dimension.raw_tesseract.name=Raw Tesseract
 metaitem.dimension.raw_tesseract.tooltip=Probably should shoot it with lasers
 metaitem.dimension.energised_tesseract.name=Energised Tesseract
@@ -638,6 +647,7 @@ gregtech.material.draconium_chaotic=
 gregtech.material.orichalcum=
 gregtech.material.vibranium=
 gregtech.material.adamantium=
+gregtech.material.taranium=Taranium
 
 gregtech.material.mar_m_200_steel=
 gregtech.material.ichorium=
@@ -974,6 +984,41 @@ naxtech.machine.buffer_hatch.name=Buffer Hatch
 naxtech.machine.buffer_hatch.import.tooltip=Input buffer for multiblocks
 naxtech.multipart.ph.name=pH: %s
 
+recipemap.quantum_force_transformer_recipes.name=量子操纵者
+naxtech.machine.quantum_force_transformer.name=量子操纵者
+naxtech.machine.quantum_force_transformer.tooltip.1=可以让复杂的化工流程一步到位
+naxtech.machine.quantum_force_transformer.tooltip.2=需要不同等级的§r脉冲控制器§7，§r屏蔽核心§7与§r力场玻璃§7
+naxtech.machine.quantum_force_transformer.tooltip.3=脉冲控制器，屏蔽核心与力场玻璃的§r等级§7限制了机器可执行的§r配方§7
+naxtech.machine.quantum_force_transformer.tier=机器等级：
+naxtech.machine.quantum_force_transformer.tier.1=中子 (1级)
+naxtech.machine.quantum_force_transformer.tier.2=寰宇 (2级)
+naxtech.machine.quantum_force_transformer.tier.3=无尽时空 (3级)
+naxtech.machine.quantum_force_transformer.tier.4=超因果连续体 (4级)
 
+tile.quantum_force_transformer_glasses_casing.force_field_constrained_glass.name=力场约束玻璃
+tile.quantum_force_transformer_glasses_casing.force_field_constrained_glass.tooltip=§b量子操纵者§7-力场玻璃等级：§cI§7
+tile.quantum_force_transformer_glasses_casing.cosmic_microwave_background_radiation_absorption_glass.name=宇宙微波背景辐射吸收玻璃
+tile.quantum_force_transformer_glasses_casing.cosmic_microwave_background_radiation_absorption_glass.tooltip=§b量子操纵者§7-力场玻璃等级：§cII§7
+tile.quantum_force_transformer_glasses_casing.spacetime_supercondenser_glass.name=时空超凝聚体玻璃
+tile.quantum_force_transformer_glasses_casing.spacetime_supercondenser_glass.tooltip=§b量子操纵者§7-力场玻璃等级：§cIII§7
+tile.quantum_force_transformer_glasses_casing.supracausal_light_cone_glass.name=超因果光锥具现化玻璃
+tile.quantum_force_transformer_glasses_casing.supracausal_light_cone_glass.tooltip=§b量子操纵者§7-力场玻璃等级：§cIV§7
 
-
+tile.quantum_force_transformer_casing.quantum_constraint_casing.name=量子约束机器外壳
+tile.quantum_force_transformer_casing.neutron_pulse_manipulator_casing.name=中子脉冲控制器机械方块
+tile.quantum_force_transformer_casing.neutron_pulse_manipulator_casing.tooltip=§b量子操纵者§7-脉冲控制器等级：§cI§7
+tile.quantum_force_transformer_casing.neutron_shielding_core_casing.name=中子屏蔽核心机械方块
+tile.quantum_force_transformer_casing.neutron_shielding_core_casing.tooltip=§b量子操纵者§7-屏蔽核心等级：§cI§7
+tile.quantum_force_transformer_casing.cosmic_fabric_manipulator_casing.name=寰宇振荡控制器机械方块
+tile.quantum_force_transformer_casing.cosmic_fabric_manipulator_casing.tooltip=§b量子操纵者§7-脉冲控制器等级：§cII§7
+tile.quantum_force_transformer_casing.cosmic_fabric_shielding_core_casing.name=寰宇屏蔽核心机械方块
+tile.quantum_force_transformer_casing.cosmic_fabric_shielding_core_casing.tooltip=§b量子操纵者§7-屏蔽核心等级：§cII§7
+tile.quantum_force_transformer_casing.infinity_infused_manipulator_casing.name=无尽时空膨胀控制器机械方块
+tile.quantum_force_transformer_casing.infinity_infused_manipulator_casing.tooltip=§b量子操纵者§7-脉冲控制器等级：§cIII§7
+tile.quantum_force_transformer_casing.infinity_infused_shielding_core_casing.name=无尽时空屏蔽核心机械方块
+tile.quantum_force_transformer_casing.infinity_infused_shielding_core_casing.tooltip=§b量子操纵者§7-屏蔽核心等级：§cIII§7
+tile.quantum_force_transformer_casing.supracausal_continuum_manipulator_casing.name=超因果连续体撕裂机械方块
+tile.quantum_force_transformer_casing.supracausal_continuum_manipulator_casing.tooltip=§b量子操纵者§7-脉冲控制器等级：§cIV§7
+tile.quantum_force_transformer_casing.supracausal_continuum_shielding_core_casing.name=超因果连续体扭曲核心机械方块
+tile.quantum_force_transformer_casing.supracausal_continuum_shielding_core_casing.tooltip=§b量子操纵者§7-屏蔽核心等级：§cIV§7
+tile.quantum_force_transformer_casing.quantum_force_transformer_coil.name=超维度转换线圈方块

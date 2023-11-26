@@ -2,8 +2,10 @@ package com.onlyex.naxtech.common.items;
 
 
 import com.onlyex.naxtech.api.unification.ore.NTOrePrefix;
+import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.CommonProxy;
 import com.onlyex.naxtech.common.items.behaviors.MillBallBehavior;
+import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
@@ -72,7 +74,7 @@ public class NTMetaItem1 extends StandardMetaItem {
         RAW_ADVANCED_CRYSTAL_CHIP = this.addItem(41,"crystal.raw_advanced_chip");
         GRINDBALL_SOAPSTONE = this.addItem(42, "mill.grindball_soapstone").setMaxStackSize(1).addComponents(new MillBallBehavior());
         GRINDBALL_ALUMINIUM = this.addItem(43, "mill.grindball_aluminium").setMaxStackSize(1).addComponents(new MillBallBehavior());
-
+        NULL = this.addItem(44, "null").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.MASK_INGOT, 1));
 
 
 

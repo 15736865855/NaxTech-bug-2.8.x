@@ -1,6 +1,8 @@
 package com.onlyex.naxtech.common.block;
 
 import com.onlyex.naxtech.common.block.blocks.*;
+import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerCasing;
+import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -22,6 +24,9 @@ public class NTMetaBlocks {
 
     public static BlockActiveMultiblockCasing ACTIVE_MULTIBLOCK_CASING;//活跃多块外壳
 
+    public static BlockQuantumForceTransformerCasing QUANTUM_FORCE_TRANSFORMER_CASING;//量子操纵者外壳
+    public static BlockQuantumForceTransformerGlassCasing QUANTUM_FORCE_TRANSFORMER_GLASS_CASING;//量子操纵者玻璃
+
     private NTMetaBlocks() {}
     public static void init() {
         NT_WIRE_COIL = new BlockDimensionWireCoil();
@@ -42,6 +47,10 @@ public class NTMetaBlocks {
         PIPELINE_CASING.setRegistryName("pipelinel_casing");
         ACTIVE_MULTIBLOCK_CASING = new BlockActiveMultiblockCasing();
         ACTIVE_MULTIBLOCK_CASING.setRegistryName("active_multiblock_casing");
+        QUANTUM_FORCE_TRANSFORMER_CASING = new BlockQuantumForceTransformerCasing();
+        QUANTUM_FORCE_TRANSFORMER_CASING.setRegistryName("quantum_force_transformer_casing");
+        QUANTUM_FORCE_TRANSFORMER_GLASS_CASING = new BlockQuantumForceTransformerGlassCasing();
+        QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.setRegistryName("quantum_force_transformer_glasses_casing");
     }
 
     @SideOnly(Side.CLIENT)
@@ -52,11 +61,14 @@ public class NTMetaBlocks {
         registerItemModel(COMPONENT_ASSEMBLY_LINE_CASING);
         registerItemModel(ADVANCED_ASSEMBLY_LINE_CASING);
         registerItemModel(PIPELINE_CASING);
+        registerItemModel(QUANTUM_FORCE_TRANSFORMER_CASING);
+
 
         //  VariantActiveBlock Registry
         NT_WIRE_COIL.onModelRegister();
         GLASS_CASING.onModelRegister();
         ACTIVE_MULTIBLOCK_CASING.onModelRegister();
+        QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.onModelRegister();
 
     }
 
