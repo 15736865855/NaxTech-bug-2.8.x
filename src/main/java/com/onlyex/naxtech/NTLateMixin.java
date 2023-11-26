@@ -8,6 +8,6 @@ import java.util.List;
 public class NTLateMixin implements ILateMixinLoader {
     @Override
     public List<String> getMixinConfigs() {
-        return Collections.singletonList("mixins.naxtech.json");
+        return Collections.singletonList("mixins.naxtech_late.json");
     }
 }

@@ -7,7 +7,7 @@ import codechicken.lib.vec.Matrix4;
 import com.google.common.collect.Lists;
 import com.onlyex.naxtech.api.capability.impl.OreProcessingLogic;
 import com.onlyex.naxtech.api.utils.NTLog;
-import com.onlyex.naxtech.client.textures.NTTextures;
+import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.BlockMachinelCasing;
 import gregtech.api.GTValues;

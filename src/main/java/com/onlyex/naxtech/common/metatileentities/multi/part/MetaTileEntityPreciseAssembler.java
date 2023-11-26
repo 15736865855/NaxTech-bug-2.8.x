@@ -10,7 +10,7 @@ import com.onlyex.naxtech.api.pattern.NTTraceabilityPredicate;
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.unification.NTMaterials;
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
-import com.onlyex.naxtech.client.textures.NTTextures;
+import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;

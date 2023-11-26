@@ -1,12 +1,11 @@
-package com.onlyex.naxtech.proxy;
+package com.onlyex.naxtech.common;
 
 import com.onlyex.naxtech.api.NTValues;
 import com.onlyex.naxtech.api.recipes.properties.CACasingTierProperty;
 import com.onlyex.naxtech.api.recipes.properties.CasingTierProperty;
 import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
-import com.onlyex.naxtech.common.block.NTMetaBlocks;
-import com.onlyex.naxtech.common.items.NTMetaInit;
+import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.loaders.formula.FormulaManager;
 import com.onlyex.naxtech.loaders.recipe.handlers.NTRecipeHandlerList;
 import gregtech.api.GregTechAPI;
@@ -22,9 +21,8 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -40,22 +38,16 @@ public class CommonProxy {
     public static final CreativeTabs NAXTECH_TAB = new CreativeTabs("NaxTech") {
         @Override
         public ItemStack createIcon() {
-            return NTMetaInit.ENERGISED_TESSERACT.getStackForm();
+            return NTMetaItems.ENERGISED_TESSERACT.getStackForm();
         }
     };
 
-    public void preInit(FMLPreInitializationEvent event ) {
+    public CommonProxy() {}
 
-    }
-    public void init(FMLInitializationEvent event ) {
-    }
+    public void preLoad() {}
 
-    public CommonProxy() {
-    }
-
-    public void preLoad() {
-
-    }
+    @SubscribeEvent
+    public static void syncConfigValues(ConfigChangedEvent.OnConfigChangedEvent event) {}
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -63,7 +55,7 @@ public class CommonProxy {
         NTLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
 
-        registry.register(BLOCK_DIMENSION_WIRE_COIL);
+        registry.register(NT_WIRE_COIL);
         registry.register(GLASS_CASING);
         registry.register(CONTROL_CASING);
         registry.register(MACHINE_CASING);
@@ -81,7 +73,7 @@ public class CommonProxy {
         NTLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
 
-        registry.register(createItemBlock(BLOCK_DIMENSION_WIRE_COIL, VariantItemBlock::new));
+        registry.register(createItemBlock(NT_WIRE_COIL, VariantItemBlock::new));
         registry.register(createItemBlock(GLASS_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(CONTROL_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(MACHINE_CASING, VariantItemBlock::new));
@@ -98,6 +90,16 @@ public class CommonProxy {
         ItemBlock itemBlock = producer.apply(block);
         itemBlock.setRegistryName(Objects.requireNonNull(block.getRegistryName()));
         return itemBlock;
+    }
+
+    //  Cover Behavior Event
+    @SubscribeEvent
+    public static void registerCoverBehavior(GregTechAPI.RegisterEvent<CoverDefinition> event) {
+        /*NTCoverBehavior.init();
+
+        for (BlockWireCoil.CoilType type : BlockWireCoil.CoilType.values()) {
+            HEATING_COILS.put(NT_WIRE_COIL.getState(type), type);
+        }*/
     }
 
     @SubscribeEvent
@@ -134,16 +136,11 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerRecipeHandlers(RegistryEvent.Register<IRecipe> event) {
         NTRecipeHandlerList.register();
-
     }
 
     //  Crafting Component Event
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void initComponents(GregTechAPI.RegisterEvent<CraftingComponent> event) {
-    }
-
-    //  Cover Behavior Event
-    @SubscribeEvent
-    public static void registerCoverBehavior(GregTechAPI.RegisterEvent<CoverDefinition> event) {
+        //MaterialComponents.init();
     }
 }

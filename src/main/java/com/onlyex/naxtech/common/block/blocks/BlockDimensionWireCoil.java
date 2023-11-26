@@ -16,7 +16,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.IStringSerializable;
@@ -30,7 +29,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static com.onlyex.naxtech.proxy.CommonProxy.NAXTECH_TAB;
+import static com.onlyex.naxtech.common.CommonProxy.NAXTECH_TAB;
 /**
  * name            the unique name of the Heating Coil
  * coilTemperature the temperature of the Heating Coil
@@ -71,7 +70,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
             int EUt = MetaTileEntityMultiSmelter.getEUtForParallel(MetaTileEntityMultiSmelter.getMaxParallel(coilType.getLevel()), coilType.getEnergyDiscount());
             lines.add(I18n.format("tile.wire_coil.tooltip_energy_smelter", EUt));
             lines.add(I18n.format("tile.wire_coil.tooltip_pyro"));
-            lines.add(I18n.format("tile.wire_coil.tooltip_speed_pyro", coilTier == 0 ? 75 : 50 * (coilTier + 1)));
+            lines.add(I18n.format("tile.wire_coil.tooltip_speed_pyro", coilTier == 0 ? 75 : 50 * (coilTier + 7)));
             lines.add(I18n.format("tile.wire_coil.tooltip_cracking"));
             lines.add(I18n.format("tile.wire_coil.tooltip_energy_cracking", 100 - 10 * coilTier));
         } else {
@@ -86,6 +85,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
     protected boolean isBloomEnabled(CoilType value) {
         return ConfigHolder.client.coilsActiveEmissiveTextures;
     }
+
 
     public enum CoilType implements IStringSerializable, IHeatingCoilBlockStats {
 

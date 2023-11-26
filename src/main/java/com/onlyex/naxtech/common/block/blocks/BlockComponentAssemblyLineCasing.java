@@ -12,7 +12,7 @@ import net.minecraft.world.IBlockAccess;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import static com.onlyex.naxtech.proxy.CommonProxy.NAXTECH_TAB;
+import static com.onlyex.naxtech.common.CommonProxy.NAXTECH_TAB;
 
 @ParametersAreNonnullByDefault
 public class BlockComponentAssemblyLineCasing extends VariantBlock<BlockComponentAssemblyLineCasing.CasingTier> {

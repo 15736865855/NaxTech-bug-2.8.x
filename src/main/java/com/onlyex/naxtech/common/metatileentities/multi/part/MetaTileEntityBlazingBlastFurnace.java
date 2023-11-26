@@ -1,6 +1,6 @@
 package com.onlyex.naxtech.common.metatileentities.multi.part;
 
-import com.onlyex.naxtech.client.textures.NTTextures;
+import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.BlockMachinelCasing;
 import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;

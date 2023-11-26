@@ -1,7 +1,7 @@
 package com.onlyex.naxtech.common.metatileentities.multi.part;
 
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
-import com.onlyex.naxtech.client.textures.NTTextures;
+import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import gregicality.multiblocks.common.block.blocks.BlockUniqueCasing;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;

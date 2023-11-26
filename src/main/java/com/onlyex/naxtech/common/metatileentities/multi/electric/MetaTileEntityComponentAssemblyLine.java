@@ -7,7 +7,7 @@ import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.recipes.properties.CACasingTierProperty;
 import com.onlyex.naxtech.api.unification.NTMaterials;
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
-import com.onlyex.naxtech.client.textures.NTTextures;
+import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.BlockAdvancedAssemblyLineCasing;
 import com.onlyex.naxtech.common.block.blocks.BlockGlassCasing;

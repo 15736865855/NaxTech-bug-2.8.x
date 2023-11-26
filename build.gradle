@@ -1,7 +1,7 @@
 /*
  *不要更改此文件！
  *此外，如果有可用的更新，您可以随时替换此文件。
- *请检查https://github.com/GregTechCEu/Buildscripts/blob/master/build.gradle更新。
+ *请检查https://github.com//build.gradle更新
  *您也可以运行./gradlew updateBuildScript来更新您的构建脚本。
  */
 //TODO 更新
@@ -199,17 +199,20 @@ dependencies {
     compileOnly (files("libs/EnderCore-1.12.2-0.5.78.jar"))
     compileOnly (files("libs/CraftTweaker2-1.12-4.1.20.693.jar"))
 
-    implementation (files("libs/Avaritia-1.12.2-3.3.0.37-universal.jar"))
+
 }
 
 apply from: 'gradle/scripts/dependencies.gradle'
 
 // Adds Access Transformer files to tasks
-if (project.use_access_transformer.toBoolean()) {
-    for (File at : sourceSets.getByName("main").resources.files) {
-        if (at.name.toLowerCase().endsWith("_at.cfg")) {
-            tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from(at)
-            tasks.srgifyBinpatchedJar.accessTransformerFiles.from(at)
+if (propertyBool('use_access_transformer')) {
+    for (def location : propertyStringList('access_transformer_locations')) {
+        def fileLocation = file("${projectDir}/src/main/resources/${location}")
+        if (fileLocation.exists()) {
+            tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from("${projectDir}/src/main/resources/${location}")
+            tasks.srgifyBinpatchedJar.accessTransformerFiles.from("${projectDir}/src/main/resources/${location}")
+        } else {
+            throw new GradleException("Access Transformer file [$fileLocation] does not exist!")
         }
     }
 }

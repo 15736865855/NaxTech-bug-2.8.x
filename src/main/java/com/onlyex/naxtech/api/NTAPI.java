@@ -29,7 +29,7 @@ public class NTAPI {
     public static void APIBlockInit() {
         //  HEATING_COILS Addition
         for (BlockDimensionWireCoil.CoilType type : BlockDimensionWireCoil.CoilType.values()) {
-            HEATING_COILS.put(NTMetaBlocks.BLOCK_DIMENSION_WIRE_COIL.getState(type), type);
+            HEATING_COILS.put(NTMetaBlocks.NT_WIRE_COIL.getState(type), type);
         }
         //  MAP_CA_TIRED_CASING Init
         

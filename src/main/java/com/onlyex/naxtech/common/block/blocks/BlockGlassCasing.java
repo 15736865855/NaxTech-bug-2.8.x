@@ -25,7 +25,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static com.onlyex.naxtech.proxy.CommonProxy.NAXTECH_TAB;
+import static com.onlyex.naxtech.common.CommonProxy.NAXTECH_TAB;
 
 public class BlockGlassCasing extends VariantActiveBlock<BlockGlassCasing.CasingType> {
 

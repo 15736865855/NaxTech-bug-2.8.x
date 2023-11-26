@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class NTMetaBlocks {
-    public static BlockDimensionWireCoil BLOCK_DIMENSION_WIRE_COIL;//线圈
+    public static BlockDimensionWireCoil NT_WIRE_COIL;//线圈
     public static BlockGlassCasing GLASS_CASING;//强化硅酸盐硼玻璃
     public static BlockControlCasing CONTROL_CASING;//控制外壳
     public static BlockMachinelCasing MACHINE_CASING;//机械外壳
@@ -24,8 +24,8 @@ public class NTMetaBlocks {
 
     private NTMetaBlocks() {}
     public static void init() {
-        BLOCK_DIMENSION_WIRE_COIL = new BlockDimensionWireCoil();
-        BLOCK_DIMENSION_WIRE_COIL.setRegistryName("wire_coil");
+        NT_WIRE_COIL = new BlockDimensionWireCoil();
+        NT_WIRE_COIL.setRegistryName("wire_coil");
         GLASS_CASING = new BlockGlassCasing();
         GLASS_CASING.setRegistryName("glasses_casing");
         CONTROL_CASING = new BlockControlCasing();
@@ -54,7 +54,7 @@ public class NTMetaBlocks {
         registerItemModel(PIPELINE_CASING);
 
         //  VariantActiveBlock Registry
-        BLOCK_DIMENSION_WIRE_COIL.onModelRegister();
+        NT_WIRE_COIL.onModelRegister();
         GLASS_CASING.onModelRegister();
         ACTIVE_MULTIBLOCK_CASING.onModelRegister();
 

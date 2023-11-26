@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.client.textures;
+package com.onlyex.naxtech.client.renderer.texture;
 
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;

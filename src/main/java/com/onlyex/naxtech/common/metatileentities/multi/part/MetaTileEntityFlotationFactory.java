@@ -1,7 +1,7 @@
 package com.onlyex.naxtech.common.metatileentities.multi.part;
 
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
-import com.onlyex.naxtech.client.textures.NTTextures;
+import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.BlockActiveMultiblockCasing;
 import com.onlyex.naxtech.common.block.blocks.BlockControlCasing;

@@ -2,12 +2,13 @@ package com.onlyex.naxtech.common.items;
 
 
 import com.onlyex.naxtech.api.unification.ore.NTOrePrefix;
-import com.onlyex.naxtech.proxy.CommonProxy;
+import com.onlyex.naxtech.common.CommonProxy;
+import com.onlyex.naxtech.common.items.behaviors.MillBallBehavior;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
 
-import static com.onlyex.naxtech.common.items.NTMetaInit.*;
+import static com.onlyex.naxtech.common.items.NTMetaItems.*;
 
 public class NTMetaItem1 extends StandardMetaItem {
 
@@ -69,6 +70,9 @@ public class NTMetaItem1 extends StandardMetaItem {
         STATION_MKIV = this.addItem(39,"station_4");
         STATION_MKV = this.addItem(40,"station_5");
         RAW_ADVANCED_CRYSTAL_CHIP = this.addItem(41,"crystal.raw_advanced_chip");
+        GRINDBALL_SOAPSTONE = this.addItem(42, "mill.grindball_soapstone").setMaxStackSize(1).addComponents(new MillBallBehavior());
+        GRINDBALL_ALUMINIUM = this.addItem(43, "mill.grindball_aluminium").setMaxStackSize(1).addComponents(new MillBallBehavior());
+
 
 
 

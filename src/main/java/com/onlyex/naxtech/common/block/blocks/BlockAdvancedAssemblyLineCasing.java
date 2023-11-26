@@ -11,7 +11,7 @@ import net.minecraft.world.IBlockAccess;
 
 import javax.annotation.Nonnull;
 
-import static com.onlyex.naxtech.proxy.CommonProxy.NAXTECH_TAB;
+import static com.onlyex.naxtech.common.CommonProxy.NAXTECH_TAB;
 
 public class BlockAdvancedAssemblyLineCasing  extends VariantBlock<BlockAdvancedAssemblyLineCasing.CasingType> {
 

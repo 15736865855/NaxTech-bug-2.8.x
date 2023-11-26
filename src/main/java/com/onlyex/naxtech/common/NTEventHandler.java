@@ -23,7 +23,6 @@ public class NTEventHandler {
     {
         NTMaterials.initregister();
         NTMetaFluids.init();
-        //在此处注册材料
         OrePrefixAdditions.init();
     }
     @SubscribeEvent

@@ -8,7 +8,7 @@ import com.onlyex.naxtech.api.capability.IPHValue;
 import com.onlyex.naxtech.api.capability.NTDataCode;
 import com.onlyex.naxtech.api.metatileentity.multiblock.NTMultiblockAbility;
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
-import com.onlyex.naxtech.client.textures.NTTextures;
+import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import gregtech.api.capability.impl.NotifiableFluidTank;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
