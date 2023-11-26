@@ -68,9 +68,8 @@ public class NTMaterials {
     public static Material Legendarium;
     public static Material DragonDust;
     public static Material DragonTear;
-    //public static Material ;
-    //public static Material ;
-    //public static Material ;
+    public static Material Quantium;
+    public static Material QuantumAlloy;
     //public static Material ;
     //public static Material ;
     //public static Material ;

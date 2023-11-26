@@ -31,5 +31,6 @@ public class NTElements {
     public static final Element CrystalMatrix = Elements.add(888, 888, -1, null, "CrystalMatrix", "◊◇◊", false);
     public static final Element VoidMetal = Elements.add(165, 281, -1, null, "VoidMetal", "⚶", false);
     public static final Element Mithril = Elements.add(405, 564, -1, null, "Mithril", "Mh", false);
+    public static final Element Quantium = Elements.add(684, 228, -1, null, "Quantium", "Qt", false);
     //public static final Element  = add(-1, -1, -1, null, "", "", false);
 }

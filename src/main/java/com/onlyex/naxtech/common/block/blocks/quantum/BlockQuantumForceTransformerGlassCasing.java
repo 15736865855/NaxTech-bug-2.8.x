@@ -28,7 +28,7 @@ import java.util.List;
 public class BlockQuantumForceTransformerGlassCasing extends VariantActiveBlock<BlockQuantumForceTransformerGlassCasing.GlassType> {
     public BlockQuantumForceTransformerGlassCasing() {
         super(Material.GLASS);
-        setTranslationKey("ep_glass_casing_b");
+        setTranslationKey("quantum_force_transformer_glasses_casing");
         setHardness(5.0F);
         setResistance(10.0F);
         setSoundType(SoundType.GLASS);

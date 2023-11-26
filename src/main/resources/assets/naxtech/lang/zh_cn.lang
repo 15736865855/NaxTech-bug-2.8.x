@@ -734,7 +734,8 @@ gregtech.material.residual_draconium_solution=龙素残余物溶液
 gregtech.material.draconium_slag_solution=龙素残渣溶液
 gregtech.material.blazing_pyrotheum=烈焰之炽焱
 gregtech.material.gelid_cryotheum=极寒之凛冰
-
+gregtech.material.quantum_alloy=量子合金
+gregtech.material.quantium=量子
 #Coil Block
 tile.wire_coil.naquadah_alloy.name=硅岩合金线圈方块
 tile.wire_coil.electrum_flux.name=通流琥珀金线圈方块

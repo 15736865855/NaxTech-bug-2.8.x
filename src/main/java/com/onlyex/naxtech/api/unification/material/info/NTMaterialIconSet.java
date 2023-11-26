@@ -1,6 +1,7 @@
 package com.onlyex.naxtech.api.unification.material.info;
 
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
+import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.HaloRenderItemBehavior;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.unification.material.info.MaterialIconSet;
@@ -22,5 +23,6 @@ public class NTMaterialIconSet {
     public static final MaterialIconSetWithRenderer CUSTOM_ETERNITY = new MaterialIconSetWithRenderer("eternity", null, true, new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
     public static final MaterialIconSetWithRenderer CUSTOM_INFINITY = new MaterialIconSetWithRenderer("infinity", null, true, new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
 
+    public static final MaterialIconSetWithRenderer CUSTOM_UNIVERSIUM = new MaterialIconSetWithRenderer("universium", null, true,  new CosmicRenderItemBehavior(() -> NTTextures.MASK_INGOT, 1));
 
 }

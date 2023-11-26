@@ -156,8 +156,10 @@ public class DimensionMaterials {
                 .build();
 
         Universium = new Material.Builder(getMaterialsId(), gregtechId("universium"))
-                .element(NTElements.Un)
-                .iconSet(METALLIC)
+                //.ingot().fluid(FluidTypes.LIQUID, true)
+                .element(NTElements.Un)//TODO 方块 流体 材质
+                //.iconSet(CUSTOM_UNIVERSIUM)
+                //.flags(DIMENSION, GENERATE_NANITES)
                 .build();
 
         ElectrumFlux = new Material.Builder(getMaterialsId(), gregtechId("electrum_flux"))

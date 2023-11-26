@@ -6,6 +6,7 @@ import gregtech.api.unification.material.properties.BlastProperty;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
 import static com.onlyex.naxtech.api.unification.material.info.NTMaterialIconSet.*;
+import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumTungstenCarbide;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -87,6 +88,26 @@ public class MachineCasingMaterials {
                 //  TODO UEV stage coil?
                 .blastTemp(12960, BlastProperty.GasTier.HIGHEST, VA[UIV], 4998)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROUND, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_DOUBLE_PLATE, GENERATE_GEAR, GENERATE_SMALL_GEAR, NO_UNIFICATION)
+                .build();
+
+        Quantium = new Material.Builder(getMaterialsId(), gregtechId("quantium"))
+                .ingot()
+                .fluid()
+                .plasma()
+                .color(0x0F0F0F)
+                .iconSet(SHINY)
+                .element(NTElements.Quantium)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, NO_UNIFICATION)
+                .build();
+
+        QuantumAlloy = new Material.Builder(getMaterialsId(), gregtechId("quantum_alloy"))
+                .ingot()
+                .fluid()
+                .color(0x0F0F0F)
+                .iconSet(SHINY)
+                .blastTemp(10800, BlastProperty.GasTier.HIGHEST, VA[UHV], 1600)
+                .cableProperties(V[UHV], 24, 0, true)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, NO_UNIFICATION)
                 .build();
 
 
