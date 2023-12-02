@@ -25,17 +25,28 @@ MAX = 14
   所有材料建设者应遵循以下通用格式:
   <p>
   material = new MaterialBuilder(id, gregtechId("name"))
-  .ingot().fluid().ore().dust()         <--- 类型
+  .ingot().fluid().ore().dust().plasma()         <--- 类型
+  .liquid(new FluidBuilder()
+  .temperature(600)//自定义温度
+  .customStill()//自定义材质
+  .alternativeName("seed.oil")//替代名称
+  .attribute(FluidAttributes.ACID)//属性（流体属性. ACID）
+  )
+
   .color().iconSet()                    <--- 外观
   .flags()                              <--- 特殊生成
   .element() / .components()            <--- 成分
   .toolStats(ToolProperty.Builder.of(7.0F, 6.0F, 2560, 3) )  <---工具统计信息
-  .oreByProducts()                         | 其他属性
+  .oreByProducts()                         | 附加属性
   ...                                   <---
   .itemPipeProperties(2048, 1)          <---管道特性
   .rotorStats(15.0f, 7.0f, 3000)        <---转子统计
   .attackSpeed(0.1F).enchantability(21).build())             <---攻击速度
-  .blastTemp()                          <--- 鼓风温度
+  .blast(1700, GasTier.LOW)
+  .blast(b -> b
+                .temp(temp, tier)
+                .blastStats(blastEUt, blastDuration)//爆炸
+                .vacuumStats(vacuumEUt, vacuumDuration));//真空              <--- 鼓风温度
   .build();
   .setFormula("NH4Cl", true);           <---设置公式
   <p>

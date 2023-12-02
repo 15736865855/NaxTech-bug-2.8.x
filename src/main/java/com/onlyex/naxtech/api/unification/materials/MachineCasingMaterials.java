@@ -11,6 +11,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static gregtech.api.unification.material.properties.BlastProperty.GasTier.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 
 public class MachineCasingMaterials {
@@ -23,7 +24,7 @@ public class MachineCasingMaterials {
                 .fluid()
                 .color(0x515151)
                 .iconSet(SHINY)
-                .blastTemp(5000, BlastProperty.GasTier.HIGHER, VA[IV], 200)
+                .blast(b -> b .temp(5000, HIGHER).blastStats(VA[IV], 200))
                 .components(Niobium, 2, Chrome, 9, Aluminium, 5, Titanium, 2, Cobalt, 10, Tungsten, 13, Nickel, 18)
                 .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_FRAME, NO_UNIFICATION)
                 .build();
@@ -44,7 +45,7 @@ public class MachineCasingMaterials {
                 .iconSet(SHINY)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE, GENERATE_FRAME, NO_UNIFICATION)
                 .element(NTElements.Vibranium)
-                .blastTemp(4852, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(4852, HIGH))
                 .build();
 
         Adamantium = new Material.Builder(getMaterialsId(), gregtechId("adamantium"))
@@ -55,7 +56,7 @@ public class MachineCasingMaterials {
                 .iconSet(METALLIC)
                 .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_SPRING, GENERATE_DOUBLE_PLATE, NO_UNIFICATION)
                 .element(NTElements.Adamantium)
-                .blastTemp(5225, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(5225, HIGH))
                 .cableProperties(VA[UHV], 18, 9, false)
                 .build();
 
@@ -66,7 +67,7 @@ public class MachineCasingMaterials {
                 .iconSet(METALLIC)
                 .element(NTElements.Orichalcum)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, NO_UNIFICATION)
-                .blastTemp(9000, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(9000, HIGH))
                 .build();
 
         Taranium = new Material.Builder(getMaterialsId(), gregtechId("taranium"))
@@ -86,7 +87,7 @@ public class MachineCasingMaterials {
                 .iconSet(CUSTOM_LEGENDARIUM)
                 .components(Naquadria, 1, Trinium, 1, Duranium, 1, Tritanium, 1, Orichalcum, 1, Adamantium, 1, Vibranium, 1, Taranium, 1)
                 //  TODO UEV stage coil?
-                .blastTemp(12960, BlastProperty.GasTier.HIGHEST, VA[UIV], 4998)
+                .blast(b -> b .temp(12960, HIGHEST).blastStats(VA[UIV], 4998))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROUND, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_DOUBLE_PLATE, GENERATE_GEAR, GENERATE_SMALL_GEAR, NO_UNIFICATION)
                 .build();
 
@@ -105,7 +106,7 @@ public class MachineCasingMaterials {
                 .fluid()
                 .color(0x0F0F0F)
                 .iconSet(SHINY)
-                .blastTemp(10800, BlastProperty.GasTier.HIGHEST, VA[UHV], 1600)
+                .blast(b -> b .temp(10800, HIGHEST).blastStats(VA[UHV], 1600))
                 .cableProperties(V[UHV], 24, 0, true)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, NO_UNIFICATION)
                 .build();

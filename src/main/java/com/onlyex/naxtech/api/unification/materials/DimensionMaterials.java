@@ -1,7 +1,7 @@
 package com.onlyex.naxtech.api.unification.materials;
 
 import com.onlyex.naxtech.api.unification.NTElements;
-import gregtech.api.fluids.fluidType.FluidTypes;
+import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
@@ -13,6 +13,8 @@ import static com.onlyex.naxtech.api.unification.material.info.NTMaterialIconSet
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static gregtech.api.unification.material.properties.BlastProperty.GasTier.HIGH;
+import static gregtech.api.unification.material.properties.BlastProperty.GasTier.HIGHEST;
 import static gregtech.api.util.GTUtility.gregtechId;
 
 
@@ -25,81 +27,91 @@ public class DimensionMaterials {
     public static void register() {
 
         BlackdWarfMatter = new Material.Builder(getMaterialsId(),gregtechId("blackd_warf_matter"))
-                .ingot(11).fluid()
+                .ingot(11)
+                .liquid(new FluidBuilder())
                 .color(0x000000).iconSet(METALLIC)
                 .flags(NONTM, GENERATE_NANITES)
-                .blastTemp(120000, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(120000, HIGH))
                 .build();
 
         WhitedWarfMatter = new Material.Builder(getMaterialsId(), gregtechId("whited_warf_matter"))
-                .ingot().fluid(FluidTypes.LIQUID)
+                .ingot()
+                .liquid(new FluidBuilder().customStill())
                 .iconSet(CUSTOM_WWM)
                 .flags(DIMENSION, GENERATE_NANITES)
-                .blastTemp(120000, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(120000, HIGH))
                 .build();
 
         Infinity = new Material.Builder(getMaterialsId(), gregtechId("infinity"))
-                .ingot().fluid(FluidTypes.LIQUID, true)
+                .ingot()
+                .liquid(new FluidBuilder().customStill())
                 .iconSet(CUSTOM_INFINITY)
                 .flags(DIMENSION)
                 .element(NTElements.If)
-                .blastTemp(120000, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(120000, HIGH))
                 .build();
 
         CosmicNeutronium = new Material.Builder(getMaterialsId(), gregtechId("cosmic_neutronium"))//TODO 方块 流体 材质
-                .ingot().fluid(FluidTypes.LIQUID, true)
+                .ingot()
+                .liquid(new FluidBuilder())
                 .element(NTElements.CoNe)
                 .color(0x323232).iconSet(CUSTOM_CN)
                 .flags(DIMENSION)
-                .blastTemp(120000, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(120000, HIGH))
                 .build();
 
         Spacetime = new Material.Builder(getMaterialsId(), gregtechId("spacetime"))
-                .ingot().fluid(FluidTypes.LIQUID)
+                .ingot()
+                .liquid(new FluidBuilder().customStill())
                 .iconSet(CUSTOM_SPACETIME)
                 .flags(DIMENSION)
                 .element(NTElements.SpTi)
-                .blastTemp(120000, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(120000, HIGH))
                 .build();
 
         Eternity = new Material.Builder(getMaterialsId(), gregtechId("eternity"))
-                .ingot().fluid(FluidTypes.LIQUID)
+                .ingot()
+                .liquid(new FluidBuilder().customStill())
                 .iconSet(CUSTOM_ETERNITY)
                 .flags(DIMENSION, GENERATE_NANITES)
                 .element(NTElements.Et)
-                .blastTemp(120000, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(120000, HIGH))
                 .build();
 
         MagnetohydrodynamicallyConstrainedStarMatter = new Material.Builder(getMaterialsId(), gregtechId("magneto_hydrodynamically_constrained_star_matter"))
-                .ingot().fluid(FluidTypes.LIQUID)
+                .ingot()
+                .liquid(new FluidBuilder().customStill())
                 .iconSet(CUSTOM_MHCSM)
                 .flags(NONTM, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_RING)
                 .element(NTElements.MaCoStMa)
-                .blastTemp(120000, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(120000, HIGH))
                 .build();
 
         DraconiumChaotic = new Material.Builder(getMaterialsId(),gregtechId("draconium_chaotic"))
-                .ingot(10).fluid()
+                .ingot(10)
+                .liquid(new FluidBuilder())
                 .color(0x2C195A).iconSet(METALLIC)
                 .flags(NONTM)
                 .element(NTElements.ChaoticDraconium)
-                .blastTemp(9430, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(9430, HIGH))
                 .build();
 
         DraconiumAwakened = new Material.Builder(getMaterialsId(),gregtechId("draconium_awakened"))
-                .ingot(9).fluid()
+                .ingot(9)
+                .liquid(new FluidBuilder())
                 .color(0xFFA157).iconSet(METALLIC)
                 .flags(NONTM)
                 .element(NTElements.AwakenedDraconium)
-                .blastTemp(8460, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(8460, HIGH))
                 .build();
 
         Draconium = new Material.Builder(getMaterialsId(),gregtechId("draconium"))
-                .ingot(8).fluid()
+                .ingot(8)
+                .liquid(new FluidBuilder())
                 .color(0x6200e7).iconSet(METALLIC)
                 .flags(NONTM)
                 .element(NTElements.Draconium)
-                .blastTemp(7250, BlastProperty.GasTier.HIGH)
+                .blast(b -> b .temp(7250, HIGH))
                 .build();
 
         Lumium = new Material.Builder(getMaterialsId(), gregtechId("lumium"))
@@ -113,50 +125,48 @@ public class DimensionMaterials {
 
         Mithril = new Material.Builder(getMaterialsId(), gregtechId("mithril"))
                 .ingot()
-                .fluid()
+                .liquid(new FluidBuilder())
                 .plasma()
-                .fluidTemp(4550)
                 .color(0x428fdb)
                 .iconSet(DULL)
-                .blastTemp(10900, BlastProperty.GasTier.HIGHEST, VA[UHV])
+                .blast(b -> b .temp(10900, HIGHEST).blastStats(VA[UHV]))
                 .element(NTElements.Mithril)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, NO_UNIFICATION)
                 .build();
 
 
         Shirabon = new Material.Builder(getMaterialsId(), gregtechId("shirabon"))
-                .ingot(13).fluid()
+                .ingot(13)
+                .liquid(new FluidBuilder().temperature(26000))
                 .color(0xBE125C).iconSet(METALLIC)
                 .flags(NONTM)
                 .element(NTElements.Shir)
-                .fluidTemp(26000)
                 .build();
 
         AstralTitanium = new Material.Builder(getMaterialsId(), gregtechId("astral_titanium"))
-                .ingot(9).fluid()
+                .ingot(9)
+                .liquid(new FluidBuilder().temperature(6900))
                 .color(0xE5ABF6).iconSet(METALLIC)
                 .flags(NONTM)
                 .element(NTElements.AsTi)
-                .fluidTemp(6900)
                 .build();
 
         CelestialTungsten = new Material.Builder(getMaterialsId(), gregtechId("celestial_tungsten"))
-                .ingot(10).fluid()
+                .ingot(10)
+                .liquid(new FluidBuilder().temperature(8700))
                 .color(0x303030).iconSet(METALLIC)
                 .flags(NONTM)
                 .element(NTElements.CeTu)
-                .fluidTemp(8700)
                 .build();
 
         Rhugnor = new Material.Builder(getMaterialsId(), gregtechId("rhugnor"))
                 .fluid()
                 .color(0xBE00FF).iconSet(METALLIC)
-                .fluidTemp((int) (V[UIV] - V[UV]))
                 .element(NTElements.Rhugnor)
                 .build();
 
         Universium = new Material.Builder(getMaterialsId(), gregtechId("universium"))
-                //.ingot().fluid(FluidTypes.LIQUID, true)
+                //.ingot().fluid()
                 .element(NTElements.Un)//TODO 方块 流体 材质
                 //.iconSet(CUSTOM_UNIVERSIUM)
                 //.flags(DIMENSION, GENERATE_NANITES)
@@ -171,7 +181,6 @@ public class DimensionMaterials {
                 .ingot()
                 .fluid()
                 .plasma()
-                .fluidTemp((int) (V[UXV] - V[LuV]))
                 .element(NTElements.Hypogen)
                 .color(0xDC784B)
                 .iconSet(CUSTOM_HYPOGEN)
@@ -180,14 +189,13 @@ public class DimensionMaterials {
                 .build();
 
         TranscendentMetal = new Material.Builder(getMaterialsId(), gregtechId("transcendent_metal"))
-                .fluid(FluidTypes.LIQUID, true)
+                .fluid()
                 .iconSet(METALLIC)
                 .build();
 
         DegenerateRhenium = new Material.Builder(getMaterialsId(), gregtechId("degenerate_rhenium"))
                 .dust()
-                .fluid(FluidTypes.PLASMA)
-                .fluidTemp((int) V[UV])
+                .fluid()
                 .color(0x6666FF)
                 .iconSet(CUSTOM_DEGENERATE_RHENIUM)
                 .element(Elements.Rh)
@@ -197,8 +205,7 @@ public class DimensionMaterials {
 
         CrystalMatrix = new Material.Builder(getMaterialsId(), gregtechId("crystal_matrix"))
                 .ingot()
-                .fluid()
-                .fluidTemp(660450)
+                .liquid(new FluidBuilder().temperature(6604))
                 .color(0x70ecff)
                 .iconSet(BRIGHT)
                 .flags(NO_UNIFICATION)
@@ -207,17 +214,17 @@ public class DimensionMaterials {
 
         Ichorium = new Material.Builder(getMaterialsId(), gregtechId("ichorium"))
                 .ingot()
-                .fluid()
+                .liquid(new FluidBuilder().temperature(10800))
                 .color(0xE5A559)
                 .iconSet(BRIGHT)
-                .blastTemp(10800, BlastProperty.GasTier.HIGHEST, VA[UV])
+                .blast(b -> b .temp(10800, HIGHEST).blastStats(VA[UV]))
                 .element(NTElements.Ichorium)
                 .flags(GENERATE_PLATE, NO_UNIFICATION)
                 .build();
 
         IchorLiquid = new Material.Builder(getMaterialsId(), gregtechId("ichor_liquid"))
-                .fluid(FluidTypes.PLASMA)
-                .fluidTemp(214748)
+                .liquid(new FluidBuilder().temperature(214748))
+                .plasma()
                 .color(0xE5A559)
                 .element(NTElements.IchorLiquid)
                 .flags(NO_UNIFICATION)
@@ -225,8 +232,7 @@ public class DimensionMaterials {
 
         VoidMetal = new Material.Builder(getMaterialsId(), gregtechId("void_metal"))
                 .ingot()
-                .fluid()
-                .fluidTemp(0)
+                .liquid(new FluidBuilder().temperature(440))
                 .color(0x20142C)
                 .iconSet(DULL)
                 .element(NTElements.VoidMetal)
@@ -234,8 +240,7 @@ public class DimensionMaterials {
                 .build();
 
         DragonTear = new Material.Builder(getMaterialsId(), gregtechId("dragon_tear"))
-                .fluid()
-                .fluidTemp(2992)
+                .liquid(new FluidBuilder().temperature(2992))
                 .color(0x9999FF)
                 .iconSet(DULL)
                 .build()

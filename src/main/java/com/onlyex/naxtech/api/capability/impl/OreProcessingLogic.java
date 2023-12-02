@@ -151,7 +151,7 @@ public class OreProcessingLogic implements IWorkable{
                     Recipe recipe = RecipeMaps.MACERATOR_RECIPES
                             .findRecipe(GTValues.V[14], Collections.singletonList(stack), Collections.emptyList());
                     if (recipe != null) {
-                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -176,7 +176,7 @@ public class OreProcessingLogic implements IWorkable{
                             Collections.singletonList(Materials.DistilledWater.getFluid(Integer.MAX_VALUE))
                             );
                     if (recipe != null) {
-                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -198,7 +198,7 @@ public class OreProcessingLogic implements IWorkable{
                     Recipe recipe = RecipeMaps.THERMAL_CENTRIFUGE_RECIPES
                             .findRecipe(GTValues.V[14],  Collections.singletonList(stack), Collections.emptyList());
                     if (recipe != null) {
-                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -220,7 +220,7 @@ public class OreProcessingLogic implements IWorkable{
                     Recipe recipe = RecipeMaps.CENTRIFUGE_RECIPES
                             .findRecipe(GTValues.V[14], Collections.singletonList(stack), Collections.emptyList());
                     if (recipe != null) {
-                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -242,7 +242,7 @@ public class OreProcessingLogic implements IWorkable{
                     Recipe recipe = RecipeMaps.SIFTER_RECIPES
                             .findRecipe(GTValues.V[14], Collections.singletonList(stack), Collections.emptyList());
                     if (recipe != null) {
-                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -272,7 +272,7 @@ public class OreProcessingLogic implements IWorkable{
                         int t_stored = getFluidAmount(t_input_fluid);
                         int t_washed = Math.min(t_stored / t_input_fluid.amount, stack.getCount());
                         depleteInput(new FluidStack(t_input_fluid.getFluid(), t_washed * t_input_fluid.amount));
-                        t_product.addAll(getOutputStack(recipe, t_washed));
+                        //t_product.addAll(getOutputStack(recipe, t_washed));
                         if (t_washed < stack.getCount()) {
                             t_product.add(NTUniverUtil.copyAmountUnsafe(stack.getCount() - t_washed, stack));
                         }
@@ -542,8 +542,8 @@ public class OreProcessingLogic implements IWorkable{
         return false;
     }
 
-    //  计算配方产物带概率输出
-    private List<ItemStack> getOutputStack(Recipe recipe, int time) {
+    //  计算配方产物带概率输出//TODO 重写
+    /*private List<ItemStack> getOutputStack(Recipe recipe, int time) {
         List<ItemStack> t_output = new ArrayList<>();
         for (ItemStack item : recipe.getOutputs()) {
             t_output.add(NTUniverUtil.copyAmountUnsafe((long) time * item.getCount(), item));
@@ -557,12 +557,12 @@ public class OreProcessingLogic implements IWorkable{
             Random random = new Random();
             int tAmount = (int) Math.ceil(Math.sqrt(e) * random.nextGaussian() + u);
             t_output.add(
-                    NTUniverUtil.copyAmountUnsafe((long) tAmount * recipe.getChancedOutputs().get(i).getItemStack().getCount(), recipe.getChancedOutputs().get(i).getItemStack()));
+                    NTUniverUtil.copyAmountUnsafe((long) tAmount * recipe.getChancedOutputs().getItemStack().getCount(), recipe.getChancedOutputs().get(i).getItemStack()));
         }
         return t_output.stream()
                 .filter(i -> (i != null && i.getCount() > 0))
                 .collect(Collectors.toList());
-    }
+    }*/
 
     //  用t_product中的物品更新midProduct
     private void doCompress(List<ItemStack> list) {

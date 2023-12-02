@@ -404,10 +404,10 @@ public class MetaTileEntityIntegratedOreFactory extends MultiblockWithDisplayBas
         this.logic.receiveInitialData(buf);
     }
 
-    @Override
-    public void writeCustomData(int discriminator, Consumer<PacketBuffer> dataWriter) {
+    /*@Override TODO 2.8
+    public final void writeCustomData(int discriminator, Consumer<PacketBuffer> dataWriter) {
         super.writeCustomData(discriminator, dataWriter);
-    }
+    }*/
 
     @Override
     public void receiveCustomData(int dataId, PacketBuffer buf) {

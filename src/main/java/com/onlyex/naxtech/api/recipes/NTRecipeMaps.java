@@ -11,7 +11,7 @@ import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
-
+//TODO 2.8
 @ZenClass("mods.naxtech.recipe.NTRecipeMaps")
 @ZenRegister
 public class NTRecipeMaps {
@@ -57,7 +57,7 @@ public class NTRecipeMaps {
                 .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
                 .setSound(GTSoundEvents.ASSEMBLER);
 
-        CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor_recipes", 0, 3, 0, 2, 0, 2, 0, 2, new NoCoilTemperatureRecipeBuilder(), false)
+        CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor_recipes",  3,  2,  2,  2, new NoCoilTemperatureRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.COOLING);
 
@@ -81,7 +81,7 @@ public class NTRecipeMaps {
                 .setSound(GTSoundEvents.CHEMICAL_REACTOR);
 
         //  Quantum Force Transformer RecipeMap
-        QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>("quantum_force_transformer_recipes", 0, 6, 0, 6, 0, 6, 0, 6, new QFTCasingTierRecipeBuilder(), false)
+        QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>("quantum_force_transformer_recipes",  6,  6,  6,  6, new QFTCasingTierRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.SCIENCE);
     }

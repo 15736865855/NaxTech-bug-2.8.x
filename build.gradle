@@ -183,8 +183,6 @@ dependencies {
 
     // 消除依赖项混淆的示例
     implementation rfg.deobf("curse.maven:had-enough-items-557549:4810661")
-    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4799055")
-    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4701685")
     implementation rfg.deobf("curse.maven:code-chicken-lib-1-8-242818:2779848")
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4773115")
 
@@ -193,6 +191,17 @@ dependencies {
     compileOnly (files("libs/EnderCore-1.12.2-0.5.78.jar"))
 
     runtimeOnly 'curse.maven:top-245211:2667280'
+
+    //2.8.1
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4910613")
+    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4910674")
+    implementation rfg.deobf("curse.maven:groovyscript-687577:4905039")
+
+    //2.7.4
+    //implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4799055")
+    //implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4701685")
+
+
 }
 
 apply from: 'gradle/scripts/dependencies.gradle'
@@ -345,12 +354,12 @@ tasks.register('generateMixinJson') {
     group 'cleanroom helpers'
     onlyIf {
         if (propertyBool('use_mixins') && propertyBool('generate_mixins_json')) {
-            return !file("src/main/resources/mixins.${propertyString('mod_id')}.json").exists()
+            return !file("src/main/resources/mixins.${propertyString('mod_id')}_early.json").exists()
         }
         return false
     }
     doLast {
-        def file = file("src/main/resources/mixins.${propertyString('mod_id')}.json")
+        def file = file("src/main/resources/mixins.${propertyString('mod_id')}_early.json")
         file << """{\n\t"package": "\${mixin_package}",\n\t"required": true,\n\t"refmap": "\${mixin_refmap}",\n\t"target": "@env(DEFAULT)",\n\t"minVersion": "0.8.5",\n\t"compatibilityLevel": "JAVA_8",\n\t"mixins": [],\n\t"server": [],\n\t"client": []\n}"""
     }
 }

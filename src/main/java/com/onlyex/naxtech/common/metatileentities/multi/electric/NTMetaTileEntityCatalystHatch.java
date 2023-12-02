@@ -39,7 +39,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class NTMetaTileEntityCatalystHatch extends MetaTileEntityMultiblockNotifiablePart implements IMultiblockAbilityPart<ICatalyst> ,ICatalyst{
-    private final IItemHandlerModifiable itemStack = new NotifiableItemStackHandler(1, null, false){
+    private final IItemHandlerModifiable itemStack = new NotifiableItemStackHandler(null,1, null, false){//TODO 2.8
         @Override
         protected void onLoad() {
             onContentsChanged(0);

@@ -1,7 +1,6 @@
 package com.onlyex.naxtech.common;
 
 import com.onlyex.naxtech.api.capability.pollution.PollutionProvider;
-import com.onlyex.naxtech.api.fluids.NTMetaFluids;
 import com.onlyex.naxtech.api.unification.NTMaterials;
 import com.onlyex.naxtech.api.unification.OrePrefixAdditions;
 import gregtech.api.unification.material.event.MaterialEvent;
@@ -22,7 +21,6 @@ public class NTEventHandler {
     public static void registerMaterials(MaterialEvent event)
     {
         NTMaterials.initregister();
-        NTMetaFluids.init();
         OrePrefixAdditions.init();
     }
     @SubscribeEvent
