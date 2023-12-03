@@ -11,7 +11,6 @@ import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
-//TODO 2.8
 @ZenClass("mods.naxtech.recipe.NTRecipeMaps")
 @ZenRegister
 public class NTRecipeMaps {

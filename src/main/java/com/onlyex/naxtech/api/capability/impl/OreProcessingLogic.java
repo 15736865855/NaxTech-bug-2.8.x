@@ -1,5 +1,6 @@
 package com.onlyex.naxtech.api.capability.impl;
 
+import com.ibm.icu.util.Output;
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
 import com.onlyex.naxtech.common.metatileentities.multi.part.MetaTileEntityIntegratedOreFactory;
 import gregtech.api.GTValues;
@@ -11,6 +12,8 @@ import gregtech.api.capability.impl.EnergyContainerList;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.chance.output.ChancedOutput;
+import gregtech.api.recipes.chance.output.impl.ChancedItemOutput;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
@@ -32,7 +35,7 @@ import javax.annotation.Nonnull;
 import java.util.*;
 import java.util.stream.Collectors;
 /*
-* Referenced some code from GT5 Unofficial
+* 引用了GT5非官方的一些代码
 *
 * https://github.com/GTNewHorizons/GT5-Unofficial/
 * */
@@ -151,7 +154,7 @@ public class OreProcessingLogic implements IWorkable{
                     Recipe recipe = RecipeMaps.MACERATOR_RECIPES
                             .findRecipe(GTValues.V[14], Collections.singletonList(stack), Collections.emptyList());
                     if (recipe != null) {
-                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -176,7 +179,7 @@ public class OreProcessingLogic implements IWorkable{
                             Collections.singletonList(Materials.DistilledWater.getFluid(Integer.MAX_VALUE))
                             );
                     if (recipe != null) {
-                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -198,7 +201,7 @@ public class OreProcessingLogic implements IWorkable{
                     Recipe recipe = RecipeMaps.THERMAL_CENTRIFUGE_RECIPES
                             .findRecipe(GTValues.V[14],  Collections.singletonList(stack), Collections.emptyList());
                     if (recipe != null) {
-                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -220,7 +223,7 @@ public class OreProcessingLogic implements IWorkable{
                     Recipe recipe = RecipeMaps.CENTRIFUGE_RECIPES
                             .findRecipe(GTValues.V[14], Collections.singletonList(stack), Collections.emptyList());
                     if (recipe != null) {
-                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -242,7 +245,7 @@ public class OreProcessingLogic implements IWorkable{
                     Recipe recipe = RecipeMaps.SIFTER_RECIPES
                             .findRecipe(GTValues.V[14], Collections.singletonList(stack), Collections.emptyList());
                     if (recipe != null) {
-                        //t_product.addAll(getOutputStack(recipe, stack.getCount()));
+                        t_product.addAll(getOutputStack(recipe, stack.getCount()));
                     } else {
                         t_product.add(stack);
                     }
@@ -272,7 +275,7 @@ public class OreProcessingLogic implements IWorkable{
                         int t_stored = getFluidAmount(t_input_fluid);
                         int t_washed = Math.min(t_stored / t_input_fluid.amount, stack.getCount());
                         depleteInput(new FluidStack(t_input_fluid.getFluid(), t_washed * t_input_fluid.amount));
-                        //t_product.addAll(getOutputStack(recipe, t_washed));
+                        t_product.addAll(getOutputStack(recipe, t_washed));
                         if (t_washed < stack.getCount()) {
                             t_product.add(NTUniverUtil.copyAmountUnsafe(stack.getCount() - t_washed, stack));
                         }
@@ -470,7 +473,7 @@ public class OreProcessingLogic implements IWorkable{
                     setActive(true);
                     updateRecipeProgress();
                 }
-                //check everything that would make a recipe never start here.
+                //检查所有会使配方永远不会从这里开始。
                 if (progressTime == 0 && shouldProcessRecipe()) {
                     recipeProcessing();
                 }
@@ -485,7 +488,7 @@ public class OreProcessingLogic implements IWorkable{
     protected void updateRecipeProgress() {
         if (canRecipeProgress && drawEnergy(recipeEUt, true)) {
             drawEnergy(recipeEUt, false);
-            //as recipe starts with progress on 1 this has to be > only not => to compensate for it
+            //由于配方以1的进度开始，因此必须>只是不=>来补偿它
             if (++progressTime > maxProgressTime) {
                 completeRecipe();
             }
@@ -493,8 +496,8 @@ public class OreProcessingLogic implements IWorkable{
                 this.hasNotEnoughEnergy = false;
             }
         } else if (recipeEUt > 0) {
-            //only set hasNotEnoughEnergy if this recipe is consuming recipe
-            //generators always have enough energy
+            //如果此配方是消耗配方，则仅设置hasNotEnoughEnergy
+            //发电机总是有足够的能量
             this.hasNotEnoughEnergy = true;
             decreaseProgress();
         }
@@ -542,27 +545,44 @@ public class OreProcessingLogic implements IWorkable{
         return false;
     }
 
-    //  计算配方产物带概率输出//TODO 重写
-    /*private List<ItemStack> getOutputStack(Recipe recipe, int time) {
-        List<ItemStack> t_output = new ArrayList<>();
+    //  计算配方产物带概率输出
+    private List<ItemStack> getOutputStack(Recipe recipe, int time) {
+        List<ItemStack> outputStacks = new ArrayList<>();
+
+        // 计算固定数量的输出物品
         for (ItemStack item : recipe.getOutputs()) {
-            t_output.add(NTUniverUtil.copyAmountUnsafe((long) time * item.getCount(), item));
+            long count = (long) time * item.getCount();
+            ItemStack output = NTUniverUtil.copyAmountUnsafe(count, item);
+            if (output != null && output.getCount() > 0) {
+                outputStacks.add(output);
+            }
         }
-        //  计算产出概率
-        for (int i = 0; i < recipe.getChancedOutputs().size(); i++) {
-            int tChance = recipe.getChancedOutputs().get(i).getChance();
-            // Use Normal Distribution 正态分布
-            double u = time * (tChance / 10000D);
-            double e = time * (tChance / 10000D) * (1 - (tChance / 10000D));
-            Random random = new Random();
-            int tAmount = (int) Math.ceil(Math.sqrt(e) * random.nextGaussian() + u);
-            t_output.add(
-                    NTUniverUtil.copyAmountUnsafe((long) tAmount * recipe.getChancedOutputs().getItemStack().getCount(), recipe.getChancedOutputs().get(i).getItemStack()));
-        }
-        return t_output.stream()
-                .filter(i -> (i != null && i.getCount() > 0))
-                .collect(Collectors.toList());
-    }*/
+
+        // TODO 计算基于概率的输出物品
+        /*for (ItemStack chancedOutputs : recipe.getOutputs()) {
+            int chance =  chancedOutputs.getChancedEntries();
+            ItemStack itemStack = chancedOutputs.copy();
+            long count = calculateOutputCountWithProbability(time, chance);
+
+            ItemStack output = NTUniverUtil.copyAmountUnsafe(count, itemStack);
+            if (output != null && output.getCount() > 0) {
+                outputStacks.add(output);
+            }
+        }*/
+
+        return outputStacks;
+    }
+
+    private long calculateOutputCountWithProbability(int time, int chance) {
+        double probability = chance / 10000D;
+        double u = time * probability;
+        double e = time * probability * (1 - probability);
+
+        Random random = new Random();
+        int count = (int) Math.ceil(Math.sqrt(e) * random.nextGaussian() + u);
+
+        return Math.max(count, 0);
+    }/**/
 
     //  用t_product中的物品更新midProduct
     private void doCompress(List<ItemStack> list) {

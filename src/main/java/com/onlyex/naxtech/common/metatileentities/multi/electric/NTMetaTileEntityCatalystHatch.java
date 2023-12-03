@@ -37,9 +37,10 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 public class NTMetaTileEntityCatalystHatch extends MetaTileEntityMultiblockNotifiablePart implements IMultiblockAbilityPart<ICatalyst> ,ICatalyst{
-    private final IItemHandlerModifiable itemStack = new NotifiableItemStackHandler(null,1, null, false){//TODO 2.8
+    private final IItemHandlerModifiable itemStack = new NotifiableItemStackHandler(null,1, null, false){
         @Override
         protected void onLoad() {
             onContentsChanged(0);
@@ -145,7 +146,7 @@ public class NTMetaTileEntityCatalystHatch extends MetaTileEntityMultiblockNotif
         super.receiveInitialSyncData(buf);
         this.needUpdate = buf.readBoolean();
         try {
-            ((ItemStackHandler)itemStack).deserializeNBT(buf.readCompoundTag());
+            ((ItemStackHandler)itemStack).deserializeNBT(Objects.requireNonNull(buf.readCompoundTag()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
