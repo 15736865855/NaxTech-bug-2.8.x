@@ -66,25 +66,28 @@ public class CosmicShaderHelper {
     }
 
     public static void setLightFromLocation(World world, BlockPos pos) {
+        // 检查世界对象是否为空
         if (world == null) {
             setLightLevel(1.0f);
             return;
         }
 
-        int coord = world.getCombinedLight(pos, 0);
+        // 获取指定位置的光照亮度
+        int lightValue = world.getLight(pos);
 
-        int[] map = Minecraft.getMinecraft().entityRenderer.lightmapColors;
-        if (map == null) {
+        // 检查是否能够获取光照亮度
+        if (lightValue == 0) {
             setLightLevel(1.0f);
             return;
         }
 
-        int mx = (coord % 65536) / 16;
-        int my = (coord / 65536) / 16;
+        // 将光照亮度转换为 RGB 值
+        float r = ((lightValue >> 16) & 0xFF) / 255.0f;
+        float g = ((lightValue >> 8) & 0xFF) / 255.0f;
+        float b = (lightValue & 0xFF) / 255.0f;
 
-        int lightcolour = map[my * 16 + mx];
-
-        setLightLevel(((lightcolour >> 16) & 0xFF) / 256.0f, ((lightcolour >> 8) & 0xFF) / 256.0f, ((lightcolour) & 0xFF) / 256.0f);
+        // 设置光照强度
+        setLightLevel(r, g, b);
     }
 
     public static void setLightLevel(float level) {
