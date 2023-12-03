@@ -4,7 +4,7 @@
  *请检查https://github.com//build.gradle更新
  *您也可以运行./gradlew updateBuildScript来更新您的构建脚本。
  */
-//TODO 更新
+
 
 import com.gtnewhorizons.retrofuturagradle.mcp.InjectTagsTask
 import org.jetbrains.gradle.ext.Gradle

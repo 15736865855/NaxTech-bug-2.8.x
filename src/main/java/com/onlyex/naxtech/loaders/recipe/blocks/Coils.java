@@ -29,7 +29,7 @@ public class Coils {
 
     public static void init() {
 
-        //  TODO New coil blocks recipe, use Mica Insulator...
+        //  TODO 新的线圈配方，使用云母绝缘体
 
         //  Adamantium Coil
         /*ASSEMBLER_RECIPES.recipeBuilder()
