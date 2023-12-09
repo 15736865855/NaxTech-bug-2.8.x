@@ -558,9 +558,12 @@ public class OreProcessingLogic implements IWorkable{
 
         // 计算基于概率的输出物品
         for (ChancedItemOutput chancedItem : recipe.getChancedOutputs().getChancedEntries()) {
-            float chance = chancedItem.getChance(); // 获取概率
-            if (Math.random() < chance) { // 根据概率进行随机判断
+            float chance = chancedItem.getChance(); // 获取原始概率
+            float randomValue = (float) Math.random(); // 生成随机数
+            if (randomValue < chance) { // 比较随机数和概率
                 ItemStack chancedOutput = chancedItem.getIngredient().copy();
+                long count = (long) time * chancedOutput.getCount();
+                chancedOutput.setCount((int) count);
                 if (chancedOutput.getCount() > 0) {
                     outputStacks.add(chancedOutput);
                 }
