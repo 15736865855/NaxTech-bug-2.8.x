@@ -192,14 +192,11 @@ dependencies {
 
     runtimeOnly 'curse.maven:top-245211:2667280'
 
-    //2.8.1
-    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4910613")
+    //2.8.2
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4924179")
     implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4910674")
-    implementation rfg.deobf("curse.maven:groovyscript-687577:4905039")
 
-    //2.7.4
-    //implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4799055")
-    //implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4701685")
+
 
 
 }

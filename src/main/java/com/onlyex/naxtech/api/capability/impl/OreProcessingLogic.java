@@ -1,6 +1,5 @@
 package com.onlyex.naxtech.api.capability.impl;
 
-import com.ibm.icu.util.Output;
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
 import com.onlyex.naxtech.common.metatileentities.multi.part.MetaTileEntityIntegratedOreFactory;
 import gregtech.api.GTValues;
@@ -12,8 +11,8 @@ import gregtech.api.capability.impl.EnergyContainerList;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.recipes.chance.output.ChancedOutput;
 import gregtech.api.recipes.chance.output.impl.ChancedItemOutput;
+import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
@@ -33,7 +32,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nonnull;
 import java.util.*;
-import java.util.stream.Collectors;
 /*
 * 引用了GT5非官方的一些代码
 *
@@ -558,31 +556,21 @@ public class OreProcessingLogic implements IWorkable{
             }
         }
 
-        // TODO 计算基于概率的输出物品
-        /*for (ItemStack chancedOutputs : recipe.getOutputs()) {
-            int chance =  chancedOutputs.getChancedEntries();
-            ItemStack itemStack = chancedOutputs.copy();
-            long count = calculateOutputCountWithProbability(time, chance);
-
-            ItemStack output = NTUniverUtil.copyAmountUnsafe(count, itemStack);
-            if (output != null && output.getCount() > 0) {
-                outputStacks.add(output);
+        // 计算基于概率的输出物品
+        for (ChancedItemOutput chancedItem : recipe.getChancedOutputs().getChancedEntries()) {
+            float chance = chancedItem.getChance(); // 获取概率
+            if (Math.random() < chance) { // 根据概率进行随机判断
+                ItemStack chancedOutput = chancedItem.getIngredient().copy();
+                if (chancedOutput.getCount() > 0) {
+                    outputStacks.add(chancedOutput);
+                }
             }
-        }*/
+        }
 
         return outputStacks;
     }
 
-    private long calculateOutputCountWithProbability(int time, int chance) {
-        double probability = chance / 10000D;
-        double u = time * probability;
-        double e = time * probability * (1 - probability);
 
-        Random random = new Random();
-        int count = (int) Math.ceil(Math.sqrt(e) * random.nextGaussian() + u);
-
-        return Math.max(count, 0);
-    }/**/
 
     //  用t_product中的物品更新midProduct
     private void doCompress(List<ItemStack> list) {
