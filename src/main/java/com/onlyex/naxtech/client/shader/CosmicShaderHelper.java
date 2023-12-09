@@ -19,7 +19,6 @@ public class CosmicShaderHelper {
         shaderCallback = new ShaderCallback() {
             @Override
             public void call(int shader) {
-                //TODO, This can be optimized.
                 Minecraft mc = Minecraft.getMinecraft();
 
                 float yaw = 0;
