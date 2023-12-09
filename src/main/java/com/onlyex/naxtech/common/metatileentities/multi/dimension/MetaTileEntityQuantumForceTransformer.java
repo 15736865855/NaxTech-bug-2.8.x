@@ -58,9 +58,6 @@ import static gregtech.api.GTValues.UHV;
 public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockController implements IFastRenderMetaTileEntity {
 
     private int ManipulatorCasingTier;
-    private int ShieldingCoreCasingTier;
-    private int GlassTier;
-    private int tier;
     private static boolean init = false;
     private static List<IBlockState> finalListManipulatorCasing;
     private static List<IBlockState> finalListShieldingCoreCasing;
@@ -116,12 +113,11 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
 
         this.ManipulatorCasingTier = NTUniverUtil.getOrDefault(() -> ManipulatorCasingTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) ManipulatorCasingTier).getIntTier(), 0);
-        this.ShieldingCoreCasingTier = NTUniverUtil.getOrDefault(() -> ShieldingCoreCasingTier instanceof WrappedIntTier,
+        NTUniverUtil.getOrDefault(() -> ShieldingCoreCasingTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) ShieldingCoreCasingTier).getIntTier(), 0);
-        this.GlassTier = NTUniverUtil.getOrDefault(() -> GlassTier instanceof  WrappedIntTier,
-                () -> ((WrappedIntTier) GlassTier).getIntTier(), 0);
 
-        this.tier = this.ManipulatorCasingTier = this.ShieldingCoreCasingTier = this.GlassTier;
+        this.ManipulatorCasingTier = NTUniverUtil.getOrDefault(() -> GlassTier instanceof WrappedIntTier,
+                () -> ((WrappedIntTier) GlassTier).getIntTier(), 0);
 
         this.writeCustomData(NTDataCode.CHANNEL_8, buf -> buf.writeInt(this.ManipulatorCasingTier));
     }
@@ -272,56 +268,56 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
     }
 
     @SideOnly(Side.CLIENT)
-    private void renderForceField(BufferBuilder buffer, double x, double y, double z, int side, double minU, double maxU, double minV, double maxV) {
+    private void renderForceField(BufferBuilder buffer, double y, int side, double minU, double maxU, double minV, double maxV) {
 
         switch (side) {
             case 0 -> {
-                buffer.pos(x + 3, y, z + 7).tex(maxU, maxV).endVertex();
-                buffer.pos(x + 3, y + 4, z + 7).tex(maxU, minV).endVertex();
-                buffer.pos(x - 3, y + 4, z + 7).tex(minU, minV).endVertex();
-                buffer.pos(x - 3, y, z + 7).tex(minU, maxV).endVertex();
+                buffer.pos((double) 0 + 3, y, (double) 0 + 7).tex(maxU, maxV).endVertex();
+                buffer.pos((double) 0 + 3, y + 4, (double) 0 + 7).tex(maxU, minV).endVertex();
+                buffer.pos((double) 0 - 3, y + 4, (double) 0 + 7).tex(minU, minV).endVertex();
+                buffer.pos((double) 0 - 3, y, (double) 0 + 7).tex(minU, maxV).endVertex();
             }
             case 1 -> {
-                buffer.pos(x + 7, y, z + 4).tex(maxU, maxV).endVertex();
-                buffer.pos(x + 7, y + 4, z + 4).tex(maxU, minV).endVertex();
-                buffer.pos(x + 7, y + 4, z - 4).tex(minU, minV).endVertex();
-                buffer.pos(x + 7, y, z - 4).tex(minU, maxV).endVertex();
+                buffer.pos((double) 0 + 7, y, (double) 0 + 4).tex(maxU, maxV).endVertex();
+                buffer.pos((double) 0 + 7, y + 4, (double) 0 + 4).tex(maxU, minV).endVertex();
+                buffer.pos((double) 0 + 7, y + 4, (double) 0 - 4).tex(minU, minV).endVertex();
+                buffer.pos((double) 0 + 7, y, (double) 0 - 4).tex(minU, maxV).endVertex();
             }
             case 2 -> {
-                buffer.pos(x + 3, y, z - 7).tex(maxU, maxV).endVertex();
-                buffer.pos(x + 3, y + 4, z - 7).tex(maxU, minV).endVertex();
-                buffer.pos(x - 3, y + 4, z - 7).tex(minU, minV).endVertex();
-                buffer.pos(x - 3, y, z - 7).tex(minU, maxV).endVertex();
+                buffer.pos((double) 0 + 3, y, (double) 0 - 7).tex(maxU, maxV).endVertex();
+                buffer.pos((double) 0 + 3, y + 4, (double) 0 - 7).tex(maxU, minV).endVertex();
+                buffer.pos((double) 0 - 3, y + 4, (double) 0 - 7).tex(minU, minV).endVertex();
+                buffer.pos((double) 0 - 3, y, (double) 0 - 7).tex(minU, maxV).endVertex();
             }
             case 3 -> {
-                buffer.pos(x - 7, y, z + 4).tex(maxU, maxV).endVertex();
-                buffer.pos(x - 7, y + 4, z + 4).tex(maxU, minV).endVertex();
-                buffer.pos(x - 7, y + 4, z - 4).tex(minU, minV).endVertex();
-                buffer.pos(x - 7, y, z - 4).tex(minU, maxV).endVertex();
+                buffer.pos((double) 0 - 7, y, (double) 0 + 4).tex(maxU, maxV).endVertex();
+                buffer.pos((double) 0 - 7, y + 4, (double) 0 + 4).tex(maxU, minV).endVertex();
+                buffer.pos((double) 0 - 7, y + 4, (double) 0 - 4).tex(minU, minV).endVertex();
+                buffer.pos((double) 0 - 7, y, (double) 0 - 4).tex(minU, maxV).endVertex();
             }
             case 4 -> {
-                buffer.pos(x - 3, y, z + 7).tex(maxU, maxV).endVertex();
-                buffer.pos(x - 3, y + 4, z + 7).tex(maxU, minV).endVertex();
-                buffer.pos(x - 7, y + 4, z + 4).tex(minU, minV).endVertex();
-                buffer.pos(x - 7, y, z + 4).tex(minU, maxV).endVertex();
+                buffer.pos((double) 0 - 3, y, (double) 0 + 7).tex(maxU, maxV).endVertex();
+                buffer.pos((double) 0 - 3, y + 4, (double) 0 + 7).tex(maxU, minV).endVertex();
+                buffer.pos((double) 0 - 7, y + 4, (double) 0 + 4).tex(minU, minV).endVertex();
+                buffer.pos((double) 0 - 7, y, (double) 0 + 4).tex(minU, maxV).endVertex();
             }
             case 5 -> {
-                buffer.pos(x - 3, y, z - 7).tex(maxU, maxV).endVertex();
-                buffer.pos(x - 3, y + 4, z - 7).tex(maxU, minV).endVertex();
-                buffer.pos(x - 7, y + 4, z - 4).tex(minU, minV).endVertex();
-                buffer.pos(x - 7, y, z - 4).tex(minU, maxV).endVertex();
+                buffer.pos((double) 0 - 3, y, (double) 0 - 7).tex(maxU, maxV).endVertex();
+                buffer.pos((double) 0 - 3, y + 4, (double) 0 - 7).tex(maxU, minV).endVertex();
+                buffer.pos((double) 0 - 7, y + 4, (double) 0 - 4).tex(minU, minV).endVertex();
+                buffer.pos((double) 0 - 7, y, (double) 0 - 4).tex(minU, maxV).endVertex();
             }
             case 6 -> {
-                buffer.pos(x + 3, y, z + 7).tex(maxU, maxV).endVertex();
-                buffer.pos(x + 3, y + 4, z + 7).tex(maxU, minV).endVertex();
-                buffer.pos(x + 7, y + 4, z + 4).tex(minU, minV).endVertex();
-                buffer.pos(x + 7, y, z + 4).tex(minU, maxV).endVertex();
+                buffer.pos((double) 0 + 3, y, (double) 0 + 7).tex(maxU, maxV).endVertex();
+                buffer.pos((double) 0 + 3, y + 4, (double) 0 + 7).tex(maxU, minV).endVertex();
+                buffer.pos((double) 0 + 7, y + 4, (double) 0 + 4).tex(minU, minV).endVertex();
+                buffer.pos((double) 0 + 7, y, (double) 0 + 4).tex(minU, maxV).endVertex();
             }
             case 7 -> {
-                buffer.pos(x + 3, y, z - 7).tex(maxU, maxV).endVertex();
-                buffer.pos(x + 3, y + 4, z - 7).tex(maxU, minV).endVertex();
-                buffer.pos(x + 7, y + 4, z - 4).tex(minU, minV).endVertex();
-                buffer.pos(x + 7, y, z - 4).tex(minU, maxV).endVertex();
+                buffer.pos((double) 0 + 3, y, (double) 0 - 7).tex(maxU, maxV).endVertex();
+                buffer.pos((double) 0 + 3, y + 4, (double) 0 - 7).tex(maxU, minV).endVertex();
+                buffer.pos((double) 0 + 7, y + 4, (double) 0 - 4).tex(minU, minV).endVertex();
+                buffer.pos((double) 0 + 7, y, (double) 0 - 4).tex(minU, maxV).endVertex();
             }
         }
     }
@@ -332,7 +328,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
         TextureAtlasSprite forceField = NTTextures.FORCE_FIELD;
         if (isActive() && MinecraftForgeClient.getRenderPass() == 0) {
 
-            BloomEffectUtil.requestCustomBloom(RENDER_HANDLER, (buffer) -> {
+            BloomEffectUtil.requestCustomBloom(RENDER_HANDLER, (buffer) -> {//TODO 已计划从 版本 2.9 中移除
                 Entity entity = Minecraft.getMinecraft().getRenderViewEntity();
                 if (entity != null) {
                     double minU = forceField.getMinU();
@@ -361,7 +357,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
                         GlStateManager.rotate(90F, 0F, 1F, 0F);
                     }
                     for (int i = 0; i < 8; i++) {
-                        renderForceField(buffer, 0, y, 0, i, minU, maxU, minV, maxV);
+                        renderForceField(buffer, y, i, minU, maxU, minV, maxV);
                     }
                     Tessellator.getInstance().draw();
                     GlStateManager.disableBlend();
@@ -392,7 +388,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
     }
 
     static BloomEffectUtil.IBloomRenderFast RENDER_HANDLER = new BloomEffectUtil.IBloomRenderFast() {
-        @Override
+        @Override//TODO 已计划从 版本 2.9 中移除
         public int customBloomStyle() {
             return 2;
         }
@@ -402,7 +398,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
 
         @Override
         @SideOnly(Side.CLIENT)
-        public void preDraw(BufferBuilder buffer) {
+        public void preDraw(@Nonnull BufferBuilder buffer) {
             BloomEffect.strength = 1.5F;
             BloomEffect.baseBrightness = 0.0F;
             BloomEffect.highBrightnessThreshold = 1.3F;
@@ -417,7 +413,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
 
         @Override
         @SideOnly(Side.CLIENT)
-        public void postDraw(BufferBuilder buffer) {
+        public void postDraw(@Nonnull BufferBuilder buffer) {
             OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, lastBrightnessX, lastBrightnessY);
         }
     };

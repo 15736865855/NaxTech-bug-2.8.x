@@ -61,7 +61,6 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.Consumer;
 
 import static gregtech.api.unification.material.Materials.TungstenSteel;
 
@@ -358,14 +357,6 @@ public class MetaTileEntityIntegratedOreFactory extends MultiblockWithDisplayBas
     @Override
     public boolean isActive() {
         return (isStructureFormed() && this.logic.isActive() && this.logic.isWorkingEnabled());
-    }
-
-    public IMultipleTankHandler getImportFluid() {
-        return this.inputFluidInventory;
-    }
-
-    public long getEnergyInputPerSecond() {
-        return energyContainer.getInputPerSec();
     }
 
 

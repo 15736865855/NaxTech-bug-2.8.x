@@ -12,7 +12,6 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.chance.output.impl.ChancedItemOutput;
-import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
@@ -38,7 +37,6 @@ import java.util.*;
 * https://github.com/GTNewHorizons/GT5-Unofficial/
 * */
 
-//TODO 重写配方逻辑以添加满箱检测和更好的配方检测
 public class OreProcessingLogic implements IWorkable{
     private static final int MAX_PARA = 1024;
 
@@ -58,7 +56,6 @@ public class OreProcessingLogic implements IWorkable{
     private boolean isActive;
     protected boolean canRecipeProgress = true;
     protected int recipeEUt;
-    protected List<FluidStack> fluidOutputs;
     protected NonNullList<ItemStack> itemOutputs;
     protected boolean workingEnabled = true;
     protected boolean hasNotEnoughEnergy;
@@ -98,16 +95,14 @@ public class OreProcessingLogic implements IWorkable{
         return list;
     }
 
-    private boolean depleteInput(FluidStack fluid) {
+    private void depleteInput(FluidStack fluid) {
         if (fluid == null) {
-            return false;
+            return;
         }
         IMultipleTankHandler inputTank = getInputTank();
         if (fluid.isFluidStackIdentical(inputTank.drain(fluid, false))) {
             inputTank.drain(fluid, true);
-            return true;
         }
-        return false;
     }
     //  对要处理的物品进行矿辞分类建表（尤其适用于半路产物加入）
     private static void initHash() {
@@ -343,7 +338,6 @@ public class OreProcessingLogic implements IWorkable{
                     tRealUsed = tCharged;
                     tOres.add(NTUniverUtil.copyAmountUnsafe(tCharged, ore));
                     ore.setCount(ore.getCount() - tCharged);
-                    tCharged = 0;
                     break;
                 }
             }
@@ -549,24 +543,19 @@ public class OreProcessingLogic implements IWorkable{
 
         // 计算固定数量的输出物品
         for (ItemStack item : recipe.getOutputs()) {
-            long count = (long) time * item.getCount();
-            ItemStack output = NTUniverUtil.copyAmountUnsafe(count, item);
-            if (output != null && output.getCount() > 0) {
-                outputStacks.add(output);
-            }
+            ItemStack output = item.copy();
+            output.setCount(output.getCount() * time);
+            outputStacks.add(output);
         }
 
         // 计算基于概率的输出物品
         for (ChancedItemOutput chancedItem : recipe.getChancedOutputs().getChancedEntries()) {
             float chance = chancedItem.getChance(); // 获取原始概率
-            float randomValue = (float) Math.random(); // 生成随机数
+            float randomValue = new Random().nextFloat(); // 生成随机数
             if (randomValue < chance) { // 比较随机数和概率
                 ItemStack chancedOutput = chancedItem.getIngredient().copy();
-                long count = (long) time * chancedOutput.getCount();
-                chancedOutput.setCount((int) count);
-                if (chancedOutput.getCount() > 0) {
-                    outputStacks.add(chancedOutput);
-                }
+                chancedOutput.setCount(chancedOutput.getCount() * time); // 根据时间乘以所需数量
+                outputStacks.add(chancedOutput);
             }
         }
 
@@ -676,10 +665,6 @@ public class OreProcessingLogic implements IWorkable{
                 this.metaTileEntity.markDirty();
             }
         }
-    }
-
-    public int getProgressTime() {
-        return this.progressTime;
     }
 
     public double getProgressPercent() {

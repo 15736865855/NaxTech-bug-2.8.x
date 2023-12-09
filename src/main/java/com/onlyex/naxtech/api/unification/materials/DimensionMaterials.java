@@ -4,11 +4,10 @@ import com.onlyex.naxtech.api.unification.NTElements;
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
-import static com.onlyex.naxtech.api.unification.material.info.NTMaterialFlags.*;
+import static com.onlyex.naxtech.api.unification.material.info.NTMaterialFlags.GENERATE_NANITES;
 import static com.onlyex.naxtech.api.unification.material.info.NTMaterialIconSet.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;

@@ -2,11 +2,9 @@ package com.onlyex.naxtech.api.unification.materials;
 
 import com.onlyex.naxtech.api.unification.NTElements;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.properties.BlastProperty;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
-import static com.onlyex.naxtech.api.unification.material.info.NTMaterialIconSet.*;
-import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumTungstenCarbide;
+import static com.onlyex.naxtech.api.unification.material.info.NTMaterialIconSet.CUSTOM_LEGENDARIUM;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;

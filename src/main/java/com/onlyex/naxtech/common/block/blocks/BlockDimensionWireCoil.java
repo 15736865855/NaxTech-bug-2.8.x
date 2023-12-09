@@ -51,6 +51,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
         this.setDefaultState(this.getState(CoilType.NAQUADAH_ALLOY));
     }
 
+    @Nonnull
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.SOLID;
     }
@@ -59,7 +60,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
     public void addInformation(@Nonnull ItemStack itemStack, @Nullable World worldIn, List<String> lines, @Nonnull ITooltipFlag tooltipFlag) {
         super.addInformation(itemStack, worldIn, lines, tooltipFlag);
 
-        VariantItemBlock itemBlock = (VariantItemBlock<CoilType, BlockDimensionWireCoil>) itemStack.getItem();
+        VariantItemBlock<CoilType, BlockDimensionWireCoil> itemBlock = (VariantItemBlock<CoilType, BlockDimensionWireCoil>) itemStack.getItem();
         IBlockState stackState = itemBlock.getBlockState(itemStack);
         CoilType coilType =  this.getState(stackState);
         lines.add(I18n.format("tile.wire_coil.tooltip_heat", coilType.coilTemperature));
@@ -70,7 +71,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
             int EUt = MetaTileEntityMultiSmelter.getEUtForParallel(MetaTileEntityMultiSmelter.getMaxParallel(coilType.getLevel()), coilType.getEnergyDiscount());
             lines.add(I18n.format("tile.wire_coil.tooltip_energy_smelter", EUt));
             lines.add(I18n.format("tile.wire_coil.tooltip_pyro"));
-            lines.add(I18n.format("tile.wire_coil.tooltip_speed_pyro", coilTier == 0 ? 75 : 50 * (coilTier + 7)));
+            lines.add(I18n.format("tile.wire_coil.tooltip_speed_pyro", coilTier == 0 ? 75 : 50 * (coilTier + 9)));
             lines.add(I18n.format("tile.wire_coil.tooltip_cracking"));
             lines.add(I18n.format("tile.wire_coil.tooltip_energy_cracking", 100 - 10 * coilTier));
         } else {

@@ -27,6 +27,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
+import javax.annotation.Nonnull;
 import java.util.Objects;
 import java.util.function.Function;
 
@@ -36,6 +37,7 @@ import static com.onlyex.naxtech.common.block.NTMetaBlocks.*;
 public class CommonProxy {
 
     public static final CreativeTabs NAXTECH_TAB = new CreativeTabs("NaxTech") {
+        @Nonnull
         @Override
         public ItemStack createIcon() {
             return NTMetaItems.ENERGISED_TESSERACT.getStackForm();

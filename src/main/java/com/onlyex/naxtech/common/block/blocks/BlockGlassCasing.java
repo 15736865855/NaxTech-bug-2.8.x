@@ -54,7 +54,7 @@ public class BlockGlassCasing extends VariantActiveBlock<BlockGlassCasing.Casing
     }
 
     @Override
-    public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+    public boolean canRenderInLayer(@Nonnull IBlockState state, @Nonnull BlockRenderLayer layer) {
 //        EPBlockGlassCasing.CasingType type = getState(state);
 //        if( type == CasingType.NAQ_BORON_SILICATE_GLASS
 //        ) {
@@ -65,20 +65,20 @@ public class BlockGlassCasing extends VariantActiveBlock<BlockGlassCasing.Casing
 
     @Override
     @SuppressWarnings("deprecation")
-    public boolean isOpaqueCube(IBlockState state) {
+    public boolean isOpaqueCube(@Nonnull IBlockState state) {
         return false;
     }
 
     @Override
     @SuppressWarnings("deprecation")
-    public boolean isFullCube(IBlockState state) {
+    public boolean isFullCube(@Nonnull IBlockState state) {
         return false;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     @SuppressWarnings("deprecation")
-    public boolean shouldSideBeRendered(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {
+    public boolean shouldSideBeRendered(@Nonnull IBlockState state, IBlockAccess world, BlockPos pos, @Nonnull EnumFacing side) {
         IBlockState sideState = world.getBlockState(pos.offset(side));
 
         return sideState.getBlock() == this ?
@@ -90,7 +90,7 @@ public class BlockGlassCasing extends VariantActiveBlock<BlockGlassCasing.Casing
     @Override
     public void addInformation(@Nonnull ItemStack stack, @Nullable World player, @Nonnull List<String> tooltip, @Nonnull ITooltipFlag advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        VariantItemBlock itemBlock = (VariantItemBlock<BlockGlassCasing.CasingType, BlockGlassCasing>) stack.getItem();
+        VariantItemBlock<CasingType, BlockGlassCasing> itemBlock = (VariantItemBlock<BlockGlassCasing.CasingType, BlockGlassCasing>) stack.getItem();
         IBlockState stackState = itemBlock.getBlockState(stack);
         BlockGlassCasing.CasingType casingType =  this.getState(stackState);
         tooltip.add(I18n.format("naxtech.glass_tier.tooltip", casingType.getTireNameColored()));

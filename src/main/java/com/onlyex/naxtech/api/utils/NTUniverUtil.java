@@ -159,7 +159,7 @@ public class NTUniverUtil {
     public static <T> MetaTileEntity[] getGTTierHatches(MultiblockAbility<T> ability, int tier) {
         return MultiblockAbility.REGISTRY.get(ability).stream()
                 .filter(mte -> {
-                    if (mte != null && mte instanceof MetaTileEntityMultiblockPart) {
+                    if (mte instanceof MetaTileEntityMultiblockPart) {
                         return ((MetaTileEntityMultiblockPart) mte).getTier() <= tier;
                     }
                     return false;

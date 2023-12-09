@@ -1,13 +1,10 @@
 package com.onlyex.naxtech.loaders.recipe.handlers;
 
 import com.onlyex.naxtech.api.unification.ore.NTOrePrefix;
-import gregtech.api.GTValues;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.OreProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
-
-import static gregtech.api.GTValues.ZPM;
 
 public class NTOreRecipeHandler {
     private NTOreRecipeHandler() {/**/}

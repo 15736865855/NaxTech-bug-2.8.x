@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Objects;
 
 @Mixin({BlockGlass.class, BlockStainedGlass.class})
 public abstract class MixinBlockGlass extends BlockBreakable implements ITierGlassBlockState {
@@ -33,7 +34,7 @@ public abstract class MixinBlockGlass extends BlockBreakable implements ITierGla
 
     @Override
     public String getName() {
-        return getRegistryName().toString();
+        return Objects.requireNonNull(getRegistryName()).toString();
     }
 
     @Override

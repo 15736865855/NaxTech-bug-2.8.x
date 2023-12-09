@@ -1,7 +1,6 @@
 package com.onlyex.naxtech.common.items;
 
 
-import com.onlyex.naxtech.api.unification.ore.NTOrePrefix;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.CommonProxy;
 import com.onlyex.naxtech.common.items.behaviors.MillBallBehavior;

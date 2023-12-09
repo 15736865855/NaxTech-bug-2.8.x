@@ -198,52 +198,42 @@ public class NTMetaTileEntityBufferHatch extends MetaTileEntityMultiblockPart im
         }
     }
 
-    //TODO 重写
     public void changePH() {
-        ItemStack bufferitem = itemHandler.getStackInSlot(0);
-        FluidStack bufferfluid = fluidTank.getFluid();
-        if (bufferitem.isEmpty() && bufferfluid == null) {
+        ItemStack bufferItem = itemHandler.getStackInSlot(0);
+        FluidStack bufferFluid = fluidTank.getFluid();
+        MultiblockControllerBase currentController = getController();
+
+        if (bufferItem.isEmpty() && (bufferFluid == null || bufferFluid.amount < 1000)) {
             needUpdate = false;
-        } else {
-            if (!bufferitem.isEmpty()){
-                double[] phchangeitem = BufferItemMap.get(NTUniverUtil.stackToInt(bufferitem));
-                MultiblockControllerBase current_controller = getController();
-                if (current_controller == null || !current_controller.isStructureFormed()) {
-                    needUpdate = false;
-                } else {
-                    if (current_controller.isActive()) {
-                        needUpdate = true;
-                    } else {
-                        if (phchangeitem != null) {
-                            itemHandler.extractItem(0,1,false);
-                            ((IPHValue) current_controller).changeCurrentPHValue(phchangeitem[0], phchangeitem[1]);
-                            needUpdate = true;
-                        } else {
-                            needUpdate = false;
-                        }
-                    }
-                }
-            }
-            if (bufferfluid != null && bufferfluid.amount >= 1000){
-                double[] phchangefluid = BufferFluidMap.get(bufferfluid.getFluid().getName());
-                MultiblockControllerBase current_controller = getController();
-                if (current_controller == null || !current_controller.isStructureFormed()) {
-                    needUpdate = false;
-                } else {
-                    if (current_controller.isActive()) {
-                        needUpdate = true;
-                    } else {
-                        if (phchangefluid != null) {
-                            fluidTank.drain(1000,true);
-                            ((IPHValue) current_controller).changeCurrentPHValue(phchangefluid[0], phchangefluid[1]);
-                            needUpdate = true;
-                        }else {
-                            needUpdate = false;
-                        }
-                    }
-                }
+            return;
+        }
+
+        if (currentController == null || !currentController.isStructureFormed() || currentController.isActive()) {
+            needUpdate = false;
+            return;
+        }
+
+        if (!bufferItem.isEmpty()) {
+            double[] phChangeItem = BufferItemMap.get(NTUniverUtil.stackToInt(bufferItem));
+            if (phChangeItem != null) {
+                itemHandler.extractItem(0, 1, false);
+                ((IPHValue) currentController).changeCurrentPHValue(phChangeItem[0], phChangeItem[1]);
+                needUpdate = true;
+                return;
             }
         }
+
+        if (bufferFluid != null && bufferFluid.amount >= 1000) {
+            double[] phChangeFluid = BufferFluidMap.get(bufferFluid.getFluid().getName());
+            if (phChangeFluid != null) {
+                fluidTank.drain(1000, true);
+                ((IPHValue) currentController).changeCurrentPHValue(phChangeFluid[0], phChangeFluid[1]);
+                needUpdate = true;
+                return;
+            }
+        }
+
+        needUpdate = false;
     }
 
     @Override

@@ -1,13 +1,8 @@
 package com.onlyex.naxtech.loaders.recipe.blocks;
 
 
-import com.onlyex.naxtech.common.block.NTMetaBlocks;
-
-import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
-import static gregtech.api.unification.material.Materials.Tritanium;
-import static gregtech.api.unification.ore.OrePrefix.foil;
-import static gregtech.api.unification.ore.OrePrefix.wireGtDouble;
+import static gregtech.api.GTValues.UV;
+import static gregtech.api.GTValues.VA;
 
 public class Coils {
 
