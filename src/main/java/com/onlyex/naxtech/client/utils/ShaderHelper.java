@@ -13,6 +13,7 @@ import org.lwjgl.opengl.GL11;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 public final class ShaderHelper {
 
@@ -23,15 +24,15 @@ public final class ShaderHelper {
     public static int cosmicShader = 0;
 
     public static void initShaders() {
-        if (!useShaders()) {
+        if (useShaders()) {
             return;
         }
 
-        cosmicShader = createProgram("cosmic.vert", "cosmic.frag");
+        cosmicShader = createProgram();
     }
 
     public static void useShader(int shader, ShaderCallback callback) {
-        if (!useShaders()) {
+        if (useShaders()) {
             return;
         }
 
@@ -59,32 +60,22 @@ public final class ShaderHelper {
     }
 
     public static boolean useShaders() {
-        return OpenGlHelper.shadersSupported;
+        return !OpenGlHelper.shadersSupported;
     }
 
-    // Most of the code taken from the LWJGL wiki
-    // http://lwjgl.org/wiki/index.php?title=GLSL_Shaders_with_LWJGL
 
-    private static int createProgram(String vert, String frag) {
-        int vertId = 0, fragId = 0, program = 0;
-        if (vert != null) {
-            vertId = createShader(PREFIX + vert, VERT);
-        }
-        if (frag != null) {
-            fragId = createShader(PREFIX + frag, FRAG);
-        }
+    private static int createProgram() {
+        int vertId, fragId, program;
+        vertId = createShader(PREFIX + "cosmic.vert", VERT);
+        fragId = createShader(PREFIX + "cosmic.frag", FRAG);
 
         program = ARBShaderObjects.glCreateProgramObjectARB();
         if (program == 0) {
             return 0;
         }
 
-        if (vert != null) {
-            ARBShaderObjects.glAttachObjectARB(program, vertId);
-        }
-        if (frag != null) {
-            ARBShaderObjects.glAttachObjectARB(program, fragId);
-        }
+        ARBShaderObjects.glAttachObjectARB(program, vertId);
+        ARBShaderObjects.glAttachObjectARB(program, fragId);
 
         ARBShaderObjects.glLinkProgramARB(program);
         if (ARBShaderObjects.glGetObjectParameteriARB(program, ARBShaderObjects.GL_OBJECT_LINK_STATUS_ARB) == GL11.GL_FALSE) {
@@ -140,7 +131,7 @@ public final class ShaderHelper {
         }
 
         try {
-            reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+            reader = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
 
             Exception innerExc = null;
             try {
@@ -154,11 +145,7 @@ public final class ShaderHelper {
                 try {
                     reader.close();
                 } catch (Exception exc) {
-                    if (innerExc == null) {
-                        innerExc = exc;
-                    } else {
-                        exc.printStackTrace();
-                    }
+                    innerExc = exc;
                 }
             }
 
