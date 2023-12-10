@@ -1,19 +1,21 @@
 package com.onlyex.naxtech.api;
 
 import com.onlyex.naxtech.api.block.ITier;
+import com.onlyex.naxtech.api.block.ITierGlassBlockState;
 import com.onlyex.naxtech.api.block.impl.WrappedIntTier;
+import com.onlyex.naxtech.api.block.impl.WrappedTierWithMeta;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
-import com.onlyex.naxtech.common.block.blocks.BlockComponentAssemblyLineCasing;
-import com.onlyex.naxtech.common.block.blocks.BlockDimensionWireCoil;
-import com.onlyex.naxtech.common.block.blocks.BlockMachinelCasing;
+import com.onlyex.naxtech.common.block.blocks.NTBlockComponentAssemblyLineCasing;
+import com.onlyex.naxtech.common.block.blocks.NTBlockDimensionWireCoil;
+import com.onlyex.naxtech.common.block.blocks.NTBlockGlassCasing;
+import com.onlyex.naxtech.common.block.blocks.machinel.NTBlockMachinelCasing;
 import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerCasing;
 import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerGlassCasing;
-import gregtech.common.blocks.BlockBoilerCasing;
-import gregtech.common.blocks.BlockMachineCasing;
-import gregtech.common.blocks.BlockMetalCasing;
-import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.blocks.*;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.EnumDyeColor;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -21,7 +23,8 @@ import java.util.stream.Collectors;
 import static gregtech.api.GregTechAPI.HEATING_COILS;
 
 public class NTAPI {
-
+    public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_GLASS = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_GLASS_SHAPE_INFO = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_CA_TIRED_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_PA_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_PA_INTERNAL_CASING = new Object2ObjectOpenHashMap<>();
@@ -34,47 +37,67 @@ public class NTAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_QFT_GLASS = new Object2ObjectOpenHashMap<>();
     public static void APIBlockInit() {
         //  HEATING_COILS Addition
-        for (BlockDimensionWireCoil.CoilType type : BlockDimensionWireCoil.CoilType.values()) {
+        for (NTBlockDimensionWireCoil.CoilType type : NTBlockDimensionWireCoil.CoilType.values()) {
+            HEATING_COILS.put(NTMetaBlocks.NT_WIRE_COIL.getState(type), type);
+        }
+
+        //  EP_GLASS Init
+        for (BlockGlassCasing.CasingType type : BlockGlassCasing.CasingType.values()) {
+            MAP_GLASS.put(MetaBlocks.TRANSPARENT_CASING.getState(type), (ITierGlassBlockState)((Object)type));
+        }
+        for (NTBlockGlassCasing.CasingType type : NTBlockGlassCasing.CasingType.values()) {
+            MAP_GLASS.put(NTMetaBlocks.GLASS_CASING.getState(type), type);
+        }
+        MAP_GLASS.put(Blocks.GLASS.getDefaultState(), (ITierGlassBlockState) Blocks.GLASS);
+
+        MAP_GLASS_SHAPE_INFO.putAll(MAP_GLASS);
+
+        for (EnumDyeColor enumdyecolor : EnumDyeColor.values()) {
+            MAP_GLASS.put(Blocks.STAINED_GLASS.getStateFromMeta(enumdyecolor.getMetadata()), new WrappedTierWithMeta((ITierGlassBlockState) Blocks.STAINED_GLASS, enumdyecolor.getMetadata()));
+        }
+
+        //  HEATING_COILS Addition
+        for (NTBlockDimensionWireCoil.CoilType type : NTBlockDimensionWireCoil.CoilType.values()) {
             HEATING_COILS.put(NTMetaBlocks.NT_WIRE_COIL.getState(type), type);
         }
         //  MAP_CA_TIRED_CASING Init
         
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.LV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.LV, 1));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.MV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.MV, 2));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.HV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.HV, 3));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.EV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.EV, 4));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.IV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.IV, 5));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.LuV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.LuV, 6));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.ZPM),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.ZPM, 7));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UV, 8));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UHV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UHV, 9));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UEV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UEV, 10));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UIV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UIV, 11));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UXV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UXV, 12));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.OpV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.OpV, 13));
-        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.MAX),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.MAX, 14));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.LV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.LV, 1));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.MV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.MV, 2));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.HV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.HV, 3));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.EV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.EV, 4));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.IV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.IV, 5));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.LuV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.LuV, 6));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.ZPM),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.ZPM, 7));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.UV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.UV, 8));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.UHV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.UHV, 9));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.UEV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.UEV, 10));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.UIV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.UIV, 11));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.UXV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.UXV, 12));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.OpV),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.OpV, 13));
+        MAP_CA_TIRED_CASING.put(NTMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(NTBlockComponentAssemblyLineCasing.CasingTier.MAX),
+                new WrappedIntTier(NTBlockComponentAssemblyLineCasing.CasingTier.MAX, 14));
 
         //  MAP_PA_CASING Init
-        MAP_PA_CASING.put(NTMetaBlocks.MACHINE_CASING.getState(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK1),
-                new WrappedIntTier(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK1, 1));
-        MAP_PA_CASING.put(NTMetaBlocks.MACHINE_CASING.getState(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK2),
-                new WrappedIntTier(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK2, 2));
-        MAP_PA_CASING.put(NTMetaBlocks.MACHINE_CASING.getState(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK3),
-                new WrappedIntTier(BlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK3, 3));
+        MAP_PA_CASING.put(NTMetaBlocks.MACHINE_CASING.getState(NTBlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK1),
+                new WrappedIntTier(NTBlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK1, 1));
+        MAP_PA_CASING.put(NTMetaBlocks.MACHINE_CASING.getState(NTBlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK2),
+                new WrappedIntTier(NTBlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK2, 2));
+        MAP_PA_CASING.put(NTMetaBlocks.MACHINE_CASING.getState(NTBlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK3),
+                new WrappedIntTier(NTBlockMachinelCasing.CasingType.PRECISE_ASSEMBLER_CASING_MK3, 3));
 
         //  MAP_PA_INTERNAL_CASING Init
         MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.LuV),

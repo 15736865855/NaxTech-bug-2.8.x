@@ -1,47 +1,104 @@
 package com.onlyex.naxtech.api.pattern;
 
+import com.onlyex.naxtech.api.block.ITierGlassBlockState;
 import com.onlyex.naxtech.api.block.impl.WrappedIntTier;
+import com.onlyex.naxtech.api.metatileentity.multiblock.NTMultiblockAbility;
+import com.onlyex.naxtech.api.pattern.predicates.TierStateTraceabilityPredicate;
 import com.onlyex.naxtech.api.pattern.predicates.TierTraceabilityPredicate;
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
 import gregtech.api.block.VariantActiveBlock;
+import gregtech.api.metatileentity.ITieredMetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockAbilityPart;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.pattern.PatternStringError;
 import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.api.util.BlockInfo;
+import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.*;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 import static com.onlyex.naxtech.api.NTAPI.*;
 
 
 public class NTTraceabilityPredicate {
 
-    //  Tier Traceability Predicates
-    public static Supplier<TierTraceabilityPredicate> MACHINE_CASINGS = () -> new TierTraceabilityPredicate(MAP_MACHINE_CASING,"MachineCasingType",null);
-    public static Supplier<TierTraceabilityPredicate> CP_CASING = () -> new TierTraceabilityPredicate(MAP_CP_CASING,
-            Comparator.comparing((s) -> ((WrappedIntTier)MAP_CP_CASING.get(s)).getIntTier()),"ChemicalPlantCasing",null);
-    public static Supplier<TierTraceabilityPredicate> CP_TUBE = () -> new TierTraceabilityPredicate(MAP_CP_TUBE,
-            Comparator.comparing((s) -> ((WrappedIntTier)MAP_CP_TUBE.get(s)).getIntTier()),"ChemicalPlantTube",null);
-    public static Supplier<TierTraceabilityPredicate> CA_TIERED_CASING = () -> new TierTraceabilityPredicate(MAP_CA_TIRED_CASING,
-            Comparator.comparing((s) -> ((WrappedIntTier)MAP_CA_TIRED_CASING.get(s)).getIntTier()), "CATieredCasing", null);
-    public static Supplier<TierTraceabilityPredicate> PA_CASING = () -> new TierTraceabilityPredicate(MAP_PA_CASING,
-            Comparator.comparing((s) -> ((WrappedIntTier)MAP_PA_CASING.get(s)).getIntTier()), "PACasing", null);
-    public static Supplier<TierTraceabilityPredicate> PA_INTERNAL_CASING = () -> new TierTraceabilityPredicate(MAP_PA_INTERNAL_CASING,
-            Comparator.comparing((s) -> ((WrappedIntTier)MAP_PA_INTERNAL_CASING.get(s)).getIntTier()), "PAInternalCasing", null);
 
-    public static Supplier<TierTraceabilityPredicate> QFT_MANIPULATOR = () -> new TierTraceabilityPredicate(MAP_QFT_MANIPULATOR,
+    //  Same Block State Traceability Predicates
+    public static Supplier<TraceabilityPredicate> NT_GLASS = () -> new TierStateTraceabilityPredicate(MAP_GLASS, "Glass", "naxtech.multiblock.pattern.error.glasses");
+    public static Supplier<TraceabilityPredicate> NT_OPTICAL_GLASS = () -> new TierStateTraceabilityPredicate(MAP_GLASS,
+            state -> ((ITierGlassBlockState)MAP_GLASS.get(state)).isOpticalGlass(), "Glass", "naxtech.multiblock.pattern.error.glasses");
+    public static Supplier<TraceabilityPredicate> NT_GLASS_NO_OPTICAL = () -> new TierStateTraceabilityPredicate(MAP_GLASS,
+            state -> !((ITierGlassBlockState)MAP_GLASS.get(state)).isOpticalGlass(), "Glass", "naxtech.multiblock.pattern.error.glasses");
+    public static Supplier<TraceabilityPredicate> ROTOR_HOLDER = () -> new TraceabilityPredicate(blockWorldState -> {
+        TileEntity tileEntity = blockWorldState.getTileEntity();
+        if (tileEntity instanceof IGregTechTileEntity) {
+            List<ResourceLocation> list = MultiblockAbility.REGISTRY.get(NTMultiblockAbility.REINFORCED_ROTOR_MULTIBLOCK_ABILITY).stream()
+                    .map(mte -> mte.metaTileEntityId)
+                    .collect(Collectors.toList());
+            MetaTileEntity mte = ((IGregTechTileEntity)tileEntity).getMetaTileEntity();
+            if (list.contains(mte.metaTileEntityId)) {
+                int tier = ((ITieredMetaTileEntity) mte).getTier();
+                Object currentTier = blockWorldState.getMatchContext().getOrPut("RotorHolderTier", tier);
+                if (!currentTier.equals(tier)) {
+                    blockWorldState.setError(new PatternStringError("naxtech.multiblock.pattern.error.rotor_holder"));
+                    return false;
+                }
+                Set<IMultiblockPart> partsFound = blockWorldState.getMatchContext().getOrCreate("MultiblockParts", HashSet::new);
+                partsFound.add((IMultiblockPart) mte);
+                return true;
+            }
+        }
+        return false;
+    }, () -> MultiblockAbility.REGISTRY.get(NTMultiblockAbility.REINFORCED_ROTOR_MULTIBLOCK_ABILITY).stream()
+            .sorted(Comparator.comparingInt(mte -> ((ITieredMetaTileEntity) mte).getTier()))
+            .map(mte -> new BlockInfo(MetaBlocks.MACHINE.getDefaultState(), NTUniverUtil.getTileEntity(mte)))
+            .toArray(BlockInfo[]::new))
+            .addTooltips("naxtech.multiblock.pattern.error.rotor_holder");
+
+    public static Supplier<TraceabilityPredicate> FIRE_BOX = () -> new TraceabilityPredicate(blockWorldState -> {
+        IBlockState blockState = blockWorldState.getBlockState();
+        if ((blockState.getBlock() instanceof BlockFireboxCasing BlockFireboxCasing)) {
+            BlockFireboxCasing.FireboxCasingType casingType = BlockFireboxCasing.getState(blockState);
+            Object currentCasingType = blockWorldState.getMatchContext().getOrPut("CasingType", casingType);
+            if (!currentCasingType.toString().equals(casingType.toString())) {
+                blockWorldState.setError(new PatternStringError("naxtech.multiblock.pattern.error.fire_boxes"));
+                return false;
+            }
+            blockWorldState.getMatchContext().getOrPut("VABlock", new LinkedList<>()).add(blockWorldState.getPos());
+            return true;
+        }
+        return false;
+    }, () -> ArrayUtils.addAll(Arrays.stream(BlockFireboxCasing.FireboxCasingType.values())
+            .map(type -> new BlockInfo(MetaBlocks.BOILER_FIREBOX_CASING.getState(type), null)).toArray(BlockInfo[]::new)))
+            .addTooltips("naxtech.multiblock.pattern.error.fire_boxes");
+
+    //  Tier Traceability Predicates
+    public static Supplier<TierTraceabilityPredicate> NT_MACHINE_CASINGS = () -> new TierTraceabilityPredicate(MAP_MACHINE_CASING,"MachineCasingType",null);
+    public static Supplier<TierTraceabilityPredicate> NT_CP_CASING = () -> new TierTraceabilityPredicate(MAP_CP_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier)MAP_CP_CASING.get(s)).getIntTier()),"ChemicalPlantCasing",null);
+    public static Supplier<TierTraceabilityPredicate> NT_CP_TUBE = () -> new TierTraceabilityPredicate(MAP_CP_TUBE,
+            Comparator.comparing((s) -> ((WrappedIntTier)MAP_CP_TUBE.get(s)).getIntTier()),"ChemicalPlantTube",null);
+    public static Supplier<TierTraceabilityPredicate> NT_PA_CASING = () -> new TierTraceabilityPredicate(MAP_PA_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier)MAP_PA_CASING.get(s)).getIntTier()), "PACasing", null);
+    public static Supplier<TierTraceabilityPredicate> NT_PA_INTERNAL_CASING = () -> new TierTraceabilityPredicate(MAP_PA_INTERNAL_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier)MAP_PA_INTERNAL_CASING.get(s)).getIntTier()), "PAInternalCasing", null);
+    public static Supplier<TierTraceabilityPredicate> NT_CA_TIERED_CASING = () -> new TierTraceabilityPredicate(MAP_CA_TIRED_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier)MAP_CA_TIRED_CASING.get(s)).getIntTier()), "CATieredCasing", null);
+    public static Supplier<TierTraceabilityPredicate> NT_QFT_MANIPULATOR = () -> new TierTraceabilityPredicate(MAP_QFT_MANIPULATOR,
             Comparator.comparing((s) -> ((WrappedIntTier)MAP_QFT_MANIPULATOR.get(s)).getIntTier()), "QFTManipulator", null);
-    public static Supplier<TierTraceabilityPredicate> QFT_SHIELDING_CORE = () -> new TierTraceabilityPredicate(MAP_QFT_SHIELDING_CORE,
+    public static Supplier<TierTraceabilityPredicate> NT_QFT_SHIELDING_CORE = () -> new TierTraceabilityPredicate(MAP_QFT_SHIELDING_CORE,
             Comparator.comparing((s) -> ((WrappedIntTier)MAP_QFT_SHIELDING_CORE.get(s)).getIntTier()), "QFTShieldingCore", null);
-    public static Supplier<TierTraceabilityPredicate> QFT_GLASS = () -> new TierTraceabilityPredicate(MAP_QFT_GLASS,
+    public static Supplier<TierTraceabilityPredicate> NT_QFT_GLASS = () -> new TierTraceabilityPredicate(MAP_QFT_GLASS,
             Comparator.comparing((s) -> ((WrappedIntTier)MAP_QFT_GLASS.get(s)).getIntTier()), "QFTGlass", null);
 
     //  Optional Traceability Predicates
@@ -81,7 +138,7 @@ public class NTTraceabilityPredicate {
     public static Supplier<BlockInfo[]> getCandidates(MetaTileEntity... metaTileEntities) {
         return () -> Arrays.stream(metaTileEntities)
                 .filter(Objects::nonNull)
-                //.map(tile -> new BlockInfo(MetaBlocks.MACHINE.getDefaultState(), NTUniverUtil.getTileEntity(tile)))
+                .map(tile -> new BlockInfo(MetaBlocks.MACHINE.getDefaultState(), NTUniverUtil.getTileEntity(tile)))
                 .toArray(BlockInfo[]::new);
     }
 }

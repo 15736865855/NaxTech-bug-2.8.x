@@ -36,6 +36,92 @@
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/precise_assembler_casing_mk3"
       }
+    },
+    "vacuum_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "naxtech:blocks/casings/machine_casing/vacuum_casing",
+        "side": "naxtech:blocks/casings/machine_casing/vacuum_casing_side",
+        "bottom": "naxtech:blocks/casings/machine_casing/vacuum_casing"
+      }
+    },
+    "naquadria_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/naquadria_casing"
+      }
+    },
+    "hyper_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/hyper_casing"
+      }
+    },
+    "talonite_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/talonite_casing"
+      }
+    },
+    "farm_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/farm_casing"
+      }
+    },
+    "breeding_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/breeding_casing"
+      }
+    },
+    "tritanium_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/tritanium_casing"
+      }
+    },
+    "quantum_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/quantum_casing"
+      }
+    },
+    "reflective_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/reflective_casing"
+      }
+    },
+    "maraging_steel_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/maraging_steel_250_casing"
+      }
+    },
+    "corrosion_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/corrosion_casing"
+      }
+    },
+    "babbitt_alloy_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/babbitt_alloy_casing"
+      }
+    },
+    "zirconium_carbide_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/zirconium_carbide_casing"
+      }
+    },
+    "hastelloy_x78_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/hastelloy_x78_casing"
+      }
     }
   }
 }

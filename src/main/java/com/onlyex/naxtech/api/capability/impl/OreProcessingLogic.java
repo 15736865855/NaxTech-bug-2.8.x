@@ -1,7 +1,7 @@
 package com.onlyex.naxtech.api.capability.impl;
 
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
-import com.onlyex.naxtech.common.metatileentities.multi.part.MetaTileEntityIntegratedOreFactory;
+import com.onlyex.naxtech.common.metatileentities.multi.part.NTMetaTileEntityIntegratedOreFactory;
 import gregtech.api.GTValues;
 import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.capability.IEnergyContainer;
@@ -65,8 +65,8 @@ public class OreProcessingLogic implements IWorkable{
     private int mode = 0;
     private static final boolean init = false;
     private boolean isVoidStone = false;
-    private final MetaTileEntityIntegratedOreFactory metaTileEntity;
-    public OreProcessingLogic(MetaTileEntityIntegratedOreFactory metaTileEntity) {
+    private final NTMetaTileEntityIntegratedOreFactory metaTileEntity;
+    public OreProcessingLogic(NTMetaTileEntityIntegratedOreFactory metaTileEntity) {
         this.metaTileEntity = metaTileEntity;
         //  初始化HashSet
         if (!init) initHash();

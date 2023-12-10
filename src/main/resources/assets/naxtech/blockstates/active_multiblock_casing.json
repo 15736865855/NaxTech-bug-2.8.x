@@ -12,6 +12,71 @@
       "textures": {
         "all": "naxtech:blocks/casings/active_multiblock_casing/flotation_intake_casing_active"
       }
+    },
+    "substrate_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "naxtech:blocks/casings/active_multiblock_casing/substrate_top",
+        "side": "naxtech:blocks/casings/active_multiblock_casing/substrate_side",
+        "bottom": "#side"
+      }
+    },
+    "advanced_substrate_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "naxtech:blocks/casings/active_multiblock_casing/advanced_substrate_top",
+        "side": "naxtech:blocks/casings/active_multiblock_casing/substrate_side",
+        "bottom": "#side"
+      }
+    },
+    "cyclotron_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/active_multiblock_casing/cyclotron_casing"
+      }
+    },
+    "cyclotron_coil": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/active_multiblock_casing/cyclotron_coil"
+      }
+    },
+    "stellar_containment_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/active_multiblock_casing/stellar_containment_casing"
+      }
+    },
+    "supercritical_fluid_turbine_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/active_multiblock_casing/supercritical_fluid_turbine_casing"
+      }
+    },
+    "supercritical_fluid_turbine_shaft_block": {
+      "model": "naxtech:shaft",
+      "textures": {
+        "side": "naxtech:blocks/casings/active_multiblock_casing/supercritical_fluid_turbine_shaft_block_side",
+        "end": "naxtech:blocks/casings/active_multiblock_casing/supercritical_fluid_turbine_shaft_block_end"
+      }
+    },
+    "dragon_fusion_coil": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/active_multiblock_casing/dragon_fusion_coil"
+      }
+    },
+    "draconium_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/active_multiblock_casing/draconium_casing"
+      }
+    },
+    "hg_1223_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/active_multiblock_casing/hg_1223_casing"
+      }
     }
   }
 }

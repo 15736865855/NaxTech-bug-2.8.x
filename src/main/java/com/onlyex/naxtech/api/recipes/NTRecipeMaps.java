@@ -7,6 +7,7 @@ import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.builders.AssemblerRecipeBuilder;
+import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import stanhebben.zenscript.annotations.ZenClass;
@@ -33,6 +34,17 @@ public class NTRecipeMaps {
     public static final RecipeMap<CasingTierRecipeBuilder> CHEMICAL_PLANT_RECIPES;
     @ZenProperty
     public static final RecipeMap<QFTCasingTierRecipeBuilder> QUANTUM_FORCE_TRANSFORMER_RECIPES;
+
+    //  Generator Recipemaps
+    @ZenProperty
+    public static final RecipeMap<FuelRecipeBuilder> NAQUADAH_REACTOR_RECIPES;
+
+    @ZenProperty
+    public static final RecipeMap<FuelRecipeBuilder> HIGH_PRESSURE_STEAM_TURBINE_FUELS;
+    @ZenProperty
+    public static final RecipeMap<FuelRecipeBuilder> SUPERCRITICAL_STEAM_TURBINE_FUELS;
+    @ZenProperty
+    public static final RecipeMap<FuelRecipeBuilder> ROCKET_ENGINE_RECIPES;
     public NTRecipeMaps() {}
 
     static {
@@ -83,6 +95,21 @@ public class NTRecipeMaps {
         QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>("quantum_force_transformer_recipes",  6,  6,  6,  6, new QFTCasingTierRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.SCIENCE);
+
+        //  Naquadah Reactor Recipemap
+        NAQUADAH_REACTOR_RECIPES = new RecipeMap<>("naquadah_reactor_recipes", 0,  0,  1,  0,  new FuelRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.COMBUSTION);
+
+        //  High Pressure Steam Turbine Recipemap
+        HIGH_PRESSURE_STEAM_TURBINE_FUELS = new RecipeMap<>("high_pressure_steam_turbine_fuels", 0, 0, 1, 1, new FuelRecipeBuilder(), false);
+
+        //  Supercritical Steam Turbine Recipemap
+        SUPERCRITICAL_STEAM_TURBINE_FUELS = new RecipeMap<>("supercritical_steam_turbine_fuels",  0, 0, 1, 1, new FuelRecipeBuilder(), false);
+
+        //  Rocket Engine Recipemap
+        ROCKET_ENGINE_RECIPES = new RecipeMap<>("rocket_engine_recipes", 0,  0,  1,  0,  new FuelRecipeBuilder(), false)
+                .setSound(GTSoundEvents.COMBUSTION);
     }
 
 }

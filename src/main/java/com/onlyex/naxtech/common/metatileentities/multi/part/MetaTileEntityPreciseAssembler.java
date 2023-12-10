@@ -118,13 +118,13 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
                 .aisle("CMMMMMMMC", "CGGGGGGGC", "CGGGGGGGC", "CGGGGGGGC", "DDDDDDDDD")
                 .aisle("DDDDSDDDD", "F       F", "F       F", "F       F", "DDDDDDDDD")
                 .where('S', selfPredicate())
-                .where('C', NTTraceabilityPredicate.PA_CASING.get())
-                .where('D', NTTraceabilityPredicate.PA_CASING.get()
+                .where('C', NTTraceabilityPredicate.NT_PA_CASING.get())
+                .where('D', NTTraceabilityPredicate.NT_PA_CASING.get()
                         .setMinGlobalLimited(42)
                         .or(autoAbilities()))
                 .where('F', states(getFrameState()))
                 .where('G', states(getGlassState()))
-                .where('M', NTTraceabilityPredicate.PA_INTERNAL_CASING.get())
+                .where('M', NTTraceabilityPredicate.NT_PA_INTERNAL_CASING.get())
                 .build();
     }//TODO 更换方块
 

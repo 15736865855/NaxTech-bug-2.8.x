@@ -8,6 +8,8 @@ metaitem.milled.tooltip.flotation=Further processing requires §6Industrial Flot
 item.material.oreprefix.nanites=%s
 item.material.oreprefix.wrap=%s
 
+#  Behavior
+behavior.data_item.require_decoding=
 
 #  Mill Balls
 metaitem.mill.grindball_soapstone.name=Soapstone Grindball
@@ -700,7 +702,39 @@ gregtech.material.dragon_tear=
 gregtech.material.blazing_pyrotheum=Blazing Pyrotheum
 gregtech.material.gelid_cryotheum=Gelid Cryotheum
 
+#   Biological Components
+metaitem.biological.components.electrochemical_gradient_recorder.name=Electrochemical Gradient Recorder
+metaitem.biological.components.electrochemical_gradient_recorder.tooltip=Fundamentals of Biocomputing
+metaitem.biological.components.hyperribosome.name=Hyperribosome
+metaitem.biological.components.hyperribosome.tooltip=Protein Factory
+metaitem.biological.components.neutron_absorbing_protein.name=Neutron Absorbing Protein
+metaitem.biological.components.neutron_absorbing_protein.tooltip=Inconceivable
+metaitem.biological.components.quantum_tunneling_microtubule.name=Quantum Tunneling Microtubule
+metaitem.biological.components.quantum_tunneling_microtubule.tooltip=Biological Fusion has finally become a reality
+metaitem.biological.components.superexcited_conductive_polymer.name=Superexcited Conductive Polymer
+metaitem.biological.components.superexcited_conductive_polymer.tooltip=Biological High-voltage Line
+metaitem.biological.components.ultra_micro_phase_separator.name=Ultra-micro Phase Separator
+metaitem.biological.components.ultra_micro_phase_separator.tooltip=Guardian of Biochemical Reactions
+metaitem.biological.components.dna_decoder.name=DNA Decoder
+metaitem.biological.components.dna_decoder.tooltip=Part of a Self-replicating Turing Machine
+metaitem.biological.components.dna_encoder.name=DNA Encoder
+metaitem.biological.components.dna_encoder.tooltip=Part of a Self-replicating Turing Machine
+metaitem.biological.components.dna_decode_encoder.name=DNA Decode-encoder
+metaitem.biological.components.dna_decode_encoder.tooltip=Will deplete the universe in order to calculate
+metaitem.algae.ordinary_algae.name=Ordinary Algae
+metaitem.algae.red_alga.name=Red Alga
+metaitem.algae.green_alga.name=Green Alga
+metaitem.algae.chrysophyceae.name=Chrysophyceae
+metaitem.algae.brown_alga.name=Brown Alga
 
+#  Debug
+metaitem.debug.structure_writer.name=
+metaitem.debug.structure_writer.tooltip=因为我需要一个...
+metaitem.debug.structure_writer.export_to_log=导出为日志
+metaitem.debug.structure_writer.export_to_json=导出为Json
+metaitem.debug.structure_writer.rotate_along_y_axis=沿Y轴旋转
+metaitem.debug.structure_writer.ex=无
+metaitem.debug.structure_writer.structural_scale=结构规模： X:%s  Y:%s  Z:%s
 
 #Coil Block
 tile.wire_coil.naquadah_alloy.name=Naquadah Alloy Coil Block
@@ -736,11 +770,40 @@ tile.machine_casing.advanced_aluminium_casing.name=Plated Antifreeze Aluminium M
 tile.machine_casing.precise_assembler_casing_mk1.name=精密电子单元机械方块 Mk I
 tile.machine_casing.precise_assembler_casing_mk2.name=精密电子单元机械方块 Mk II
 tile.machine_casing.precise_assembler_casing_mk3.name=精密电子单元机械方块 Mk III
+tile.machine_casing.naquadria_casing.name=超能硅岩抗辐射机器外壳
+tile.machine_casing.hyper_casing.name=超致密黑钚机器外壳
+tile.machine_casing.farm_casing.name=富生农场机器外壳
+tile.machine_casing.breeding_casing.name=水产养殖机器外壳
+tile.machine_casing.tritanium_casing.name=极限强度三钛合金机器外壳
+tile.machine_casing.quantum_casing.name=超重量子合金机器外壳
+tile.machine_casing.reflective_casing.name=抗形变反射面机器外壳
+tile.machine_casing.maraging_steel_casing.name=高耐久马氏体时效钢250机器外壳
+tile.machine_casing.talonite_casing.name=低摩擦铬钴磷酸盐合金机器外壳
+tile.machine_casing.babbitt_alloy_casing.name=抗瘿巴氏合金机器外壳
+tile.machine_casing.vacuum_casing.name=高气密红钢机器外壳
+tile.machine_casing.zirconium_carbide_casing.name=超耐热碳化锆机器外壳
+tile.machine_casing.draconium_casing.name=魔力亲和龙素机器外壳
+tile.machine_casing.corrosion_casing.name=抗腐蚀超级奥氏体不锈钢-904L机器外壳
+tile.machine_casing.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-X78机器外壳
+tile.machine_casing.hastelloy_k243_casing.name=高耐久哈斯特洛伊合金-K243机器外壳
+tile.machine_casing_a.hg_1223_casing.name=化学惰性HG-1223耐热机器外壳
+
+tile.active_multiblock_casing.supercritical_fluid_turbine_casing.name=MAR-M200特种钢超临界涡轮外壳
+tile.active_multiblock_casing.supercritical_fluid_turbine_shaft_block.name=超临界涡轮传动转轴方块
+tile.active_multiblock_casing.stellar_containment_casing.name=恒星热力容器
+tile.active_multiblock_casing.substrate_casing.name=基板机械方块
+tile.active_multiblock_casing.advanced_substrate_casing.name=高级基板机械方块
+tile.active_multiblock_casing.cyclotron_casing.name=回旋加速机械方块
+tile.active_multiblock_casing.cyclotron_coil.name=重离子偏转线圈方块
+tile.active_multiblock_casing.dragon_fusion_coil.name=混沌聚合线圈方块
+
 tile.pipelinel_casing.pbi.name=
 
 #machine
 naxtech.machine.packaging_line.name=
-
+tile.pipelinel_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
+tile.pipelinel_casing.farm_pipe_casing.name=水培管道机械方块
+tile.pipelinel_casing.alloy_smelting_pipe_casing.name=高强度热磁保护管道外壳
 
 naxtech.machine.component_assembly_line.name=部件装配线
 recipemap.component_assembly_line_recipes.name=部件装配线
@@ -953,6 +1016,27 @@ naxtech.machine.compact_fusion_reactor_mk3.name=压缩核聚变反应堆控制�
 naxtech.machine.compact_fusion_reactor_mk4.name=压缩核聚变反应堆控制电脑 Mk IV
 naxtech.machine.compact_fusion_reactor_mk5.name=压缩核聚变反应堆控制电脑 Mk V
 
+naxtech.machine.multiblock.glass_tier=Glass Tier: %s (%s)
+naxtech.machine.multiblock.max_parallel=Maximum Parallel: %s
+naxtech.machine.multiblock.max_voltage=Maximum Voltage: %s
+naxtech.machine.multiblock.mode=Mode: %s
+naxtech.multiblock.universal.problem.soldering_iron=%s§7Circuit board is short circuited. (§aSoldering Iron§7)
+
+naxtech.machine.mega_alloy_blast_smelter.name=Mega Alloy Blast Smelter
+naxtech.machine.mega_alloy_blast_smelter.max_parallel=Maximum parallel: %s
+naxtech.machine.mega_alloy_blast_smelter.tooltip.1=Glass level determines the maximum voltage.
+naxtech.machine.mega_alloy_blast_smelter.tooltip.2=Maximum parallel is four times the coil level.
+naxtech.machine.mega_alloy_blast_smelter.tooltip.3=For each level higher than cupronickel, duration required for recipes increases to 0.8.
+
+naxtech.machine.mega_oil_cracking_unit.name=Mega Oil Cracking Unit
+naxtech.machine.mega_oil_cracking_unit.tooltip.1=Glass level determines the maximum voltage.
+naxtech.machine.mega_oil_cracking_unit.tooltip.2=Maximum parallel is four times the coil level.
+naxtech.machine.mega_oil_cracking_unit.tooltip.3=For each level higher than cupronickel, duration required for recipes increases to 0.8.
+
+naxtech.machine.mega_chemical_reactor.name=Mega Chemical Reactor
+naxtech.machine.mega_chemical_reactor.tooltip.1=Glass level determines the maximum voltage.
+naxtech.machine.mega_chemical_reactor.tooltip.2=Maximum parallel is 256.
+
 naxtech.machine.chemical_plant.name=Chemical Plant
 recipemap.chemical_plant_recipes.name=Chemical Processing
 naxtech.machine.chemical_plant.coil_tier=Coil level: %d
@@ -980,11 +1064,26 @@ tile.control_casing.flotation_casing.name=Hastelloy-N Machine Casing
 tile.control_casing.flotation_casing_pipe.name=Hastelloy-N Oil film coated Pipe Casing
 tile.control_casing.flotation_casing_gearbox.name=Hastelloy-N Gearbox Casing
 
-tile.active_multiblock_casing.flotation_intake_casing.name=Hastelloy-N Sieve selection Intake Casing
+tile.active_machine_casing.flotation_intake_casing.name=Hastelloy-N Sieve selection Intake Casing
 
 naxtech.machine.buffer_hatch.name=Buffer Hatch
 naxtech.machine.buffer_hatch.import.tooltip=Input buffer for multiblocks
 naxtech.multipart.ph.name=pH: %s
+
+naxtech.multiblock.pattern.error.rotor_holder=必须使用同一等级的转子固定器
+
+naxtech.multiblock.mega_turbine.description=特大涡轮是大型涡轮的升级版。
+
+naxtech.machine.mega_turbine.steam.name=特大蒸汽涡轮
+naxtech.machine.mega_turbine.gas.name=特大燃气涡轮
+naxtech.machine.mega_turbine.plasma.name=特大等离子涡轮
+naxtech.machine.mega_turbine.mode.0=正常模式
+naxtech.machine.mega_turbine.mode.1=高速模式
+
+naxtech.machine.high_pressure_steam_turbine.name=高压蒸汽涡轮
+naxtech.machine.supercritical_steam_turbine.name=超临界蒸汽涡轮
+naxtech.machine.mega_high_pressure_steam_turbine.name=特大高压蒸汽涡轮
+naxtech.machine.mega_supercritical_steam_turbine.name=特大超临界蒸汽涡轮
 
 recipemap.quantum_force_transformer_recipes.name=量子操纵者
 naxtech.machine.quantum_force_transformer.name=量子操纵者

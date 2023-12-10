@@ -1,0 +1,11 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "hastelloy_k243_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/hastelloy_k243_casing"
+      }
+    }
+  }
+}
