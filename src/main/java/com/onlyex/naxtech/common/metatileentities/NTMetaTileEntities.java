@@ -64,14 +64,14 @@ public class NTMetaTileEntities {
     public static NTMetaTileEntityQuantumForceTransformer QUANTUM_FORCE_TRANSFORMER;
     public static NTMetaTileEntityMegaOilCrackingUnit MEGA_OIL_CRACKING_UNIT;
     public static NTMetaTileEntityMegaChemicalReactor MEGA_CHEMICAL_REACTOR;
-    public static NTMetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
-    public static NTMetaTileEntityMegaTurbine MEGA_GAS_TURBINE;
-    public static NTMetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
-    public static NTMetaTileEntityLargeTurbine HIGH_PRESSURE_STEAM_TURBINE;
-    public static NTMetaTileEntityLargeTurbine SUPERCRITICAL_STEAM_TURBINE;
-    public static NTMetaTileEntityMegaTurbine MEGA_HIGH_PRESSURE_STEAM_TURBINE;
-    public static NTMetaTileEntityMegaTurbine MEGA_SUPERCRITICAL_STEAM_TURBINE;
-    public static NTMetaTileEntityLargeNaquadahReactor LARGE_NAQUADAH_REACTOR;
+//    public static NTMetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
+//    public static NTMetaTileEntityMegaTurbine MEGA_GAS_TURBINE;
+//    public static NTMetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
+//    public static NTMetaTileEntityLargeTurbine HIGH_PRESSURE_STEAM_TURBINE;
+//    public static NTMetaTileEntityLargeTurbine SUPERCRITICAL_STEAM_TURBINE;
+//    public static NTMetaTileEntityMegaTurbine MEGA_HIGH_PRESSURE_STEAM_TURBINE;
+//    public static NTMetaTileEntityMegaTurbine MEGA_SUPERCRITICAL_STEAM_TURBINE;
+//    public static NTMetaTileEntityLargeNaquadahReactor LARGE_NAQUADAH_REACTOR;
 
     public static NTMetaTileEntityFlotationFactory FLOTATION_FACTORY;
     private static <F extends MetaTileEntity> F registerSingleMetaTileEntity(int id, F mte) {

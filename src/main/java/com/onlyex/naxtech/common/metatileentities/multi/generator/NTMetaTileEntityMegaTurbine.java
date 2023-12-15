@@ -109,14 +109,14 @@ public class NTMetaTileEntityMegaTurbine extends FuelMultiblockController implem
 
     protected boolean isRotorFaceFree() {
         List<IReinforcedRotorHolder> rotorHolders = getRotorHolders();
-        if (!isStructureFormed() || rotorHolders == null) return false;
+        if (!isStructureFormed() || rotorHolders == null) return true;
 
         for (IReinforcedRotorHolder rotorHolder : rotorHolders) {
             if (!rotorHolder.isFrontFaceFree()) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     @Override
@@ -146,10 +146,10 @@ public class NTMetaTileEntityMegaTurbine extends FuelMultiblockController implem
         }
     }
 
-    protected void setSpeed(int speed) {
+    protected void setSpeed() {
         for (IReinforcedRotorHolder holder : getRotorHolders()) {
             if (holder.hasRotor()) {
-                holder.setCurrentSpeed(speed);
+                holder.setCurrentSpeed(0);
             }
         }
     }
@@ -175,7 +175,7 @@ public class NTMetaTileEntityMegaTurbine extends FuelMultiblockController implem
         super.update();
         if (getOffsetTimer() % 20 == 0) {
             if (!checkRotors()) {
-                setSpeed(0);
+                setSpeed();
             }
             if (!getWorld().isRemote && isStructureFormed()) {
                 setupRotors();
@@ -341,13 +341,13 @@ public class NTMetaTileEntityMegaTurbine extends FuelMultiblockController implem
     @Override
     protected void addErrorText(List<ITextComponent> textList) {
         super.addErrorText(textList);
-        if (isStructureFormed() && !isRotorFaceFree()) {
+        if (isStructureFormed() && isRotorFaceFree()) {
             textList.add(new TextComponentTranslation("gregtech.multiblock.turbine.obstructed").setStyle(new Style().setColor(TextFormatting.RED)));
         }
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
+    public void addInformation(ItemStack stack, @Nullable World player, @Nonnull List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[tier] * 2 * 16));
         tooltip.add(I18n.format("gregtech.multiblock.turbine.efficiency_tooltip", GTValues.VNF[tier]));
@@ -396,7 +396,7 @@ public class NTMetaTileEntityMegaTurbine extends FuelMultiblockController implem
 
     @Override
     public boolean isStructureObstructed() {
-        return super.isStructureObstructed() || !isRotorFaceFree();
+        return super.isStructureObstructed() || isRotorFaceFree();
     }
 
     @Override

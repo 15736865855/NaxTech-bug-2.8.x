@@ -33,7 +33,7 @@ OrientedOverlayRenderer
     public static NTOverlayRenderer QUANTUM_CONSTRAINT_CASING = new NTOverlayRenderer("casings/quantum_force_transformer_casing/quantum_constraint_casing");
     public static OrientedOverlayRenderer MEGA_TURBINE_OVERLAY = new OrientedOverlayRenderer("multiblock/mega_turbine");
     public static NTOverlayRenderer NAQUADRIA_CASING = new NTOverlayRenderer("casings/solid/naquadria_casing");
-    public static NTOverlayRenderer SUPERCRITICAL_FLUID_TURBINE_CASING = new NTOverlayRenderer("casings/ep_multiblock_casing_b/supercritical_fluid_turbine_casing");
+    public static NTOverlayRenderer SUPERCRITICAL_FLUID_TURBINE_CASING = new NTOverlayRenderer("casings/machine_casing_a/supercritical_fluid_turbine_casing");
 
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();
 
