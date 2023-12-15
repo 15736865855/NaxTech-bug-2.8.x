@@ -37,7 +37,7 @@
         "all": "naxtech:blocks/casings/machine_casing/precise_assembler_casing_mk3"
       }
     },
-    "vacuum_casing": {
+    "variant=vacuum_casing": {
       "model": "minecraft:cube_bottom_top",
       "textures": {
         "top": "naxtech:blocks/casings/machine_casing/vacuum_casing",
@@ -45,82 +45,88 @@
         "bottom": "naxtech:blocks/casings/machine_casing/vacuum_casing"
       }
     },
-    "naquadria_casing": {
+    "variant=naquadria_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/naquadria_casing"
       }
     },
-    "hyper_casing": {
+    "variant=hyper_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/hyper_casing"
       }
     },
-    "talonite_casing": {
+    "variant=talonite_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/talonite_casing"
       }
     },
-    "farm_casing": {
+    "variant=farm_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/farm_casing"
       }
     },
-    "breeding_casing": {
+    "variant=breeding_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/breeding_casing"
       }
     },
-    "tritanium_casing": {
+    "variant=tritanium_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/tritanium_casing"
       }
     },
-    "quantum_casing": {
+    "variant=quantum_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/quantum_casing"
       }
     },
-    "reflective_casing": {
+    "variant=reflective_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/reflective_casing"
       }
     },
-    "maraging_steel_casing": {
+    "variant=maraging_steel_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/maraging_steel_250_casing"
       }
     },
-    "corrosion_casing": {
+    "variant=corrosion_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/corrosion_casing"
       }
     },
-    "babbitt_alloy_casing": {
+    "variant=babbitt_alloy_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/babbitt_alloy_casing"
       }
     },
-    "zirconium_carbide_casing": {
+    "variant=zirconium_carbide_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/zirconium_carbide_casing"
       }
     },
-    "hastelloy_x78_casing": {
+    "variant=hastelloy_x78_casing": {
       "model": "minecraft:cube_all",
       "textures": {
         "all": "naxtech:blocks/casings/machine_casing/hastelloy_x78_casing"
+      }
+    },
+    "variant=draconium_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/draconium_casing"
       }
     }
   }

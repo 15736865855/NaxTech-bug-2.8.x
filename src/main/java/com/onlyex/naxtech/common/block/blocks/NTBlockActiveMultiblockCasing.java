@@ -31,15 +31,7 @@ public class NTBlockActiveMultiblockCasing extends VariantActiveBlock<NTBlockAct
     public enum CasingType implements IStringSerializable {
 
 
-        FLOTATION_INTAKE_CASING("flotation_intake_casing"),
-        STELLAR_CONTAINMENT_CASING("stellar_containment_casing"),
-        SUPERCRITICAL_FLUID_TURBINE_CASING("supercritical_fluid_turbine_casing"),
-        SUPERCRITICAL_FLUID_TURBINE_SHAFT_BLOCK("supercritical_fluid_turbine_shaft_block"),
-        SUBSTRATE_CASING("substrate_casing"),
-        ADVANCED_SUBSTRATE_CASING("advanced_substrate_casing"),
-        CYCLOTRON_CASING("cyclotron_casing"),
-        //DRAGON_FUSION_COIL("dragon_fusion_coil"),
-        CYCLOTRON_COIL("cyclotron_coil");
+        FLOTATION_INTAKE_CASING("flotation_intake_casing");
 
         private final String name;
 

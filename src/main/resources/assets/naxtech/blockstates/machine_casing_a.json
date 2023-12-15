@@ -1,10 +1,69 @@
 {
   "forge_marker": 1,
   "variants": {
-    "hastelloy_k243_casing": {
+    "variant=hastelloy_k243_casing": {
       "model": "minecraft:cube_all",
       "textures": {
-        "all": "naxtech:blocks/casings/machine_casing/hastelloy_k243_casing"
+        "all": "naxtech:blocks/casings/machine_casing_a/hastelloy_k243_casing"
+      }
+    },
+    "variant=substrate_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "naxtech:blocks/casings/machine_casing_a/substrate_top",
+        "side": "naxtech:blocks/casings/machine_casing_a/substrate_side",
+        "bottom": "#side"
+      }
+    },
+    "variant=advanced_substrate_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "naxtech:blocks/casings/machine_casing_a/advanced_substrate_top",
+        "side": "naxtech:blocks/casings/machine_casing_a/substrate_side",
+        "bottom": "#side"
+      }
+    },
+    "variant=cyclotron_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing_a/cyclotron_casing"
+      }
+    },
+    "variant=cyclotron_coil": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing_a/cyclotron_coil"
+      }
+    },
+    "variant=stellar_containment_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing_a/stellar_containment_casing"
+      }
+    },
+    "variant=supercritical_fluid_turbine_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing_a/supercritical_fluid_turbine_casing"
+      }
+    },
+    "variant=supercritical_fluid_turbine_shaft_block": {
+      "model": "naxtech:shaft",
+      "textures": {
+        "side": "naxtech:blocks/casings/machine_casing_a/supercritical_fluid_turbine_shaft_block_side",
+        "end": "naxtech:blocks/casings/machine_casing_a/supercritical_fluid_turbine_shaft_block_end"
+      }
+    },
+    "variant=dragon_fusion_coil": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing_a/dragon_fusion_coil"
+      }
+    },
+    "variant=hg_1223_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing_a/hg_1223_casing"
       }
     }
   }

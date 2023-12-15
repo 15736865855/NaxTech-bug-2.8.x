@@ -788,14 +788,14 @@ tile.machine_casing.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-
 tile.machine_casing.hastelloy_k243_casing.name=高耐久哈斯特洛伊合金-K243机器外壳
 tile.machine_casing_a.hg_1223_casing.name=化学惰性HG-1223耐热机器外壳
 
-tile.active_multiblock_casing.supercritical_fluid_turbine_casing.name=MAR-M200特种钢超临界涡轮外壳
-tile.active_multiblock_casing.supercritical_fluid_turbine_shaft_block.name=超临界涡轮传动转轴方块
-tile.active_multiblock_casing.stellar_containment_casing.name=恒星热力容器
-tile.active_multiblock_casing.substrate_casing.name=基板机械方块
-tile.active_multiblock_casing.advanced_substrate_casing.name=高级基板机械方块
-tile.active_multiblock_casing.cyclotron_casing.name=回旋加速机械方块
-tile.active_multiblock_casing.cyclotron_coil.name=重离子偏转线圈方块
-tile.active_multiblock_casing.dragon_fusion_coil.name=混沌聚合线圈方块
+tile.machine_casing_a.supercritical_fluid_turbine_casing.name=MAR-M200特种钢超临界涡轮外壳
+tile.machine_casing_a.supercritical_fluid_turbine_shaft_block.name=超临界涡轮传动转轴方块
+tile.machine_casing_a.stellar_containment_casing.name=恒星热力容器
+tile.machine_casing_a.substrate_casing.name=基板机械方块
+tile.machine_casing_a.advanced_substrate_casing.name=高级基板机械方块
+tile.machine_casing_a.cyclotron_casing.name=回旋加速机械方块
+tile.machine_casing_a.cyclotron_coil.name=重离子偏转线圈方块
+tile.machine_casing_a.dragon_fusion_coil.name=混沌聚合线圈方块
 
 tile.pipelinel_casing.pbi.name=
 
@@ -804,6 +804,10 @@ naxtech.machine.packaging_line.name=
 tile.pipelinel_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
 tile.pipelinel_casing.farm_pipe_casing.name=水培管道机械方块
 tile.pipelinel_casing.alloy_smelting_pipe_casing.name=高强度热磁保护管道外壳
+
+naxtech.machine.large_naquadah_reactor.name=Large Naquadah Reactor
+naxtech.machine.large_naquadah_reactor.tooltip.1=Take energy in moderation
+naxtech.machine.large_naquadah_reactor.tooltip.2=Produces up to §3UV§7 power.
 
 naxtech.machine.component_assembly_line.name=部件装配线
 recipemap.component_assembly_line_recipes.name=部件装配线
@@ -1064,7 +1068,7 @@ tile.control_casing.flotation_casing.name=Hastelloy-N Machine Casing
 tile.control_casing.flotation_casing_pipe.name=Hastelloy-N Oil film coated Pipe Casing
 tile.control_casing.flotation_casing_gearbox.name=Hastelloy-N Gearbox Casing
 
-tile.active_machine_casing.flotation_intake_casing.name=Hastelloy-N Sieve selection Intake Casing
+tile.active_multiblock_casing.flotation_intake_casing.name=Hastelloy-N Sieve selection Intake Casing
 
 naxtech.machine.buffer_hatch.name=Buffer Hatch
 naxtech.machine.buffer_hatch.import.tooltip=Input buffer for multiblocks

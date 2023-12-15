@@ -15,7 +15,6 @@ import net.minecraftforge.fluids.IFluidTank;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 
 import java.util.List;
-import java.util.Objects;
 
 public class MegaTurbineWorkableHandler extends MultiblockFuelRecipeLogic {
     private final int BASE_EU_OUTPUT;
@@ -106,7 +105,7 @@ public class MegaTurbineWorkableHandler extends MultiblockFuelRecipeLogic {
         }
 
         //rebuild the recipe and adjust voltage to match the turbine
-        RecipeBuilder<?> recipeBuilder = Objects.requireNonNull(getRecipeMap()).recipeBuilder();
+        RecipeBuilder<?> recipeBuilder = getRecipeMap().recipeBuilder();
         recipeBuilder.append(recipe, parallel, false)
                 .EUt(-turbineMaxVoltage);
         applyParallelBonus(recipeBuilder);

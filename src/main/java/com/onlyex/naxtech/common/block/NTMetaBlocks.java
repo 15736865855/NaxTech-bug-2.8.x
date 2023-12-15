@@ -17,17 +17,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class NTMetaBlocks {
     public static NTBlockDimensionWireCoil NT_WIRE_COIL;//线圈
     public static NTBlockGlassCasing GLASS_CASING;//强化硅酸盐硼玻璃
-    public static NTBlockControlCasing CONTROL_CASING;//控制外壳
-    public static NTBlockMachinelCasing MACHINE_CASING;//机械外壳
-    public static NTBlockMachinelCasingA MACHINE_CASING_A;//机械外壳
-
-    public static NTBlockPipelinelCasing PIPELINE_CASING;//管道外壳
+    public static NTBlockControlCasing CONTROL_CASING;//控制外壳-1
+    public static NTBlockMachinelCasing MACHINE_CASING;//机械外壳-1
+    public static NTBlockMachinelCasingA MACHINE_CASING_A;//机械外壳-2
+    public static NTBlockPipelinelCasing PIPELINE_CASING;//管道外壳-1
     public static NTBlockPackagingline PACKAGING_LINE;//封装线外壳
     public static NTBlockComponentAssemblyLineCasing COMPONENT_ASSEMBLY_LINE_CASING;//部件装配线外壳
     public static NTBlockAdvancedAssemblyLineCasing ADVANCED_ASSEMBLY_LINE_CASING;//进阶装配线外壳
-
     public static NTBlockActiveMultiblockCasing ACTIVE_MULTIBLOCK_CASING;//活跃多块外壳
-
     public static BlockQuantumForceTransformerCasing QUANTUM_FORCE_TRANSFORMER_CASING;//量子操纵者外壳
     public static BlockQuantumForceTransformerGlassCasing QUANTUM_FORCE_TRANSFORMER_GLASS_CASING;//量子操纵者玻璃
 
@@ -42,7 +39,7 @@ public class NTMetaBlocks {
         MACHINE_CASING = new NTBlockMachinelCasing();
         MACHINE_CASING.setRegistryName("machine_casing");
         MACHINE_CASING_A = new NTBlockMachinelCasingA();
-        MACHINE_CASING_A.setRegistryName("machine_casing");
+        MACHINE_CASING_A.setRegistryName("machine_casing_a");
         PACKAGING_LINE = new NTBlockPackagingline();
         PACKAGING_LINE.setRegistryName("packaging_line");
         COMPONENT_ASSEMBLY_LINE_CASING = new NTBlockComponentAssemblyLineCasing();

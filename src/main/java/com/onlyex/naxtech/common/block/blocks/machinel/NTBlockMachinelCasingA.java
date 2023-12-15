@@ -22,7 +22,7 @@ public class NTBlockMachinelCasingA extends VariantBlock<NTBlockMachinelCasingA.
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
-        setCreativeTab(NAXTECH_TAB);
+        this.setCreativeTab(NAXTECH_TAB);
         this.setHarvestLevel("wrench", 2);
         this.setDefaultState(this.getState(NTBlockMachinelCasingA.CasingType.HG_1223_CASING));
     }
@@ -34,7 +34,15 @@ public class NTBlockMachinelCasingA extends VariantBlock<NTBlockMachinelCasingA.
 
 
     public enum CasingType implements IStringSerializable {
-        HG_1223_CASING("hg_1223_casing");
+        HG_1223_CASING("hg_1223_casing"),
+        STELLAR_CONTAINMENT_CASING("stellar_containment_casing"),
+        SUPERCRITICAL_FLUID_TURBINE_CASING("supercritical_fluid_turbine_casing"),
+        SUPERCRITICAL_FLUID_TURBINE_SHAFT_BLOCK("supercritical_fluid_turbine_shaft_block"),
+        SUBSTRATE_CASING("substrate_casing"),
+        ADVANCED_SUBSTRATE_CASING("advanced_substrate_casing"),
+        CYCLOTRON_CASING("cyclotron_casing"),
+        DRAGON_FUSION_COIL("dragon_fusion_coil"),
+        CYCLOTRON_COIL("cyclotron_coil");
 
         private final String name;
 

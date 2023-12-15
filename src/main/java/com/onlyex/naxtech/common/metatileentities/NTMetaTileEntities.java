@@ -4,8 +4,12 @@ import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtils;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
+import com.onlyex.naxtech.common.block.NTMetaBlocks;
+import com.onlyex.naxtech.common.block.blocks.machinel.NTBlockMachinelCasingA;
 import com.onlyex.naxtech.common.metatileentities.multi.dimension.NTMetaTileEntityQuantumForceTransformer;
 import com.onlyex.naxtech.common.metatileentities.multi.electric.*;
+import com.onlyex.naxtech.common.metatileentities.multi.generator.NTMetaTileEntityLargeNaquadahReactor;
+import com.onlyex.naxtech.common.metatileentities.multi.generator.NTMetaTileEntityLargeTurbine;
 import com.onlyex.naxtech.common.metatileentities.multi.generator.NTMetaTileEntityMegaTurbine;
 import com.onlyex.naxtech.common.metatileentities.multi.part.*;
 import gregtech.api.GTValues;
@@ -63,6 +67,11 @@ public class NTMetaTileEntities {
     public static NTMetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
     public static NTMetaTileEntityMegaTurbine MEGA_GAS_TURBINE;
     public static NTMetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
+    public static NTMetaTileEntityLargeTurbine HIGH_PRESSURE_STEAM_TURBINE;
+    public static NTMetaTileEntityLargeTurbine SUPERCRITICAL_STEAM_TURBINE;
+    public static NTMetaTileEntityMegaTurbine MEGA_HIGH_PRESSURE_STEAM_TURBINE;
+    public static NTMetaTileEntityMegaTurbine MEGA_SUPERCRITICAL_STEAM_TURBINE;
+    public static NTMetaTileEntityLargeNaquadahReactor LARGE_NAQUADAH_REACTOR;
 
     public static NTMetaTileEntityFlotationFactory FLOTATION_FACTORY;
     private static <F extends MetaTileEntity> F registerSingleMetaTileEntity(int id, F mte) {
@@ -130,9 +139,14 @@ public class NTMetaTileEntities {
         QUANTUM_FORCE_TRANSFORMER = registerMultiMetaTileEntity(12, new NTMetaTileEntityQuantumForceTransformer(epId("quantum_force_transformer")));
         MEGA_OIL_CRACKING_UNIT = registerMultiMetaTileEntity(13, new NTMetaTileEntityMegaOilCrackingUnit(epId("mega_oil_cracking_unit")));
         MEGA_CHEMICAL_REACTOR = registerMultiMetaTileEntity(14, new NTMetaTileEntityMegaChemicalReactor(epId("mega_chemical_reactor")));
-        MEGA_STEAM_TURBINE = registerMultiMetaTileEntity(15, new NTMetaTileEntityMegaTurbine(epId("mega_turbine.steam"), RecipeMaps.STEAM_TURBINE_FUELS, 3, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX), Textures.SOLID_STEEL_CASING, false, NTTextures.MEGA_TURBINE_OVERLAY));
-        MEGA_GAS_TURBINE = registerMultiMetaTileEntity(16, new NTMetaTileEntityMegaTurbine(epId("mega_turbine.gas"), RecipeMaps.GAS_TURBINE_FUELS, 4, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_STEEL_GEARBOX), Textures.CLEAN_STAINLESS_STEEL_CASING, true, NTTextures.MEGA_TURBINE_OVERLAY));
-        MEGA_PLASMA_TURBINE = registerMultiMetaTileEntity(17, new NTMetaTileEntityMegaTurbine(epId("mega_turbine.plasma"), RecipeMaps.PLASMA_GENERATOR_FUELS, 5, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX), Textures.ROBUST_TUNGSTENSTEEL_CASING, false, NTTextures.MEGA_TURBINE_OVERLAY));
+        //MEGA_STEAM_TURBINE = registerMultiMetaTileEntity(15, new NTMetaTileEntityMegaTurbine(epId("mega_turbine.steam"), RecipeMaps.STEAM_TURBINE_FUELS, 3, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX), Textures.SOLID_STEEL_CASING, false, NTTextures.MEGA_TURBINE_OVERLAY));
+        //MEGA_GAS_TURBINE = registerMultiMetaTileEntity(16, new NTMetaTileEntityMegaTurbine(epId("mega_turbine.gas"), RecipeMaps.GAS_TURBINE_FUELS, 4, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_STEEL_GEARBOX), Textures.CLEAN_STAINLESS_STEEL_CASING, true, NTTextures.MEGA_TURBINE_OVERLAY));
+        //MEGA_PLASMA_TURBINE = registerMultiMetaTileEntity(17, new NTMetaTileEntityMegaTurbine(epId("mega_turbine.plasma"), RecipeMaps.PLASMA_GENERATOR_FUELS, 5, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX), Textures.ROBUST_TUNGSTENSTEEL_CASING, false, NTTextures.MEGA_TURBINE_OVERLAY));
+        //HIGH_PRESSURE_STEAM_TURBINE = registerMultiMetaTileEntity(18, new NTMetaTileEntityLargeTurbine(epId("high_pressure_steam_turbine"), NTRecipeMaps.HIGH_PRESSURE_STEAM_TURBINE_FUELS, 4, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_GEARBOX), Textures.STABLE_TITANIUM_CASING, false, Textures.LARGE_STEAM_TURBINE_OVERLAY));
+        //SUPERCRITICAL_STEAM_TURBINE = registerMultiMetaTileEntity(19, new NTMetaTileEntityLargeTurbine(epId("supercritical_steam_turbine"), NTRecipeMaps.SUPERCRITICAL_STEAM_TURBINE_FUELS, 6, NTMetaBlocks.MACHINE_CASING_A.getState(NTBlockMachinelCasingA.CasingType.SUPERCRITICAL_FLUID_TURBINE_CASING), NTMetaBlocks.MACHINE_CASING_A.getState(NTBlockMachinelCasingA.CasingType.SUPERCRITICAL_FLUID_TURBINE_SHAFT_BLOCK), NTTextures.SUPERCRITICAL_FLUID_TURBINE_CASING, false, Textures.LARGE_STEAM_TURBINE_OVERLAY));
+        //MEGA_HIGH_PRESSURE_STEAM_TURBINE = registerMultiMetaTileEntity(20, new NTMetaTileEntityMegaTurbine(epId("mega_high_pressure_steam_turbine"), NTRecipeMaps.HIGH_PRESSURE_STEAM_TURBINE_FUELS, 4, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_GEARBOX), Textures.STABLE_TITANIUM_CASING, false, NTTextures.MEGA_TURBINE_OVERLAY));
+        //MEGA_SUPERCRITICAL_STEAM_TURBINE = registerMultiMetaTileEntity(21, new NTMetaTileEntityMegaTurbine(epId("mega_supercritical_steam_turbine"), NTRecipeMaps.SUPERCRITICAL_STEAM_TURBINE_FUELS, 6, NTMetaBlocks.MACHINE_CASING_A.getState(NTBlockMachinelCasingA.CasingType.SUPERCRITICAL_FLUID_TURBINE_CASING), NTMetaBlocks.MACHINE_CASING_A.getState(NTBlockMachinelCasingA.CasingType.SUPERCRITICAL_FLUID_TURBINE_SHAFT_BLOCK), NTTextures.SUPERCRITICAL_FLUID_TURBINE_CASING, false, NTTextures.MEGA_TURBINE_OVERLAY));
+        //LARGE_NAQUADAH_REACTOR = registerMultiMetaTileEntity(22, new NTMetaTileEntityLargeNaquadahReactor(epId("large_naquadah_reactor")));
 
 //
 

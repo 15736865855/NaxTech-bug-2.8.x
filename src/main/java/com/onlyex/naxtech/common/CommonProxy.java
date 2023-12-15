@@ -4,6 +4,7 @@ import com.onlyex.naxtech.api.NTValues;
 import com.onlyex.naxtech.api.recipes.properties.CACasingTierProperty;
 import com.onlyex.naxtech.api.recipes.properties.CasingTierProperty;
 import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
+import com.onlyex.naxtech.api.recipes.properties.QFTCasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.loaders.formula.FormulaManager;
@@ -111,11 +112,11 @@ public class CommonProxy {
     }
 
     @SubscribeEvent
-    public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
-    {
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         NTLog.logger.info("Registering recipes...");
         FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
         FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
+        FusionEUToStartProperty.registerFusionTier(11, "(MK6)");
         CasingTierProperty.registerCasingTier(1, I18n.format("naxtech.recipe.casing_tier.1"));
         CasingTierProperty.registerCasingTier(2, I18n.format("naxtech.recipe.casing_tier.2"));
         CasingTierProperty.registerCasingTier(3, I18n.format("naxtech.recipe.casing_tier.3"));
@@ -138,6 +139,10 @@ public class CommonProxy {
         CACasingTierProperty.registerCACasingTier(12, I18n.format("naxtech.machine.component_assembly_line.tier.12"));
         CACasingTierProperty.registerCACasingTier(13, I18n.format("naxtech.machine.component_assembly_line.tier.13"));
         CACasingTierProperty.registerCACasingTier(14, I18n.format("naxtech.machine.component_assembly_line.tier.14"));
+        QFTCasingTierProperty.registerQFTCasingTier(1, I18n.format("naxtech.machine.quantum_force_transformer.tier.1"));
+        QFTCasingTierProperty.registerQFTCasingTier(2, I18n.format("naxtech.machine.quantum_force_transformer.tier.2"));
+        QFTCasingTierProperty.registerQFTCasingTier(3, I18n.format("naxtech.machine.quantum_force_transformer.tier.3"));
+        QFTCasingTierProperty.registerQFTCasingTier(4, I18n.format("naxtech.machine.quantum_force_transformer.tier.4"));
         FormulaManager.init();
     }
 
