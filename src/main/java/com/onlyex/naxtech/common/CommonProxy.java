@@ -1,10 +1,10 @@
 package com.onlyex.naxtech.common;
 
 import com.onlyex.naxtech.api.NTValues;
-import com.onlyex.naxtech.api.recipes.properties.CACasingTierProperty;
-import com.onlyex.naxtech.api.recipes.properties.CasingTierProperty;
-import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
-import com.onlyex.naxtech.api.recipes.properties.QFTCasingTierProperty;
+import com.onlyex.naxtech.api.recipe.properties.CACasingTierProperty;
+import com.onlyex.naxtech.api.recipe.properties.CasingTierProperty;
+import com.onlyex.naxtech.api.recipe.properties.PACasingTierProperty;
+import com.onlyex.naxtech.api.recipe.properties.QFTCasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.loaders.formula.FormulaManager;

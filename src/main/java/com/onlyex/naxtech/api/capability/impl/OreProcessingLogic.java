@@ -1,7 +1,7 @@
 package com.onlyex.naxtech.api.capability.impl;
 
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
-import com.onlyex.naxtech.common.metatileentities.multi.part.NTMetaTileEntityIntegratedOreFactory;
+import com.onlyex.naxtech.common.metatileentities.multiblock.NTMetaTileEntityIntegratedOreFactory;
 import gregtech.api.GTValues;
 import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.capability.IEnergyContainer;
@@ -11,7 +11,7 @@ import gregtech.api.capability.impl.EnergyContainerList;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.recipes.chance.output.impl.ChancedItemOutput;
+import gregtech.api.recipes.chance.output.ChancedOutput;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
@@ -31,12 +31,14 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nonnull;
 import java.util.*;
+import java.util.stream.Collectors;
 /*
-* 引用了GT5非官方的一些代码
+* Referenced some code from GT5 Unofficial
 *
 * https://github.com/GTNewHorizons/GT5-Unofficial/
 * */
 
+//TODO 重写配方逻辑以添加满箱检测和更好的配方检测
 public class OreProcessingLogic implements IWorkable{
     private static final int MAX_PARA = 1024;
 
@@ -56,6 +58,8 @@ public class OreProcessingLogic implements IWorkable{
     private boolean isActive;
     protected boolean canRecipeProgress = true;
     protected int recipeEUt;
+
+    protected List<FluidStack> fluidOutputs;
     protected NonNullList<ItemStack> itemOutputs;
     protected boolean workingEnabled = true;
     protected boolean hasNotEnoughEnergy;
@@ -95,14 +99,16 @@ public class OreProcessingLogic implements IWorkable{
         return list;
     }
 
-    private void depleteInput(FluidStack fluid) {
+    private boolean depleteInput(FluidStack fluid) {
         if (fluid == null) {
-            return;
+            return false;
         }
         IMultipleTankHandler inputTank = getInputTank();
         if (fluid.isFluidStackIdentical(inputTank.drain(fluid, false))) {
             inputTank.drain(fluid, true);
+            return true;
         }
+        return false;
     }
     //  对要处理的物品进行矿辞分类建表（尤其适用于半路产物加入）
     private static void initHash() {
@@ -338,6 +344,7 @@ public class OreProcessingLogic implements IWorkable{
                     tRealUsed = tCharged;
                     tOres.add(NTUniverUtil.copyAmountUnsafe(tCharged, ore));
                     ore.setCount(ore.getCount() - tCharged);
+                    tCharged = 0;
                     break;
                 }
             }
@@ -390,7 +397,6 @@ public class OreProcessingLogic implements IWorkable{
             recipeEUt = overclockResults[1];
             itemOutputs.addAll(Arrays.asList(midProduct));
         }
-        //  序列化
     }
 
     private int[] calculateOverclock(int parallelNumber) {
@@ -465,7 +471,7 @@ public class OreProcessingLogic implements IWorkable{
                     setActive(true);
                     updateRecipeProgress();
                 }
-                //检查所有会使配方永远不会从这里开始。
+                //check everything that would make a recipe never start here.
                 if (progressTime == 0 && shouldProcessRecipe()) {
                     recipeProcessing();
                 }
@@ -480,7 +486,7 @@ public class OreProcessingLogic implements IWorkable{
     protected void updateRecipeProgress() {
         if (canRecipeProgress && drawEnergy(recipeEUt, true)) {
             drawEnergy(recipeEUt, false);
-            //由于配方以1的进度开始，因此必须>只是不=>来补偿它
+            //as recipe starts with progress on 1 this has to be > only not => to compensate for it
             if (++progressTime > maxProgressTime) {
                 completeRecipe();
             }
@@ -488,8 +494,8 @@ public class OreProcessingLogic implements IWorkable{
                 this.hasNotEnoughEnergy = false;
             }
         } else if (recipeEUt > 0) {
-            //如果此配方是消耗配方，则仅设置hasNotEnoughEnergy
-            //发电机总是有足够的能量
+            //only set hasNotEnoughEnergy if this recipe is consuming recipe
+            //generators always have enough energy
             this.hasNotEnoughEnergy = true;
             decreaseProgress();
         }
@@ -539,30 +545,36 @@ public class OreProcessingLogic implements IWorkable{
 
     //  计算配方产物带概率输出
     private List<ItemStack> getOutputStack(Recipe recipe, int time) {
-        List<ItemStack> outputStacks = new ArrayList<>();
+        List<ItemStack> outputStack = new ArrayList<>(); // 声明存储产出物品的列表
 
-        // 计算固定数量的输出物品
+        // 计算固定产出物品的数量
         for (ItemStack item : recipe.getOutputs()) {
-            ItemStack output = item.copy();
-            output.setCount(output.getCount() * time);
-            outputStacks.add(output);
+            long totalOutput = (long) time * item.getCount(); // 根据生产时间计算总产出数量
+            ItemStack outputItem = NTUniverUtil.copyAmountUnsafe(totalOutput, item); // 创建产出物品的副本
+            outputStack.add(outputItem); // 将产出物品加入到列表中
         }
 
-        // 计算基于概率的输出物品
-        for (ChancedItemOutput chancedItem : recipe.getChancedOutputs().getChancedEntries()) {
-            float chance = chancedItem.getChance(); // 获取原始概率
-            float randomValue = new Random().nextFloat(); // 生成随机数
-            if (randomValue < chance) { // 比较随机数和概率
-                ItemStack chancedOutput = chancedItem.getIngredient().copy();
-                chancedOutput.setCount(chancedOutput.getCount() * time); // 根据时间乘以所需数量
-                outputStacks.add(chancedOutput);
-            }
-        }
+        // 计算有概率产出物品的数量 TODO
+        /*for (ChancedOutput chancedOutput : recipe.getChancedOutputs()) {
+            int chance = chancedOutput.getChance(); // 获取产出物品的概率
+            int amount = calculateChancedOutputAmount(time, chance, chancedOutput.getItemStack().getCount()); // 计算总产出数量
+            ItemStack chancedOutputItem = NTUniverUtil.copyAmountUnsafe(amount, chancedOutput.getItemStack()); // 创建产出物品的副本
+            outputStack.add(chancedOutputItem); // 将产出物品加入到列表中
+        }*/
 
-        return outputStacks;
+        return outputStack.stream()
+                .filter(item -> item != null && item.getCount() > 0) // 过滤数量为零的物品
+                .collect(Collectors.toList()); // 将产出物品列表收集为新的列表并返回
     }
 
-
+    // 计算有概率产出物品的产出数量
+    private int calculateChancedOutputAmount(int time, int chance, int itemCount) {
+        double u = time * (chance / 10000D); // 计算均值
+        double e = time * (chance / 10000D) * (1 - (chance / 10000D)); // 计算方差
+        Random random = new Random();
+        int amount = (int) Math.ceil(Math.sqrt(e) * random.nextGaussian() + u); // 使用正态分布计算产出数量
+        return amount * itemCount; // 返回总产出数量
+    }
 
     //  用t_product中的物品更新midProduct
     private void doCompress(List<ItemStack> list) {
@@ -626,6 +638,7 @@ public class OreProcessingLogic implements IWorkable{
         return metaTileEntity;
     }
 
+    @Override
     public boolean isWorkingEnabled() {
         return workingEnabled;
     }
@@ -640,10 +653,12 @@ public class OreProcessingLogic implements IWorkable{
         }
     }
 
+    @Override
     public int getProgress() {
         return this.progressTime;
     }
 
+    @Override
     public int getMaxProgress() {
         return this.maxProgressTime;
     }
@@ -653,6 +668,7 @@ public class OreProcessingLogic implements IWorkable{
         metaTileEntity.markDirty();
     }
 
+    @Override
     public boolean isActive() {
         return this.isActive;
     }

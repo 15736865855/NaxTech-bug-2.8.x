@@ -1,7 +1,7 @@
 package com.onlyex.naxtech.loaders.formula;
 
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
-import com.onlyex.naxtech.common.metatileentities.multi.electric.NTMetaTileEntityBufferHatch;
+import com.onlyex.naxtech.common.metatileentities.multiblock.part.NTMetaTileEntityBufferHatch;
 import gregtech.api.unification.OreDictUnifier;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;

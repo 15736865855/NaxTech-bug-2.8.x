@@ -1,11 +1,6 @@
-/*
- *不要更改此文件！
- *此外，如果有可用的更新，您可以随时替换此文件。
- *请检查https://github.com//build.gradle更新
- *您也可以运行./gradlew updateBuildScript来更新您的构建脚本。
+/**
+ * It is advised that you do not edit anything in the build.gradle; unless you are sure of what you are doing
  */
-
-
 import com.gtnewhorizons.retrofuturagradle.mcp.InjectTagsTask
 import org.jetbrains.gradle.ext.Gradle
 
@@ -86,10 +81,10 @@ minecraft {
     useDependencyAccessTransformers.set(propertyBool('use_dependency_at_files'))
 
     username.set(propertyString('minecraft_username'))
-
+    
     // Add any additional tweaker classes here
     extraTweakClasses.addAll(propertyStringList('extra_tweak_classes'))
-    
+
     // Add various JVM arguments here for runtime
     def args = ['-ea:' + group]
     if (propertyBool('is_coremod')) {
@@ -101,12 +96,6 @@ minecraft {
         args << '-Dmixin.debug.export=true'
     }
     extraRunJvmArguments.addAll(args)
-    
-    // Add any properties you want to swap out for a dynamic value at build time here
-    // Any properties here will be added to a class at build time, the name can be configured below
-    // Example:
-    // injectedTags.put('VERSION', project.version)
-    // injectedTags.put('MOD_ID', project.archives_base_name)
     extraRunJvmArguments.addAll(propertyStringList('extra_jvm_args'))
 
     if (propertyBool('use_tags')) {
@@ -118,8 +107,6 @@ minecraft {
         }
     }
 }
-
-
 
 repositories {
     maven {
@@ -164,41 +151,21 @@ dependencies {
         }
     }
 
-    if (propertyBool('use_asset_mover')) {
-        implementation "com.cleanroommc:assetmover:${propertyString('asset_mover_version')}"
-    }
-    if (propertyBool('use_mixins')) {
-        String mixin = modUtils.enableMixins("zone.rong:mixinbooter:${propertyString('mixin_booter_version')}", propertyString('mixin_refmap'))
-        api (mixin) {
-            transitive = false
-        }
-        annotationProcessor 'org.ow2.asm:asm-debug-all:5.2'
-        annotationProcessor 'com.google.guava:guava:24.1.1-jre'
-        annotationProcessor 'com.google.code.gson:gson:2.8.6'
-        annotationProcessor (mixin) {
-            transitive = false
-        }
-    }
-
-
-    // 消除依赖项混淆的示例
-    implementation rfg.deobf("curse.maven:had-enough-items-557549:4810661")
-    implementation rfg.deobf("curse.maven:code-chicken-lib-1-8-242818:2779848")
+    //APIs-2.8.3
+    implementation rfg.deobf("curse.maven:codechicken-lib-1-8-242818:2779848")
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4951281")
+    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4910674")
+    implementation rfg.deobf("curse.maven:gregtech-food-option-477021:4716101")
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4773115")
+
+    implementation rfg.deobf("curse.maven:artisan-worktables-284351:3205284")
+    runtimeOnly 'curse.maven:athenaeum-284350:4633750'
+
+    implementation 'mezz.jei:jei_1.12.2:4.16.1.302'
+    runtimeOnly 'curse.maven:top-245211:2667280'
 
     compileOnly(rfg.deobf('CraftTweaker2:CraftTweaker2-API:4.1.20.684'))
     compileOnly(rfg.deobf("curse.maven:ctm-267602:2915363"))
-    compileOnly (files("libs/EnderCore-1.12.2-0.5.78.jar"))
-
-    runtimeOnly 'curse.maven:top-245211:2667280'
-
-    //2.8.3
-    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4951281")
-    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4910674")
-
-
-
-
 }
 
 apply from: 'gradle/scripts/dependencies.gradle'
@@ -217,11 +184,7 @@ if (propertyBool('use_access_transformer')) {
 }
 
 processResources {
-    // This will ensure that this task is redone when the versions change
-
-    // Replace various properties in mcmod.info and pack.mcmeta if applicable
-    filesMatching(['mcmod.info', 'pack.mcmeta', 'mixins.*(?!refmap).*\\.json']) { fcd ->
-        // Replace version and mcversion
+    filesMatching(['mcmod.info', 'pack.mcmeta', 'mixins.*(?!refmap).*\\.json']) {
         def authors = propertyString('mod_authors').split(',').collect { """\"${ it.trim() }\"""" }.join(', ')
         expand(
                 'mod_id': propertyString('mod_id'),
@@ -239,8 +202,9 @@ processResources {
     }
     
     if (propertyBool('use_access_transformer')) {
-        rename '(.+_at.cfg)', 'META-INF/$1' // Make sure Access Transformer files are in META-INF folder
+        rename '(.+_at.cfg)', 'META-INF/$1'
     }
+
 }
 
 jar {
@@ -399,5 +363,6 @@ idea.project.settings {
         afterSync 'cleanroomAfterSync'
     }
 }
+
 apply from: 'gradle/scripts/publishing.gradle'
 apply from: 'gradle/scripts/extra.gradle'
