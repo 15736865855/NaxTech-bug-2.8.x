@@ -350,7 +350,7 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_INDUCTOR;
 
 
-    public static void init()
+    public static void initialization()
     {
         metaItem_NT = new NTMetaItem1();
     }

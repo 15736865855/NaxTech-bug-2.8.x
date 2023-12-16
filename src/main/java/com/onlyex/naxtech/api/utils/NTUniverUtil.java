@@ -12,7 +12,6 @@ import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
 import java.util.BitSet;
-import java.util.Collections;
 import java.util.List;
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
@@ -20,6 +19,7 @@ import java.util.function.Supplier;
 import static net.minecraft.util.EnumFacing.*;
 
 public class NTUniverUtil {
+
     //  Utils
     public static int getOrDefault(NBTTagCompound tag, String key, int defaultValue){
         if(tag.hasKey(key)){
@@ -160,7 +160,7 @@ public class NTUniverUtil {
     public static <T> MetaTileEntity[] getGTTierHatches(MultiblockAbility<T> ability, int tier) {
         return MultiblockAbility.REGISTRY.get(ability).stream()
                 .filter(mte -> {
-                    if (mte instanceof MetaTileEntityMultiblockPart) {
+                    if (mte != null && mte instanceof MetaTileEntityMultiblockPart) {
                         return ((MetaTileEntityMultiblockPart) mte).getTier() <= tier;
                     }
                     return false;

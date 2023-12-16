@@ -1,5 +1,14 @@
 package com.onlyex.naxtech.client.utils;
 
+/*
+  Original class written by Vazkii for Botania.
+ */
+
+// TEMA: this is the main shader stuff, where the programs are loaded and compiled for the card.
+// other relevant files are the shader in /assets/physis/shader/, and the tesr in /client/render/tile/
+// they have other comments like this in.
+
+
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.client.shader.ShaderCallback;
 import net.minecraft.client.Minecraft;
@@ -19,20 +28,20 @@ public final class ShaderHelper {
 
     private static final int VERT = ARBVertexShader.GL_VERTEX_SHADER_ARB;
     private static final int FRAG = ARBFragmentShader.GL_FRAGMENT_SHADER_ARB;
-    private static final String PREFIX = "/assets/naxtech/shader/";
+    private static final String PREFIX = "/assets/epimorphism/shader/";
 
     public static int cosmicShader = 0;
 
     public static void initShaders() {
-        if (useShaders()) {
+        if (!useShaders()) {
             return;
         }
 
-        cosmicShader = createProgram();
+        cosmicShader = createProgram("cosmic.vert", "cosmic.frag");
     }
 
     public static void useShader(int shader, ShaderCallback callback) {
-        if (useShaders()) {
+        if (!useShaders()) {
             return;
         }
 
@@ -60,22 +69,32 @@ public final class ShaderHelper {
     }
 
     public static boolean useShaders() {
-        return !OpenGlHelper.shadersSupported;
+        return OpenGlHelper.shadersSupported;
     }
 
+    // Most of the code taken from the LWJGL wiki
+    // http://lwjgl.org/wiki/index.php?title=GLSL_Shaders_with_LWJGL
 
-    private static int createProgram() {
-        int vertId, fragId, program;
-        vertId = createShader(PREFIX + "cosmic.vert", VERT);
-        fragId = createShader(PREFIX + "cosmic.frag", FRAG);
+    private static int createProgram(String vert, String frag) {
+        int vertId = 0, fragId = 0, program = 0;
+        if (vert != null) {
+            vertId = createShader(PREFIX + vert, VERT);
+        }
+        if (frag != null) {
+            fragId = createShader(PREFIX + frag, FRAG);
+        }
 
         program = ARBShaderObjects.glCreateProgramObjectARB();
         if (program == 0) {
             return 0;
         }
 
-        ARBShaderObjects.glAttachObjectARB(program, vertId);
-        ARBShaderObjects.glAttachObjectARB(program, fragId);
+        if (vert != null) {
+            ARBShaderObjects.glAttachObjectARB(program, vertId);
+        }
+        if (frag != null) {
+            ARBShaderObjects.glAttachObjectARB(program, fragId);
+        }
 
         ARBShaderObjects.glLinkProgramARB(program);
         if (ARBShaderObjects.glGetObjectParameteriARB(program, ARBShaderObjects.GL_OBJECT_LINK_STATUS_ARB) == GL11.GL_FALSE) {
@@ -145,7 +164,11 @@ public final class ShaderHelper {
                 try {
                     reader.close();
                 } catch (Exception exc) {
-                    innerExc = exc;
+                    if (innerExc == null) {
+                        innerExc = exc;
+                    } else {
+                        exc.printStackTrace();
+                    }
                 }
             }
 
