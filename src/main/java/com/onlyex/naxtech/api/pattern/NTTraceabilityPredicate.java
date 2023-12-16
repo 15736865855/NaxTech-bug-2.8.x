@@ -32,7 +32,6 @@ import static com.onlyex.naxtech.api.NTAPI.*;
 
 public class NTTraceabilityPredicate {
 
-
     //  Same Block State Traceability Predicates
     public static Supplier<TraceabilityPredicate> NT_GLASS = () -> new TierStateTraceabilityPredicate(MAP_GLASS, "Glass", "naxtech.multiblock.pattern.error.glasses");
     public static Supplier<TraceabilityPredicate> NT_OPTICAL_GLASS = () -> new TierStateTraceabilityPredicate(MAP_GLASS,

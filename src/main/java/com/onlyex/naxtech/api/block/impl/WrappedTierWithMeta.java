@@ -3,6 +3,8 @@ package com.onlyex.naxtech.api.block.impl;
 
 import com.onlyex.naxtech.api.block.ITierGlassBlockState;
 
+import javax.annotation.Nonnull;
+
 public class WrappedTierWithMeta implements ITierGlassBlockState {
     private final ITierGlassBlockState inner;
     private final int meta;
@@ -12,6 +14,7 @@ public class WrappedTierWithMeta implements ITierGlassBlockState {
         this.meta = meta;
     }
 
+    @Nonnull
     @Override
     public String getName() {
         return inner.getName() + "#" + meta;

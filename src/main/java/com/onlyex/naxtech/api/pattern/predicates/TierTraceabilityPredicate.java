@@ -54,8 +54,6 @@ public class TierTraceabilityPredicate extends TraceabilityPredicate {
         this.predicate = predicate;
     }
 
-
-
     private Predicate<BlockWorldState> predicate(){
         return  (blockWorldState) -> {
             IBlockState blockState = blockWorldState.getBlockState();

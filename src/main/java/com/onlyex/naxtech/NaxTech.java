@@ -37,6 +37,7 @@ public class NaxTech {
             serverSide = "com.onlyex.naxtech.common.CommonProxy"
     )
     public static CommonProxy proxy;
+    public NaxTech() {}
     @Mod.EventHandler
     public void onConstruction(FMLConstructionEvent event)
     {
@@ -47,10 +48,11 @@ public class NaxTech {
         NTLog.init(event.getModLog());
         ConfigHolder.machines.highTierContent = true;
         NTLog.logger.info("Enabled GregTechCEu highTierContent");
-        NTMetaItems.init();
-        NTMetaTileEntities.init();
+        NTMetaItems.initialization();
         NTMetaBlocks.init();
         NTAPI.APIBlockInit();
+        NTMetaTileEntities.init();
+        NTWorldGenRegistry.init();
 
         CapabilityManager.INSTANCE.register(IPollution.class, new PollutionProvider.Storage(), PollutionProvider.Impl::new);
         proxy.preLoad();

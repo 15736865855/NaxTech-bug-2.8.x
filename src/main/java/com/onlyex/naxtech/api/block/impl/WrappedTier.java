@@ -17,6 +17,4 @@ public abstract class WrappedTier implements ITier {
     public String getName() {
         return inner.getName();
     }
-
-    public abstract Object getTier();
 }

@@ -154,4 +154,18 @@ ORE=矿石
 
 
  */
+//checkEnergyln: false/true
+//检查能量输入
+//checkMaintenance: false/true
+//检查维护
+//checkltemln: false/true
+//检查物品输入
+//checkltemOut: false/true
+//检查物品输出
+//checkFluidIn: false/true
+//检查流体输入
+//checkFluidOut: false/true
+//检查液体输出
+//checkMuffler: false/true
+//检查消声器
 }
