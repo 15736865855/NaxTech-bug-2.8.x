@@ -121,7 +121,7 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
                 .where('D', states(getFrameState()))
                 .where('G', states(getPipeCasingState()))
                 .where('E', states(getThirdCasingState()))
-                .where('B', NTTraceabilityPredicate.CA_TIERED_CASING.get())
+                .where('B', NTTraceabilityPredicate.NT_CA_TIERED_CASING.get())
                 .where('J', states(getCasingState())
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS)
                                 .setMaxGlobalLimited(6)

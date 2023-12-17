@@ -119,7 +119,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
         this.ManipulatorCasingTier = NTUniverUtil.getOrDefault(() -> GlassTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) GlassTier).getIntTier(), 0);
 
-        this.writeCustomData(NTDataCode.CHANNEL_8, buf -> buf.writeInt(this.ManipulatorCasingTier));
+        this.writeCustomData(NTDataCode.NT_CHANNEL_8, buf -> buf.writeInt(this.ManipulatorCasingTier));
     }
 
     @Override
@@ -127,7 +127,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
         super.update();
 
         if (this.getWorld().isRemote && this.ManipulatorCasingTier == 0) {
-            this.writeCustomData(NTDataCode.CHANNEL_9, buf -> {});
+            this.writeCustomData(NTDataCode.NT_CHANNEL_9, buf -> {});
         }
     }
 
@@ -152,11 +152,11 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
                 .aisle("               ", "               ", "               ", "  A         A  ", "  A         A  ", "  B         B  ", "  BAAAAAAAAAB  ", "   AAABBBAAA   ", "      BAB      ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ")
                 .aisle("    A     A    ", "    A     A    ", "    A     A    ", "   BA     AB   ", "   BABBABBAB   ", "   BAAAAAAAB   ", "   BBBBABBBB   ", "      BAB      ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ")
                 .where('S', this.selfPredicate())
-                .where('A', NTTraceabilityPredicate.QFT_MANIPULATOR.get())
-                .where('B', NTTraceabilityPredicate.QFT_SHIELDING_CORE.get())
+                .where('A', NTTraceabilityPredicate.NT_QFT_MANIPULATOR.get())
+                .where('B', NTTraceabilityPredicate.NT_QFT_SHIELDING_CORE.get())
                 .where('C', states(getCoilState()))
                 .where('D', states(getCasingState()))
-                .where('E', NTTraceabilityPredicate.QFT_GLASS.get())
+                .where('E', NTTraceabilityPredicate.NT_QFT_GLASS.get())
                 .where('H', states(getCasingState())
                         .setMinGlobalLimited(55)
                         .or(autoAbilities()))
@@ -247,11 +247,11 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
     @Override
     public void receiveCustomData(int dataId, PacketBuffer buf) {
         super.receiveCustomData(dataId, buf);
-        if (dataId == NTDataCode.CHANNEL_8) {
+        if (dataId == NTDataCode.NT_CHANNEL_8) {
             this.ManipulatorCasingTier = buf.readInt();
         }
-        if (dataId == NTDataCode.CHANNEL_9) {
-            this.writeCustomData(NTDataCode.CHANNEL_8, buf1 -> buf1.writeInt(this.ManipulatorCasingTier));
+        if (dataId == NTDataCode.NT_CHANNEL_9) {
+            this.writeCustomData(NTDataCode.NT_CHANNEL_8, buf1 -> buf1.writeInt(this.ManipulatorCasingTier));
         }
     }
 

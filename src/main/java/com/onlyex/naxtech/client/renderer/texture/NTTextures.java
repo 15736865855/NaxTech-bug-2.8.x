@@ -57,23 +57,23 @@ OrientedOverlayRenderer
 
     public static void register(TextureMap textureMap) {
 
-        HALO = textureMap.registerSprite(NTUtils.epId("items/halo"));
-        HALO_NOISE = textureMap.registerSprite(NTUtils.epId("items/halo_noise"));
+        HALO = textureMap.registerSprite(NTUtils.ntId("items/halo"));
+        HALO_NOISE = textureMap.registerSprite(NTUtils.ntId("items/halo_noise"));
 
-        MASK_INGOT = textureMap.registerSprite(NTUtils.epId( "items/mask_ingot"));
+        MASK_INGOT = textureMap.registerSprite(NTUtils.ntId( "items/mask_ingot"));
 
-        COSMIC_0 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_0"));
-        COSMIC_1 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_1"));
-        COSMIC_2 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_2"));
-        COSMIC_3 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_3"));
-        COSMIC_4 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_4"));
-        COSMIC_5 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_5"));
-        COSMIC_6 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_6"));
-        COSMIC_7 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_7"));
-        COSMIC_8 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_8"));
-        COSMIC_9 = textureMap.registerSprite(NTUtils.epId("shader/cosmic_9"));
+        COSMIC_0 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_0"));
+        COSMIC_1 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_1"));
+        COSMIC_2 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_2"));
+        COSMIC_3 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_3"));
+        COSMIC_4 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_4"));
+        COSMIC_5 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_5"));
+        COSMIC_6 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_6"));
+        COSMIC_7 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_7"));
+        COSMIC_8 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_8"));
+        COSMIC_9 = textureMap.registerSprite(NTUtils.ntId("shader/cosmic_9"));
 
-        FORCE_FIELD = textureMap.registerSprite(NTUtils.epId("blocks/force_field"));
+        FORCE_FIELD = textureMap.registerSprite(NTUtils.ntId("blocks/force_field"));
 
         COSMIC = new TextureAtlasSprite[] {
                 COSMIC_0,

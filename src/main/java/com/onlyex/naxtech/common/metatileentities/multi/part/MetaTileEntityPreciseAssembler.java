@@ -95,7 +95,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         this.CasingTier = NTUniverUtil.getOrDefault(() -> InternalCasingTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) InternalCasingTier).getIntTier(), 0);
 
-        this.writeCustomData(NTDataCode.CHANNEL_4, buf -> buf.writeInt(this.CasingTier));
+        this.writeCustomData(NTDataCode.NT_CHANNEL_4, buf -> buf.writeInt(this.CasingTier));
     }
 
     @Override
@@ -103,7 +103,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         super.update();
 
         if (this.getWorld().isRemote && this.CasingTier == 0) {
-            this.writeCustomData(NTDataCode.CHANNEL_7, buf -> {});
+            this.writeCustomData(NTDataCode.NT_CHANNEL_7, buf -> {});
         }
     }
 
@@ -118,13 +118,13 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
                 .aisle("CMMMMMMMC", "CGGGGGGGC", "CGGGGGGGC", "CGGGGGGGC", "DDDDDDDDD")
                 .aisle("DDDDSDDDD", "F       F", "F       F", "F       F", "DDDDDDDDD")
                 .where('S', selfPredicate())
-                .where('C', NTTraceabilityPredicate.PA_CASING.get())
-                .where('D', NTTraceabilityPredicate.PA_CASING.get()
+                .where('C', NTTraceabilityPredicate.NT_PA_CASING.get())
+                .where('D', NTTraceabilityPredicate.NT_PA_CASING.get()
                         .setMinGlobalLimited(42)
                         .or(autoAbilities()))
                 .where('F', states(getFrameState()))
                 .where('G', states(getGlassState()))
-                .where('M', NTTraceabilityPredicate.PA_INTERNAL_CASING.get())
+                .where('M', NTTraceabilityPredicate.NT_PA_INTERNAL_CASING.get())
                 .build();
     }//TODO 更换方块
 
@@ -206,11 +206,11 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
     @Override
     public void receiveCustomData(int dataId, PacketBuffer buf) {
         super.receiveCustomData(dataId, buf);
-        if (dataId == NTDataCode.CHANNEL_4) {
+        if (dataId == NTDataCode.NT_CHANNEL_4) {
             this.CasingTier = buf.readInt();
         }
-        if (dataId == NTDataCode.CHANNEL_7) {
-            this.writeCustomData(NTDataCode.CHANNEL_4, buf1 -> buf1.writeInt(this.CasingTier));
+        if (dataId == NTDataCode.NT_CHANNEL_7) {
+            this.writeCustomData(NTDataCode.NT_CHANNEL_4, buf1 -> buf1.writeInt(this.CasingTier));
         }
     }
 

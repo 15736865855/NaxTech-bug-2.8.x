@@ -164,7 +164,7 @@ public class NTMetaTileEntityBufferHatch extends MetaTileEntityMultiblockPart im
 
     public void setPH() {
         if (!this.getWorld().isRemote) {
-            this.writeCustomData(NTDataCode.CHANNEL_1, (buf) -> {
+            this.writeCustomData(NTDataCode.NT_CHANNEL_1, (buf) -> {
                 buf.writeString(getPH());
             });
         }
@@ -173,7 +173,7 @@ public class NTMetaTileEntityBufferHatch extends MetaTileEntityMultiblockPart im
     @Override
     public void receiveCustomData(int dataId, PacketBuffer buf) {
         super.receiveCustomData(dataId, buf);
-        if (dataId == NTDataCode.CHANNEL_1){
+        if (dataId == NTDataCode.NT_CHANNEL_1){
             this.ph = buf.readString(99);
         }
     }

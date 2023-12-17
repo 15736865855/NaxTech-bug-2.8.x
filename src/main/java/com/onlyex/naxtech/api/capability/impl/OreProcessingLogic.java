@@ -1,7 +1,7 @@
 package com.onlyex.naxtech.api.capability.impl;
 
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
-import com.onlyex.naxtech.common.metatileentities.multiblock.NTMetaTileEntityIntegratedOreFactory;
+import com.onlyex.naxtech.common.metatileentities.multi.part.MetaTileEntityIntegratedOreFactory;
 import gregtech.api.GTValues;
 import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.capability.IEnergyContainer;
@@ -11,7 +11,6 @@ import gregtech.api.capability.impl.EnergyContainerList;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.recipes.chance.output.ChancedOutput;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
@@ -69,8 +68,8 @@ public class OreProcessingLogic implements IWorkable{
     private int mode = 0;
     private static final boolean init = false;
     private boolean isVoidStone = false;
-    private final NTMetaTileEntityIntegratedOreFactory metaTileEntity;
-    public OreProcessingLogic(NTMetaTileEntityIntegratedOreFactory metaTileEntity) {
+    private final MetaTileEntityIntegratedOreFactory metaTileEntity;
+    public OreProcessingLogic(MetaTileEntityIntegratedOreFactory metaTileEntity) {
         this.metaTileEntity = metaTileEntity;
         //  初始化HashSet
         if (!init) initHash();
