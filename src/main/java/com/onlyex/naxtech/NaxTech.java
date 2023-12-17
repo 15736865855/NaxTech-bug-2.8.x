@@ -47,7 +47,7 @@ public class NaxTech {
         NTLog.init(event.getModLog());
         ConfigHolder.machines.highTierContent = true;
         NTLog.logger.info("Enabled GregTechCEu highTierContent");
-        NTMetaItems.init();
+        NTMetaItems.initialization();
         NTMetaBlocks.init();
         NTAPI.APIBlockInit();
         NTMetaTileEntities.init();

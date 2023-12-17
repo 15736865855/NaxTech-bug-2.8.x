@@ -6,7 +6,7 @@ package com.onlyex.naxtech.common.items.behaviors;
  * https://github.com/CleanroomMC/Multiblocked/
  * */
 
-import com.onlyex.naxtech.api.pattern.JsonBlockPattern;
+import com.onlyex.naxtech.api.pattern.utils.JsonBlockPattern;
 import com.onlyex.naxtech.api.utils.NTLog;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
