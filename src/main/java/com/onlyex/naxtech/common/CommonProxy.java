@@ -1,10 +1,10 @@
 package com.onlyex.naxtech.common;
 
 import com.onlyex.naxtech.api.NTValues;
-import com.onlyex.naxtech.api.recipe.properties.CACasingTierProperty;
-import com.onlyex.naxtech.api.recipe.properties.CasingTierProperty;
-import com.onlyex.naxtech.api.recipe.properties.PACasingTierProperty;
-import com.onlyex.naxtech.api.recipe.properties.QFTCasingTierProperty;
+import com.onlyex.naxtech.api.recipes.properties.CACasingTierProperty;
+import com.onlyex.naxtech.api.recipes.properties.CasingTierProperty;
+import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
+import com.onlyex.naxtech.api.recipes.properties.QFTCasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.loaders.formula.FormulaManager;
@@ -63,6 +63,7 @@ public class CommonProxy {
         registry.register(CONTROL_CASING);
         registry.register(MACHINE_CASING);
         registry.register(MACHINE_CASING_A);
+        registry.register(MACHINE_CASING_B);
         registry.register(PACKAGING_LINE);
         registry.register(COMPONENT_ASSEMBLY_LINE_CASING);
         registry.register(ADVANCED_ASSEMBLY_LINE_CASING);
@@ -70,6 +71,7 @@ public class CommonProxy {
         registry.register(ACTIVE_MULTIBLOCK_CASING);
         registry.register(QUANTUM_FORCE_TRANSFORMER_CASING);
         registry.register(QUANTUM_FORCE_TRANSFORMER_GLASS_CASING);
+        registry.register(PCB_FACTORY_CASING);
 
     }
 
@@ -84,6 +86,7 @@ public class CommonProxy {
         registry.register(createItemBlock(CONTROL_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(MACHINE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(MACHINE_CASING_A, VariantItemBlock::new));
+        registry.register(createItemBlock(MACHINE_CASING_B, VariantItemBlock::new));
         registry.register(createItemBlock(PACKAGING_LINE, VariantItemBlock::new));
         registry.register(createItemBlock(COMPONENT_ASSEMBLY_LINE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(ADVANCED_ASSEMBLY_LINE_CASING, VariantItemBlock::new));
@@ -91,6 +94,7 @@ public class CommonProxy {
         registry.register(createItemBlock(ACTIVE_MULTIBLOCK_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(QUANTUM_FORCE_TRANSFORMER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(QUANTUM_FORCE_TRANSFORMER_GLASS_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(PCB_FACTORY_CASING, VariantItemBlock::new));
 
 
     }
@@ -112,19 +116,24 @@ public class CommonProxy {
     }
 
     @SubscribeEvent
-    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
+    {
         NTLog.logger.info("Registering recipes...");
+        //
         FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
         FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
         FusionEUToStartProperty.registerFusionTier(11, "(MK6)");
+        //
         CasingTierProperty.registerCasingTier(1, I18n.format("naxtech.recipe.casing_tier.1"));
         CasingTierProperty.registerCasingTier(2, I18n.format("naxtech.recipe.casing_tier.2"));
         CasingTierProperty.registerCasingTier(3, I18n.format("naxtech.recipe.casing_tier.3"));
         CasingTierProperty.registerCasingTier(4, I18n.format("naxtech.recipe.casing_tier.4"));
         CasingTierProperty.registerCasingTier(5, I18n.format("naxtech.recipe.casing_tier.5"));
+        //
         PACasingTierProperty.registerPACasingTier(1, I18n.format("naxtech.machine.precise_assembler.tier.1"));
         PACasingTierProperty.registerPACasingTier(2, I18n.format("naxtech.machine.precise_assembler.tier.2"));
         PACasingTierProperty.registerPACasingTier(3, I18n.format("naxtech.machine.precise_assembler.tier.3"));
+        //
         CACasingTierProperty.registerCACasingTier(1, I18n.format("naxtech.machine.component_assembly_line.tier.1"));
         CACasingTierProperty.registerCACasingTier(2, I18n.format("naxtech.machine.component_assembly_line.tier.2"));
         CACasingTierProperty.registerCACasingTier(3, I18n.format("naxtech.machine.component_assembly_line.tier.3"));
@@ -139,6 +148,7 @@ public class CommonProxy {
         CACasingTierProperty.registerCACasingTier(12, I18n.format("naxtech.machine.component_assembly_line.tier.12"));
         CACasingTierProperty.registerCACasingTier(13, I18n.format("naxtech.machine.component_assembly_line.tier.13"));
         CACasingTierProperty.registerCACasingTier(14, I18n.format("naxtech.machine.component_assembly_line.tier.14"));
+        //
         QFTCasingTierProperty.registerQFTCasingTier(1, I18n.format("naxtech.machine.quantum_force_transformer.tier.1"));
         QFTCasingTierProperty.registerQFTCasingTier(2, I18n.format("naxtech.machine.quantum_force_transformer.tier.2"));
         QFTCasingTierProperty.registerQFTCasingTier(3, I18n.format("naxtech.machine.quantum_force_transformer.tier.3"));

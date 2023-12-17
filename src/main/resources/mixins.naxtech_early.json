@@ -11,6 +11,5 @@
   ],
   "server": [],
   "client": [
-    "minecraft.MixinBlockGlass"
-  ]
+    "minecraft.MixinBlockGlass"]
 }

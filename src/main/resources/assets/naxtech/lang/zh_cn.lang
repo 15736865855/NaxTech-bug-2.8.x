@@ -7,9 +7,6 @@ metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精�
 item.material.oreprefix.nanites=%s纳米蜂群
 item.material.oreprefix.wrap=封装%s
 
-#  Behavior
-behavior.data_item.require_decoding=存有需要解码的未知信息
-
 #  Mill Balls
 metaitem.mill.grindball_soapstone.name=皂石研磨球
 metaitem.mill.grindball_aluminium.name=铝研磨球
@@ -389,39 +386,9 @@ metaitem.wrap.circuit_board.spintronic.name=封装无尽电路板
 metaitem.wrap.circuit_board.spintronic.tooltip=自旋转移矩效应的最好实现
 
 
-#  Debug
-metaitem.debug.structure_writer.name=多方块导出工具
-metaitem.debug.structure_writer.tooltip=因为我需要一个...
-metaitem.debug.structure_writer.export_to_log=导出为日志
-metaitem.debug.structure_writer.export_to_json=导出为Json
-metaitem.debug.structure_writer.rotate_along_y_axis=沿Y轴旋转
-metaitem.debug.structure_writer.ex=无
-metaitem.debug.structure_writer.structural_scale=结构规模： X:%s  Y:%s  Z:%s
 
-#   Biological Components
-metaitem.biological.components.electrochemical_gradient_recorder.name=电化学梯度记录仪
-metaitem.biological.components.electrochemical_gradient_recorder.tooltip=生物计算基础
-metaitem.biological.components.hyperribosome.name=超核糖体
-metaitem.biological.components.hyperribosome.tooltip=蛋白质工厂
-metaitem.biological.components.neutron_absorbing_protein.name=中子吸收蛋白
-metaitem.biological.components.neutron_absorbing_protein.tooltip=不可思议
-metaitem.biological.components.quantum_tunneling_microtubule.name=量子隧穿微管
-metaitem.biological.components.quantum_tunneling_microtubule.tooltip=生物聚变终成现实
-metaitem.biological.components.superexcited_conductive_polymer.name=超激发传导聚合体
-metaitem.biological.components.superexcited_conductive_polymer.tooltip=生物高压线
-metaitem.biological.components.ultra_micro_phase_separator.name=超微型相分离器
-metaitem.biological.components.ultra_micro_phase_separator.tooltip=生化反应守护者
-metaitem.biological.components.dna_decoder.name=DNA解码器
-metaitem.biological.components.dna_decoder.tooltip=自复制图灵机的一部分
-metaitem.biological.components.dna_encoder.name=DNA编码器
-metaitem.biological.components.dna_encoder.tooltip=自复制图灵机的一部分
-metaitem.biological.components.dna_decode_encoder.name=DNA解-编码器
-metaitem.biological.components.dna_decode_encoder.tooltip=会为了计算饮干宇宙
-metaitem.algae.ordinary_algae.name=普通藻类
-metaitem.algae.red_alga.name=红藻
-metaitem.algae.green_alga.name=绿藻
-metaitem.algae.chrysophyceae.name=金藻
-metaitem.algae.brown_alga.name=褐藻
+
+
 
 # Supra-Chronal Stuff
 metaitem.eigenfolded.kerr.manifold.name=本征折叠克尔流形
@@ -785,58 +752,81 @@ metaitem.crystal_glowstone.name=充能络合物
 metaitem.crystal_ender.name=谐振末影络合物
 metaitem.crystal_geode.name=元始魔力络合物
 
-#
+#packaging line
 tile.packaging_line.packaging_line_control_casing.name=封装控制外壳
 tile.packaging_line.packaging_line_machine_casing.name=封装机械外壳
 tile.packaging_line.packaging_line_casing.name=封装线外壳
 
+#advanced assembly line
 tile.advanced_assembly_line_casing.filter_casing.name=进阶过滤器机械方块
 tile.advanced_assembly_line_casing.filter_casing.tooltip.1=为多方块结构提供§a洁净§7功能
 tile.advanced_assembly_line_casing.filter_casing.tooltip.2=每立方米少于五个直径0.1微米的微粒
-
 tile.advanced_assembly_line_casing.assembly_line_casing.name=进阶装配线外壳
 tile.advanced_assembly_line_casing.assembly_control_casing.name=进阶装配控制外壳
 
-
-tile.machine_casing.iridium.name=镀铱强化机器外壳
+#machine-1
+tile.machine_casing.iridium_casing.name=强化镀铱机械方块
 tile.machine_casing.advanced_invar_casing.name=镀层殷钢绝热机器外壳
 tile.machine_casing.advanced_aluminium_casing.name=镀层铝制防冻机器外壳
 tile.machine_casing.precise_assembler_casing_mk1.name=精密电子单元机械方块 Mk I
 tile.machine_casing.precise_assembler_casing_mk2.name=精密电子单元机械方块 Mk II
 tile.machine_casing.precise_assembler_casing_mk3.name=精密电子单元机械方块 Mk III
+tile.machine_casing.substrate_casing.name=基板机械方块
+tile.machine_casing.advanced_substrate_casing.name=高级基板机械方块
 tile.machine_casing.vacuum_casing.name=高气密红钢机器外壳
+tile.machine_casing.drill_head.name=钻头
 tile.machine_casing.naquadria_casing.name=超能硅岩抗辐射机器外壳
 tile.machine_casing.hyper_casing.name=超致密黑钚机器外壳
 tile.machine_casing.talonite_casing.name=低摩擦铬钴磷酸盐合金机器外壳
+tile.machine_casing.farm_pipe_casing.name=水培管道机械方块
 tile.machine_casing.farm_casing.name=富生农场机器外壳
 tile.machine_casing.breeding_casing.name=水产养殖机器外壳
-tile.machine_casing.tritanium_casing.name=极限强度三钛合金机器外壳
-tile.machine_casing.quantum_casing.name=超重量子合金机器外壳
-tile.machine_casing.reflective_casing.name=抗形变反射面机器外壳
-tile.machine_casing.maraging_steel_casing.name=高耐久马氏体时效钢250机器外壳//
-tile.machine_casing.babbitt_alloy_casing.name=抗瘿巴氏合金机器外壳
-tile.machine_casing.zirconium_carbide_casing.name=超耐热碳化锆机器外壳
-tile.machine_casing.corrosion_casing.name=抗腐蚀超级奥氏体不锈钢-904L机器外壳
-tile.machine_casing.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-X78机器外壳
-tile.machine_casing.hastelloy_k243_casing.name=高耐久哈斯特洛伊合金-K243机器外壳
-tile.machine_casing.draconium_casing.name=魔力亲和龙素机器外壳
-tile.machine_casing_a.hg_1223_casing.name=化学惰性HG-1223耐热机器外壳
-tile.machine_casing_a.dragon_fusion_coil.name=混沌聚合线圈方块
+
+#machine-2
+tile.machine_casing_a.tritanium_casing.name=极限强度三钛合金机器外壳
+tile.machine_casing_a.quantum_casing.name=超重量子合金机器外壳
+tile.machine_casing_a.reflective_casing.name=抗形变反射面机器外壳
+tile.machine_casing_a.general_processing_casing.name=通用加工机械方块
+tile.machine_casing_a.maraging_steel_casing.name=高耐久马氏体时效钢250机器外壳
+tile.machine_casing_a.babbitt_alloy_casing.name=抗瘿巴氏合金机器外壳
+tile.machine_casing_a.zirconium_carbide_casing.name=超耐热碳化锆机器外壳
 tile.machine_casing_a.supercritical_fluid_turbine_casing.name=MAR-M200特种钢超临界涡轮外壳
-tile.machine_casing_a.supercritical_fluid_turbine_shaft_block.name=超临界涡轮传动转轴方块
+tile.machine_casing_a.corrosion_casing.name=抗腐蚀超级奥氏体不锈钢-904L机器外壳
+tile.machine_casing_a.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-X78机器外壳
 tile.machine_casing_a.stellar_containment_casing.name=恒星热力容器
+tile.machine_casing_a.hastelloy_k243_casing.name=高耐久哈斯特洛伊合金-K243机器外壳
+tile.machine_casing_a.supercritical_fluid_turbine_shaft_block.name=超临界涡轮传动转轴方块
+tile.machine_casing_a.alloy_smelting_pipe_casing.name=高强度热磁保护管道外壳
 tile.machine_casing_a.cyclotron_casing.name=回旋加速机械方块
 tile.machine_casing_a.cyclotron_coil.name=重离子偏转线圈方块
-tile.machine_casing_a.substrate_casing.name=基板机械方块
-tile.machine_casing_a.advanced_substrate_casing.name=高级基板机械方块
+
+#machine-3
+tile.machine_casing_b.draconium_casing.name=魔力亲和龙素机器外壳
+tile.machine_casing_b.dragon_fusion_coil.name=混沌聚合线圈方块
+tile.machine_casing_b.hg_1223_casing.name=化学惰性HG-1223耐热机器外壳
 
 
+
+#PCB
+tile.pcb_factory_casing.basic_photolithographic_framework_casing.name=精密光刻框架外壳
+tile.pcb_factory_casing.basic_photolithographic_framework_casing.tooltip=超高精度激光蚀刻/n§6PCB工厂§7-外壳等级：§bI§7
+tile.pcb_factory_casing.mold_printing_assembly_framework_casing.name=纳米级模板印刷框架外壳
+tile.pcb_factory_casing.mold_printing_assembly_framework_casing.tooltip=家用3D打印机/n§6PCB工厂§7-外壳等级：§bII§7
+tile.pcb_factory_casing.radiation_proof_scan_framework_casing.name=抗辐射特殊器件扫描框架外壳
+tile.pcb_factory_casing.radiation_proof_scan_framework_casing.tooltip=可直接扫描核反应堆/n§6PCB工厂§7-外壳等级：§bIII§7
+tile.pcb_factory_casing.biological_sterile_machine_casing.name=生物级无菌机器外壳
+tile.pcb_factory_casing.biological_sterile_machine_casing.tooltip=比无菌超净间更干净/n§6PCB工厂§7-§a生物仓外壳§7
+tile.pcb_factory_casing.water_cooled_machine_casing.name=水冷机器外壳
+tile.pcb_factory_casing.water_cooled_machine_casing.tooltip=散热器件/n§6PCB工厂§7-§b水冷塔外壳§7/n只能使用§c水冷塔§7或§c空冻塔§7两种升级中的一种
+tile.pcb_factory_casing.infinity_cooled_machine_casing.name=无尽冷却机器外壳
+tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=无限接近于绝对零度/n§6PCB工厂§7-§b空冻塔外壳§7/n只能使用§c水冷塔§7或§c空冻塔§7两种升级中的一种
+
+
+#pipelinel
 tile.pipelinel_casing.pbi.name=PBI管道方块
-tile.pipelinel_casing.farm_pipe_casing.name=水培管道机械方块
-tile.pipelinel_casing.alloy_smelting_pipe_casing.name=高强度热磁保护管道外壳
 tile.pipelinel_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
 
-
+#control
 tile.control_casing.isa_mill_casing.name=镍基合金-625机器外壳
 tile.control_casing.isa_mill_casing_pipe.name=镍基合金-625温和分散管道外壳
 tile.control_casing.isa_mill_casing_gearbox.name=镍基合金-625球磨齿轮箱外壳
@@ -845,17 +835,13 @@ tile.control_casing.flotation_casing_pipe.name=哈斯特洛依合金-N油膜管�
 tile.control_casing.flotation_casing_gearbox.name=哈斯特洛依合金-N齿轮箱外壳
 
 
-
 tile.active_multiblock_casing.flotation_intake_casing.name=哈斯特洛依合金-N筛选用进气口外壳
 
 
 
-#machine
+#
 naxtech.machine.packaging_line.name=封装线
 
-naxtech.machine.large_naquadah_reactor.name=大型硅岩反应堆
-naxtech.machine.large_naquadah_reactor.tooltip.1=取之有度，用之有节
-naxtech.machine.large_naquadah_reactor.tooltip.2=最高产生§3UV§7级的能量
 
 naxtech.machine.component_assembly_line.name=部件装配线
 recipemap.component_assembly_line_recipes.name=部件装配线
@@ -1055,41 +1041,6 @@ recipemap.isa_mill_recipes.name=湿法碾磨
 naxtech.machine.flotation_factory.name=工业浮选机
 recipemap.flotation_factory_recipes.name=浮游选矿
 
-naxtech.machine.mega_alloy_blast_smelter.name=巨型合金冶炼炉
-naxtech.machine.mega_alloy_blast_smelter.max_parallel=最大并行数: %s
-naxtech.machine.mega_alloy_blast_smelter.tooltip.1=玻璃等级决定了最大电压。
-naxtech.machine.mega_alloy_blast_smelter.tooltip.2=最大并行数量为线圈等级的四倍。
-naxtech.machine.mega_alloy_blast_smelter.tooltip.3=线圈每比白铜高一个层级，配方所需时间变为原来的80%%。
-
-naxtech.machine.mega_oil_cracking_unit.name=巨型石油裂化机
-naxtech.machine.mega_oil_cracking_unit.tooltip.1=玻璃等级决定了最大电压。
-naxtech.machine.mega_oil_cracking_unit.tooltip.2=最大并行数量为线圈等级的四倍。
-naxtech.machine.mega_oil_cracking_unit.tooltip.3=线圈每比白铜高一个层级，配方能耗减少10%%。
-
-naxtech.machine.mega_chemical_reactor.name=巨型化学反应釜
-naxtech.machine.mega_chemical_reactor.tooltip.1=玻璃等级决定了最大电压。
-naxtech.machine.mega_chemical_reactor.tooltip.2=最大并行数：§e256§7
-
-naxtech.machine.multiblock.glass_tier=当前玻璃等级：%s (%s)
-naxtech.machine.multiblock.max_parallel=最大并行数：%s
-naxtech.machine.multiblock.max_voltage=最大电压：%s
-naxtech.machine.multiblock.mode=当前模式：%s
-naxtech.multiblock.universal.problem.soldering_iron=%s§7电路板短路了。 (§a电烙铁§7)
-
-naxtech.multiblock.pattern.error.rotor_holder=必须使用同一等级的转子固定器
-
-naxtech.multiblock.mega_turbine.description=特大涡轮是大型涡轮的升级版。
-
-naxtech.machine.mega_turbine.steam.name=特大蒸汽涡轮
-naxtech.machine.mega_turbine.gas.name=特大燃气涡轮
-naxtech.machine.mega_turbine.plasma.name=特大等离子涡轮
-naxtech.machine.mega_turbine.mode.0=正常模式
-naxtech.machine.mega_turbine.mode.1=高速模式
-
-naxtech.machine.high_pressure_steam_turbine.name=高压蒸汽涡轮
-naxtech.machine.supercritical_steam_turbine.name=超临界蒸汽涡轮
-naxtech.machine.mega_high_pressure_steam_turbine.name=特大高压蒸汽涡轮
-naxtech.machine.mega_supercritical_steam_turbine.name=特大超临界蒸汽涡轮
 
 recipemap.quantum_force_transformer_recipes.name=量子操纵者
 naxtech.machine.quantum_force_transformer.name=量子操纵者

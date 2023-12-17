@@ -27,7 +27,7 @@ public class NTWorldGenRegistry {
     public static List<String> overrideList = new ArrayList<>();
 
     public static void init() {
-        // The path of the worldgen folder in the config folder TODO
+        // The path of the worldgen folder in the config folder
         Path worldgenRootPath = configPath.resolve("worldgen");
         // The folder where all physical veins are stored
         Path veinPath = worldgenRootPath.resolve("vein");

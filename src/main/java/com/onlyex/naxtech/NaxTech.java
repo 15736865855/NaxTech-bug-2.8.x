@@ -37,7 +37,6 @@ public class NaxTech {
             serverSide = "com.onlyex.naxtech.common.CommonProxy"
     )
     public static CommonProxy proxy;
-    public NaxTech() {}
     @Mod.EventHandler
     public void onConstruction(FMLConstructionEvent event)
     {
@@ -48,7 +47,7 @@ public class NaxTech {
         NTLog.init(event.getModLog());
         ConfigHolder.machines.highTierContent = true;
         NTLog.logger.info("Enabled GregTechCEu highTierContent");
-        NTMetaItems.initialization();
+        NTMetaItems.init();
         NTMetaBlocks.init();
         NTAPI.APIBlockInit();
         NTMetaTileEntities.init();
